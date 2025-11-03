@@ -1,9 +1,109 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { Github, Linkedin, Code2, Rocket, Users, Award } from "lucide-react";
-import { Button } from "../ui/button";
-import { Badge } from "../ui/badge";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../locales/translations";
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+// Utility function
+function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+// Button component
+const buttonVariants = cva(
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+        outline:
+          "border bg-background text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost:
+          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-9 px-4 py-2 has-[>svg]:px-3",
+        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
+        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        icon: "size-9 rounded-md",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  },
+);
+
+function Button({
+  className,
+  variant,
+  size,
+  asChild = false,
+  ...props
+}: React.ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean;
+  }) {
+  const Comp = asChild ? Slot : "button";
+
+  return (
+    <Comp
+      data-slot="button"
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
+  );
+}
+
+// Badge component
+const badgeVariants = cva(
+  "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden",
+  {
+    variants: {
+      variant: {
+        default:
+          "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
+        secondary:
+          "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
+        destructive:
+          "border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+        outline:
+          "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  },
+);
+
+function Badge({
+  className,
+  variant,
+  asChild = false,
+  ...props
+}: React.ComponentProps<"span"> &
+  VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
+  const Comp = asChild ? Slot : "span";
+
+  return (
+    <Comp
+      data-slot="badge"
+      className={cn(badgeVariants({ variant }), className)}
+      {...props}
+    />
+  );
+}
 
 export function Hero() {
   const { scrollY } = useScroll();
@@ -31,7 +131,7 @@ export function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-linear-gradient-to-r from-black via-blue-950 to-black">
+      <div className="absolute inset-0 bg-linear-to-br from-black via-blue-950 to-black">
         <div className="absolute inset-0">
           {[...Array(50)].map((_, i) => (
             <motion.div
@@ -83,9 +183,9 @@ export function Hero() {
           className="mb-4"
         >
           <div className="inline-block relative">
-            <div className="absolute inset-0 bg-linear-gradient-to-r from-cyan-400 to-blue-600 blur-3xl opacity-40 animate-pulse" />
+            <div className="absolute inset-0 bg-linear-to-br from-cyan-400 to-blue-600 blur-3xl opacity-40 animate-pulse" />
             <div className="relative px-10 py-7 pb-8 border border-cyan-400/50 rounded-full bg-black/40 backdrop-blur-sm">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl bg-linear-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent whitespace-nowrap leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl bg-linear-to-br from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent whitespace-nowrap leading-tight">
                 Victor Leça
               </h1>
             </div>
@@ -155,16 +255,16 @@ export function Hero() {
               whileHover={{ y: -5, scale: 1.05 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-linear-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300" />
+              <div className="absolute inset-0 bg-linear-to-br from-cyan-500/10 to-blue-500/10 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300" />
               <div className="relative p-4 md:p-5 bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl hover:border-cyan-400/50 transition-all duration-500 hover:shadow-lg hover:shadow-cyan-500/5">
                 <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
-                  className="inline-flex items-center justify-center w-10 h-10 mb-2 bg-linear-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-lg"
+                  className="inline-flex items-center justify-center w-10 h-10 mb-2 bg-linear-to-br from-cyan-400/20 to-blue-600/20 rounded-lg"
                 >
                   <stat.icon size={20} className="text-cyan-400" />
                 </motion.div>
-                <div className="bg-linear-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent mb-1">
+                <div className="bg-linear-to-br from-cyan-400 to-blue-600 bg-clip-text text-transparent mb-1">
                   {stat.value}
                 </div>
                 <div className="text-gray-400">{stat.label}</div>
@@ -181,7 +281,7 @@ export function Hero() {
           className="flex flex-wrap gap-4 justify-center mb-12"
         >
           <Button
-            className="bg-linear-gradient-to-r from-cyan-400 to-blue-600 hover:from-cyan-500 hover:to-blue-700 text-white border-0 px-8"
+            className="bg-linear-to-br from-cyan-400 to-blue-600 hover:from-cyan-500 hover:to-blue-700 text-white border-0 px-8"
             onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
           >
             <Rocket className="mr-2" size={18} />
