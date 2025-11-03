@@ -1,9 +1,9 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { Github, Linkedin, Code2, Rocket, Users, Award } from "lucide-react";
-import { Button } from "./ui/button";
-import { Badge } from "./ui/badge";
-import { useLanguage } from "../contexts/LanguageContext";
-import { translations } from "../locales/translations";
+import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../locales/translations";
 
 export function Hero() {
   const { scrollY } = useScroll();

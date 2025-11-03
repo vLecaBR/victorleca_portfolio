@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Github, Linkedin, Heart } from "lucide-react";
-import { useLanguage } from "../contexts/LanguageContext";
-import { translations } from "../locales/translations";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../locales/translations";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();

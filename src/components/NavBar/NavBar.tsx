@@ -54,9 +54,9 @@ export function Navbar() {
             className="relative group cursor-pointer"
           >
             <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }} className="block">
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-linear-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative px-3 py-1.5 border border-cyan-400/30 rounded-lg bg-black/20 group-hover:border-cyan-400/60 transition-all duration-300">
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
+                <span className="bg-linear-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
                   {"<VictorLeça />"}
                 </span>
               </div>
@@ -79,7 +79,7 @@ export function Navbar() {
                 >
                   {item.name}
                   <motion.span
-                    className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-blue-600"
+                    className="absolute bottom-0 left-0 w-full h-0.5 bg-linear-gradient-to-r from-cyan-400 to-blue-600"
                     initial={{ scaleX: 0 }}
                     whileHover={{ scaleX: 1 }}
                     transition={{ duration: 0.3 }}
@@ -97,7 +97,7 @@ export function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-linear-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative flex items-center gap-1.5">
                   <Languages size={16} className="text-cyan-400" />
                   <span className="text-white text-sm">{language.toUpperCase()}</span>
