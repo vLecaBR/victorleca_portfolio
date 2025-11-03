@@ -10,7 +10,7 @@ export function Footer() {
 
   return (
     <footer className="relative py-16 px-4 border-t border-white/10">
-      <div className="absolute inset-0 bg-gradient-to-b from-black to-blue-950/20" />
+      <div className="absolute inset-0 bg-linear-gradient-to-r from-black to-blue-950/20" />
       
       <div className="relative max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
@@ -21,7 +21,7 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-linear-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
               {"<VictorLeça />"}
             </span>
           </motion.div>

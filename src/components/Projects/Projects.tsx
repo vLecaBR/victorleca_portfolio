@@ -1,11 +1,11 @@
 import { motion, useInView } from "motion/react";
 import { useRef, useState } from "react";
 import { ExternalLink, Github, ChevronDown, ChevronUp } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
-import { useLanguage } from "../contexts/LanguageContext";
-import { translations } from "../locales/translations";
+import { ImageWithFallback } from "../../figma/ImageWithFallback";
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../locales/translations";
 
 export function Projects() {
   const ref = useRef(null);
@@ -101,10 +101,10 @@ export function Projects() {
 
   return (
     <section id="projects" className="relative py-32 px-4 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-cyan-950/20 to-black" />
+      <div className="absolute inset-0 bg-linear-gradient-to-r from-black via-cyan-950/20 to-black" />
 
       {/* Decorative Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.08)_1px,transparent_1px)] bg-[size:100px_100px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.08)_1px,transparent_1px)] bg-size-[100px_100px]" />
       
       {/* Animated Gradient Orbs */}
       <motion.div
@@ -144,7 +144,7 @@ export function Projects() {
           className="text-center mb-16"
         >
           <h2 className="mb-4">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-linear-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
               {t.title}
             </span>
           </h2>
@@ -162,7 +162,7 @@ export function Projects() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-linear-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="relative bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-cyan-400/50 transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/10">
                 {/* Project Header */}
@@ -292,7 +292,7 @@ export function Projects() {
                               rel="noopener noreferrer"
                               whileHover={{ scale: 1.02 }}
                               whileTap={{ scale: 0.98 }}
-                              className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all shadow-lg shadow-cyan-500/25"
+                              className="flex items-center justify-center gap-2 px-4 py-3 bg-linear-gradient-to-r from-cyan-500 to-blue-600 rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all shadow-lg shadow-cyan-500/25"
                             >
                               <ExternalLink size={20} className="text-white" />
                               <span className="text-white">{t.viewLive}</span>

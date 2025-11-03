@@ -31,7 +31,7 @@ export function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-950 to-black">
+      <div className="absolute inset-0 bg-linear-gradient-to-r from-black via-blue-950 to-black">
         <div className="absolute inset-0">
           {[...Array(50)].map((_, i) => (
             <motion.div
@@ -60,7 +60,7 @@ export function Hero() {
       </div>
 
       {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[50px_50px]" />
 
       <motion.div
         style={{ y, opacity }}
@@ -83,9 +83,9 @@ export function Hero() {
           className="mb-4"
         >
           <div className="inline-block relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-600 blur-3xl opacity-40 animate-pulse" />
+            <div className="absolute inset-0 bg-linear-gradient-to-r from-cyan-400 to-blue-600 blur-3xl opacity-40 animate-pulse" />
             <div className="relative px-10 py-7 pb-8 border border-cyan-400/50 rounded-full bg-black/40 backdrop-blur-sm">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent whitespace-nowrap leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl bg-linear-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent whitespace-nowrap leading-tight">
                 Victor Leça
               </h1>
             </div>
@@ -155,16 +155,16 @@ export function Hero() {
               whileHover={{ y: -5, scale: 1.05 }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300" />
+              <div className="absolute inset-0 bg-linear-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300" />
               <div className="relative p-4 md:p-5 bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl hover:border-cyan-400/50 transition-all duration-500 hover:shadow-lg hover:shadow-cyan-500/5">
                 <motion.div
                   whileHover={{ rotate: 360 }}
                   transition={{ duration: 0.6 }}
-                  className="inline-flex items-center justify-center w-10 h-10 mb-2 bg-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-lg"
+                  className="inline-flex items-center justify-center w-10 h-10 mb-2 bg-linear-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-lg"
                 >
                   <stat.icon size={20} className="text-cyan-400" />
                 </motion.div>
-                <div className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent mb-1">
+                <div className="bg-linear-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent mb-1">
                   {stat.value}
                 </div>
                 <div className="text-gray-400">{stat.label}</div>
@@ -181,7 +181,7 @@ export function Hero() {
           className="flex flex-wrap gap-4 justify-center mb-12"
         >
           <Button
-            className="bg-gradient-to-r from-cyan-400 to-blue-600 hover:from-cyan-500 hover:to-blue-700 text-white border-0 px-8"
+            className="bg-linear-gradient-to-r from-cyan-400 to-blue-600 hover:from-cyan-500 hover:to-blue-700 text-white border-0 px-8"
             onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
           >
             <Rocket className="mr-2" size={18} />

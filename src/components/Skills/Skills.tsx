@@ -1,7 +1,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
-import { useLanguage } from "../contexts/LanguageContext";
-import { translations } from "../locales/translations";
+import { useLanguage } from "../../context/LanguageContext";
+import { translations } from "../../locales/translations";
 
 export function Skills() {
   const ref = useRef(null);
@@ -102,7 +102,7 @@ export function Skills() {
 
   return (
     <section id="skills" className="relative py-32 px-4 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/20 to-black" />
+      <div className="absolute inset-0 bg-linear-gradient-to-r from-black via-purple-950/20 to-black" />
 
       {/* Diagonal Lines Pattern */}
       <div className="absolute inset-0 opacity-20" style={{
@@ -155,7 +155,7 @@ export function Skills() {
           className="text-center mb-16"
         >
           <h2 className="mb-4">
-            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-linear-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
               {t.title}
             </span>
           </h2>
@@ -180,7 +180,7 @@ export function Skills() {
                   <motion.div
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
-                    className={`p-3 rounded-xl bg-gradient-to-br ${category.color} shadow-lg`}
+                    className={`p-3 rounded-xl bg-linear-gradient-to-r ${category.color} shadow-lg`}
                   >
                     <div className="text-white">
                       {category.icon}
@@ -201,7 +201,7 @@ export function Skills() {
                         delay: categoryIndex * 0.15 + skillIndex * 0.05,
                       }}
                       whileHover={{ scale: 1.05, y: -2 }}
-                      className={`px-4 py-2.5 rounded-full bg-gradient-to-r ${category.color} bg-opacity-10 border ${category.borderColor} backdrop-blur-sm cursor-default transition-all duration-300 hover:shadow-lg`}
+                      className={`px-4 py-2.5 rounded-full bg-linear-gradient-to-r ${category.color} bg-opacity-10 border ${category.borderColor} backdrop-blur-sm cursor-default transition-all duration-300 hover:shadow-lg`}
                     >
                       <span className="text-white text-sm">{skill}</span>
                     </motion.div>
