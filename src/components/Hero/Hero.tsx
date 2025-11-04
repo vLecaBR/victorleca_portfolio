@@ -172,7 +172,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.1 }}
           className="mb-6"
         >
-          <span className="block text-gray-300 mb-4">{t.greeting}</span>
+          <span className="block text-gray-300 mb-4 text-4xl">{t.greeting}</span>
         </motion.div>
 
         {/* Name Pill - Larger */}
