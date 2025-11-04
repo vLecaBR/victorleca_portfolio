@@ -275,8 +275,10 @@ export const translations = {
       info: {
         birthDate: "Date of Birth",
         birthValue: "06/30/2003 (22 years old)",
-        phone: "+55 16 98864-7864",
-        email: "vitartasleca@gmail.com",
+        phone: "Phone",
+        phoneValue: "+55 16 98864-7864",
+        email: "Mail",
+        emailValue: "vitartasleca@gmail.com",
         location: "Ribeirão Preto,",
         locationValue: " São Paulo - Brazil"
       },
