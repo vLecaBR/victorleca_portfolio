@@ -56,7 +56,7 @@ export function Navbar() {
             <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }} className="block">
               <div className="absolute inset-0 bg-linear-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative px-3 py-1.5 border border-cyan-400/30 rounded-lg bg-black/20 group-hover:border-cyan-400/60 transition-all duration-300">
-                <span className="bg-linear-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
                   {"<VictorLeça />"}
                 </span>
               </div>
