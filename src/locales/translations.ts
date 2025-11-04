@@ -205,18 +205,18 @@ export const translations = {
           title: "Eastqg (Full Stack Application)",
           shortDescription: "Full-stack web application with decoupled frontend and backend.",
           fullDescription:
-            "A complete web application consisting of a React/Next.js frontend (eastqg) and a Node.js/Express backend (eastqg-backend). The API handles business logic and data management, while the frontend provides a reactive and modern user interface. This project demonstrates a decoupled microservices-style architecture.",
+            "A complete web application consisting of a React frontend (eastqg) and a Node.js/Express backend (eastqg-backend). The API handles business logic and data management, while the frontend provides a reactive and modern user interface. This project demonstrates a decoupled microservices-style architecture.",
           features: [
             "Decoupled architecture (Frontend/Backend)",
             "RESTful API with Node.js & Express",
-            "Reactive frontend in React/Next.js",
+            "Reactive frontend in React",
             "Data and business logic management",
           ],
           tags: ["ReactJS", "NextJS", "NodeJS", "Express"],
           technologies: {
-            frontend: "ReactJS, NextJS",
+            frontend: "ReactJS, Styled Components",
             backend: "NodeJS, Express",
-            database: "MongoDB",
+            database: "API ML Model",
           },
           images: [
             "../../public/assets/eastqg.png",
@@ -238,12 +238,12 @@ export const translations = {
           ],
           tags: ["ReactJS", "NextJS", "NodeJS", "PostgreSQL"],
           technologies: {
-            frontend: "ReactJS, NextJS, Tailwind CSS",
+            frontend: "ReactJS, Styled Components",
             backend: "NodeJS, Express, PostgreSQL",
             automation: "REST APIs",
           },
           images: [
-            "../../public/assets/sales-website-model.png",
+            "../../public/assets/sales.png",
             "https://images.unsplash.com/photo-1575388902449-6bca946ad549?...",
           ],
           githubUrl: "https://github.com/vLecaBR",
@@ -555,7 +555,7 @@ export const translations = {
             automation: "REST APIs",
           },
           images: [
-            "../../public/assets/sales-website-model.png",
+            "../../public/assets/sales.png",
             "https://images.unsplash.com/photo-1575388902449-6bca946ad549?...",
           ],
           githubUrl: "https://github.com/vLecaBR",
