@@ -4,6 +4,7 @@ export const translations = {
       home: "Home",
       about: "About",
       skills: "Skills",
+      experience: "Experience",
       projects: "Projects",
       contact: "Contact",
     },
@@ -45,6 +46,56 @@ export const translations = {
       title: "Technical Skills",
       subtitle: "Complete stack of web, mobile, and automation development. Always evolving, learning new tools and technologies to deliver the best solutions.",
       footer: "And constantly learning new technologies to stay up-to-date with market trends."
+    },
+    experience: {
+      title: "Professional Experience",
+      subtitle: "4 years of experience in multinational companies, working with modern technologies and strategic projects that impact thousands of users.",
+      current: "Current",
+      technologies: "Technologies Used",
+      list: [
+        {
+          company: "Multinational Company",
+          position: "Full Stack Developer",
+          period: "2022 - Current",
+          location: "Digitalization & AI Team",
+          description: "Development of web, mobile, and automation solutions for the Digitalization & AI team. Collaboration on strategic projects with the international team in China, creating applications that serve users in multiple countries.",
+          technologies: ["ReactJS", "React Native", "NodeJS", "TypeScript", "Tailwind CSS", "Power Platform", "SharePoint", "MongoDB", "PostgreSQL"],
+          achievements: [
+            "Developed mobile app for asset management with offline-first functionality",
+            "Created web portal with AI features serving users in 3 countries",
+            "Implemented automation systems that reduced manual processes by 70%",
+            "Collaborated with international team on strategic projects"
+          ]
+        },
+        {
+          company: "Multinational Company",
+          position: "Power Platform Developer",
+          period: "2021 - 2022",
+          location: "Digital Transformation Team",
+          description: "Development of automation and digitalization solutions using Microsoft Power Platform. Creation of custom applications, intelligent forms, and workflows that optimized corporate processes.",
+          technologies: ["Power Apps", "Power Automate", "SharePoint", "Power BI", "JavaScript", "Office 365"],
+          achievements: [
+            "Developed corporate booking system used by over 500 employees",
+            "Created 50+ automated workflows saving hundreds of hours monthly",
+            "Implemented smart forms system used in 30+ departments",
+            "Integrated solutions with ERP and internal systems"
+          ]
+        },
+        {
+          company: "Technology Company",
+          position: "IT Support Analyst",
+          period: "2021",
+          location: "Infrastructure & Support Team",
+          description: "Technical support and IT infrastructure. Started career focusing on problem solving and technical support, which provided solid foundation for development.",
+          technologies: ["Windows Server", "Active Directory", "Network", "Helpdesk", "SQL Server"],
+          achievements: [
+            "Provided technical support to 200+ users",
+            "Implemented solutions to optimize internal processes",
+            "Developed scripts for task automation",
+            "Migrated to development area due to demonstrated potential"
+          ]
+        }
+      ]
     },
     projects: {
       title: "Featured Projects",
@@ -157,6 +208,7 @@ export const translations = {
       home: "Início",
       about: "Sobre",
       skills: "Habilidades",
+      experience: "Experiência",
       projects: "Projetos",
       contact: "Contato",
     },
@@ -198,6 +250,56 @@ export const translations = {
       title: "Habilidades Técnicas",
       subtitle: "Stack completo de desenvolvimento web, mobile e automação. Sempre em constante evolução, aprendendo novas ferramentas e tecnologias para entregar as melhores soluções.",
       footer: "E constantemente aprendendo novas tecnologias para me manter atualizado com as tendências do mercado."
+    },
+    experience: {
+      title: "Experiência Profissional",
+      subtitle: "4 anos de experiência em empresas multinacionais, atuando com tecnologias modernas e projetos estratégicos que impactam milhares de usuários.",
+      current: "Atual",
+      technologies: "Tecnologias Utilizadas",
+      list: [
+        {
+          company: "Empresa Multinacional",
+          position: "Desenvolvedor Full Stack",
+          period: "2022 - Atual",
+          location: "Time de Digitalization & AI",
+          description: "Desenvolvimento de soluções web, mobile e automação para o time de Digitalization & AI. Colaboração em projetos estratégicos com o time internacional da China, criando aplicações que atendem usuários em múltiplos países.",
+          technologies: ["ReactJS", "React Native", "NodeJS", "TypeScript", "Tailwind CSS", "Power Platform", "SharePoint", "MongoDB", "PostgreSQL"],
+          achievements: [
+            "Desenvolvi app mobile de gestão de ativos com funcionalidade offline-first",
+            "Criei portal web com recursos de IA atendendo usuários em 3 países",
+            "Implementei sistemas de automação que reduziram processos manuais em 70%",
+            "Colaborei com time internacional em projetos estratégicos"
+          ]
+        },
+        {
+          company: "Empresa Multinacional",
+          position: "Desenvolvedor Power Platform",
+          period: "2021 - 2022",
+          location: "Time de Transformação Digital",
+          description: "Desenvolvimento de soluções de automação e digitalização utilizando Microsoft Power Platform. Criação de aplicações customizadas, formulários inteligentes e workflows que otimizaram processos corporativos.",
+          technologies: ["Power Apps", "Power Automate", "SharePoint", "Power BI", "JavaScript", "Office 365"],
+          achievements: [
+            "Desenvolvi sistema de reservas corporativo utilizado por mais de 500 colaboradores",
+            "Criei mais de 50 fluxos de automação economizando centenas de horas mensais",
+            "Implementei sistema de formulários inteligentes usado em mais de 30 departamentos",
+            "Integrei soluções com ERP e sistemas internos"
+          ]
+        },
+        {
+          company: "Empresa de Tecnologia",
+          position: "Analista de Suporte TI",
+          period: "2021",
+          location: "Time de Infraestrutura & Suporte",
+          description: "Suporte técnico e infraestrutura de TI. Iniciei a carreira com foco em resolução de problemas e atendimento técnico, o que proporcionou uma base sólida para o desenvolvimento.",
+          technologies: ["Windows Server", "Active Directory", "Redes", "Helpdesk", "SQL Server"],
+          achievements: [
+            "Prestei suporte técnico para mais de 200 usuários",
+            "Implementei soluções para otimizar processos internos",
+            "Desenvolvi scripts para automação de tarefas",
+            "Migrei para área de desenvolvimento devido ao potencial demonstrado"
+          ]
+        }
+      ]
     },
     projects: {
       title: "Projetos em Destaque",
