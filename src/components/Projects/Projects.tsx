@@ -166,6 +166,7 @@ export function Projects() {
                       <ImageWithFallback src={project.images[0]} alt={project.title} className="w-full h-full object-cover" />
                     </motion.div>
                   </div>
+
                   <div className="flex flex-col justify-between">
                     <div>
                       <h3 className="mb-3 text-white">{project.title}</h3>
