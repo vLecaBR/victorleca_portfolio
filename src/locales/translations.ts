@@ -195,8 +195,8 @@ export const translations = {
             integration: "Email Form / Analytics",
           },
           images: [
-            "https://images.unsplash.com/photo-1576707769315-01a7474de445?...",
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?...",
+            "../../public/assets/cliqz.png",
+            "../../public/assets/cliqz2.png",
           ],
           githubUrl: null,
           liveUrl: "https://cliqz.com",
@@ -219,8 +219,8 @@ export const translations = {
             database: "MongoDB",
           },
           images: [
-            "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?...",
-            "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?...",
+            "../../public/assets/eastqg.png",
+            "../../public/assets/eastqg2.png",
           ],
           githubUrl: "https://github.com/vLecaBR",
           liveUrl: null,
@@ -243,7 +243,7 @@ export const translations = {
             automation: "REST APIs",
           },
           images: [
-            "https://images.unsplash.com/photo-1759143545924-beb85b33c0f1?...",
+            "../../public/assets/sales-website-model.png",
             "https://images.unsplash.com/photo-1575388902449-6bca946ad549?...",
           ],
           githubUrl: "https://github.com/vLecaBR",
@@ -507,8 +507,8 @@ export const translations = {
             integration: "Formulário / Analytics",
           },
           images: [
-            "https://images.unsplash.com/photo-1576707769315-01a7474de445?...",
-            "https://images.unsplash.com/photo-1551288049-bebda4e38f71?...",
+            "../../public/assets/cliqz.png",
+            "../../public/assets/cliqz2.png",
           ],
           githubUrl: null,
           liveUrl: "https://cliqz.com",
@@ -531,8 +531,8 @@ export const translations = {
             database: "MongoDB",
           },
           images: [
-            "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?...",
-            "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?...",
+            "../../public/assets/eastqg.png",
+            "../../public/assets/eastqg2.png",
           ],
           githubUrl: "https://github.com/vLecaBR",
           liveUrl: null,
@@ -555,7 +555,7 @@ export const translations = {
             automation: "REST APIs",
           },
           images: [
-            "https://images.unsplash.com/photo-1759143545924-beb85b33c0f1?...",
+            "../../public/assets/sales-website-model.png",
             "https://images.unsplash.com/photo-1575388902449-6bca946ad549?...",
           ],
           githubUrl: "https://github.com/vLecaBR",
