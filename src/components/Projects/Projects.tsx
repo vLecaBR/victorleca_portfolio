@@ -221,7 +221,7 @@ export function Projects() {
 
                       <div>
                         {project.images[1] && (
-                          <div className="relative h-48 overflow-hidden rounded-xl mb-4">
+                          <div className="relative h-100 w-150 overflow-hidden rounded-xl mb-4">
                             <ImageWithFallback src={project.images[1]} alt={`${project.title} - Interface`} className="w-full h-full object-cover" />
                           </div>
                         )}
