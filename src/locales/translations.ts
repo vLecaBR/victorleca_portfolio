@@ -12,7 +12,7 @@ export const translations = {
       greeting: "Hello, I'm",
       role: "Full Stack Developer",
       description:
-        "Full Stack Developer specialized in creating <span class='text-cyan-400'>web, mobile, and automation solutions</span>. Currently on the <span class='text-cyan-400'>Digitalization & AI</span> team at <span class='text-cyan-400'>LongPing High-Tech</span>, transforming complex processes into <span class='text-cyan-400'>scalable and efficient applications</span>.",
+        "Full Stack Developer specialized in creating <span class='text-cyan-400'>web, mobile, and automation solutions</span>. Currently part of the <span class='text-cyan-400'>Digitalization & AI</span> team at <span class='text-cyan-400'>LongPing High-Tech</span>, developing scalable and efficient applications that drive digital transformation and innovation across business areas.",
       viewProjects: "View Projects",
       aboutMe: "About Me",
       stats: {
@@ -25,51 +25,81 @@ export const translations = {
     about: {
       title: "About Me",
       subtitle:
-        "Full Stack Developer with 4 years of experience in multinational companies, creating web, mobile, and automation solutions that transform processes and increase productivity.",
+        "Full Stack Developer with 4 years of experience in multinational companies, building web, mobile and automation solutions that optimize processes and increase productivity.",
       journeyTitle: "My Journey",
       journeyParagraph1:
-        "I'm a Computer Science student and have been working for 4 years in multinational companies. I began my career in 2021 focused on technical support and infrastructure, and have since transitioned into software development. Today I work on the Digitalization & AI team at LongPing High-Tech, building web, mobile and automation solutions that impact users across countries.",
+        "I am a Computer Science student with 4 years of experience in multinational companies. I started my career in 2021 with a focus on technical support and IT infrastructure, and today I work in the Digitalization & AI team, where I contribute to strategic projects, some in direct collaboration with our team in China.",
       journeyParagraph2:
-        "I have solid experience building modern, scalable applications using ReactJS, Next.js, React Native, Tailwind CSS and NodeJS. I also work with the Microsoft Power Platform (Power Apps, Power Automate and SharePoint) delivering automations, booking systems and intelligent forms. I focus on clean architecture, automation and delivering user-centered solutions.",
+        "My main focus is web, mobile, and automation development. I have solid experience building modern and scalable applications using ReactJS, Next.js, React Native, Tailwind CSS, and NodeJS, working on both front-end and back-end development. In addition, I develop customized solutions using the Microsoft Power Platform (Power Apps, Power Automate, and SharePoint), including automated workflows, booking systems, smart forms, and corporate data integrations that improve productivity and streamline internal processes.",
+      journeyParagraph3:
+        "I am passionate about technology and development, especially in the web and mobile ecosystem. I am constantly learning and improving my skills to deliver practical, scalable, and user-focused solutions. I am recognized for being fast, consistent, and motivated to take on new challenges and overcome obstacles.",
       features: [
         {
-          title: "Full Stack Development",
+          title: "Web & Mobile Development",
           description:
-            "End-to-end development of web and mobile apps using React, Next.js, React Native and Node.js.",
+            "Creation of modern and scalable web and mobile applications using ReactJS, Next.js, React Native, and NodeJS.",
         },
         {
-          title: "Automation & AI",
+          title: "Automation & Digital Transformation",
           description:
-            "Automation and digitalization using Power Platform and AI-driven tools to optimize processes.",
+            "Development of customized solutions using Microsoft Power Platform and automation flows to optimize business processes.",
         },
         {
-          title: "International Experience",
+          title: "Innovation & Collaboration",
           description:
-            "Collaboration on strategic projects with multinational teams, including direct work with the China team.",
+            "Active collaboration on strategic projects with international teams, focused on innovation and continuous improvement.",
         },
       ],
     },
     skills: {
       title: "Technical Skills",
       subtitle:
-        "Complete stack for web, mobile and automation development. Always learning new tools and methodologies to deliver clean, scalable and performant solutions.",
+        "Full-stack expertise covering front-end, back-end, databases, testing and automation. Constantly learning new technologies and practices to deliver maintainable, scalable and high-performance solutions.",
       footer:
-        "And constantly learning new technologies to stay up-to-date with market trends.",
+        "Continuously learning: TypeScript, Next.js, DevOps practices, modern testing and architecture patterns.",
+      hardSkills: {
+        frontend: [
+          "ReactJS (Hooks, Context API, Zustand)",
+          "Next.js (SSR/SSG, performance)",
+          "React Native",
+          "Styled Components",
+          "Tailwind CSS",
+          "HTML5 & CSS3",
+          "Figma (prototyping & handoff)",
+        ],
+        backend: [
+          "Node.js (Express)",
+          "Python (FastAPI)",
+          "REST APIs & Webhooks",
+          "Clean Architecture & Microservices",
+        ],
+        databases: ["PostgreSQL", "DynamoDB", "MongoDB", "SQL"],
+        testing: ["Jest", "Testing Library", "Cypress", "TDD"],
+        devops: ["Docker", "CI/CD (GitHub Actions, Jenkins)", "AWS", "GCP"],
+        other: ["Power Platform (Power Apps, Power Automate, SharePoint)", "PowerShell", "Zabbix", "Grafana"],
+      },
+      softSkills: [
+        "Agile mindset (Scrum/Kanban)",
+        "Fast learner",
+        "Consistent and resilient",
+        "Good communicator",
+        "Proactive and collaborative",
+      ],
     },
     experience: {
       title: "Professional Experience",
       subtitle:
-        "4 years of experience in multinational companies, working with modern technologies and strategic projects that impact thousands of users.",
+        "4 years of experience in multinational companies, developing web, mobile, and automation solutions that bring measurable impact.",
       current: "Current",
       technologies: "Technologies Used",
       list: [
         {
           company: "LongPing High-Tech",
-          position: "Full Stack Developer",
+          position: "Full Stack Developer | Digitalization & AI - Web, Mobile & Automation",
           period: "Sep 2024 - Present",
-          location: "Cravinhos, SP — Digitalization & AI Team",
+          location: "Cravinhos, São Paulo, Brazil",
           description:
-            "Development of web, mobile and automation solutions for the Digitalization & AI team. Work on strategic initiatives with international collaboration (China), building scalable applications, APIs and automation flows that serve multiple countries.",
+            "I work on the development of web and mobile applications, creating modern and scalable solutions that generate direct business impact. I use ReactJS and React Native to build responsive, high-performance interfaces, applying Styled Components, React Hooks, and React Router to ensure maintainability and efficiency on the front end. On the back end, I develop and maintain REST APIs with NodeJS, delivering robust integrations that support dynamic and complex systems. In addition, I am part of the Digitalization & AI team, where we take on strategic projects, some in direct collaboration with the China team, with a strong focus on innovation, automation, and digital transformation. Within this context, I also work with the Microsoft Power Platform (Power Apps, Power Automate, and SharePoint), creating customized solutions such as automated approval flows, booking systems, smart forms, and corporate data integrations that increase productivity and streamline internal processes. My focus is to deliver full-stack solutions that are practical, scalable, and user-centered, always aligned with business needs and the company’s vision of digitalization and artificial intelligence.",
           technologies: [
             "ReactJS",
             "Next.js",
@@ -80,6 +110,8 @@ export const translations = {
             "Python",
             "FastAPI",
             "Power Platform",
+            "Power Apps",
+            "Power Automate",
             "SharePoint",
             "PostgreSQL",
             "DynamoDB",
@@ -94,60 +126,51 @@ export const translations = {
             "Git / GitHub Actions",
           ],
           achievements: [
-            "Delivered mobile app for asset management with offline-first functionality",
-            "Built web portal with AI features serving users across multiple countries",
-            "Implemented automation systems (Power Automate) that reduced manual processes by ~35%",
-            "Collaborated with the international team to deliver strategic digital projects",
+            "Delivered web and mobile applications adopted across multiple departments",
+            "Built REST APIs for automation and integrations between corporate systems",
+            "Reduced manual workload by ~35% through Power Automate flows",
+            "Collaborated with international teams (China) on strategic digital projects",
           ],
         },
         {
           company: "LongPing High-Tech",
-          position: "Power Platform Developer / Helpdesk",
-          period: "Feb 2023 - Sep 2024",
-          location: "Cravinhos, SP — Infrastructure & Support",
+          position: "Helpdesk Intern",
+          period: "Feb 2023 - Aug 2024",
+          location: "Cravinhos, São Paulo, Brazil",
           description:
-            "Provided IT support and developed automation solutions using Microsoft Power Platform. Built internal tools, custom Power Apps, intelligent forms and automated workflows to streamline operations and reduce manual work.",
+            "Worked with in-person and remote calls to correct problems such as VPN, password issues, bug fixes, and user management through Active Directory. Created shell and PowerShell scripts for remote execution, reducing around 10 hours of manual work per month. Performed network monitoring and internal services monitoring using Zabbix and Grafana, improving monitoring efficiency by ~20%. Maintained and prepared equipment, managed inventory and .MSIX packaging for deployments, and developed internal intranet pages and tools.",
           technologies: [
-            "Power Apps",
-            "Power Automate",
-            "SharePoint",
-            "Power BI",
-            "JavaScript",
             "React",
             "HTML",
             "CSS",
-            "PowerShell",
+            "JavaScript",
+            "Active Directory",
+            "Windows Support",
             "Zabbix",
             "Grafana",
+            "VPN",
+            "PowerShell",
+            "SAP",
           ],
           achievements: [
-            "Developed corporate booking system used by 500+ employees",
-            "Created 50+ automated workflows saving hundreds of hours monthly",
-            "Implemented smart forms used across 30+ departments",
-            "Built PowerShell automations that saved 10+ hours/month",
+            "Reduced ticket resolution time by 30% through proactive automation",
+            "Improved monitoring and uptime by ~20% using Zabbix and Grafana",
+            "Created internal intranet websites improving internal communication",
+            "Automated maintenance tasks with PowerShell scripts, saving ~10 hours/month",
           ],
         },
         {
           company: "LongPing High-Tech",
-          position: "IT Support / Apprentice",
+          position: "IT / Facilities Apprentice",
           period: "Feb 2021 - Jan 2023",
-          location: "Ribeirão Preto, SP — Infrastructure & GAO",
+          location: "Ribeirão Preto, São Paulo, Brazil",
           description:
-            "Technical support, equipment provisioning and inventory management. Gained hands-on experience in networks, AD and helpdesk processes that formed the base for transitioning to development.",
-          technologies: [
-            "Windows Server",
-            "Active Directory",
-            "Network",
-            "Helpdesk",
-            "SQL Server",
-            "VPN",
-            "SAP",
-          ],
+            "Apprentice in Administrative, IT and Facilities areas. In IT, performed helpdesk support tasks, reducing service time by 30%, formatting and preparing machines for onboarding, remote support and equipment logistics. Improved IT inventory accuracy and supported office operations, contributing to better process organization. Worked remotely for 1.5 years and later adopted a hybrid model.",
+          technologies: ["Active Directory", "Windows Support", "SAP", "VPN", "Office 365"],
           achievements: [
-            "Provided technical support to 200+ users",
-            "Implemented automation scripts to save manual effort",
-            "Improved inventory accuracy by ~35%",
-            "Migrated to development area after demonstrating potential",
+            "Reduced helpdesk response time by 30% through workflow improvements",
+            "Improved IT inventory accuracy by ~35%",
+            "Supported 200+ employees in hybrid and remote setups",
           ],
         },
       ],
@@ -252,10 +275,15 @@ export const translations = {
       info: {
         birthDate: "Date of Birth",
         birthValue: "06/30/2003 (22 years old)",
-        phone: "Phone",
-        email: "Email",
-        location: "Location",
-        locationValue: "Ribeirão Preto, SP - Brazil",
+        phone: "+55 16 98864-7864",
+        email: "vitartasleca@gmail.com",
+        location: "Ribeirão Preto,",
+        locationValue: " São Paulo - Brazil"
+      },
+      socialLinksData: {
+        github: "https://github.com/vLecaBR",
+        linkedin: "https://www.linkedin.com/in/victor-leca-vlkbr/",
+        portfolio: "https://victorleca.vercel.app/",
       },
       footer: "Currently in <span class='text-cyan-400'>Ribeirão Preto, SP - Brazil</span>",
       footerDetails: "Available for remote and on-site projects",
@@ -266,6 +294,7 @@ export const translations = {
       by: "by Victor Leça",
     },
   },
+
   pt: {
     navbar: {
       home: "Início",
@@ -279,7 +308,7 @@ export const translations = {
       greeting: "Olá, eu sou",
       role: "Desenvolvedor Full Stack",
       description:
-        "Desenvolvedor Full Stack especializado em criar <span class='text-cyan-400'>soluções web, mobile e automação</span>. Atualmente no time de <span class='text-cyan-400'>Digitalization & AI</span> da <span class='text-cyan-400'>LongPing High-Tech</span>, transformando processos complexos em <span class='text-cyan-400'>aplicações escaláveis e eficientes</span>.",
+        "Desenvolvedor Full Stack especializado em criar <span class='text-cyan-400'>soluções web, mobile e de automação</span>. Atualmente faço parte do time de <span class='text-cyan-400'>Digitalization & AI</span> na <span class='text-cyan-400'>LongPing High-Tech</span>, desenvolvendo aplicações escaláveis e eficientes que impulsionam a transformação digital e a inovação corporativa.",
       viewProjects: "Ver Projetos",
       aboutMe: "Sobre Mim",
       stats: {
@@ -292,51 +321,81 @@ export const translations = {
     about: {
       title: "Sobre Mim",
       subtitle:
-        "Desenvolvedor Full Stack com 4 anos de experiência em empresas multinacionais, criando soluções web, mobile e de automação que transformam processos e aumentam a produtividade.",
+        "Desenvolvedor Full Stack com 4 anos de experiência em empresas multinacionais, criando soluções web, mobile e de automação que otimizam processos e aumentam a produtividade.",
       journeyTitle: "Minha Jornada",
       journeyParagraph1:
-        "Sou estudante de Ciência da Computação e atuo há 4 anos em empresas multinacionais. Iniciei minha carreira em 2021 com foco em suporte técnico e infraestrutura, e desde então migrei para desenvolvimento de software. Atualmente faço parte do time de Digitalization & AI na LongPing High-Tech, desenvolvendo soluções web, mobile e automações com impacto internacional.",
+        "Sou estudante de Ciência da Computação com 4 anos de experiência em empresas multinacionais. Iniciei minha carreira em 2021 com foco em suporte técnico e infraestrutura de TI, e hoje atuo no time de Digitalization & AI, onde contribuo em projetos estratégicos, alguns em colaboração direta com o time da China.",
       journeyParagraph2:
-        "Tenho experiência sólida na criação de aplicações modernas e escaláveis utilizando ReactJS, Next.js, React Native, NodeJS e Python (FastAPI). Também trabalho com Microsoft Power Platform (Power Apps, Power Automate e SharePoint), construindo fluxos de automação, sistemas de reservas e formulários inteligentes. Sou focado em arquitetura limpa, automação e soluções centradas no usuário.",
+        "Meu foco principal é o desenvolvimento web, mobile e de automação. Tenho experiência sólida na criação de aplicações modernas e escaláveis utilizando ReactJS, Next.js, React Native, Tailwind CSS e NodeJS, atuando tanto no front-end quanto no back-end. Além disso, desenvolvo soluções personalizadas com Microsoft Power Platform (Power Apps, Power Automate e SharePoint), incluindo fluxos automatizados, sistemas de reservas, formulários inteligentes e integrações corporativas que aumentam a produtividade e otimizam processos internos.",
+      journeyParagraph3:
+        "Sou apaixonado por tecnologia e desenvolvimento, especialmente no ecossistema web e mobile. Estou em constante aprendizado e aprimoramento para entregar soluções práticas, escaláveis e centradas no usuário. Sou reconhecido por ser ágil, consistente e motivado a enfrentar novos desafios e superar obstáculos.",
       features: [
         {
-          title: "Desenvolvimento Full Stack",
+          title: "Desenvolvimento Web & Mobile",
           description:
-            "Criação completa de aplicações web e mobile com React, Next.js, React Native e Node.js.",
+            "Criação de aplicações web e mobile modernas e escaláveis utilizando ReactJS, Next.js, React Native e NodeJS.",
         },
         {
-          title: "Automação & IA",
+          title: "Automação & Transformação Digital",
           description:
-            "Automação e digitalização usando Power Platform e ferramentas baseadas em IA.",
+            "Desenvolvimento de soluções personalizadas com Microsoft Power Platform e fluxos de automação para otimizar processos de negócio.",
         },
         {
-          title: "Experiência Internacional",
+          title: "Inovação & Colaboração",
           description:
-            "Colaboração em projetos estratégicos com equipes multinacionais, incluindo o time da China.",
+            "Atuação em projetos estratégicos com equipes internacionais, com foco em inovação e melhoria contínua.",
         },
       ],
     },
     skills: {
       title: "Habilidades Técnicas",
       subtitle:
-        "Stack completa cobrindo front-end, back-end e automação. Sempre aprendendo novas tecnologias e metodologias para entregar soluções limpas, escaláveis e de alta performance.",
+        "Especialista full stack cobrindo front-end, back-end, bancos de dados, testes e automação. Sempre aprendendo novas tecnologias e práticas para entregar soluções manuteníveis, escaláveis e de alto desempenho.",
       footer:
-        "E constantemente aprendendo novas tecnologias para me manter atualizado com as tendências do mercado.",
+        "Em constante aprendizado: TypeScript, Next.js, práticas de DevOps, testes modernos e padrões de arquitetura.",
+      hardSkills: {
+        frontend: [
+          "ReactJS (Hooks, Context API, Zustand)",
+          "Next.js (SSR/SSG, performance)",
+          "React Native",
+          "Styled Components",
+          "Tailwind CSS",
+          "HTML5 & CSS3",
+          "Figma (prototipação & handoff)",
+        ],
+        backend: [
+          "Node.js (Express)",
+          "Python (FastAPI)",
+          "APIs REST & Webhooks",
+          "Arquitetura limpa & Microserviços",
+        ],
+        databases: ["PostgreSQL", "DynamoDB", "MongoDB", "SQL"],
+        testing: ["Jest", "Testing Library", "Cypress", "TDD"],
+        devops: ["Docker", "CI/CD (GitHub Actions, Jenkins)", "AWS", "GCP"],
+        other: ["Power Platform (Power Apps, Power Automate, SharePoint)", "PowerShell", "Zabbix", "Grafana"],
+      },
+      softSkills: [
+        "Mentalidade ágil (Scrum/Kanban)",
+        "Aprendizado rápido",
+        "Consistente e resiliente",
+        "Boa comunicação",
+        "Proativo e colaborativo",
+      ],
     },
     experience: {
       title: "Experiência Profissional",
       subtitle:
-        "4 anos de experiência em empresas multinacionais, atuando com tecnologias modernas e projetos estratégicos que impactam milhares de usuários.",
+        "4 anos de experiência em empresas multinacionais, desenvolvendo soluções web, mobile e de automação com impacto mensurável.",
       current: "Atual",
       technologies: "Tecnologias Utilizadas",
       list: [
         {
           company: "LongPing High-Tech",
-          position: "Desenvolvedor Full Stack",
+          position: "Desenvolvedor Full Stack | Digitalization & AI - Web, Mobile & Automação",
           period: "Set 2024 - Atual",
-          location: "Cravinhos, SP — Time de Digitalization & AI",
+          location: "Cravinhos, São Paulo, Brasil",
           description:
-            "Desenvolvimento de soluções web, mobile e automação para o time de Digitalization & AI. Participação em projetos estratégicos com colaboração internacional (China), construindo aplicações escaláveis, APIs e fluxos de automação que atendem múltiplos países.",
+            "Atuo no desenvolvimento de aplicações web e mobile, criando soluções modernas e escaláveis que geram impacto direto no negócio. Utilizo ReactJS e React Native para construir interfaces responsivas e de alta performance, aplicando Styled Components, React Hooks e React Router para garantir manutenibilidade e eficiência no front-end. No back-end, desenvolvo e mantenho APIs REST com NodeJS, entregando integrações robustas que suportam sistemas dinâmicos e complexos. Além disso, faço parte do time de Digitalization & AI, onde participamos de projetos estratégicos, alguns em colaboração direta com o time da China, com foco em inovação, automação e transformação digital. Dentro desse contexto, também atuo com Microsoft Power Platform (Power Apps, Power Automate e SharePoint), criando soluções personalizadas como fluxos de aprovação automatizados, sistemas de reservas, formulários inteligentes e integrações corporativas que aumentam a produtividade e otimizam processos internos. Meu foco é entregar soluções full stack práticas, escaláveis e centradas no usuário, sempre alinhadas às necessidades do negócio e à visão de digitalização e inteligência artificial da empresa.",
           technologies: [
             "ReactJS",
             "Next.js",
@@ -347,6 +406,8 @@ export const translations = {
             "Python",
             "FastAPI",
             "Power Platform",
+            "Power Apps",
+            "Power Automate",
             "SharePoint",
             "PostgreSQL",
             "DynamoDB",
@@ -362,56 +423,50 @@ export const translations = {
           ],
           achievements: [
             "Entrega de aplicações web e mobile adotadas em múltiplos departamentos",
-            "Criação e manutenção de APIs REST para automação e integrações",
-            "Redução de ~35% no trabalho manual através de automações e fluxos Power Automate",
+            "Criação e manutenção de APIs REST para automação e integrações corporativas",
+            "Redução de ~35% no trabalho manual através de fluxos Power Automate",
             "Colaboração com equipes internacionais em projetos de inovação digital",
           ],
         },
         {
           company: "LongPing High-Tech",
-          position: "Desenvolvedor Power Platform / Helpdesk",
-          period: "Fev 2023 - Set 2024",
-          location: "Cravinhos, SP — Infraestrutura & Suporte",
+          position: "Estagiário de Helpdesk",
+          period: "Fev 2023 - Ago 2024",
+          location: "Cravinhos, São Paulo, Brasil",
           description:
-            "Atuação com suporte técnico e desenvolvimento de soluções com Microsoft Power Platform. Construção de ferramentas internas, Power Apps e fluxos automatizados para otimizar processos e reduzir trabalho manual.",
+            "Atendimento presencial e remoto para resolução de problemas como VPN, senhas e bugs de sistema. Gerenciamento de grupos e usuários via Active Directory, criação de scripts shell/PowerShell para execução remota, reduzindo cerca de 10 horas de trabalho manual por mês. Monitoramento de rede e serviços internos usando Zabbix e Grafana, melhorando o monitoramento em ~20%. Manutenção de equipamentos, empacotamento de arquivos .MSIX, controle de estoque e desenvolvimento de páginas internas (intranet).",
           technologies: [
-            "Power Apps",
-            "Power Automate",
-            "SharePoint",
-            "Power BI",
-            "JavaScript",
             "React",
             "HTML",
             "CSS",
-            "PowerShell",
+            "JavaScript",
+            "Active Directory",
+            "Windows Support",
             "Zabbix",
             "Grafana",
+            "VPN",
+            "PowerShell",
+            "SAP",
           ],
           achievements: [
-            "Desenvolvimento de sistema de reservas corporativo utilizado por 500+ colaboradores",
-            "Criação de 50+ fluxos de automação economizando centenas de horas por mês",
-            "Implementação de formulários inteligentes usados em 30+ departamentos",
-            "Desenvolvi scripts PowerShell que economizaram 10+ horas/mês",
+            "Reduzi o tempo de resolução de tickets em 30% com automações proativas",
+            "Aprimorei o monitoramento e uptime em ~20% com Zabbix e Grafana",
+            "Desenvolvi sites internos que melhoraram a comunicação organizacional",
+            "Automatizei tarefas de manutenção com scripts PowerShell, economizando ~10h/mês",
           ],
         },
         {
           company: "LongPing High-Tech",
-          position: "Aprendiz de TI",
+          position: "Aprendiz de TI / Facilities",
           period: "Fev 2021 - Jan 2023",
-          location: "Ribeirão Preto, SP — GAO / TI & Facilities",
+          location: "Ribeirão Preto, São Paulo, Brasil",
           description:
-            "Atuação nas áreas de TI, administrativa e facilities, com foco em suporte técnico, gestão de inventário e operações do escritório. Suporte remoto, configuração de equipamentos e auxílio no processo de integração de novos colaboradores.",
-          technologies: [
-            "Active Directory",
-            "Windows Support",
-            "SAP",
-            "VPN",
-            "Office 365",
-          ],
+            "Aprendiz nas áreas Administrativa, TI e Facilities. Em TI, realizei atividades de helpdesk que reduziram o tempo de atendimento em 30%, formatação e preparação de máquinas, suporte remoto e controle de inventário, aumentando a precisão do estoque de TI em 35%. Na parte administrativa e de facilities, atuei com GAO (General Affairs Office), cuidando da logística do escritório, benefícios e solicitações de serviço. Trabalhei 1,5 anos remotamente e depois em modelo híbrido.",
+          technologies: ["Active Directory", "Windows Support", "SAP", "VPN", "Office 365"],
           achievements: [
-            "Redução de 30% no tempo de atendimento com melhorias nos fluxos de suporte",
-            "Aumento de 35% na precisão do inventário de TI",
-            "Atendimento a 200+ colaboradores em modelo híbrido e remoto",
+            "Reduzi o tempo de atendimento em 30% com melhorias de fluxo",
+            "Aumentei a precisão do inventário de TI em 35%",
+            "Prestei suporte a mais de 200 colaboradores em regime híbrido e remoto",
           ],
         },
       ],
@@ -518,7 +573,13 @@ export const translations = {
         birthValue: "30/06/2003 (22 anos)",
         phone: "+55 16 98864-7864",
         email: "vitartasleca@gmail.com",
-        location: "Ribeirão Preto, SP - Brasil",
+        location: "Ribeirão Preto,",
+        locationValue: "São Paulo - Brasil"
+      },
+      socialLinksData: {
+        github: "https://github.com/vLecaBR",
+        linkedin: "https://www.linkedin.com/in/victor-leca-vlkbr/",
+        portfolio: "https://victorleca.vercel.app/",
       },
       footer: "Atualmente em <span class='text-cyan-400'>Ribeirão Preto, SP - Brasil</span>",
       footerDetails: "Disponível para projetos remotos e presenciais",
