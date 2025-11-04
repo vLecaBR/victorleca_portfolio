@@ -1,0 +1,7 @@
+/* src/styles/tailwind.css */
+
+/* 1. Importa TODOS os estilos do Tailwind v4 (preflight, etc) */
+@import "tailwindcss";
+
+/* 2. Importa seus estilos globais (variáveis, resets) DEPOIS */
+@import "./globals.css";
