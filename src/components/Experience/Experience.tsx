@@ -63,8 +63,8 @@ export function Experience() {
   return (
     <section id="experience" ref={ref} className="relative py-32 px-4 overflow-hidden">
       {/* Background Layers */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-950/20 to-black" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.08)_1px,transparent_1px)] bg-[size:100px_100px]" />
+      <div className="absolute inset-0 bg-linear-to-b from-black via-purple-950/20 to-black" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.08)_1px,transparent_1px)] bg-size-[100px_100px]" />
 
       {/* Floating gradient orbs */}
       <motion.div
@@ -98,7 +98,7 @@ export function Experience() {
           className="text-center mb-16"
         >
           <h2 className="mb-4 text-3xl font-semibold">
-            <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
               {t.title}
             </span>
           </h2>
@@ -107,7 +107,7 @@ export function Experience() {
 
         {/* Timeline */}
         <div className="relative">
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/50 via-pink-500/50 to-transparent" />
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-purple-500/50 via-pink-500/50 to-transparent" />
 
           <div className="space-y-12">
             {t.list.map((exp, index) => (
@@ -121,7 +121,7 @@ export function Experience() {
                 }`}
               >
                 {/* Dot */}
-                <div className="absolute left-8 md:left-1/2 top-6 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 shadow-lg shadow-purple-500/50 z-10">
+                <div className="absolute left-8 md:left-1/2 top-6 -translate-x-1/2 w-4 h-4 rounded-full bg-linear-to-br from-purple-500 to-pink-600 shadow-lg shadow-purple-500/50 z-10">
                   <div className="absolute inset-0 rounded-full bg-purple-500 animate-ping opacity-75" />
                 </div>
 
