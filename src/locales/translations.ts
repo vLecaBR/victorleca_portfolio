@@ -195,8 +195,8 @@ export const translations = {
             integration: "Email Form / Analytics",
           },
           images: [
-            "../../public/assets/cliqz.png",
-            "../../public/assets/cliqz2.png",
+            "../assets/cliqz.png",
+            "../assets/cliqz2.png",
           ],
           githubUrl: null,
           liveUrl: "https://cliqz.com",
@@ -219,8 +219,8 @@ export const translations = {
             database: "API ML Model",
           },
           images: [
-            "../../public/assets/eastqg.png",
-            "../../public/assets/eastqg2.png",
+            "../assets/eastqg.png",
+            "../assets/eastqg2.png",
           ],
           githubUrl: "https://github.com/vLecaBR",
           liveUrl: null,
@@ -243,7 +243,7 @@ export const translations = {
             automation: "REST APIs",
           },
           images: [
-            "../../public/assets/sales.png",
+            "../assets/sales.png",
             "https://images.unsplash.com/photo-1575388902449-6bca946ad549?...",
           ],
           githubUrl: "https://github.com/vLecaBR",
@@ -507,8 +507,8 @@ export const translations = {
             integration: "Formulário / Analytics",
           },
           images: [
-            "../../public/assets/cliqz.png",
-            "../../public/assets/cliqz2.png",
+            "../assets/cliqz.png",
+            "../assets/cliqz2.png",
           ],
           githubUrl: null,
           liveUrl: "https://cliqz.com",
@@ -531,8 +531,8 @@ export const translations = {
             database: "MongoDB",
           },
           images: [
-            "../../public/assets/eastqg.png",
-            "../../public/assets/eastqg2.png",
+            "../assets/eastqg.png",
+            "../assets/eastqg2.png",
           ],
           githubUrl: "https://github.com/vLecaBR",
           liveUrl: null,
@@ -555,7 +555,7 @@ export const translations = {
             automation: "REST APIs",
           },
           images: [
-            "../../public/assets/sales.png",
+            "../assets/sales.png",
             "https://images.unsplash.com/photo-1575388902449-6bca946ad549?...",
           ],
           githubUrl: "https://github.com/vLecaBR",
