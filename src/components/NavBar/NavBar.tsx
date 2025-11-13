@@ -41,8 +41,9 @@ export function Navbar() {
     <motion.nav
       style={{ 
         backgroundColor,
-        backdropFilter: backdropBlur,
-        WebkitBackdropFilter: backdropBlur,
+        backdropFilter: backdropBlur as unknown as string,
+        WebkitBackdropFilter: backdropBlur as unknown as string,
+
       }}
       className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 shadow-lg shadow-cyan-500/5"
     >
