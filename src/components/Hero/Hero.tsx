@@ -8,7 +8,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-// 🔧 Utility
+// Utility
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -120,7 +120,7 @@ export function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 will-change-transform"
     >
       <div className="absolute inset-0 bg-linear-to-br from-black via-blue-950 to-black">
-        {/* 🔥 useMemo + map fixo para não recriar elementos */}
+        {/* useMemo + map fixo para não recriar elementos */}
         {useMemo(
           () =>
             [...Array(50)].map((_, i) => (
