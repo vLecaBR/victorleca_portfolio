@@ -8,7 +8,7 @@ import { Footer } from "./components/Footer/Footer";
 import { ScrollProgress } from "./components/ScrollProgress/ScrollProgress";
 import { LanguageProvider } from "./context/LanguageContext";
 import { Experience } from "./components/Experience/Experience";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 export default function App() {
   return (
