@@ -9,7 +9,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-// Atualizando interface
+
 interface Project {
   title: string;
   shortDescription: string;
@@ -252,6 +252,22 @@ export function Projects() {
                           ))}
                         </div>
 
+                        {/* Hosting agora vem antes dos botões */}
+                        {project.hosting && (
+                          <div className="p-3 mb-3 bg-white/5 border border-white/10 rounded-lg text-gray-400 text-sm">
+                            <p className="flex items-center gap-2 mb-1">
+                              <Server size={16} className="text-cyan-400" />{" "}
+                              <strong>Hosting:</strong>
+                            </p>
+                            {project.hosting.frontend && (
+                              <p>Frontend → {project.hosting.frontend}</p>
+                            )}
+                            {project.hosting.backend && (
+                              <p>Backend → {project.hosting.backend}</p>
+                            )}
+                          </div>
+                        )}
+
                         {/* Links */}
                         <div className="flex flex-col gap-3">
                           {project.githubUrlFront && (
@@ -294,21 +310,6 @@ export function Projects() {
                               <ExternalLink size={20} className="text-white" />
                               <span className="text-white">{t.viewLive}</span>
                             </motion.a>
-                          )}
-
-                          {project.hosting && (
-                            <div className="p-3 bg-white/5 border border-white/10 rounded-lg text-gray-400 text-sm">
-                              <p className="flex items-center gap-2">
-                                <Server size={16} className="text-cyan-400" />{" "}
-                                <strong>hosting:</strong>
-                              </p>
-                              {project.hosting.frontend && (
-                                <p>Frontend → {project.hosting.frontend}</p>
-                              )}
-                              {project.hosting.backend && (
-                                <p>Backend → {project.hosting.backend}</p>
-                              )}
-                            </div>
                           )}
 
                           {!project.githubUrlFront &&
