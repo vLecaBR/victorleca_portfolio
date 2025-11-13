@@ -11,7 +11,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-// ⚙️ util fixo e memoizado
+// util fixo e memoizado
 const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
 const badgeVariants = cva(
@@ -49,7 +49,7 @@ const Badge = memo(function Badge({ className, variant, asChild = false, ...prop
   );
 });
 
-// 🔹 Ícones memoizados (não re-renderizam)
+// Ícones memoizados (não re-renderizam)
 const IconBriefcase = memo(() => <Briefcase className="text-purple-400" size={20} />);
 const IconMapPin = memo(() => <MapPin size={16} className="text-purple-400" />);
 const IconCalendar = memo(() => <Calendar size={16} className="text-purple-400" />);
@@ -62,7 +62,7 @@ export const Experience = memo(function Experience() {
 
   const t = translations[language].experience;
 
-  // 🔹 useMemo pra travar o array traduzido
+  // useMemo pra travar o array traduzido
   const experiences = useMemo(() => t.list, [t.list]);
 
   return (
