@@ -8,11 +8,13 @@ import { Footer } from "./components/Footer/Footer";
 import { ScrollProgress } from "./components/ScrollProgress/ScrollProgress";
 import { LanguageProvider } from "./context/LanguageContext";
 import { Experience } from "./components/Experience/Experience";
+import { Analytics } from "@vercel/analytics/react"
 
 export default function App() {
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-black text-white overflow-x-hidden">
+        <Analytics />
         <ScrollProgress />
         <Navbar />
         <Hero />
