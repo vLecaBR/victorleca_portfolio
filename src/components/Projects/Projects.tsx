@@ -94,7 +94,7 @@ export function Projects() {
   const { language } = useLanguage();
   const t = translations[language].projects;
 
-  // ✅ Memoiza a lista e garante o tipo correto
+  // Memoiza a lista e garante o tipo correto
   const projects = useMemo(() => (Array.isArray(t.list) ? t.list : []), [t.list]);
 
   return (
