@@ -11,7 +11,7 @@ export function About() {
   const { language } = useLanguage();
   const t = translations[language].about;
 
-  // ✅ useMemo evita recriar o array de features em cada render
+  // useMemo evita recriar o array de features em cada render
   const features = useMemo(
     () => [
       {
@@ -37,7 +37,7 @@ export function About() {
     <section id="about" className="relative py-32 px-4 overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-b from-black via-blue-950/20 to-black" />
 
-      {/* 🟢 Dot Pattern otimizado (sem recriar no render) */}
+      {/*Dot Pattern otimizado (sem recriar no render) */}
       <div
         className="absolute inset-0 opacity-30"
         style={{
@@ -47,7 +47,7 @@ export function About() {
         }}
       />
 
-      {/* 🌀 Efeitos decorativos animados (GPU-friendly) */}
+      {/* Efeitos decorativos animados (GPU-friendly) */}
       <motion.div
         className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl will-change-transform"
         animate={{
