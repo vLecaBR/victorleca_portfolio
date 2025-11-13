@@ -9,7 +9,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-// ✅ Interface tipada corretamente (corrige o erro do ESLint)
+// Interface tipada corretamente (corrige o erro do ESLint)
 interface Project {
   title: string;
   shortDescription: string;
@@ -124,7 +124,7 @@ export function Projects() {
   const { language } = useLanguage();
   const t = translations[language].projects;
 
-  // ✅ Tipagem explícita pra projects
+  // Tipagem explícita pra projects
   const projects: Project[] = useMemo(
     () => (Array.isArray(t.list) ? (t.list as Project[]) : []),
     [t.list],
