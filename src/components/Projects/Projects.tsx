@@ -1,14 +1,34 @@
 import { motion, useInView } from "motion/react";
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo } from "react";
 import { ExternalLink, Github, ChevronDown, ChevronUp } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../locales/translations";
-import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+
+// Interface tipada corretamente (corrige o erro do ESLint)
+interface Project {
+  title: string;
+  shortDescription: string;
+  fullDescription: string;
+  features: string[];
+  tags: string[];
+  technologies: {
+    frontend?: string;
+    backend?: string;
+    integration?: string;
+    database?: string;
+    automation?: string;
+    ai?: string;
+  };
+  images: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+}
+
 
 // Utility function
 function cn(...inputs: ClassValue[]) {
@@ -57,13 +77,8 @@ function Button({
     asChild?: boolean;
   }) {
   const Comp = asChild ? Slot : "button";
-
   return (
-    <Comp
-      data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
+    <Comp className={cn(buttonVariants({ variant, size, className }))} {...props} />
   );
 }
 
@@ -97,13 +112,8 @@ function Badge({
 }: React.ComponentProps<"span"> &
   VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
   const Comp = asChild ? Slot : "span";
-
   return (
-    <Comp
-      data-slot="badge"
-      className={cn(badgeVariants({ variant }), className)}
-      {...props}
-    />
+    <Comp className={cn(badgeVariants({ variant }), className)} {...props} />
   );
 }
 
@@ -114,26 +124,41 @@ export function Projects() {
   const { language } = useLanguage();
   const t = translations[language].projects;
 
-  const projects = t.list; // ✅ Agora tudo vem direto do translations
+  // Tipagem explícita pra projects
+  const projects: Project[] = useMemo(
+    () => (Array.isArray(t.list) ? (t.list as Project[]) : []),
+    [t.list],
+  );
 
   return (
     <section id="projects" className="relative py-32 px-4 overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-b from-black via-cyan-950/20 to-black" />
       <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.08)_1px,transparent_1px)] bg-size-[100px_100px]" />
-      
-      {/* Animated Gradient Orbs */}
+
+      {/* Orbs animados */}
       <motion.div
-        className="absolute top-1/4 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
-        animate={{ x: [0, 50, 0], y: [0, 30, 0], scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+        className="absolute top-1/4 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl will-change-transform"
+        animate={{
+          x: [0, 50, 0],
+          y: [0, 30, 0],
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute bottom-1/4 right-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"
-        animate={{ x: [0, -40, 0], y: [0, -20, 0], scale: [1.1, 1, 1.1], opacity: [0.2, 0.4, 0.2] }}
+        className="absolute bottom-1/4 right-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl will-change-transform"
+        animate={{
+          x: [0, -40, 0],
+          y: [0, -20, 0],
+          scale: [1.1, 1, 1.1],
+          opacity: [0.2, 0.4, 0.2],
+        }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="relative max-w-7xl mx-auto" ref={ref}>
+        {/* Título */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -148,38 +173,60 @@ export function Projects() {
           <p className="text-gray-400 max-w-3xl mx-auto">{t.subtitle}</p>
         </motion.div>
 
+        {/* Lista de projetos */}
         <div className="space-y-8">
           {projects.map((project, index) => (
             <motion.div
-              key={project.title}
+              key={project.title || index}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative group"
+              className="relative group will-change-transform"
             >
               <div className="absolute inset-0 bg-linear-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
+
               <div className="relative bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-cyan-400/50 transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/10">
                 <div className="grid md:grid-cols-2 gap-6 p-6 md:p-8">
                   <div className="relative h-64 md:h-80 overflow-hidden rounded-xl">
-                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.4 }} className="h-full">
-                      <ImageWithFallback src={project.images[0]} alt={project.title} className="w-full h-full object-cover" />
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.4 }}
+                      className="h-full will-change-transform"
+                    >
+                      <ImageWithFallback
+                        src={project.images?.[0]}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
                     </motion.div>
                   </div>
 
                   <div className="flex flex-col justify-between">
                     <div>
                       <h3 className="mb-3 text-white">{project.title}</h3>
-                      <p className="text-gray-400 mb-4">{project.shortDescription}</p>
+                      <p className="text-gray-400 mb-4">
+                        {project.shortDescription}
+                      </p>
                       <div className="flex flex-wrap gap-2 mb-4">
-                        {project.tags.map((tag) => (
-                          <Badge key={tag} variant="outline" className="border-cyan-400/30 text-cyan-400 hover:bg-cyan-400/10">{tag}</Badge>
+                        {project.tags?.map((tag) => (
+                          <Badge
+                            key={tag}
+                            variant="outline"
+                            className="border-cyan-400/30 text-cyan-400 hover:bg-cyan-400/10"
+                          >
+                            {tag}
+                          </Badge>
                         ))}
                       </div>
                     </div>
 
                     <Button
-                      onClick={() => setExpandedProject(expandedProject === index ? null : index)}
+                      onClick={() =>
+                        setExpandedProject(
+                          expandedProject === index ? null : index,
+                        )
+                      }
                       className="w-full bg-white/5 border border-white/20 text-white hover:bg-white/10 hover:border-cyan-400/50"
                     >
                       {expandedProject === index ? (
@@ -188,17 +235,21 @@ export function Projects() {
                         </>
                       ) : (
                         <>
-                          {t.viewDetails} <ChevronDown className="ml-2" size={16} />
+                          {t.viewDetails}{" "}
+                          <ChevronDown className="ml-2" size={16} />
                         </>
                       )}
                     </Button>
                   </div>
                 </div>
 
-                {/* Expanded Details */}
+                {/* Detalhes expandidos */}
                 <motion.div
                   initial={false}
-                  animate={{ height: expandedProject === index ? "auto" : 0, opacity: expandedProject === index ? 1 : 0 }}
+                  animate={{
+                    height: expandedProject === index ? "auto" : 0,
+                    opacity: expandedProject === index ? 1 : 0,
+                  }}
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
@@ -206,12 +257,17 @@ export function Projects() {
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
                       <div>
                         <h4 className="text-white mb-3">{t.aboutProject}</h4>
-                        <p className="text-gray-400 leading-relaxed mb-4">{project.fullDescription}</p>
+                        <p className="text-gray-400 leading-relaxed mb-4">
+                          {project.fullDescription}
+                        </p>
 
                         <h4 className="text-white mb-3">{t.keyFeatures}</h4>
                         <ul className="space-y-2">
-                          {project.features.map((feature, i) => (
-                            <li key={i} className="flex items-start gap-2 text-gray-400">
+                          {project.features?.map((feature, i) => (
+                            <li
+                              key={i}
+                              className="flex items-start gap-2 text-gray-400"
+                            >
                               <span className="text-cyan-400 mt-1">•</span>
                               <span>{feature}</span>
                             </li>
@@ -220,20 +276,31 @@ export function Projects() {
                       </div>
 
                       <div>
-                        {project.images[1] && (
+                        {project.images?.[1] && (
                           <div className="relative h-100 w-150 overflow-hidden rounded-xl mb-4">
-                            <ImageWithFallback src={project.images[1]} alt={`${project.title} - Interface`} className="w-full h-full object-cover" />
+                            <ImageWithFallback
+                              src={project.images[1]}
+                              alt={`${project.title} - Interface`}
+                              className="w-full h-full object-cover"
+                              loading="lazy"
+                            />
                           </div>
                         )}
 
                         <h4 className="text-white mb-3">{t.techStack}</h4>
                         <div className="space-y-3 mb-6">
-                          {Object.entries(project.technologies).map(([key, value]) => (
-                            <div key={key}>
-                              <span className="text-cyan-400 capitalize">{key}:</span>
-                              <p className="text-gray-400 mt-1">{value}</p>
-                            </div>
-                          ))}
+                          {Object.entries(project.technologies || {}).map(
+                            ([key, value]) => (
+                              <div key={key}>
+                                <span className="text-cyan-400 capitalize">
+                                  {key}:
+                                </span>
+                                <p className="text-gray-400 mt-1">
+                                  {value as string}
+                                </p>
+                              </div>
+                            ),
+                          )}
                         </div>
 
                         <div className="flex flex-col gap-3">
@@ -247,7 +314,9 @@ export function Projects() {
                               className="flex items-center justify-center gap-2 px-4 py-3 bg-white/5 border border-white/20 rounded-lg hover:bg-white/10 hover:border-white/40 transition-all"
                             >
                               <Github size={20} className="text-white" />
-                              <span className="text-white">{t.viewRepository}</span>
+                              <span className="text-white">
+                                {t.viewRepository}
+                              </span>
                             </motion.a>
                           )}
                           {project.liveUrl && (
@@ -265,7 +334,9 @@ export function Projects() {
                           )}
                           {!project.githubUrl && !project.liveUrl && (
                             <div className="p-3 bg-white/5 border border-white/10 rounded-lg text-center">
-                              <p className="text-gray-400 text-sm">{t.privateCorporate}</p>
+                              <p className="text-gray-400 text-sm">
+                                {t.privateCorporate}
+                              </p>
                             </div>
                           )}
                         </div>
