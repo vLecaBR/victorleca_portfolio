@@ -3,7 +3,7 @@ import { useRef, useMemo, memo } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../locales/translations";
 
-// 🔹 Componentes de ícones memoizados (não redesenham)
+// Componentes de ícones memoizados (não redesenham)
 const FrontendIcon = memo(() => (
   <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
     <path d="M14.25 9.75L16.5 12L14.25 14.25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -42,7 +42,7 @@ export const Skills = memo(function Skills() {
   const { language } = useLanguage();
   const t = translations[language].skills;
 
-  // 🔹 Usa useMemo para não recriar os arrays em cada render
+  // Usa useMemo para não recriar os arrays em cada render
   const skillCategories = useMemo(() => [
     {
       name: "Frontend & Mobile",
