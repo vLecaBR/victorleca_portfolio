@@ -163,119 +163,112 @@ export const translations = {
       ],
     },
     projects: {
-      title: "Featured Projects",
-      subtitle:
-        "Complete web, mobile, and automation development solutions implemented in corporate environments. Each project represents unique technical challenges and measurable impact on business processes.",
-      viewDetails: "View Details",
-      showLess: "Show Less",
-      aboutProject: "About the Project",
-      keyFeatures: "Key Features",
-      techStack: "Technology Stack",
-      viewRepository: "View Repository",
-      viewLive: "View Live Project",
-      privateCorporate: "Private corporate project",
-      footer:
-        "These are just some of the developed projects. Each solution was created with a focus on scalability, performance, and user experience.",
-      list: [
-        {
-          title: "CliqZ Agency Website",
-          shortDescription: "Institutional website for a marketing and development agency.",
-          fullDescription:
-            "A corporate website for 'CliqZ', a marketing and web development agency. The project was designed to showcase the agency's services, display its portfolio, and capture new clients through a contact form. It serves as the agency's primary digital presence.",
-          features: [
-            "Institutional landing page",
-            "Service showcase section",
-            "Client portfolio display",
-            "Lead generation contact form",
-          ],
-          tags: ["ReactJS", "NextJS", "Tailwind CSS"],
-          technologies: {
-            frontend: "ReactJS, NextJS, Tailwind CSS",
-            backend: "NodeJS (if needed)",
-            integration: "Email Form / Analytics",
-          },
-          images: [
-            "../assets/cliqz.png",
-            "../assets/cliqz2.png",
-          ],
-          githubUrl: "https://github.com/vLecaBR/CliqZ",
-          liveUrl: "https://cliqz.com.br",
-        },
-        {
-          title: "Eastqg (Full Stack Application)",
-          shortDescription: "Full-stack web application with decoupled frontend and backend.",
-          fullDescription:
-            "A complete web application consisting of a React frontend (eastqg) and a Node.js/Express backend (eastqg-backend). The API handles business logic and data management, while the frontend provides a reactive and modern user interface. This project demonstrates a decoupled microservices-style architecture.",
-          features: [
-            "Decoupled architecture (Frontend/Backend)",
-            "RESTful API with Node.js & Express",
-            "Reactive frontend in React",
-            "Data and business logic management",
-          ],
-          tags: ["ReactJS", "NextJS", "NodeJS", "Express"],
-          technologies: {
-            frontend: "ReactJS, Styled Components",
-            backend: "NodeJS, Express",
-            database: "API ML Model",
-          },
-          images: [
-            "../assets/eastqg.png",
-            "../assets/eastqg2.png",
-          ],
-          githubUrl: "https://github.com/vLecaBR/eastqg",
-          liveUrl: "https://eastqg.vercel.app/",
-        },
-        {
-          title: "Sales Website Model (Full Stack)",
-          shortDescription: "A full-stack template for an e-commerce or sales website.",
-          fullDescription:
-            "A scalable foundation for an e-commerce site. This project includes a Node.js backend to manage products, users, and orders, and a frontend (sales-website-model) to act as the digital storefront. It's a base model designed for easy expansion and implementation of new features.",
-          features: [
-            "E-commerce base structure",
-            "Product management API",
-            "Storefront (UI) and Backend (Logic)",
-            "Scalable model for new features",
-          ],
-          tags: ["ReactJS", "NextJS", "NodeJS", "PostgreSQL"],
-          technologies: {
-            frontend: "ReactJS, Styled Components",
-            backend: "NodeJS, Express, PostgreSQL",
-            automation: "REST APIs",
-          },
-          images: [
-            "../assets/sales.png",
-            "https://images.unsplash.com/photo-1575388902449-6bca946ad549?...",
-          ],
-          githubUrl: "https://github.com/vLecaBR/sales-website-model",
-          liveUrl: null,
-        },
-        {
-          title: "DJ Franzoni Portfolio",
-          shortDescription: "Portfolio website for a DJ, focused on bookings and media.",
-          fullDescription:
-            "A professional portfolio website developed for DJ Franzoni. The main goal is to showcase her work, provide her biography and media (sets/photos), and centralize contact information for hiring and bookings. Acts as her primary digital business card.",
-          features: [
-            "Artist-focused design",
-            "Biography and 'About Me' section",
-            "Media gallery (music and photos)",
-            "Contact form for bookings",
-          ],
-          tags: ["ReactJS", "NextJS", "NodeJS", "AI/ML"],
-          technologies: {
-            frontend: "ReactJS, NextJS, TypeScript",
-            backend: "NodeJS, Python FastAPI",
-            ai: "OpenAI API, ML Models",
-            database: "PostgreSQL, Redis",
-          },
-          images: [
-            "../assets/djfranzoni.png",
-            "../assets/djfranzoni2.png",
-          ],
-          githubUrl: "https://github.com/vLecaBR/djfranzoni-portfolio",
-          liveUrl: "https://djfranzoni-portfolio.vercel.app/",
-        },
+  title: "Featured Projects",
+  subtitle:
+    "Complete web, mobile, and automation development solutions for businesses and individuals. Each project reflects real-world technical challenges, modern architecture, and a focus on performance and user experience.",
+  viewDetails: "View Details",
+  showLess: "Show Less",
+  aboutProject: "About the Project",
+  keyFeatures: "Key Features",
+  techStack: "Technology Stack",
+  viewRepository: "View Repository",
+  viewLive: "View Live Project",
+  privateCorporate: "Private corporate project",
+  footer:
+    "These are some of the key projects I've developed — all built with scalability, maintainability, and performance in mind.",
+  list: [
+    {
+      title: "CliqZ Agency Website",
+      shortDescription: "High-performance institutional website for a marketing and development agency.",
+      fullDescription:
+        "A modern and responsive corporate website built for 'CliqZ', a marketing and web development agency. Designed to highlight services, display an interactive portfolio, and generate leads through automated contact forms integrated with email and analytics. The project focuses on SEO optimization, accessibility, and visual impact to strengthen the agency's online presence.",
+      features: [
+        "Responsive, SEO-optimized landing page",
+        "Dynamic service and portfolio sections",
+        "Integrated lead capture via email automation",
+        "Custom animations and microinteractions",
+        "Google Analytics integration for conversion tracking",
       ],
+      tags: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+      technologies: {
+        frontend: "Next.js, React, Tailwind CSS, Framer Motion",
+        backend: "Node.js (API integrations)",
+        integration: "EmailJS, Google Analytics",
+      },
+      images: ["../assets/cliqz.png", "../assets/cliqz2.png"],
+      githubUrl: "https://github.com/vLecaBR/CliqZ",
+      liveUrl: "https://cliqz.com.br",
     },
+    {
+      title: "Eastqg (Full Stack Application)",
+      shortDescription: "Full-stack web platform with a decoupled frontend and backend architecture.",
+      fullDescription:
+        "A scalable full-stack web platform featuring a React-based frontend and a Node.js/Express backend. The project demonstrates a modular architecture where the backend exposes RESTful APIs consumed by a dynamic frontend interface. Designed with performance and clean architecture in mind, Eastqg allows easy extension and integration with external services.",
+      features: [
+        "Modular frontend-backend structure (decoupled architecture)",
+        "Fully documented RESTful API",
+        "State management using Context API",
+        "Secure API endpoints with middleware validation",
+        "Deployed with CI/CD automation via Vercel and Render",
+      ],
+      tags: ["React", "Node.js", "Express", "Styled Components"],
+      technologies: {
+        frontend: "React, Styled Components, Vite",
+        backend: "Node.js, Express, JWT Authentication",
+        database: "MongoDB / REST API Layer",
+        integration: "API ML Integration (custom model)",
+      },
+      images: ["../assets/eastqg.png", "../assets/eastqg2.png"],
+      githubUrl: "https://github.com/vLecaBR/eastqg",
+      liveUrl: "https://eastqg.vercel.app/",
+    },
+    {
+      title: "Sales Website Model (Full Stack)",
+      shortDescription: "Scalable full-stack e-commerce template for product and order management.",
+      fullDescription:
+        "A complete foundation for an e-commerce application designed to handle product listings, user authentication, and order management. Developed as a modular template for businesses aiming to scale their online presence efficiently. Features include REST API integration, structured backend architecture, and reusable frontend components.",
+      features: [
+        "Reusable e-commerce architecture with modular components",
+        "Product and order management API",
+        "Authentication and user management (JWT)",
+        "Responsive storefront UI with dynamic data rendering",
+        "Optimized for scalability and future integration (payments, analytics)",
+      ],
+      tags: ["React", "Next.js", "Node.js", "PostgreSQL"],
+      technologies: {
+        frontend: "React, Next.js, Styled Components",
+        backend: "Node.js, Express, PostgreSQL",
+        automation: "REST API for CRUD operations",
+      },
+      images: ["../assets/sales.png", "https://images.unsplash.com/photo-1575388902449-6bca946ad549?..."],
+      githubUrl: "https://github.com/vLecaBR/sales-website-model",
+      liveUrl: null,
+    },
+    {
+      title: "DJ Franzoni Portfolio",
+      shortDescription: "Professional artist portfolio focused on media presentation and client engagement.",
+      fullDescription:
+        "A custom-built portfolio website for DJ Franzoni — a music artist and performer. The platform presents her biography, media gallery, and event highlights, with a contact system optimized for bookings and management. The project integrates AI tools for content generation and automation of media updates, enhancing both creativity and efficiency.",
+      features: [
+        "Custom artist landing page with reactive animations",
+        "Media gallery with optimized image and audio management",
+        "AI-assisted content generation (OpenAI API)",
+        "CMS-ready backend for updates and content control",
+        "Contact and booking automation workflow",
+      ],
+      tags: ["Next.js", "React", "TypeScript", "Python", "FastAPI", "AI"],
+      technologies: {
+        frontend: "Next.js, React, TypeScript, Framer Motion",
+        backend: "Node.js, Python (FastAPI)",
+        ai: "OpenAI API, ML Models for media curation",
+        database: "PostgreSQL, Redis",
+      },
+      images: ["../assets/djfranzoni.png", "../assets/djfranzoni2.png"],
+      githubUrl: "https://github.com/vLecaBR/djfranzoni-portfolio",
+      liveUrl: "https://djfranzoni-portfolio.vercel.app/",
+    },
+  ],
+},
     contact: {
       title: "Let's Talk?",
       subtitle:
@@ -475,119 +468,113 @@ export const translations = {
       ],
     },
     projects: {
-      title: "Projetos em Destaque",
-      subtitle:
-        "Soluções completas de desenvolvimento web, mobile e automação implementadas em ambiente corporativo. Cada projeto representa desafios técnicos únicos e impacto mensurável nos processos de negócio.",
-      viewDetails: "Ver Detalhes",
-      showLess: "Ver Menos",
-      aboutProject: "Sobre o Projeto",
-      keyFeatures: "Principais Funcionalidades",
-      techStack: "Stack Tecnológico",
-      viewRepository: "Ver Repositório",
-      viewLive: "Ver Projeto Online",
-      privateCorporate: "Projeto corporativo privado",
-      footer:
-        "Estes são apenas alguns dos projetos desenvolvidos. Cada solução foi criada com foco em escalabilidade, performance e experiência do usuário.",
-      list: [
-        {
-          title: "Site Agência CliqZ",
-          shortDescription: "Site institucional para uma agência de marketing e desenvolvimento.",
-          fullDescription:
-            "Website corporativo para a 'CliqZ', uma agência de marketing e desenvolvimento web. O projeto foi desenhado para apresentar os serviços da agência, exibir seu portfólio e capturar novos clientes através de um formulário de contato. Serve como a principal presença digital da agência.",
-          features: [
-            "Landing page institucional",
-            "Apresentação de serviços",
-            "Exibição de portfólio de clientes",
-            "Formulário de contato para captação de leads",
-          ],
-          tags: ["ReactJS", "NextJS", "Tailwind CSS"],
-          technologies: {
-            frontend: "ReactJS, NextJS, Tailwind CSS",
-            backend: "NodeJS (se necessário)",
-            integration: "Formulário / Analytics",
-          },
-          images: [
-            "../assets/cliqz.png",
-            "../assets/cliqz2.png",
-          ],
-          githubUrl: "https://github.com/vLecaBR/CliqZ",
-          liveUrl: "https://cliqz.com.br",
-        },
-        {
-          title: "Eastqg (Aplicação Full Stack)",
-          shortDescription: "Aplicação web completa com frontend e backend desacoplados.",
-          fullDescription:
-            "Uma aplicação web completa composta por um frontend em React/Next.js (eastqg) e um backend em Node.js/Express (eastqg-backend). A API gerencia a lógica de negócios e os dados, enquanto o frontend fornece uma interface reativa e moderna. O projeto demonstra uma arquitetura desacoplada.",
-          features: [
-            "Arquitetura desacoplada (Frontend/Backend)",
-            "API RESTful com Node.js & Express",
-            "Frontend reativo em React/Next.js",
-            "Gerenciamento de dados e lógica de negócios",
-          ],
-          tags: ["ReactJS", "NextJS", "NodeJS", "Express"],
-          technologies: {
-            frontend: "ReactJS, NextJS",
-            backend: "NodeJS, Express",
-            database: "MongoDB",
-          },
-          images: [
-            "../assets/eastqg.png",
-            "../assets/eastqg2.png",
-          ],
-          githubUrl: "https://github.com/vLecaBR/eastqg",
-          liveUrl: "https://eastqg.vercel.app/",
-        },
-        {
-          title: "Modelo de Site de Vendas (Full Stack)",
-          shortDescription: "Um template full-stack para um site de e-commerce ou vendas.",
-          fullDescription:
-            "Uma base escalável para um site de e-commerce. Este projeto inclui um backend em Node.js para gerenciar produtos, usuários e pedidos, e um frontend (sales-website-model) para atuar como a vitrine digital. É um modelo base projetado para fácil expansão e implementação de novas funcionalidades.",
-          features: [
-            "Estrutura base de e-commerce",
-            "API para gestão de produtos",
-            "Vitrine (UI) e Backend (Lógica)",
-            "Modelo escalável para novas features",
-          ],
-          tags: ["ReactJS", "NextJS", "NodeJS", "PostgreSQL"],
-          technologies: {
-            frontend: "ReactJS, NextJS, Tailwind CSS",
-            backend: "NodeJS, Express, PostgreSQL",
-            automation: "REST APIs",
-          },
-          images: [
-            "../assets/sales.png",
-            "https://images.unsplash.com/photo-1575388902449-6bca946ad549?...",
-          ],
-          githubUrl: "https://github.com/vLecaBR/sales-website-model",
-          liveUrl: null,
-        },
-        {
-          title: "Portfólio DJ Franzoni",
-          shortDescription: "Site de portfólio para uma DJ, focado em booking e mídia.",
-          fullDescription:
-            "Site de portfólio profissional desenvolvido para a DJ Franzoni. O objetivo principal é exibir seu trabalho, disponibilizar sua biografia e mídias (sets/fotos), e centralizar as informações de contato para contratação e bookings. Funciona como seu principal cartão de visitas digital.",
-          features: [
-            "Design focado na artista",
-            "Seção de biografia e 'Sobre'",
-            "Galeria de mídias (músicas e fotos)",
-            "Formulário de contato para shows",
-          ],
-          tags: ["ReactJS", "NextJS", "NodeJS", "AI/ML"],
-          technologies: {
-            frontend: "ReactJS, NextJS, TypeScript",
-            backend: "NodeJS, Python FastAPI",
-            ai: "OpenAI API, ML Models",
-            database: "PostgreSQL, Redis",
-          },
-          images: [
-            "../assets/djfranzoni.png",
-            "../assets/djfranzoni2.png",
-          ],
-          githubUrl: "https://github.com/vLecaBR/djfranzoni-portfolio",
-          liveUrl: "https://djfranzoni-portfolio.vercel.app/",
-        },
+  title: "Projetos em Destaque",
+  subtitle:
+    "Soluções completas de desenvolvimento web, mobile e automação criadas para ambientes corporativos e pessoais. Cada projeto representa desafios técnicos reais e foco em performance, escalabilidade e experiência do usuário.",
+  viewDetails: "Ver Detalhes",
+  showLess: "Ver Menos",
+  aboutProject: "Sobre o Projeto",
+  keyFeatures: "Principais Funcionalidades",
+  techStack: "Stack Tecnológico",
+  viewRepository: "Ver Repositório",
+  viewLive: "Ver Projeto Online",
+  privateCorporate: "Projeto corporativo privado",
+  footer:
+    "Estes são alguns dos principais projetos que desenvolvi — todos construídos com foco em qualidade, manutenção e alto desempenho.",
+  list: [
+    {
+      title: "Site Agência CliqZ",
+      shortDescription: "Website institucional moderno para uma agência de marketing e desenvolvimento digital.",
+      fullDescription:
+        "Desenvolvimento do site oficial da agência 'CliqZ', voltado para marketing e soluções web. O projeto foi planejado para apresentar serviços, portfólio e atrair novos clientes através de formulários integrados com automações de e-mail e analytics. O foco foi entregar uma experiência visual envolvente e otimizada para SEO e dispositivos móveis.",
+      features: [
+        "Landing page institucional responsiva e otimizada para SEO",
+        "Sessões dinâmicas de serviços e portfólio",
+        "Integração com sistemas de e-mail para captação de leads",
+        "Animações personalizadas e microinterações com Framer Motion",
+        "Integração com Google Analytics para rastreamento de conversões",
       ],
+      tags: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+      technologies: {
+        frontend: "Next.js, React, Tailwind CSS, Framer Motion",
+        backend: "Node.js (integrações e automações)",
+        integration: "EmailJS, Google Analytics",
+      },
+      images: ["../assets/cliqz.png", "../assets/cliqz2.png"],
+      githubUrl: "https://github.com/vLecaBR/CliqZ",
+      liveUrl: "https://cliqz.com.br",
     },
+    {
+      title: "Eastqg (Aplicação Full Stack)",
+      shortDescription: "Plataforma web completa com frontend e backend independentes e arquitetura modular.",
+      fullDescription:
+        "O Eastqg é uma aplicação full stack projetada com arquitetura desacoplada, composta por um frontend em React/Next.js e um backend em Node.js/Express. A API gerencia toda a lógica de negócio e os dados, enquanto o frontend entrega uma interface moderna, reativa e escalável. O projeto foca em boas práticas de arquitetura limpa, performance e modularidade.",
+      features: [
+        "Arquitetura desacoplada entre frontend e backend",
+        "API RESTful documentada com Express e middleware de autenticação",
+        "Gerenciamento de estado com Context API",
+        "Estrutura modular e escalável para novos módulos e integrações",
+        "Deploy automatizado via Vercel (frontend) e Render (backend)",
+      ],
+      tags: ["React", "Node.js", "Express", "Styled Components"],
+      technologies: {
+        frontend: "React, Styled Components, Vite",
+        backend: "Node.js, Express, JWT Auth",
+        database: "MongoDB / camada de API REST",
+        integration: "Integração com modelos ML personalizados",
+      },
+      images: ["../assets/eastqg.png", "../assets/eastqg2.png"],
+      githubUrl: "https://github.com/vLecaBR/eastqg",
+      liveUrl: "https://eastqg.vercel.app/",
+    },
+    {
+      title: "Modelo de Site de Vendas (Full Stack)",
+      shortDescription: "Template completo e escalável para sites de e-commerce e sistemas de vendas online.",
+      fullDescription:
+        "Projeto base para e-commerces e plataformas de vendas, com backend em Node.js para gestão de produtos, usuários e pedidos, e frontend em Next.js para a vitrine digital. Desenvolvido com foco em modularidade e escalabilidade, o modelo permite expansão fácil para novas funcionalidades como gateways de pagamento, relatórios e integrações externas.",
+      features: [
+        "Arquitetura modular e reutilizável para e-commerce",
+        "API para gestão de produtos, usuários e pedidos",
+        "Autenticação segura com JWT",
+        "Interface responsiva e dinâmica com renderização server-side",
+        "Pronto para integração com serviços de pagamento e analytics",
+      ],
+      tags: ["React", "Next.js", "Node.js", "PostgreSQL"],
+      technologies: {
+        frontend: "React, Next.js, Styled Components",
+        backend: "Node.js, Express, PostgreSQL",
+        automation: "APIs RESTful para CRUD e integrações externas",
+      },
+      images: ["../assets/sales.png", "https://images.unsplash.com/photo-1575388902449-6bca946ad549?..."],
+      githubUrl: "https://github.com/vLecaBR/sales-website-model",
+      liveUrl: null,
+    },
+    {
+      title: "Portfólio DJ Franzoni",
+      shortDescription: "Website profissional para artista com foco em mídia, automação e experiência interativa.",
+      fullDescription:
+        "Desenvolvido para a artista e DJ Franzoni, este site atua como seu portfólio e principal cartão de visitas digital. O projeto inclui seções de biografia, galeria multimídia e sistema de contato automatizado para bookings. Além disso, conta com integrações de IA para geração de conteúdo dinâmico e automação de atualização de mídias.",
+      features: [
+        "Landing page personalizada com animações reativas",
+        "Galeria multimídia com otimização de imagens e áudios",
+        "Geração automática de conteúdo com IA (OpenAI API)",
+        "Backend com suporte a CMS e atualizações dinâmicas",
+        "Automação de contato e fluxo de agendamento",
+      ],
+      tags: ["Next.js", "React", "TypeScript", "Python", "FastAPI", "IA"],
+      technologies: {
+        frontend: "Next.js, React, TypeScript, Framer Motion",
+        backend: "Node.js, Python (FastAPI)",
+        ai: "OpenAI API, Modelos de Machine Learning",
+        database: "PostgreSQL, Redis",
+      },
+      images: ["../assets/djfranzoni.png", "../assets/djfranzoni2.png"],
+      githubUrl: "https://github.com/vLecaBR/djfranzoni-portfolio",
+      liveUrl: "https://djfranzoni-portfolio.vercel.app/",
+    },
+  ],
+},
+
     contact: {
       title: "Vamos Conversar?",
       subtitle:
