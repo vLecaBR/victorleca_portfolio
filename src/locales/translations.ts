@@ -491,7 +491,7 @@ projects: {
         },
       ],
     },
-    projects: {
+projects: {
   title: "Projetos em Destaque",
   subtitle:
     "Soluções completas de desenvolvimento web, mobile e automação criadas para ambientes corporativos e pessoais. Cada projeto representa desafios técnicos reais e foco em performance, escalabilidade e experiência do usuário.",
@@ -502,13 +502,14 @@ projects: {
   techStack: "Stack Tecnológico",
   viewRepository: "Ver Repositório",
   viewLive: "Ver Projeto Online",
-  privateCorporate: "Projeto corporativo privado",
+  privateCorporate: "Projeto Corporativo Privado",
   footer:
     "Estes são alguns dos principais projetos que desenvolvi — todos construídos com foco em qualidade, manutenção e alto desempenho.",
   list: [
     {
       title: "Site Agência CliqZ",
-      shortDescription: "Website institucional moderno para uma agência de marketing e desenvolvimento digital.",
+      shortDescription:
+        "Website institucional moderno para uma agência de marketing e desenvolvimento digital.",
       fullDescription:
         "Desenvolvimento do site oficial da agência 'CliqZ', voltado para marketing e soluções web. O projeto foi planejado para apresentar serviços, portfólio e atrair novos clientes através de formulários integrados com automações de e-mail e analytics. O foco foi entregar uma experiência visual envolvente e otimizada para SEO e dispositivos móveis.",
       features: [
@@ -524,14 +525,20 @@ projects: {
         integration: "Vercel, EmailJS, Google Analytics",
       },
       images: ["../assets/cliqz.png", "../assets/cliqz2.png"],
-      githubUrl: "https://github.com/vLecaBR/CliqZ",
+      githubUrlFront: "https://github.com/vLecaBR/CliqZ",
+      githubUrlBack: null,
       liveUrl: "https://cliqz.com.br",
+      hosting: {
+        frontend: "Vercel",
+        backend: null,
+      },
     },
     {
       title: "Eastqg (Aplicação Full Stack)",
-      shortDescription: "Plataforma web completa com frontend e backend independentes e arquitetura modular utilizando API",
+      shortDescription:
+        "Plataforma web completa com frontend e backend independentes e arquitetura modular utilizando API.",
       fullDescription:
-        "O Eastqg é uma aplicação full stack projetada com arquitetura desacoplada, composta por um frontend em ReactJS e um backend em Node.js/Express. A API gerencia toda a lógica de negócio e os dados, enquanto o frontend entrega uma interface moderna, reativa e escalável. O projeto foca em boas práticas de arquitetura limpa, performance e modularidade. Desta forma descartamos o uso de banco de dados direto, utilizando apenas uma camada de API REST para comunicação entre frontend e backend puxando os produtos do backend e exibindo no frontend.",
+        "O Eastqg é uma aplicação full stack projetada com arquitetura desacoplada, composta por um frontend em ReactJS e um backend em Node.js/Express. A API gerencia toda a lógica de negócio e os dados, enquanto o frontend entrega uma interface moderna, reativa e escalável. O projeto foca em boas práticas de arquitetura limpa, performance e modularidade. Em vez de uma conexão direta com banco de dados, utiliza uma camada de API REST para comunicação entre backend e frontend, puxando os produtos de forma dinâmica.",
       features: [
         "Arquitetura desacoplada entre frontend e backend",
         "API RESTful documentada com Express e middleware de autenticação",
@@ -544,19 +551,25 @@ projects: {
         frontend: "React, Styled Components, Vite",
         backend: "Node.js, Express",
         database: "Camada de API REST",
-        integration: "Integração com modelos ML personalizados, Render e Vercel",
+        integration: "Integração com modelos de ML personalizados, Render e Vercel",
       },
       images: ["../assets/eastqg.png", "../assets/eastqg2.png"],
-      githubUrl: "https://github.com/vLecaBR/eastqg",
+      githubUrlFront: "https://github.com/vLecaBR/eastqg",
+      githubUrlBack: "https://github.com/vLecaBR/eastqg-backend",
       liveUrl: "https://eastqg.vercel.app/",
+      hosting: {
+        frontend: "Vercel",
+        backend: "Render",
+      },
     },
     {
       title: "Modelo de Site de Vendas (Full Stack)",
-      shortDescription: "Template completo e escalável para sites de e-commerce e sistemas de vendas online.",
+      shortDescription:
+        "Template completo e escalável para e-commerces e plataformas de vendas online.",
       fullDescription:
-        "Projeto base para e-commerces e plataformas de vendas, com backend em Node.js para gestão de produtos, usuários e pedidos, e frontend em ReactJS para a vitrine digital. Desenvolvido com foco em modularidade e escalabilidade, o modelo permite expansão fácil para novas funcionalidades como gateways de pagamento, relatórios e integrações externas. Possui autenticação segura, gerenciamento de sessões e uma interface responsiva e área de administração simplificada, para editar, adicionar ou remover produtos facilmente.",
+        "Projeto base para e-commerces e plataformas de vendas, com backend em Node.js para gestão de produtos, usuários e pedidos, e frontend em ReactJS para a vitrine digital. Desenvolvido com foco em modularidade e escalabilidade, o modelo permite fácil expansão para novas funcionalidades como gateways de pagamento, relatórios e integrações externas. Possui autenticação segura, gerenciamento de sessões e uma interface responsiva com área administrativa simplificada para CRUD de produtos.",
       features: [
-        "Arquitetura modular e reutilizável para e-commerce",
+        "Arquitetura modular e reutilizável para sistemas de e-commerce",
         "API para gestão de produtos, usuários e pedidos",
         "Autenticação segura com JWT",
         "Interface responsiva e dinâmica com renderização server-side",
@@ -569,28 +582,42 @@ projects: {
         database: "PostgreSQL, SQLite",
         automation: "APIs RESTful para CRUD e integrações externas",
       },
-      images: ["../assets/sales.png", "https://images.unsplash.com/photo-1575388902449-6bca946ad549?..."],
-      githubUrl: "https://github.com/vLecaBR/sales-website-model",
+      images: [
+        "../assets/sales.png",
+        "https://images.unsplash.com/photo-1575388902449-6bca946ad549?...",
+      ],
+      githubUrlFront: "https://github.com/vLecaBR/sales-website-model",
+      githubUrlBack: "https://github.com/vLecaBR/sales-website-backend",
       liveUrl: null,
+      hosting: {
+        frontend: "Vercel",
+        backend: "Render",
+      },
     },
     {
       title: "Portfólio DJ Franzoni",
-      shortDescription: "Website profissional para artista com foco em mídia, automação e experiência interativa.",
+      shortDescription:
+        "Website profissional para artista com foco em mídia, automação e experiência interativa.",
       fullDescription:
-        "Desenvolvido para a artista e DJ Franzoni, este site atua como seu portfólio e principal cartão de visitas digital. O projeto inclui seções de biografia, galeria multimídia e sistema de contato automatizado para bookings. Além disso, conta com integrações de IA para geração de conteúdo dinâmico e automação de atualização de mídias.",
+        "Desenvolvido para a artista e DJ Franzoni, este site atua como portfólio e principal presença digital. O projeto inclui seções de biografia, galeria multimídia e sistema automatizado de contato para bookings. Também conta com automações inteligentes para atualização dinâmica de mídias e conteúdos, garantindo uma experiência fluida para fãs e organizadores de eventos.",
       features: [
-        "Landing page personalizada com animações reativas",
-        "Galeria multimídia com otimização de imagens e áudios",
-        "Automação de contato e fluxo de agendamento",
+        "Landing page personalizada com animações reativas e suaves",
+        "Galeria multimídia otimizada para imagens e áudios",
+        "Fluxo automatizado de contato e agendamento",
       ],
-      tags: ["React", "Javacript", "Styled Components", "Framer Motion"],
+      tags: ["React", "Javascript", "Styled Components", "Framer Motion"],
       technologies: {
         frontend: "React, TypeScript, Framer Motion",
         integration: "Vercel",
       },
       images: ["../assets/djfranzoni.png", "../assets/djfranzoni2.png"],
-      githubUrl: "https://github.com/vLecaBR/djfranzoni-portfolio",
+      githubUrlFront: "https://github.com/vLecaBR/djfranzoni-portfolio",
+      githubUrlBack: null,
       liveUrl: "https://djfranzoni-portfolio.vercel.app/",
+      hosting: {
+        frontend: "Vercel",
+        backend: null,
+      },
     },
   ],
 },
