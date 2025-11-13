@@ -162,7 +162,7 @@ export const translations = {
         },
       ],
     },
-   projects: {
+projects: {
   title: "Featured Projects",
   subtitle:
     "Complete web, mobile, and automation solutions built for both corporate and personal environments. Each project represents real technical challenges and focuses on performance, scalability, and user experience.",
@@ -196,8 +196,13 @@ export const translations = {
         integration: "Vercel, EmailJS, Google Analytics",
       },
       images: ["../assets/cliqz.png", "../assets/cliqz2.png"],
-      githubUrl: "https://github.com/vLecaBR/CliqZ",
+      githubUrlFront: "https://github.com/vLecaBR/CliqZ",
+      githubUrlBack: null,
       liveUrl: "https://cliqz.com.br",
+      hosting: {
+        frontend: "Vercel",
+        backend: null,
+      },
     },
     {
       title: "Eastqg (Full Stack Application)",
@@ -220,8 +225,13 @@ export const translations = {
         integration: "Custom ML model integration, Render, and Vercel",
       },
       images: ["../assets/eastqg.png", "../assets/eastqg2.png"],
-      githubUrl: "https://github.com/vLecaBR/eastqg",
+      githubUrlFront: "https://github.com/vLecaBR/eastqg",
+      githubUrlBack: "https://github.com/vLecaBR/eastqg-backend",
       liveUrl: "https://eastqg.vercel.app/",
+      hosting: {
+        frontend: "Vercel",
+        backend: "Render",
+      },
     },
     {
       title: "Sales Website Model (Full Stack)",
@@ -247,8 +257,13 @@ export const translations = {
         "../assets/sales.png",
         "https://images.unsplash.com/photo-1575388902449-6bca946ad549?...",
       ],
-      githubUrl: "https://github.com/vLecaBR/sales-website-model",
+      githubUrlFront: "https://github.com/vLecaBR/sales-website-model",
+      githubUrlBack: "https://github.com/vLecaBR/sales-website-backend",
       liveUrl: null,
+      hosting: {
+        frontend: "Vercel",
+        backend: "Render",
+      },
     },
     {
       title: "DJ Franzoni Portfolio",
@@ -267,8 +282,13 @@ export const translations = {
         integration: "Vercel",
       },
       images: ["../assets/djfranzoni.png", "../assets/djfranzoni2.png"],
-      githubUrl: "https://github.com/vLecaBR/djfranzoni-portfolio",
+      githubUrlFront: "https://github.com/vLecaBR/djfranzoni-portfolio",
+      githubUrlBack: null,
       liveUrl: "https://djfranzoni-portfolio.vercel.app/",
+      hosting: {
+        frontend: "Vercel",
+        backend: null,
+      },
     },
   ],
 },
