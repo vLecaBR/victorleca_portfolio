@@ -9,6 +9,27 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+// ✅ Interface tipada corretamente (corrige o erro do ESLint)
+interface Project {
+  title: string;
+  shortDescription: string;
+  fullDescription: string;
+  features: string[];
+  tags: string[];
+  technologies: {
+    frontend?: string;
+    backend?: string;
+    integration?: string;
+    database?: string;
+    automation?: string;
+    ai?: string;
+  };
+  images: string[];
+  githubUrl?: string;
+  liveUrl?: string;
+}
+
+
 // Utility function
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -56,7 +77,9 @@ function Button({
     asChild?: boolean;
   }) {
   const Comp = asChild ? Slot : "button";
-  return <Comp className={cn(buttonVariants({ variant, size, className }))} {...props} />;
+  return (
+    <Comp className={cn(buttonVariants({ variant, size, className }))} {...props} />
+  );
 }
 
 // Badge component
@@ -65,10 +88,14 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default: "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
-        secondary: "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
-        destructive: "border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline: "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
+        default:
+          "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
+        secondary:
+          "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
+        destructive:
+          "border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+        outline:
+          "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
       },
     },
     defaultVariants: {
@@ -82,9 +109,12 @@ function Badge({
   variant,
   asChild = false,
   ...props
-}: React.ComponentProps<"span"> & VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
+}: React.ComponentProps<"span"> &
+  VariantProps<typeof badgeVariants> & { asChild?: boolean }) {
   const Comp = asChild ? Slot : "span";
-  return <Comp className={cn(badgeVariants({ variant }), className)} {...props} />;
+  return (
+    <Comp className={cn(badgeVariants({ variant }), className)} {...props} />
+  );
 }
 
 export function Projects() {
@@ -94,8 +124,11 @@ export function Projects() {
   const { language } = useLanguage();
   const t = translations[language].projects;
 
-  // Memoiza a lista e garante o tipo correto
-  const projects = useMemo(() => (Array.isArray(t.list) ? t.list : []), [t.list]);
+  // ✅ Tipagem explícita pra projects
+  const projects: Project[] = useMemo(
+    () => (Array.isArray(t.list) ? (t.list as Project[]) : []),
+    [t.list],
+  );
 
   return (
     <section id="projects" className="relative py-32 px-4 overflow-hidden">
@@ -105,12 +138,22 @@ export function Projects() {
       {/* Orbs animados */}
       <motion.div
         className="absolute top-1/4 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl will-change-transform"
-        animate={{ x: [0, 50, 0], y: [0, 30, 0], scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+        animate={{
+          x: [0, 50, 0],
+          y: [0, 30, 0],
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.5, 0.3],
+        }}
         transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         className="absolute bottom-1/4 right-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl will-change-transform"
-        animate={{ x: [0, -40, 0], y: [0, -20, 0], scale: [1.1, 1, 1.1], opacity: [0.2, 0.4, 0.2] }}
+        animate={{
+          x: [0, -40, 0],
+          y: [0, -20, 0],
+          scale: [1.1, 1, 1.1],
+          opacity: [0.2, 0.4, 0.2],
+        }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
 
@@ -123,14 +166,16 @@ export function Projects() {
           className="text-center mb-16"
         >
           <h2 className="mb-4">
-            <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">{t.title}</span>
+            <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
+              {t.title}
+            </span>
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto">{t.subtitle}</p>
         </motion.div>
 
         {/* Lista de projetos */}
         <div className="space-y-8">
-          {projects.map((project: any, index: number) => (
+          {projects.map((project, index) => (
             <motion.div
               key={project.title || index}
               initial={{ opacity: 0, y: 50 }}
@@ -143,7 +188,11 @@ export function Projects() {
               <div className="relative bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl overflow-hidden hover:border-cyan-400/50 transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/10">
                 <div className="grid md:grid-cols-2 gap-6 p-6 md:p-8">
                   <div className="relative h-64 md:h-80 overflow-hidden rounded-xl">
-                    <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.4 }} className="h-full will-change-transform">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.4 }}
+                      className="h-full will-change-transform"
+                    >
                       <ImageWithFallback
                         src={project.images?.[0]}
                         alt={project.title}
@@ -156,10 +205,16 @@ export function Projects() {
                   <div className="flex flex-col justify-between">
                     <div>
                       <h3 className="mb-3 text-white">{project.title}</h3>
-                      <p className="text-gray-400 mb-4">{project.shortDescription}</p>
+                      <p className="text-gray-400 mb-4">
+                        {project.shortDescription}
+                      </p>
                       <div className="flex flex-wrap gap-2 mb-4">
-                        {project.tags?.map((tag: string) => (
-                          <Badge key={tag} variant="outline" className="border-cyan-400/30 text-cyan-400 hover:bg-cyan-400/10">
+                        {project.tags?.map((tag) => (
+                          <Badge
+                            key={tag}
+                            variant="outline"
+                            className="border-cyan-400/30 text-cyan-400 hover:bg-cyan-400/10"
+                          >
                             {tag}
                           </Badge>
                         ))}
@@ -167,7 +222,11 @@ export function Projects() {
                     </div>
 
                     <Button
-                      onClick={() => setExpandedProject(expandedProject === index ? null : index)}
+                      onClick={() =>
+                        setExpandedProject(
+                          expandedProject === index ? null : index,
+                        )
+                      }
                       className="w-full bg-white/5 border border-white/20 text-white hover:bg-white/10 hover:border-cyan-400/50"
                     >
                       {expandedProject === index ? (
@@ -176,7 +235,8 @@ export function Projects() {
                         </>
                       ) : (
                         <>
-                          {t.viewDetails} <ChevronDown className="ml-2" size={16} />
+                          {t.viewDetails}{" "}
+                          <ChevronDown className="ml-2" size={16} />
                         </>
                       )}
                     </Button>
@@ -197,12 +257,17 @@ export function Projects() {
                     <div className="grid md:grid-cols-2 gap-6 mb-6">
                       <div>
                         <h4 className="text-white mb-3">{t.aboutProject}</h4>
-                        <p className="text-gray-400 leading-relaxed mb-4">{project.fullDescription}</p>
+                        <p className="text-gray-400 leading-relaxed mb-4">
+                          {project.fullDescription}
+                        </p>
 
                         <h4 className="text-white mb-3">{t.keyFeatures}</h4>
                         <ul className="space-y-2">
-                          {project.features?.map((feature: string, i: number) => (
-                            <li key={i} className="flex items-start gap-2 text-gray-400">
+                          {project.features?.map((feature, i) => (
+                            <li
+                              key={i}
+                              className="flex items-start gap-2 text-gray-400"
+                            >
                               <span className="text-cyan-400 mt-1">•</span>
                               <span>{feature}</span>
                             </li>
@@ -224,12 +289,18 @@ export function Projects() {
 
                         <h4 className="text-white mb-3">{t.techStack}</h4>
                         <div className="space-y-3 mb-6">
-                          {Object.entries(project.technologies || {}).map(([key, value]) => (
-                            <div key={key}>
-                              <span className="text-cyan-400 capitalize">{key}:</span>
-                              <p className="text-gray-400 mt-1">{value as string}</p>
-                            </div>
-                          ))}
+                          {Object.entries(project.technologies || {}).map(
+                            ([key, value]) => (
+                              <div key={key}>
+                                <span className="text-cyan-400 capitalize">
+                                  {key}:
+                                </span>
+                                <p className="text-gray-400 mt-1">
+                                  {value as string}
+                                </p>
+                              </div>
+                            ),
+                          )}
                         </div>
 
                         <div className="flex flex-col gap-3">
@@ -243,7 +314,9 @@ export function Projects() {
                               className="flex items-center justify-center gap-2 px-4 py-3 bg-white/5 border border-white/20 rounded-lg hover:bg-white/10 hover:border-white/40 transition-all"
                             >
                               <Github size={20} className="text-white" />
-                              <span className="text-white">{t.viewRepository}</span>
+                              <span className="text-white">
+                                {t.viewRepository}
+                              </span>
                             </motion.a>
                           )}
                           {project.liveUrl && (
@@ -261,7 +334,9 @@ export function Projects() {
                           )}
                           {!project.githubUrl && !project.liveUrl && (
                             <div className="p-3 bg-white/5 border border-white/10 rounded-lg text-center">
-                              <p className="text-gray-400 text-sm">{t.privateCorporate}</p>
+                              <p className="text-gray-400 text-sm">
+                                {t.privateCorporate}
+                              </p>
                             </div>
                           )}
                         </div>
