@@ -162,38 +162,38 @@ export const translations = {
         },
       ],
     },
-    projects: {
+   projects: {
   title: "Featured Projects",
   subtitle:
-    "Complete web, mobile, and automation development solutions for businesses and individuals. Each project reflects real-world technical challenges, modern architecture, and a focus on performance and user experience.",
+    "Complete web, mobile, and automation solutions built for both corporate and personal environments. Each project represents real technical challenges and focuses on performance, scalability, and user experience.",
   viewDetails: "View Details",
   showLess: "Show Less",
   aboutProject: "About the Project",
   keyFeatures: "Key Features",
-  techStack: "Technology Stack",
+  techStack: "Tech Stack",
   viewRepository: "View Repository",
   viewLive: "View Live Project",
-  privateCorporate: "Private corporate project",
+  privateCorporate: "Private Corporate Project",
   footer:
-    "These are some of the key projects I've developed — all built with scalability, maintainability, and performance in mind.",
+    "These are some of the main projects I’ve developed — all built with a focus on quality, maintainability, and high performance.",
   list: [
     {
       title: "CliqZ Agency Website",
-      shortDescription: "High-performance institutional website for a marketing and development agency.",
+      shortDescription:
+        "Modern institutional website for a digital marketing and development agency.",
       fullDescription:
-        "A modern and responsive corporate website built for 'CliqZ', a marketing and web development agency. Designed to highlight services, display an interactive portfolio, and generate leads through automated contact forms integrated with email and analytics. The project focuses on SEO optimization, accessibility, and visual impact to strengthen the agency's online presence.",
+        "Development of the official website for 'CliqZ', a marketing and web development agency. The project was designed to showcase the agency's services, display its portfolio, and attract new clients through integrated forms with email automation and analytics. The main focus was to deliver an engaging, SEO-optimized visual experience that performs well across all devices.",
       features: [
-        "Responsive, SEO-optimized landing page",
-        "Dynamic service and portfolio sections",
-        "Integrated lead capture via email automation",
-        "Custom animations and microinteractions",
+        "Responsive and SEO-optimized institutional landing page",
+        "Dynamic sections for services and portfolio",
+        "Integration with email systems for lead capture",
+        "Custom animations and microinteractions using Framer Motion",
         "Google Analytics integration for conversion tracking",
       ],
-      tags: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+      tags: ["React", "Styled Components", "Framer Motion"],
       technologies: {
-        frontend: "Next.js, React, Tailwind CSS, Framer Motion",
-        backend: "Node.js (API integrations)",
-        integration: "EmailJS, Google Analytics",
+        frontend: "React, Styled Components, Framer Motion",
+        integration: "Vercel, EmailJS, Google Analytics",
       },
       images: ["../assets/cliqz.png", "../assets/cliqz2.png"],
       githubUrl: "https://github.com/vLecaBR/CliqZ",
@@ -201,22 +201,23 @@ export const translations = {
     },
     {
       title: "Eastqg (Full Stack Application)",
-      shortDescription: "Full-stack web platform with a decoupled frontend and backend architecture.",
+      shortDescription:
+        "Full web platform with independent frontend and backend architecture using a REST API layer.",
       fullDescription:
-        "A scalable full-stack web platform featuring a React-based frontend and a Node.js/Express backend. The project demonstrates a modular architecture where the backend exposes RESTful APIs consumed by a dynamic frontend interface. Designed with performance and clean architecture in mind, Eastqg allows easy extension and integration with external services.",
+        "Eastqg is a full stack application designed with a decoupled architecture, composed of a ReactJS frontend and a Node.js/Express backend. The API handles all business logic and data flow, while the frontend delivers a modern, reactive, and scalable interface. This project emphasizes clean architecture, performance, and modularity. Instead of a direct database connection, it uses a REST API layer to handle data between the backend and frontend, fetching products dynamically.",
       features: [
-        "Modular frontend-backend structure (decoupled architecture)",
-        "Fully documented RESTful API",
-        "State management using Context API",
-        "Secure API endpoints with middleware validation",
-        "Deployed with CI/CD automation via Vercel and Render",
+        "Decoupled architecture between frontend and backend",
+        "RESTful API documented with Express and authentication middleware",
+        "State management using React Context API",
+        "Modular and scalable structure for new modules and integrations",
+        "Automated deployment via Vercel (frontend) and Render (backend)",
       ],
       tags: ["React", "Node.js", "Express", "Styled Components"],
       technologies: {
         frontend: "React, Styled Components, Vite",
-        backend: "Node.js, Express, JWT Authentication",
-        database: "MongoDB / REST API Layer",
-        integration: "API ML Integration (custom model)",
+        backend: "Node.js, Express",
+        database: "REST API Layer",
+        integration: "Custom ML model integration, Render, and Vercel",
       },
       images: ["../assets/eastqg.png", "../assets/eastqg2.png"],
       githubUrl: "https://github.com/vLecaBR/eastqg",
@@ -224,44 +225,46 @@ export const translations = {
     },
     {
       title: "Sales Website Model (Full Stack)",
-      shortDescription: "Scalable full-stack e-commerce template for product and order management.",
+      shortDescription:
+        "Complete and scalable full stack template for e-commerce or online sales platforms.",
       fullDescription:
-        "A complete foundation for an e-commerce application designed to handle product listings, user authentication, and order management. Developed as a modular template for businesses aiming to scale their online presence efficiently. Features include REST API integration, structured backend architecture, and reusable frontend components.",
+        "A base project for e-commerce and online sales platforms, featuring a Node.js backend for managing products, users, and orders, and a ReactJS frontend as the digital storefront. Built with a focus on modularity and scalability, this model allows easy expansion for new features like payment gateways, analytics, and reporting. It also includes secure authentication, session management, and a simplified admin area for product CRUD operations.",
       features: [
-        "Reusable e-commerce architecture with modular components",
-        "Product and order management API",
-        "Authentication and user management (JWT)",
-        "Responsive storefront UI with dynamic data rendering",
-        "Optimized for scalability and future integration (payments, analytics)",
+        "Modular and reusable architecture for e-commerce systems",
+        "API for managing products, users, and orders",
+        "Secure authentication with JWT",
+        "Responsive and dynamic interface with server-side rendering",
+        "Ready for payment and analytics service integrations",
       ],
-      tags: ["React", "Next.js", "Node.js", "PostgreSQL"],
+      tags: ["React", "Styled Components", "Node.js", "PostgreSQL"],
       technologies: {
-        frontend: "React, Next.js, Styled Components",
-        backend: "Node.js, Express, PostgreSQL",
-        automation: "REST API for CRUD operations",
+        frontend: "React, Styled Components",
+        backend: "Node.js, Express",
+        database: "PostgreSQL, SQLite",
+        automation: "RESTful APIs for CRUD operations and external integrations",
       },
-      images: ["../assets/sales.png", "https://images.unsplash.com/photo-1575388902449-6bca946ad549?..."],
+      images: [
+        "../assets/sales.png",
+        "https://images.unsplash.com/photo-1575388902449-6bca946ad549?...",
+      ],
       githubUrl: "https://github.com/vLecaBR/sales-website-model",
       liveUrl: null,
     },
     {
       title: "DJ Franzoni Portfolio",
-      shortDescription: "Professional artist portfolio focused on media presentation and client engagement.",
+      shortDescription:
+        "Professional artist portfolio website focused on media, automation, and interactive experience.",
       fullDescription:
-        "A custom-built portfolio website for DJ Franzoni — a music artist and performer. The platform presents her biography, media gallery, and event highlights, with a contact system optimized for bookings and management. The project integrates AI tools for content generation and automation of media updates, enhancing both creativity and efficiency.",
+        "Developed for the artist and DJ Franzoni, this website serves as her portfolio and main digital presence. The project includes biography sections, multimedia galleries, and an automated contact system for bookings. It also features smart automation for updating media and content dynamically, ensuring a seamless experience for both fans and event organizers.",
       features: [
-        "Custom artist landing page with reactive animations",
-        "Media gallery with optimized image and audio management",
-        "AI-assisted content generation (OpenAI API)",
-        "CMS-ready backend for updates and content control",
-        "Contact and booking automation workflow",
+        "Custom landing page with smooth reactive animations",
+        "Multimedia gallery with optimized image and audio rendering",
+        "Automated contact and booking flow",
       ],
-      tags: ["Next.js", "React", "TypeScript", "Python", "FastAPI", "AI"],
+      tags: ["React", "Javascript", "Styled Components", "Framer Motion"],
       technologies: {
-        frontend: "Next.js, React, TypeScript, Framer Motion",
-        backend: "Node.js, Python (FastAPI)",
-        ai: "OpenAI API, ML Models for media curation",
-        database: "PostgreSQL, Redis",
+        frontend: "React, TypeScript, Framer Motion",
+        integration: "Vercel",
       },
       images: ["../assets/djfranzoni.png", "../assets/djfranzoni2.png"],
       githubUrl: "https://github.com/vLecaBR/djfranzoni-portfolio",
@@ -269,6 +272,7 @@ export const translations = {
     },
   ],
 },
+
     contact: {
       title: "Let's Talk?",
       subtitle:
