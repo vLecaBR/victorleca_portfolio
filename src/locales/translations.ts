@@ -494,11 +494,10 @@ export const translations = {
         "Animações personalizadas e microinterações com Framer Motion",
         "Integração com Google Analytics para rastreamento de conversões",
       ],
-      tags: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+      tags: ["React", "Styled Components", "Framer Motion"],
       technologies: {
-        frontend: "Next.js, React, Tailwind CSS, Framer Motion",
-        backend: "Node.js (integrações e automações)",
-        integration: "EmailJS, Google Analytics",
+        frontend: "React, Styled Components, Framer Motion",
+        integration: "Vercel, EmailJS, Google Analytics",
       },
       images: ["../assets/cliqz.png", "../assets/cliqz2.png"],
       githubUrl: "https://github.com/vLecaBR/CliqZ",
@@ -506,9 +505,9 @@ export const translations = {
     },
     {
       title: "Eastqg (Aplicação Full Stack)",
-      shortDescription: "Plataforma web completa com frontend e backend independentes e arquitetura modular.",
+      shortDescription: "Plataforma web completa com frontend e backend independentes e arquitetura modular utilizando API",
       fullDescription:
-        "O Eastqg é uma aplicação full stack projetada com arquitetura desacoplada, composta por um frontend em React/Next.js e um backend em Node.js/Express. A API gerencia toda a lógica de negócio e os dados, enquanto o frontend entrega uma interface moderna, reativa e escalável. O projeto foca em boas práticas de arquitetura limpa, performance e modularidade.",
+        "O Eastqg é uma aplicação full stack projetada com arquitetura desacoplada, composta por um frontend em ReactJS e um backend em Node.js/Express. A API gerencia toda a lógica de negócio e os dados, enquanto o frontend entrega uma interface moderna, reativa e escalável. O projeto foca em boas práticas de arquitetura limpa, performance e modularidade. Desta forma descartamos o uso de banco de dados direto, utilizando apenas uma camada de API REST para comunicação entre frontend e backend puxando os produtos do backend e exibindo no frontend.",
       features: [
         "Arquitetura desacoplada entre frontend e backend",
         "API RESTful documentada com Express e middleware de autenticação",
@@ -519,9 +518,9 @@ export const translations = {
       tags: ["React", "Node.js", "Express", "Styled Components"],
       technologies: {
         frontend: "React, Styled Components, Vite",
-        backend: "Node.js, Express, JWT Auth",
-        database: "MongoDB / camada de API REST",
-        integration: "Integração com modelos ML personalizados",
+        backend: "Node.js, Express",
+        database: "Camada de API REST",
+        integration: "Integração com modelos ML personalizados, Render e Vercel",
       },
       images: ["../assets/eastqg.png", "../assets/eastqg2.png"],
       githubUrl: "https://github.com/vLecaBR/eastqg",
@@ -531,7 +530,7 @@ export const translations = {
       title: "Modelo de Site de Vendas (Full Stack)",
       shortDescription: "Template completo e escalável para sites de e-commerce e sistemas de vendas online.",
       fullDescription:
-        "Projeto base para e-commerces e plataformas de vendas, com backend em Node.js para gestão de produtos, usuários e pedidos, e frontend em Next.js para a vitrine digital. Desenvolvido com foco em modularidade e escalabilidade, o modelo permite expansão fácil para novas funcionalidades como gateways de pagamento, relatórios e integrações externas.",
+        "Projeto base para e-commerces e plataformas de vendas, com backend em Node.js para gestão de produtos, usuários e pedidos, e frontend em ReactJS para a vitrine digital. Desenvolvido com foco em modularidade e escalabilidade, o modelo permite expansão fácil para novas funcionalidades como gateways de pagamento, relatórios e integrações externas. Possui autenticação segura, gerenciamento de sessões e uma interface responsiva e área de administração simplificada, para editar, adicionar ou remover produtos facilmente.",
       features: [
         "Arquitetura modular e reutilizável para e-commerce",
         "API para gestão de produtos, usuários e pedidos",
@@ -539,10 +538,11 @@ export const translations = {
         "Interface responsiva e dinâmica com renderização server-side",
         "Pronto para integração com serviços de pagamento e analytics",
       ],
-      tags: ["React", "Next.js", "Node.js", "PostgreSQL"],
+      tags: ["React", "Styled Components", "Node.js", "PostgreSQL"],
       technologies: {
-        frontend: "React, Next.js, Styled Components",
-        backend: "Node.js, Express, PostgreSQL",
+        frontend: "React, Styled Components",
+        backend: "Node.js, Express",
+        database: "PostgreSQL, SQLite",
         automation: "APIs RESTful para CRUD e integrações externas",
       },
       images: ["../assets/sales.png", "https://images.unsplash.com/photo-1575388902449-6bca946ad549?..."],
@@ -557,16 +557,12 @@ export const translations = {
       features: [
         "Landing page personalizada com animações reativas",
         "Galeria multimídia com otimização de imagens e áudios",
-        "Geração automática de conteúdo com IA (OpenAI API)",
-        "Backend com suporte a CMS e atualizações dinâmicas",
         "Automação de contato e fluxo de agendamento",
       ],
-      tags: ["Next.js", "React", "TypeScript", "Python", "FastAPI", "IA"],
+      tags: ["React", "Javacript", "Styled Components", "Framer Motion"],
       technologies: {
-        frontend: "Next.js, React, TypeScript, Framer Motion",
-        backend: "Node.js, Python (FastAPI)",
-        ai: "OpenAI API, Modelos de Machine Learning",
-        database: "PostgreSQL, Redis",
+        frontend: "React, TypeScript, Framer Motion",
+        integration: "Vercel",
       },
       images: ["../assets/djfranzoni.png", "../assets/djfranzoni2.png"],
       githubUrl: "https://github.com/vLecaBR/djfranzoni-portfolio",
