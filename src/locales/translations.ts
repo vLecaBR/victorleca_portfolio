@@ -193,7 +193,7 @@ projects: {
       tags: ["React", "Styled Components", "Framer Motion"],
       technologies: {
         frontend: "React, Styled Components, Framer Motion",
-        integration: "Vercel, EmailJS, Google Analytics",
+        integration: "EmailJS, Google Analytics",
       },
       images: ["../assets/cliqz.png", "../assets/cliqz2.png"],
       githubUrlFront: "https://github.com/vLecaBR/CliqZ",
@@ -222,7 +222,7 @@ projects: {
         frontend: "React, Styled Components, Vite",
         backend: "Node.js, Express",
         database: "REST API Layer",
-        integration: "Custom ML model integration, Render, and Vercel",
+        integration: "Custom ML model integration",
       },
       images: ["../assets/eastqg.png", "../assets/eastqg2.png"],
       githubUrlFront: "https://github.com/vLecaBR/eastqg",
@@ -522,7 +522,7 @@ projects: {
       tags: ["React", "Styled Components", "Framer Motion"],
       technologies: {
         frontend: "React, Styled Components, Framer Motion",
-        integration: "Vercel, EmailJS, Google Analytics",
+        integration: "EmailJS, Google Analytics",
       },
       images: ["../assets/cliqz.png", "../assets/cliqz2.png"],
       githubUrlFront: "https://github.com/vLecaBR/CliqZ",
@@ -551,7 +551,7 @@ projects: {
         frontend: "React, Styled Components, Vite",
         backend: "Node.js, Express",
         database: "Camada de API REST",
-        integration: "Integração com modelos de ML personalizados, Render e Vercel",
+        integration: "Integração com modelos de ML personalizados",
       },
       images: ["../assets/eastqg.png", "../assets/eastqg2.png"],
       githubUrlFront: "https://github.com/vLecaBR/eastqg",
@@ -608,7 +608,6 @@ projects: {
       tags: ["React", "Javascript", "Styled Components", "Framer Motion"],
       technologies: {
         frontend: "React, TypeScript, Framer Motion",
-        integration: "Vercel",
       },
       images: ["../assets/djfranzoni.png", "../assets/djfranzoni2.png"],
       githubUrlFront: "https://github.com/vLecaBR/djfranzoni-portfolio",
