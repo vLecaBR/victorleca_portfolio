@@ -536,7 +536,7 @@ projects: {
     {
       title: "Eastqg (Aplicação Full Stack)",
       shortDescription:
-        "Plataforma web completa com frontend e backend independentes e arquitetura modular utilizando API.",
+        "Site de mecanica e ecommerce de produtos proprios, completa com frontend e backend independentes e arquitetura modular utilizando API.",
       fullDescription:
         "O Eastqg é uma aplicação full stack projetada com arquitetura desacoplada, composta por um frontend em ReactJS e um backend em Node.js/Express. A API gerencia toda a lógica de negócio e os dados, enquanto o frontend entrega uma interface moderna, reativa e escalável. O projeto foca em boas práticas de arquitetura limpa, performance e modularidade. Em vez de uma conexão direta com banco de dados, utiliza uma camada de API REST para comunicação entre backend e frontend, puxando os produtos de forma dinâmica.",
       features: [
