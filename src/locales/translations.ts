@@ -162,10 +162,10 @@ export const translations = {
         },
       ],
     },
-projects: {
+    projects: {
   title: "Featured Projects",
   subtitle:
-    "Complete web, mobile, and automation solutions built for both corporate and personal environments. Each project represents real technical challenges and focuses on performance, scalability, and user experience.",
+    "Complete web, mobile, and automation development solutions created for both corporate and personal environments. Each project represents real technical challenges with a focus on performance, scalability, and user experience.",
   viewDetails: "View Details",
   showLess: "Show Less",
   aboutProject: "About the Project",
@@ -175,19 +175,19 @@ projects: {
   viewLive: "View Live Project",
   privateCorporate: "Private Corporate Project",
   footer:
-    "These are some of the main projects I’ve developed — all built with a focus on quality, maintainability, and high performance.",
+    "These are some of the main projects I've developed — all built with a focus on quality, maintainability, and high performance.",
   list: [
     {
       title: "CliqZ Agency Website",
       shortDescription:
-        "Modern institutional website for a digital marketing and development agency.",
+        "Modern institutional website for a marketing and digital development agency.",
       fullDescription:
-        "Development of the official website for 'CliqZ', a marketing and web development agency. The project was designed to showcase the agency's services, display its portfolio, and attract new clients through integrated forms with email automation and analytics. The main focus was to deliver an engaging, SEO-optimized visual experience that performs well across all devices.",
+        "Development of the official website for 'CliqZ' agency, focused on marketing and web solutions. The project was designed to showcase services, portfolio, and capture new clients through integrated email automations and analytics. The goal was to deliver an engaging visual experience optimized for SEO and mobile devices.",
       features: [
         "Responsive and SEO-optimized institutional landing page",
-        "Dynamic sections for services and portfolio",
+        "Dynamic service and portfolio sections",
         "Integration with email systems for lead capture",
-        "Custom animations and microinteractions using Framer Motion",
+        "Custom animations and micro-interactions using Framer Motion",
         "Google Analytics integration for conversion tracking",
       ],
       tags: ["React", "Styled Components", "Framer Motion"],
@@ -207,13 +207,13 @@ projects: {
     {
       title: "Eastqg (Full Stack Application)",
       shortDescription:
-        "Full web platform with independent frontend and backend architecture using a REST API layer.",
+        "Automotive and e-commerce website with independent frontend and backend, featuring a modular API-based architecture.",
       fullDescription:
-        "Eastqg is a full stack application designed with a decoupled architecture, composed of a ReactJS frontend and a Node.js/Express backend. The API handles all business logic and data flow, while the frontend delivers a modern, reactive, and scalable interface. This project emphasizes clean architecture, performance, and modularity. Instead of a direct database connection, it uses a REST API layer to handle data between the backend and frontend, fetching products dynamically.",
+        "Eastqg is a full stack application built with a decoupled architecture — a ReactJS frontend and a Node.js/Express backend. The API manages all business logic and data, while the frontend delivers a modern, responsive, and scalable interface. The project focuses on clean architecture, performance, and modularity. Instead of directly connecting to a database, it uses a REST API layer to dynamically fetch product data between backend and frontend.",
       features: [
         "Decoupled architecture between frontend and backend",
         "RESTful API documented with Express and authentication middleware",
-        "State management using React Context API",
+        "State management with Context API",
         "Modular and scalable structure for new modules and integrations",
         "Automated deployment via Vercel (frontend) and Render (backend)",
       ],
@@ -221,12 +221,14 @@ projects: {
       technologies: {
         frontend: "React, Styled Components, Vite",
         backend: "Node.js, Express",
-        database: "REST API Layer",
-        integration: "Custom ML model integration",
+        database: "REST API layer",
+        integration: "Integration with custom ML models",
+        automation:
+          "RESTful APIs for frontend-backend communication and dynamic product management",
       },
       images: ["../assets/eastqg.png", "../assets/eastqg2.png"],
       githubUrlFront: "https://github.com/vLecaBR/eastqg",
-      githubUrlBack: "https://github.com/vLecaBR/eastqg-backend",
+      githubUrlBack: "https://github.com/vLecaBR/eastqg_backend",
       liveUrl: "https://eastqg.vercel.app/",
       hosting: {
         frontend: "Vercel",
@@ -234,17 +236,17 @@ projects: {
       },
     },
     {
-      title: "Sales Website Model (Full Stack)",
+      title: "E-Commerce Website Template (Full Stack)",
       shortDescription:
-        "Complete and scalable full stack template for e-commerce or online sales platforms.",
+        "A complete and scalable template for e-commerce and online sales platforms.",
       fullDescription:
-        "A base project for e-commerce and online sales platforms, featuring a Node.js backend for managing products, users, and orders, and a ReactJS frontend as the digital storefront. Built with a focus on modularity and scalability, this model allows easy expansion for new features like payment gateways, analytics, and reporting. It also includes secure authentication, session management, and a simplified admin area for product CRUD operations.",
+        "A base project for e-commerce and sales platforms with a Node.js backend for product, user, and order management, and a ReactJS frontend for the digital storefront. Designed with a focus on modularity and scalability, the template can be easily expanded to include new features such as payment gateways, reports, and third-party integrations. It includes secure authentication, session management, and a responsive interface with a simple admin area for CRUD operations.",
       features: [
         "Modular and reusable architecture for e-commerce systems",
-        "API for managing products, users, and orders",
-        "Secure authentication with JWT",
+        "API for product, user, and order management",
+        "Secure authentication using JWT",
         "Responsive and dynamic interface with server-side rendering",
-        "Ready for payment and analytics service integrations",
+        "Ready for payment and analytics integrations",
       ],
       tags: ["React", "Styled Components", "Node.js", "PostgreSQL"],
       technologies: {
@@ -268,18 +270,17 @@ projects: {
     {
       title: "DJ Franzoni Portfolio",
       shortDescription:
-        "Professional artist portfolio website focused on media, automation, and interactive experience.",
+        "Professional artist website focused on media, automation, and interactive user experience.",
       fullDescription:
-        "Developed for the artist and DJ Franzoni, this website serves as her portfolio and main digital presence. The project includes biography sections, multimedia galleries, and an automated contact system for bookings. It also features smart automation for updating media and content dynamically, ensuring a seamless experience for both fans and event organizers.",
+        "Developed for DJ Franzoni, this website serves as both a portfolio and the artist’s main digital presence. It includes biography sections, multimedia galleries, and an automated booking contact system. Intelligent automations update media and content dynamically, ensuring a smooth experience for fans and event organizers.",
       features: [
         "Custom landing page with smooth reactive animations",
-        "Multimedia gallery with optimized image and audio rendering",
-        "Automated contact and booking flow",
+        "Multimedia gallery optimized for images and audio",
+        "Automated contact and scheduling workflow",
       ],
       tags: ["React", "Javascript", "Styled Components", "Framer Motion"],
       technologies: {
         frontend: "React, TypeScript, Framer Motion",
-        integration: "Vercel",
       },
       images: ["../assets/djfranzoni.png", "../assets/djfranzoni2.png"],
       githubUrlFront: "https://github.com/vLecaBR/djfranzoni-portfolio",
@@ -292,6 +293,7 @@ projects: {
     },
   ],
 },
+
 
     contact: {
       title: "Let's Talk?",
@@ -552,10 +554,11 @@ projects: {
         backend: "Node.js, Express",
         database: "Camada de API REST",
         integration: "Integração com modelos de ML personalizados",
+        automation: "APIs RESTful para comunicação entre frontend e backend e gerenciamento de produtos dinâmicos",
       },
       images: ["../assets/eastqg.png", "../assets/eastqg2.png"],
       githubUrlFront: "https://github.com/vLecaBR/eastqg",
-      githubUrlBack: "https://github.com/vLecaBR/eastqg-backend",
+      githubUrlBack: "https://github.com/vLecaBR/eastqg_backend",
       liveUrl: "https://eastqg.vercel.app/",
       hosting: {
         frontend: "Vercel",
