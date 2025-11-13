@@ -28,7 +28,7 @@ interface Project {
   githubUrlFront?: string;
   githubUrlBack?: string;
   liveUrl?: string;
-  host?: {
+  hosting?: {
     frontend?: string;
     backend?: string;
   };
@@ -296,17 +296,17 @@ export function Projects() {
                             </motion.a>
                           )}
 
-                          {project.host && (
+                          {project.hosting && (
                             <div className="p-3 bg-white/5 border border-white/10 rounded-lg text-gray-400 text-sm">
                               <p className="flex items-center gap-2">
                                 <Server size={16} className="text-cyan-400" />{" "}
-                                <strong>Host:</strong>
+                                <strong>hosting:</strong>
                               </p>
-                              {project.host.frontend && (
-                                <p>Frontend → {project.host.frontend}</p>
+                              {project.hosting.frontend && (
+                                <p>Frontend → {project.hosting.frontend}</p>
                               )}
-                              {project.host.backend && (
-                                <p>Backend → {project.host.backend}</p>
+                              {project.hosting.backend && (
+                                <p>Backend → {project.hosting.backend}</p>
                               )}
                             </div>
                           )}
