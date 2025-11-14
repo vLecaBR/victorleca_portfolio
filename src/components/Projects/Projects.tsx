@@ -121,8 +121,8 @@ export function Projects() {
 
   return (
     <section id="projects" className="relative py-32 px-4 overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-b from-black via-cyan-950/20 to-black" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.08)_1px,transparent_1px)] bg-size-[100px_100px]" />
+      <div className="absolute inset-0 bg-linear-to-b from-black via-cyan-500/35 to-black" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.15)_1px,transparent_1px)] bg-size-[80px_80px]" />
 
       <div className="relative max-w-7xl mx-auto" ref={ref}>
         {/* Cabeçalho */}

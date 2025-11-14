@@ -68,8 +68,9 @@ export const Experience = memo(function Experience() {
   return (
     <section id="experience" ref={ref} className="relative py-32 px-4 overflow-hidden">
       {/* Background Layers */}
-      <div className="absolute inset-0 bg-linear-to-b from-black via-purple-950/20 to-black" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.08)_1px,transparent_1px)] bg-size-[100px_100px]" />
+      <div className="absolute inset-0 bg-linear-to-b from-black via-purple-500/35 to-black" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.15)_1px,transparent_1px)] bg-size-[80px_80px]" />
+
 
       {/* Floating gradient orbs */}
       <motion.div
