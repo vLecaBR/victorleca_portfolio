@@ -9,8 +9,8 @@ export function useSourceTracker() {
     if (!source) return;
 
     // Envia evento pro Vercel Analytics
-    if (typeof window !== "undefined" && (window as any).va) {
-      (window as any).va.track("came_from_cv", { source });
+    if (typeof window !== "undefined" && typeof (window as any).va === "function") {
+      (window as any).va("came_from_cv", { source });
     }
   }, []);
 }
