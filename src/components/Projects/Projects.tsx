@@ -253,7 +253,7 @@ export function Projects() {
                           ))}
                         </div>
 
-                        {/* Hosting agora vem antes dos botões */}
+                        {/* Hosting */}
                         {project.hosting && (
                           <div className="p-3 mb-3 bg-white/5 border border-white/10 rounded-lg text-gray-400 text-sm">
                             <p className="flex items-center gap-2 mb-1">

@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Victor Leça - Portfolio</title>
   </head>
+
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.va = window.va || function () {
+        (window.va.q = window.va.q || []).push(arguments);
+      };
+    </script>
     <script defer src="/_vercel/insights/script.js"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
