@@ -325,7 +325,7 @@ export const translations = {
       footerWhatsApp: "Quick response via WhatsApp",
     },
     footer: {
-      madeWith: "Made with",
+      madeWith: "Developed",
       by: "by Victor Leça",
     },
   },
