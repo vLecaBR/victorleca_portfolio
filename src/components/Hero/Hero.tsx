@@ -237,7 +237,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-14 max-w-4xl mx-auto px-4"
+            className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-14 max-w-6xl mx-auto px-4"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -271,7 +271,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="flex flex-wrap gap-4 justify-center mb-12"
+            className="flex flex-wrap gap-4 justify-center mb-12 p-8"
           >
             <Button
               className="bg-linear-to-br from-cyan-400 to-blue-600 hover:from-cyan-500 hover:to-blue-700 text-white border-0 px-8"
@@ -295,31 +295,32 @@ export function Hero() {
 
           {/* Socials */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 1.1 }}
-            className="flex gap-6 justify-center mb-8"
-          >
-            {[
-              { icon: Github, href: "https://github.com/vLecaBR", label: "GitHub" },
-              { icon: Linkedin, href: "https://www.linkedin.com/in/victor-leca-vlkbr/", label: "LinkedIn" },
-            ].map((social, index) => (
-              <motion.a
-                key={index}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.2, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-                className="relative group"
-              >
-                <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="relative p-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full hover:border-cyan-400/50 transition-all duration-300">
-                  <social.icon size={24} className="text-gray-400 group-hover:text-cyan-400 transition-colors" />
-                </div>
-              </motion.a>
-            ))}
-          </motion.div>
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.1 }}
+          className="hidden md:flex gap-6 justify-center mb-8"
+        >
+          {[
+            { icon: Github, href: "https://github.com/vLecaBR", label: "GitHub" },
+            { icon: Linkedin, href: "https://www.linkedin.com/in/victor-leca-vlkbr/", label: "LinkedIn" },
+          ].map((social, index) => (
+            <motion.a
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.2, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              className="relative group"
+            >
+              <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative p-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full hover:border-cyan-400/50 transition-all duration-300">
+                <social.icon size={24} className="text-gray-400 group-hover:text-cyan-400 transition-colors" />
+              </div>
+            </motion.a>
+          ))}
+        </motion.div>
+
         </motion.div>
       </LazyMotion>
     </section>

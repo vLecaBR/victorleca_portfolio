@@ -68,8 +68,9 @@ export const Experience = memo(function Experience() {
   return (
     <section id="experience" ref={ref} className="relative py-32 px-4 overflow-hidden">
       {/* Background Layers */}
-      <div className="absolute inset-0 bg-linear-to-b from-black via-purple-950/20 to-black" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.08)_1px,transparent_1px)] bg-size-[100px_100px]" />
+      <div className="absolute inset-0 bg-linear-to-b from-black via-purple-500/35 to-black" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.15)_1px,transparent_1px)] bg-size-[80px_80px]" />
+
 
       {/* Floating gradient orbs */}
       <motion.div
@@ -100,8 +101,8 @@ export const Experience = memo(function Experience() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="mb-4 text-3xl font-semibold">
-            <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+          <h2 className="mb-4">
+            <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold">
               {t.title}
             </span>
           </h2>
