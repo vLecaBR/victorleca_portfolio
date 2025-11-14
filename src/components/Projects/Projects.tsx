@@ -232,15 +232,16 @@ export function Projects() {
 
                       <div>
                         {project.images?.[1] && (
-                          <div className="relative h-100 w-150 overflow-hidden rounded-xl mb-4">
-                            <ImageWithFallback
-                              src={project.images[1]}
-                              alt={`${project.title} - Interface`}
-                              className="w-full h-full object-cover"
-                              loading="lazy"
-                            />
-                          </div>
-                        )}
+                        <div className="relative h-200px w-full overflow-hidden rounded-xl mb-4 flex items-center justify-center">
+                          <ImageWithFallback
+                            src={project.images[1]}
+                            alt={`${project.title} - Interface`}
+                            className="h-full w-auto object-cover object-center"
+                            loading="lazy"
+                          />
+                        </div>
+                      )}
+
 
                         <h4 className="text-white mb-3">{t.techStack}</h4>
                         <div className="space-y-3 mb-6">

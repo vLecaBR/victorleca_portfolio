@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Github, Linkedin, Heart } from "lucide-react";
+import { Github, Linkedin} from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../locales/translations";
 
@@ -60,7 +60,7 @@ export function Footer() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex items-center gap-2 text-gray-400"
           >
-            <span>© {currentYear} {t.madeWith}</span>
+            <span>© {currentYear} {t.madeWith} {t.by}</span>
             <motion.div
               animate={{
                 scale: [1, 1.2, 1],
@@ -71,9 +71,7 @@ export function Footer() {
                 ease: "easeInOut",
               }}
             >
-              <Heart size={16} className="text-red-500 fill-red-500" />
             </motion.div>
-            <span>{t.by}</span>
           </motion.div>
         </div>
       </div>
