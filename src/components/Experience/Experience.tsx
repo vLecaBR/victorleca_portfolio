@@ -100,8 +100,8 @@ export const Experience = memo(function Experience() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="mb-4 text-3xl font-semibold">
-            <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+          <h2 className="mb-4">
+            <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold">
               {t.title}
             </span>
           </h2>
