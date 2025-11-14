@@ -257,7 +257,7 @@ export const translations = {
       },
       images: [
         "../assets/sales.png",
-        "https://images.unsplash.com/photo-1575388902449-6bca946ad549?...",
+        "../assets/sales2.png",
       ],
       githubUrlFront: "https://github.com/vLecaBR/sales-website-model",
       githubUrlBack: "https://github.com/vLecaBR/sales-website-backend",
@@ -587,7 +587,7 @@ projects: {
       },
       images: [
         "../assets/sales.png",
-        "https://images.unsplash.com/photo-1575388902449-6bca946ad549?...",
+        "../assets/sales2.png",
       ],
       githubUrlFront: "https://github.com/vLecaBR/sales-website-model",
       githubUrlBack: "https://github.com/vLecaBR/sales-website-backend",
