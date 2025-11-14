@@ -8,10 +8,13 @@ import { Footer } from "./components/Footer/Footer";
 import { ScrollProgress } from "./components/ScrollProgress/ScrollProgress";
 import { LanguageProvider } from "./context/LanguageContext";
 import { Experience } from "./components/Experience/Experience";
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { useSourceTracker } from "./hooks/useSourceTracker";
 
 export default function App() {
+  useSourceTracker();
+
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-black text-white overflow-x-hidden">
