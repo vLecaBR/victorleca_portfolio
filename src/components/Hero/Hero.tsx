@@ -93,7 +93,7 @@ function Badge({
 export function Hero() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 200]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  const opacity = useTransform(scrollY, [0, 900], [1, 0]);
   const { language } = useLanguage();
   const t = translations[language].hero;
 
