@@ -1,11 +1,9 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import { Menu, X, Languages } from "lucide-react";
-import { useState } from "react";
+import { Languages } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../locales/translations";
 
-export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+export function Navbar() { 
   const { scrollY } = useScroll();
   const { language, toggleLanguage } = useLanguage();
   const t = translations[language].navbar;
@@ -34,7 +32,6 @@ export function Navbar() {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: "smooth" });
-    setIsOpen(false);
   };
 
   return (
@@ -43,19 +40,24 @@ export function Navbar() {
         backgroundColor,
         backdropFilter: backdropBlur as unknown as string,
         WebkitBackdropFilter: backdropBlur as unknown as string,
-
       }}
       className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 shadow-lg shadow-cyan-500/5"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+          
+          {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             className="relative group cursor-pointer"
           >
-            <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }} className="block">
+            <a 
+              href="#home" 
+              onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }} 
+              className="block"
+            >
               <div className="absolute inset-0 bg-linear-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative px-3 py-1.5 border border-cyan-400/30 rounded-lg bg-black/20 group-hover:border-cyan-400/60 transition-all duration-300">
                 <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
@@ -89,7 +91,7 @@ export function Navbar() {
                 </motion.a>
               ))}
               
-              {/* Language Toggle Button */}
+              {/* Language Toggle Button (Desktop) */}
               <motion.button
                 onClick={toggleLanguage}
                 className="relative group px-3 py-1.5 border border-cyan-400/30 rounded-lg bg-black/20 hover:border-cyan-400/60 transition-all duration-300 cursor-pointer"
@@ -108,7 +110,7 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Menu Button & Language Toggle */}
+          {/* Mobile - Only Language Button */}
           <div className="md:hidden flex items-center gap-3">
             <button
               onClick={toggleLanguage}
@@ -119,40 +121,13 @@ export function Navbar() {
                 <span className="text-white text-xs">{language.toUpperCase()}</span>
               </div>
             </button>
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-gray-300 hover:text-white"
-            >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
           </div>
+
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      <motion.div
-        initial={{ opacity: 0, height: 0 }}
-        animate={{
-          opacity: isOpen ? 1 : 0,
-          height: isOpen ? "auto" : 0,
-        }}
-        transition={{ duration: 0.3 }}
-        className="md:hidden overflow-hidden bg-black/95 backdrop-blur-lg border-t border-white/10"
-      >
-        <div className="px-4 pt-2 pb-4 space-y-1">
-          {navItems.map((item) => (
-            <motion.a
-              key={item.name}
-              href={item.href}
-              onClick={(e) => { e.preventDefault(); scrollToSection(item.href); }}
-              className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-cyan-400/10 rounded-lg transition-all cursor-pointer border border-transparent hover:border-cyan-400/30"
-              whileTap={{ scale: 0.98 }}
-            >
-              {item.name}
-            </motion.a>
-          ))}
-        </div>
-      </motion.div>
+      {/* Mobile Menu REMOVED */}
+      <motion.div className="hidden" />
     </motion.nav>
   );
 }
