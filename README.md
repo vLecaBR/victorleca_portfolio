@@ -3,6 +3,8 @@
 Repositório do meu portfólio pessoal, desenvolvido para apresentar meus projetos, habilidades e experiências como **Full-Stack Developer**.
 O site foi otimizado para ser rápido, fluido e com animações suaves, oferecendo uma navegação moderna e clean.
 
+- [📘 Portfolio Online](https://victorleca-portfolio.vercel.app/)
+
 # 🛠️ Tecnologias utilizadas
 
 - **React + TypeScript** – Estrutura principal da aplicação
@@ -144,12 +146,13 @@ Ambos fazem deploy automaticamente via GitHub.
 ```
 
 # 📬 Contato
-```
-Se quiser trocar ideia, colaborar ou só dar um feedback:
+
+- **Se quiser trocar ideia, colaborar ou só dar um feedback:
+
 Email: vitartasleca@gmail.com
-LinkedIn: https://www.linkedin.com/in/victor-leca-vlkbr/
-Portfolio Online: https://victorleca-portfolio.vercel.app/
-```
+- [📘 LinkedIn](https://www.linkedin.com/in/victor-leca-vlkbr/)
+- [📘 Portfolio Online](https://victorleca-portfolio.vercel.app/)
+
 
 ## 📄 Licença
 > Projeto distribuído sob a licença MIT.
