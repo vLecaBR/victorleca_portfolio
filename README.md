@@ -1,73 +1,155 @@
-# React + TypeScript + Vite
+# 🌐 Leça — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Repositório do meu portfólio pessoal, desenvolvido para apresentar meus projetos, habilidades e experiências como **Full-Stack Developer**.
+O site foi otimizado para ser rápido, fluido e com animações suaves, oferecendo uma navegação moderna e clean.
 
-Currently, two official plugins are available:
+# 🛠️ Tecnologias utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React + TypeScript** – Estrutura principal da aplicação
+- **Vite** – Build tool super rápida
+- **TailwindCSS** – Estilização responsiva e customizável
+- **Framer Motion** – Animações fluidas
+- **Lucide Icons** – Ícones modernos
+- **Zustand** (quando necessário) – Gerenciamento de estado simples e eficaz
 
-## React Compiler
-
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# 📁 Estrutura do projeto
+```
+├── 📁 .github
+│   └── 📁 workflows
+│       └── ⚙️ ci.yml
+├── 📁 public
+│   ├── 📁 assets
+│   │   ├── 🖼️ VL.svg
+│   │   ├── 🖼️ cliqz.png
+│   │   ├── 🖼️ cliqz2.png
+│   │   ├── 🖼️ djfranzoni.png
+│   │   ├── 🖼️ djfranzoni2.png
+│   │   ├── 🖼️ eastqg.png
+│   │   ├── 🖼️ eastqg2.png
+│   │   ├── 🖼️ react.svg
+│   │   ├── 🖼️ sales.png
+│   │   ├── 🖼️ sales2.png
+│   │   └── 🖼️ sales3.png
+│   └── 🖼️ VL.svg
+├── 📁 src
+│   ├── 📁 components
+│   │   ├── 📁 About
+│   │   │   └── 📄 About.tsx
+│   │   ├── 📁 Contact
+│   │   │   └── 📄 Contact.tsx
+│   │   ├── 📁 Experience
+│   │   │   └── 📄 Experience.tsx
+│   │   ├── 📁 Footer
+│   │   │   └── 📄 Footer.tsx
+│   │   ├── 📁 Hero
+│   │   │   └── 📄 Hero.tsx
+│   │   ├── 📁 NavBar
+│   │   │   └── 📄 NavBar.tsx
+│   │   ├── 📁 Projects
+│   │   │   └── 📄 Projects.tsx
+│   │   ├── 📁 ScrollProgress
+│   │   │   └── 📄 ScrollProgress.tsx
+│   │   └── 📁 Skills
+│   │       └── 📄 Skills.tsx
+│   ├── 📁 context
+│   │   └── 📄 LanguageContext.tsx
+│   ├── 📁 figma
+│   │   └── 📄 ImageWithFallback.tsx
+│   ├── 📁 locales
+│   │   └── 📄 translations.ts
+│   ├── 📁 styles
+│   │   ├── 🎨 globals.css
+│   │   └── 🎨 tailwind.css
+│   ├── 📄 App.tsx
+│   └── 📄 main.tsx
+├── ⚙️ .gitignore
+├── 📝 README.md
+├── 📄 eslint.config.js
+├── 🌐 index.html
+├── ⚙️ package-lock.json
+├── ⚙️ package.json
+├── 📄 tailwind.config.ts
+├── ⚙️ tsconfig.app.json
+├── ⚙️ tsconfig.json
+├── ⚙️ tsconfig.node.json
+└── 📄 vite.config.ts
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# ⚙️ Como rodar o projeto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Clone o repositório**:
 ```
+git clone <url-do-repo>
+```
+
+- **Instale as dependências**:
+```
+npm install
+```
+
+- **Execute o ambiente de desenvolvimento**:
+```
+npm run dev
+```
+> O projeto roda por padrão em:
+> 🌍 `http://localhost:5173`
+
+
+# 📌 Organização dos projetos
+
+- **Cada projeto incluído no portfólio contém**:
+```
+Título
+Descrição
+Tecnologias
+githubUrlFront — Repositório do front-end
+githubUrlBack — Repositório do back-end (se houver)
+hosting — Link da hospedagem (front/back)
+Imagem — Preview do projeto
+Essas informações são carregadas dinamicamente através do arquivo projectsData.ts.
+```
+
+# 🔹 Estrutura do objeto de projeto
+```
+{
+  id: number;
+  title: string;
+  description: string;
+  technologies: string[];
+  image: string;
+  githubUrlFront: string;
+  githubUrlBack?: string;
+  hosting?: string;
+}
+```
+
+# 📱 Responsividade
+
+- **O layout foi refinado manualmente para mobile, garantindo**:
+```
+Navegação fluida
+Menu mobile animado
+Grid reorganizado
+Componentes mais leves
+Melhor UX em telas pequenas
+```
+
+# 🚀 Deploy
+
+- **Recomendado utilizar**:
+```
+Vercel (o que foi utilizado)
+Netlify
+Ambos fazem deploy automaticamente via GitHub.
+```
+
+# 📬 Contato
+```
+Se quiser trocar ideia, colaborar ou só dar um feedback:
+Email: vitartasleca@gmail.com
+LinkedIn: https://www.linkedin.com/in/victor-leca-vlkbr/
+Portfolio Online: https://victorleca-portfolio.vercel.app/
+```
+
+## 📄 Licença
+> Projeto distribuído sob a licença MIT.
