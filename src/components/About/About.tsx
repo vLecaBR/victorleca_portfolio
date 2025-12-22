@@ -49,7 +49,12 @@ export function About() {
 
   return (
     <section id="about" className="relative py-32 px-4 overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-b from-black via-blue-950/20 to-black" />
+      
+      {/* Fundo com brilho central Azul (Blue-600) */}
+      <div className="absolute inset-0 bg-linear-to-b from-black via-blue-600/35 to-black" />
+
+      {/* Grade com linhas Ciano (Cyan-400 convertido para RGB) */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.15)_1px,transparent_1px)] bg-size-[30px_30px]" />
 
       <div
         className="absolute inset-0 opacity-30"
