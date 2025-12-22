@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import { Languages } from "lucide-react";
+import { BriefcaseBusiness, Code, Home, Info, Languages, MonitorSmartphone, Smartphone } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../locales/translations";
 
@@ -21,12 +21,12 @@ export function Navbar() {
   );
 
   const navItems = [
-    { name: t.home, href: "#home" },
-    { name: t.about, href: "#about" },
-    { name: t.skills, href: "#skills" },
-    { name: t.experience, href: "#experience" },
-    { name: t.projects, href: "#projects" },
-    { name: t.contact, href: "#contact" },
+    { icon: <Home size={18} /> ,name: t.home, href: "#home" },
+    { icon: <Info size={18} />, name: t.about, href: "#about" },
+    { icon: <Code size={18} />, name: t.skills, href: "#skills" },
+    { icon: <BriefcaseBusiness size={18} />, name: t.experience, href: "#experience" },
+    { icon: <MonitorSmartphone size={18} />, name: t.projects, href: "#projects" },
+    { icon: <Smartphone size={18} />, name: t.contact, href: "#contact" },
   ];
 
   const scrollToSection = (href: string) => {
@@ -81,6 +81,9 @@ export function Navbar() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ y: -2 }}
                 >
+                  <span className="flex items-center justify-center -translate-y-0">
+                  {item.icon}
+                  </span>
                   {item.name}
                   <motion.span
                     className="absolute bottom-0 left-0 w-full h-0.5 bg-linear-gradient-to-r from-cyan-400 to-blue-600"

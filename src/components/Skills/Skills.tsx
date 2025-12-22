@@ -81,7 +81,11 @@ export const Skills = memo(function Skills() {
   return (
     <section id="skills" className="relative py-32 px-4 overflow-hidden">
       {/* Backgrounds e layers estáticos (sem alteração visual) */}
-      <div className="absolute inset-0 bg-linear-gradient-to-r from-black via-purple-950/20 to-black" />
+      {/* Fundo com brilho central Indigo (Indigo-600) */}
+      <div className="absolute inset-0 bg-linear-to-b from-black via-indigo-600/35 to-black" />
+
+      {/* Grade com linhas Indigo Claro (Indigo-400) e tamanho reduzido (60px) */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(129,140,248,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(129,140,248,0.15)_1px,transparent_1px)] bg-size-[30px_30px]" />
       <div
         className="absolute inset-0 opacity-20"
         style={{

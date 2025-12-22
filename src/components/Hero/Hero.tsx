@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { motion, useScroll, useTransform, LazyMotion, domAnimation } from "motion/react";
-import { Github, Linkedin, Code2, Rocket, Users, Award } from "lucide-react";
+import { Rocket } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../locales/translations";
 import { Slot } from "@radix-ui/react-slot";
@@ -97,16 +97,6 @@ export function Hero() {
   const { language } = useLanguage();
   const t = translations[language].hero;
 
-  // useMemo evita recriar arrays toda renderização
-  const stats = useMemo(
-    () => [
-      { icon: Code2, value: "4+", label: t.stats.experience },
-      { icon: Rocket, value: "50+", label: t.stats.processes },
-      { icon: Users, value: "Multi", label: t.stats.collaboration },
-      { icon: Award, value: "100%", label: t.stats.dedication },
-    ],
-    [t]
-  );
 
   const mainTechs = useMemo(
     () => ["ReactJS", "React Native", "NodeJS", "TypeScript", "Power Platform", "Tailwind CSS"],
@@ -232,39 +222,7 @@ export function Hero() {
             ))}
           </motion.div>
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-14 max-w-6xl mx-auto px-4"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                whileHover={{ y: -5, scale: 1.05 }}
-                className="relative group will-change-transform"
-              >
-                <div className="absolute inset-0 bg-linear-to-br from-cyan-500/10 to-blue-500/10 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300" />
-                <div className="relative p-4 md:p-5 bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl hover:border-cyan-400/50 transition-all duration-500 hover:shadow-lg hover:shadow-cyan-500/5">
-                  <motion.div
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                    className="inline-flex items-center justify-center w-10 h-10 mb-2 bg-linear-to-br from-cyan-400/20 to-blue-600/20 rounded-lg"
-                  >
-                    <stat.icon size={20} className="text-cyan-400" />
-                  </motion.div>
-                  <div className="bg-linear-to-br from-cyan-400 to-blue-600 bg-clip-text text-transparent mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-gray-400">{stat.label}</div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+          
 
           {/* CTA */}
           <motion.div
@@ -293,33 +251,7 @@ export function Hero() {
             </Button>
           </motion.div>
 
-          {/* Socials */}
-          <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.1 }}
-          className="hidden md:flex gap-6 justify-center mb-8"
-        >
-          {[
-            { icon: Github, href: "https://github.com/vLecaBR", label: "GitHub" },
-            { icon: Linkedin, href: "https://www.linkedin.com/in/victor-leca-vlkbr/", label: "LinkedIn" },
-          ].map((social, index) => (
-            <motion.a
-              key={index}
-              href={social.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative p-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full hover:border-cyan-400/50 transition-all duration-300">
-                <social.icon size={24} className="text-gray-400 group-hover:text-cyan-400 transition-colors" />
-              </div>
-            </motion.a>
-          ))}
-        </motion.div>
+          
 
         </motion.div>
       </LazyMotion>
