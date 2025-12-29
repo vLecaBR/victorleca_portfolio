@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+// MUDANÇA 1: Usando a versão otimizada 'm' e LazyMotion
+import { m, useInView, LazyMotion, domAnimation } from "motion/react";
 import { useRef, useMemo, memo } from "react";
 import { Briefcase, MapPin, Calendar, Award } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
@@ -66,161 +67,165 @@ export const Experience = memo(function Experience() {
   const experiences = useMemo(() => t.list, [t.list]);
 
   return (
-    <section id="experience" ref={ref} className="relative py-32 px-4 overflow-hidden">
-      {/* Background Layers */}
-      <div className="absolute inset-0 bg-linear-to-b from-black via-purple-500/35 to-black" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.15)_1px,transparent_1px)] bg-size-[80px_80px]" />
+    // MUDANÇA 2: LazyMotion envolvendo o componente
+    <LazyMotion features={domAnimation}>
+      {/* MUDANÇA 3: id="experience" removido (já está no App.tsx) */}
+      <section ref={ref} className="relative py-32 px-4 overflow-hidden w-full h-full">
+        
+        {/* Background Layers com pointer-events-none para não bloquear scroll/clique */}
+        <div className="absolute inset-0 bg-linear-to-b from-black via-purple-500/35 to-black pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.15)_1px,transparent_1px)] bg-size-[80px_80px] pointer-events-none" />
 
+        {/* Floating gradient orbs (m.div) */}
+        <m.div
+          className="absolute top-1/4 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none will-change-transform"
+          animate={
+            isInView
+              ? { x: [0, -50, 0], y: [0, 30, 0], scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }
+              : {}
+          }
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <m.div
+          className="absolute bottom-1/4 left-10 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl pointer-events-none will-change-transform"
+          animate={
+            isInView
+              ? { x: [0, 40, 0], y: [0, -20, 0], scale: [1.1, 1, 1.1], opacity: [0.2, 0.4, 0.2] }
+              : {}
+          }
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+        />
 
-      {/* Floating gradient orbs */}
-      <motion.div
-        className="absolute top-1/4 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
-        animate={
-          isInView
-            ? { x: [0, -50, 0], y: [0, 30, 0], scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }
-            : {}
-        }
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 left-10 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl"
-        animate={
-          isInView
-            ? { x: [0, 40, 0], y: [0, -20, 0], scale: [1.1, 1, 1.1], opacity: [0.2, 0.4, 0.2] }
-            : {}
-        }
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-      {/* Content */}
-      <div className="relative max-w-6xl mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="mb-4">
-            <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold">
-              {t.title}
-            </span>
-          </h2>
-          <p className="text-gray-400 max-w-3xl mx-auto">{t.subtitle}</p>
-        </motion.div>
-
-        {/* Timeline */}
-        <div className="relative">
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-purple-500/50 via-pink-500/50 to-transparent" />
-
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className={`relative grid md:grid-cols-2 gap-8 items-start ${
-                  index % 2 === 0 ? "" : "md:grid-flow-dense"
-                }`}
-              >
-                {/* Dot */}
-                <div className="absolute left-8 md:left-1/2 top-6 -translate-x-1/2 w-4 h-4 rounded-full bg-linear-to-br from-purple-500 to-pink-600 shadow-lg shadow-purple-500/50 z-10">
-                  <div className="absolute inset-0 rounded-full bg-purple-500 animate-ping opacity-75" />
-                </div>
-
-                {/* Content Card */}
-                <div
-                  className={`${index % 2 === 0 ? "md:text-right" : "md:col-start-2"} ml-16 md:ml-0`}
-                >
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 hover:border-purple-400/50 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/10"
-                  >
-                    {/* Header */}
-                    <div className="mb-4">
-                      <div className="flex items-start gap-3 mb-2">
-                        <IconBriefcase />
-                        <div>
-                          <h3 className="text-white mb-1">{exp.position}</h3>
-                          <p className="text-purple-400">{exp.company}</p>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-wrap gap-3 mt-3 text-sm text-gray-400">
-                        <div className="flex items-center gap-2">
-                          <IconCalendar />
-                          <span>{exp.period}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <IconMapPin />
-                          <span>{exp.location}</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-gray-300 mb-4 leading-relaxed">
-                      {exp.description}
-                    </p>
-
-                    {/* Tech */}
-                    <div className="mb-4">
-                      <h4 className="text-white mb-3 text-sm flex items-center gap-2">
-                        <IconAward />
-                        {t.technologies}
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech: string, i: number) => (
-                          <Badge
-                            key={`${tech}-${i}`}
-                            variant="outline"
-                            className="border-purple-400/30 text-purple-400 hover:bg-purple-400/10"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Achievements */}
-                    <ul className="space-y-2">
-                      {exp.achievements.map((achievement: string, i: number) => (
-                        <li
-                          key={`${achievement}-${i}`}
-                          className="flex items-start gap-2 text-gray-400 text-sm"
-                        >
-                          <span className="text-purple-400 mt-1">•</span>
-                          <span>{achievement}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* Footer */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 text-center"
-        >
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-purple-500/10 to-pink-500/10 border border-purple-400/30 rounded-full">
-            <Briefcase className="text-purple-400" size={18} />
-            <p className="text-gray-300 text-sm">
-              <span className="text-purple-400">
-                {language === "en"
-                  ? "Currently working on exciting projects"
-                  : "Atualmente trabalhando em projetos empolgantes"}
+        {/* Content */}
+        <div className="relative max-w-6xl mx-auto">
+          {/* Header */}
+          <m.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="mb-4">
+              <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold">
+                {t.title}
               </span>
-            </p>
+            </h2>
+            <p className="text-gray-400 max-w-3xl mx-auto">{t.subtitle}</p>
+          </m.div>
+
+          {/* Timeline */}
+          <div className="relative">
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-purple-500/50 via-pink-500/50 to-transparent" />
+
+            <div className="space-y-12">
+              {experiences.map((exp, index) => (
+                <m.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className={`relative grid md:grid-cols-2 gap-8 items-start ${
+                    index % 2 === 0 ? "" : "md:grid-flow-dense"
+                  }`}
+                >
+                  {/* Dot */}
+                  <div className="absolute left-8 md:left-1/2 top-6 -translate-x-1/2 w-4 h-4 rounded-full bg-linear-to-br from-purple-500 to-pink-600 shadow-lg shadow-purple-500/50 z-10">
+                    <div className="absolute inset-0 rounded-full bg-purple-500 animate-ping opacity-75" />
+                  </div>
+
+                  {/* Content Card */}
+                  <div
+                    className={`${index % 2 === 0 ? "md:text-right" : "md:col-start-2"} ml-16 md:ml-0`}
+                  >
+                    <m.div
+                      whileHover={{ scale: 1.02 }}
+                      className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 hover:border-purple-400/50 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/10"
+                    >
+                      {/* Header */}
+                      <div className="mb-4">
+                        <div className="flex items-start gap-3 mb-2">
+                          <IconBriefcase />
+                          <div>
+                            <h3 className="text-white mb-1">{exp.position}</h3>
+                            <p className="text-purple-400">{exp.company}</p>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-wrap gap-3 mt-3 text-sm text-gray-400">
+                          <div className="flex items-center gap-2">
+                            <IconCalendar />
+                            <span>{exp.period}</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <IconMapPin />
+                            <span>{exp.location}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Description */}
+                      <p className="text-gray-300 mb-4 leading-relaxed">
+                        {exp.description}
+                      </p>
+
+                      {/* Tech */}
+                      <div className="mb-4">
+                        <h4 className="text-white mb-3 text-sm flex items-center gap-2">
+                          <IconAward />
+                          {t.technologies}
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {exp.technologies.map((tech: string, i: number) => (
+                            <Badge
+                              key={`${tech}-${i}`}
+                              variant="outline"
+                              className="border-purple-400/30 text-purple-400 hover:bg-purple-400/10"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Achievements */}
+                      <ul className="space-y-2">
+                        {exp.achievements.map((achievement: string, i: number) => (
+                          <li
+                            key={`${achievement}-${i}`}
+                            className="flex items-start gap-2 text-gray-400 text-sm"
+                          >
+                            <span className="text-purple-400 mt-1">•</span>
+                            <span>{achievement}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </m.div>
+                  </div>
+                </m.div>
+              ))}
+            </div>
           </div>
-        </motion.div>
-      </div>
-    </section>
+
+          {/* Footer */}
+          <m.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mt-16 text-center"
+          >
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-purple-500/10 to-pink-500/10 border border-purple-400/30 rounded-full">
+              <Briefcase className="text-purple-400" size={18} />
+              <p className="text-gray-300 text-sm">
+                <span className="text-purple-400">
+                  {language === "en"
+                    ? "Currently working on exciting projects"
+                    : "Atualmente trabalhando em projetos empolgantes"}
+                </span>
+              </p>
+            </div>
+          </m.div>
+        </div>
+      </section>
+    </LazyMotion>
   );
 });

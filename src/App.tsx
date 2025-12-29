@@ -15,94 +15,99 @@ const Projects = lazy(() => import("./components/Projects/Projects").then(module
 const Contact = lazy(() => import("./components/Contact/Contact").then(module => ({ default: module.Contact })));
 const Footer = lazy(() => import("./components/Footer/Footer").then(module => ({ default: module.Footer })));
 
-// 1. Componente de Fallback Melhorado (Skeleton)
-// Usa min-h-screen ou altura aproximada para evitar que a barra de rolagem pule (CLS)
 const SectionSkeleton = () => (
-  <div className="w-full min-h-[50vh] md:min-h-[70vh] flex items-center justify-center bg-black/50">
+  <div className="w-full h-full flex items-center justify-center bg-black/50">
     <div className="w-10 h-10 border-4 border-cyan-500/30 border-t-cyan-500 rounded-full animate-spin" />
   </div>
 );
 
-// 2. Wrapper Inteligente: Só renderiza o componente quando ele entra na tela
-const LazySection = ({ children }: { children: ReactNode }) => {
+interface LazySectionProps {
+  children: ReactNode;
+  id?: string;
+  className?: string;
+}
+
+const LazySection = ({ children, id, className = "min-h-[50vh]" }: LazySectionProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // CORREÇÃO DO LINT: Capturamos o elemento atual para usar no cleanup
+    const element = ref.current;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Se o elemento estiver aparecendo (ou 200px antes de aparecer)
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Uma vez visível, desconectamos para não monitorar mais (melhora performance)
-          if (ref.current) observer.unobserve(ref.current);
+          // Uma vez visível, paramos de observar para economizar recursos
+          if (element) observer.unobserve(element);
         }
       },
       {
-        rootMargin: "200px", // Começa a carregar 200px ANTES do usuário chegar na seção
+        rootMargin: "200px", // Carrega 200px antes de chegar na tela
         threshold: 0.1,
       }
     );
 
-    if (ref.current) observer.observe(ref.current);
+    if (element) observer.observe(element);
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      // Usamos a variável capturada 'element' em vez de ref.current
+      if (element) observer.unobserve(element);
     };
   }, []);
 
   return (
-    <div ref={ref} className="min-h-10">
+    <section id={id} ref={ref} className={`w-full ${className} transition-all duration-500`}>
       {isVisible ? (
         <Suspense fallback={<SectionSkeleton />}>
           {children}
         </Suspense>
       ) : (
-        // Renderiza o skeleton enquanto não está visível para manter o espaço
-        <div className="min-h-[200px]" /> 
+        // Mantém o espaço reservado para evitar CLS
+        <div className="w-full h-full" /> 
       )}
-    </div>
+    </section>
   );
 };
 
 export default function App() {
   return (
     <LanguageProvider>
-      <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <div className="bg-black text-white overflow-x-hidden">
         <Analytics />
         <SpeedInsights />
         <ScrollProgress />
         <Navbar />
         
-        {/* O Hero carrega imediatamente (eagerly) pois é a primeira dobra */}
-        <Hero />
+        {/* O Hero carrega imediatamente (LCP priorizado) */}
+        <section id="home">
+            <Hero />
+        </section>
 
-        {/* Cada seção agora é isolada. O browser do celular fraco
-            NÃO vai baixar o JavaScript de 'Contact' enquanto você estiver
-            lendo 'About'. Isso libera a CPU para rolar a tela suavemente.
-        */}
         <div className="flex flex-col">
-          <LazySection>
+          {/* Seções com Lazy Loading e IDs corrigidos para navegação */}
+          <LazySection id="about" className="min-h-screen">
             <About />
           </LazySection>
           
-          <LazySection>
+          <LazySection id="skills" className="min-h-[80vh]">
             <Skills />
           </LazySection>
           
-          <LazySection>
+          <LazySection id="experience" className="min-h-screen">
             <Experience />
           </LazySection>
           
-          <LazySection>
+          <LazySection id="projects" className="min-h-screen">
             <Projects />
           </LazySection>
           
-          <LazySection>
+          <LazySection id="contact" className="min-h-[80vh]">
             <Contact />
           </LazySection>
           
-          <LazySection>
+          <LazySection className="min-h-[200px]">
             <Footer />
           </LazySection>
         </div>
