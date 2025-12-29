@@ -3,7 +3,7 @@ import { useRef, useMemo, memo } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../locales/translations";
 
-// Componentes de ícones memoizados (não redesenham)
+// Componentes de ícones memoizados (mantém performance sem afetar visual)
 const FrontendIcon = memo(() => (
   <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
     <path d="M14.25 9.75L16.5 12L14.25 14.25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -42,7 +42,6 @@ export const Skills = memo(function Skills() {
   const { language } = useLanguage();
   const t = translations[language].skills;
 
-  // Usa useMemo para não recriar os arrays em cada render
   const skillCategories = useMemo(() => [
     {
       name: "Frontend & Mobile",
@@ -79,12 +78,11 @@ export const Skills = memo(function Skills() {
   ], []);
 
   return (
-    <section id="skills" className="relative py-32 px-4 overflow-hidden">
-      {/* Backgrounds e layers estáticos (sem alteração visual) */}
-      {/* Fundo com brilho central Indigo (Indigo-600) */}
+    // Removido id="skills" (está no App.tsx). Classes mantidas idênticas ao original.
+    <section className="relative py-32 px-4 overflow-hidden">
+      
       <div className="absolute inset-0 bg-linear-to-b from-black via-indigo-600/35 to-black" />
 
-      {/* Grade com linhas Indigo Claro (Indigo-400) e tamanho reduzido (60px) */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(129,140,248,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(129,140,248,0.15)_1px,transparent_1px)] bg-size-[30px_30px]" />
       <div
         className="absolute inset-0 opacity-20"
@@ -93,7 +91,6 @@ export const Skills = memo(function Skills() {
         }}
       />
 
-      {/* Efeitos decorativos animados */}
       <motion.div
         className="absolute bottom-20 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
         animate={isInView ? { scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] } : {}}
@@ -111,7 +108,7 @@ export const Skills = memo(function Skills() {
       />
 
       <div className="relative max-w-6xl mx-auto" ref={ref}>
-        {/* Título */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -126,7 +123,7 @@ export const Skills = memo(function Skills() {
           <p className="text-gray-400 max-w-3xl mx-auto">{t.subtitle}</p>
         </motion.div>
 
-        {/* Cards */}
+        {/* Grid de Cards */}
         <div className="grid md:grid-cols-2 gap-6 md:gap-8">
           {skillCategories.map((category, i) => (
             <motion.div
@@ -142,6 +139,7 @@ export const Skills = memo(function Skills() {
                   <motion.div
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
+                    // REVERTIDO: Mantive bg-linear-gradient-to-r conforme seu código original
                     className={`p-3 rounded-xl bg-linear-gradient-to-r ${category.color} shadow-lg`}
                   >
                     <div className="text-white">{category.icon}</div>
@@ -157,6 +155,7 @@ export const Skills = memo(function Skills() {
                       animate={isInView ? { opacity: 1, scale: 1 } : {}}
                       transition={{ duration: 0.3, delay: i * 0.15 + j * 0.05 }}
                       whileHover={{ scale: 1.05, y: -2 }}
+                      // REVERTIDO: Mantive bg-linear-gradient-to-r para garantir o estilo outline/transparente
                       className={`px-4 py-2.5 rounded-full bg-linear-gradient-to-r ${category.color} bg-opacity-10 border ${category.borderColor} backdrop-blur-sm cursor-default transition-all duration-300 hover:shadow-lg`}
                     >
                       <span className="text-white text-sm">{skill}</span>
@@ -168,7 +167,7 @@ export const Skills = memo(function Skills() {
           ))}
         </div>
 
-        {/* Rodapé */}
+        {/* Footer */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
