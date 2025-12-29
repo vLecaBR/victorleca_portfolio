@@ -83,9 +83,6 @@ export default function App() {
         </section>
 
         <div className="flex flex-col">
-          {/* MUDANÇA 2: Passamos o ID para o LazySection.
-             IMPORTANTE: Remova o id="about" de DENTRO do componente <About /> para não ter id duplicado.
-          */}
           <LazySection id="about" className="min-h-screen">
             <About />
           </LazySection>
@@ -105,8 +102,7 @@ export default function App() {
           <LazySection id="contact" className="min-h-[80vh]">
             <Contact />
           </LazySection>
-          
-          {/* Footer geralmente não precisa de ID para navegação, mas pode ter */}
+        
           <LazySection className="min-h-[200px]">
             <Footer />
           </LazySection>
