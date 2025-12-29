@@ -1,3 +1,4 @@
+import { useMemo, useCallback } from "react"; // Adicionado hooks essenciais
 import { motion, useScroll, useTransform } from "motion/react";
 import { BriefcaseBusiness, Code, Home, Info, Languages, MonitorSmartphone, Smartphone } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
@@ -6,7 +7,9 @@ import { translations } from "../../locales/translations";
 export function Navbar() { 
   const { scrollY } = useScroll();
   const { language, toggleLanguage } = useLanguage();
-  const t = translations[language].navbar;
+  
+  // Memoiza a tradução atual para evitar lookups desnecessários
+  const t = useMemo(() => translations[language].navbar, [language]);
   
   const backgroundColor = useTransform(
     scrollY,
@@ -20,19 +23,26 @@ export function Navbar() {
     ["blur(0px)", "blur(20px)"]
   );
 
-  const navItems = [
-    { icon: <Home size={18} /> ,name: t.home, href: "#home" },
-    { icon: <Info size={18} />, name: t.about, href: "#about" },
-    { icon: <Code size={18} />, name: t.skills, href: "#skills" },
-    { icon: <BriefcaseBusiness size={18} />, name: t.experience, href: "#experience" },
-    { icon: <MonitorSmartphone size={18} />, name: t.projects, href: "#projects" },
-    { icon: <Smartphone size={18} />, name: t.contact, href: "#contact" },
-  ];
+  // OTIMIZAÇÃO 1: useMemo para evitar recriar o array e os ícones a cada render.
+  // Mudança estrutural: Passamos o componente do ícone, não o JSX instanciado.
+  const navItems = useMemo(() => [
+    { Icon: Home, name: t.home, href: "#home" },
+    { Icon: Info, name: t.about, href: "#about" },
+    { Icon: Code, name: t.skills, href: "#skills" },
+    { Icon: BriefcaseBusiness, name: t.experience, href: "#experience" },
+    { Icon: MonitorSmartphone, name: t.projects, href: "#projects" },
+    { Icon: Smartphone, name: t.contact, href: "#contact" },
+  ], [t]);
 
-  const scrollToSection = (href: string) => {
+  // OTIMIZAÇÃO 2: useCallback para estabilizar a função de clique.
+  // Isso evita que os botões "pisquem" ou recarreguem listeners desnecessariamente.
+  const handleScrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
     const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
 
   return (
     <motion.nav
@@ -41,7 +51,8 @@ export function Navbar() {
         backdropFilter: backdropBlur as unknown as string,
         WebkitBackdropFilter: backdropBlur as unknown as string,
       }}
-      className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 shadow-lg shadow-cyan-500/5"
+      // OTIMIZAÇÃO 3: 'will-change-transform' ajuda o navegador a preparar a GPU
+      className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 shadow-lg shadow-cyan-500/5 will-change-[background-color,backdrop-filter]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -55,12 +66,12 @@ export function Navbar() {
           >
             <a 
               href="#home" 
-              onClick={(e) => { e.preventDefault(); scrollToSection("#home"); }} 
+              onClick={(e) => handleScrollToSection(e, "#home")} 
               className="block"
             >
               <div className="absolute inset-0 bg-linear-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative px-3 py-1.5 border border-cyan-400/30 rounded-lg bg-black/20 group-hover:border-cyan-400/60 transition-all duration-300">
-                <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent font-bold">
                   {"<VictorLeça />"}
                 </span>
               </div>
@@ -70,23 +81,25 @@ export function Navbar() {
           {/* Desktop Menu */}
           <div className="hidden md:block">
             <div className="flex items-center space-x-8">
-              {navItems.map((item, index) => (
+              {navItems.map(({ name, href, Icon }, index) => (
                 <motion.a
-                  key={item.name}
-                  href={item.href}
-                  onClick={(e) => { e.preventDefault(); scrollToSection(item.href); }}
-                  className="text-gray-300 hover:text-white transition-colors relative group cursor-pointer"
+                  key={name}
+                  href={href}
+                  onClick={(e) => handleScrollToSection(e, href)}
+                  className="text-gray-300 hover:text-white transition-colors relative group cursor-pointer flex flex-col items-center gap-1"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ y: -2 }}
                 >
-                  <span className="flex items-center justify-center -translate-y-0">
-                  {item.icon}
+                  {/* Renderização do ícone otimizada */}
+                  <span className="flex items-center justify-center">
+                    <Icon size={18} />
                   </span>
-                  {item.name}
+                  <span className="text-sm font-medium">{name}</span>
+                  
                   <motion.span
-                    className="absolute bottom-0 left-0 w-full h-0.5 bg-linear-gradient-to-r from-cyan-400 to-blue-600"
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-linear-gradient-to-r from-cyan-400 to-blue-600"
                     initial={{ scaleX: 0 }}
                     whileHover={{ scaleX: 1 }}
                     transition={{ duration: 0.3 }}
@@ -97,17 +110,18 @@ export function Navbar() {
               {/* Language Toggle Button (Desktop) */}
               <motion.button
                 onClick={toggleLanguage}
-                className="relative group px-3 py-1.5 border border-cyan-400/30 rounded-lg bg-black/20 hover:border-cyan-400/60 transition-all duration-300 cursor-pointer"
+                className="relative group px-3 py-1.5 border border-cyan-400/30 rounded-lg bg-black/20 hover:border-cyan-400/60 transition-all duration-300 cursor-pointer ml-4"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: navItems.length * 0.1 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                aria-label="Toggle Language"
               >
                 <div className="absolute inset-0 bg-linear-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative flex items-center gap-1.5">
                   <Languages size={16} className="text-cyan-400" />
-                  <span className="text-white text-sm">{language.toUpperCase()}</span>
+                  <span className="text-white text-sm font-semibold">{language.toUpperCase()}</span>
                 </div>
               </motion.button>
             </div>
@@ -118,10 +132,11 @@ export function Navbar() {
             <button
               onClick={toggleLanguage}
               className="px-2.5 py-1 border border-cyan-400/30 rounded-lg bg-black/20 hover:border-cyan-400/60 transition-all duration-300"
+              aria-label="Toggle Language Mobile"
             >
               <div className="flex items-center gap-1">
                 <Languages size={14} className="text-cyan-400" />
-                <span className="text-white text-xs">{language.toUpperCase()}</span>
+                <span className="text-white text-xs font-semibold">{language.toUpperCase()}</span>
               </div>
             </button>
           </div>
@@ -129,7 +144,7 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu REMOVED */}
+      {/* Mobile Menu REMOVED as per original code */}
       <motion.div className="hidden" />
     </motion.nav>
   );
