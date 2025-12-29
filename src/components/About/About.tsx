@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useMemo } from "react";
-// MUDANÇA 1: Importamos 'm' (versão leve) e LazyMotion
 import { m, useInView, LazyMotion, domAnimation } from "motion/react";
 import { Code2, Sparkles, Zap, Rocket, Users, Award } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
@@ -17,7 +16,8 @@ export function About() {
   
   // Fallback seguro: se não tiver stats no 'about', pega do 'hero'
   const tStats = useMemo(() => 
-    // @ts-ignore - Ignorando erro de tipagem caso a chave não exista ainda no arquivo
+    // CORREÇÃO: Mudado de @ts-ignore para @ts-expect-error para passar no Lint
+    // @ts-expect-error - Ignorando erro de tipagem caso a chave não exista ainda no arquivo
     translations[language].about?.stats || translations[language].hero.stats, 
     [language]
   );
@@ -54,11 +54,7 @@ export function About() {
   );
 
   return (
-    // MUDANÇA 2: LazyMotion envolve tudo para reduzir o peso do JS
     <LazyMotion features={domAnimation}>
-      {/* MUDANÇA 3: Removi id="about" daqui pois ele já está no wrapper do App.tsx.
-         Mantive as classes de layout.
-      */}
       <section className="relative py-32 px-4 overflow-hidden w-full h-full">
         
         {/* Fundo com brilho central Azul */}
@@ -67,7 +63,6 @@ export function About() {
         {/* Grade com linhas Ciano */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.15)_1px,transparent_1px)] bg-size-[30px_30px] pointer-events-none" />
 
-        {/* MUDANÇA 4: Correção de 'radial-linear' para 'radial-gradient' */}
         <div
           className="absolute inset-0 opacity-30 pointer-events-none"
           style={{
@@ -78,7 +73,6 @@ export function About() {
         />
 
         {/* Efeitos decorativos (Blobs) */}
-        {/* Usamos 'm.div' ao invés de 'motion.div' */}
         <m.div
           className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl will-change-transform pointer-events-none"
           animate={{
