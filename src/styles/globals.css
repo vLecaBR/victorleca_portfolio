@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -126,11 +128,12 @@
 
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden; /* Evita scroll lateral acidental */
   }
 }
 
 /**
- * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ * Base typography.
  */
 @layer base {
   :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
@@ -184,6 +187,38 @@
   }
 }
 
+/* --- MELHORIAS DE PERFORMANCE E VISUAL --- */
+
 html {
   font-size: var(--font-size);
+  /* 1. Scroll Suave para navegação na mesma página */
+  scroll-behavior: smooth;
+  /* 2. Deixa a fonte mais nítida e fina em fundos escuros */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 3. Estilização da Scrollbar (Estilo Dark/Moderno) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b; /* Fundo bem escuro */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a; /* Cinza escuro */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46; /* Cinza mais claro no hover */
+}
+
+/* 4. Cor de Seleção de Texto (Branding Cyan/Blue) */
+::selection {
+  background-color: rgba(6, 182, 212, 0.3); /* Cyan com transparência */
+  color: #ffffff;
 }
