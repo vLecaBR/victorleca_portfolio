@@ -1,6 +1,8 @@
 "use client";
 
-import React, { useRef, useMemo } from "react";
+import React, { useRef, useMemo, memo } from "react";
+// MUDANÇA 1: Usando 'motion/react' para manter consistência com o resto do site
+import { m, useInView, LazyMotion, domAnimation } from "motion/react";
 import {
   Mail, MapPin, Calendar, Phone,
   Github, Linkedin, ExternalLink, MessageCircle,
@@ -11,14 +13,13 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { LazyMotion, domAnimation, m, useInView } from "framer-motion";
 
 // --- util ---
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// --- Button ---
+// --- Button (Memoized) ---
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
@@ -49,7 +50,7 @@ const buttonVariants = cva(
   },
 );
 
-function Button({
+const Button = memo(function Button({
   className,
   variant,
   size,
@@ -61,10 +62,10 @@ function Button({
   }) {
   const Comp = asChild ? Slot : "button";
   return <Comp data-slot="button" className={cn(buttonVariants({ variant, size, className }))} {...props} />;
-}
+});
 
-// --- Contact Section ---
-export function Contact() {
+// --- Contact Section (Memoized) ---
+export const Contact = memo(function Contact() {
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { language } = useLanguage();
@@ -84,10 +85,13 @@ export function Contact() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <section id="contact" className="relative py-32 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-b from-black via-blue-950/20 to-black" />
+      {/* Removido id="contact" (controlado pelo App.tsx) */}
+      <section ref={ref} className="relative py-32 px-4 overflow-hidden w-full h-full">
+        
+        {/* Backgrounds com pointer-events-none para não bloquear cliques */}
+        <div className="absolute inset-0 bg-linear-to-b from-black via-blue-950/20 to-black pointer-events-none" />
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
             backgroundImage: `
               radial-gradient(circle at 20% 30%, rgba(6, 182, 212, 0.15) 1px, transparent 1px),
@@ -98,19 +102,19 @@ export function Contact() {
           }}
         />
 
-        {/* Floating BGs */}
+        {/* Floating BGs (m.div + pointer-events-none) */}
         <m.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-linear-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl will-change-transform"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-linear-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl will-change-transform pointer-events-none"
           animate={isInView ? { scale: [1, 1.2, 1], rotate: [0, 180, 360] } : {}}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
         <m.div
-          className="absolute top-20 right-20 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl will-change-transform"
+          className="absolute top-20 right-20 w-72 h-72 bg-cyan-400/10 rounded-full blur-3xl will-change-transform pointer-events-none"
           animate={isInView ? { scale: [1, 1.3, 1], opacity: [0.3, 0.6, 0.3] } : {}}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
 
-        <div className="relative max-w-6xl mx-auto" ref={ref}>
+        <div className="relative max-w-6xl mx-auto">
           {/* Header */}
           <m.div
             initial={{ opacity: 0, y: 50 }}
@@ -272,4 +276,4 @@ export function Contact() {
       </section>
     </LazyMotion>
   );
-}
+});
