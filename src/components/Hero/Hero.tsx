@@ -234,7 +234,7 @@ export function Hero() {
               </motion.div>
             ))}
           </motion.div>
-
+          
           {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -257,7 +257,6 @@ export function Hero() {
               {t.aboutMe}
             </Button>
           </motion.div>
-
         </motion.div>
       </LazyMotion>
     </section>

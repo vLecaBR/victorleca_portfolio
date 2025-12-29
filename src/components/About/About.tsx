@@ -1,7 +1,8 @@
 "use client";
-import { motion, useInView } from "framer-motion";
+
 import { useRef, useMemo } from "react";
-// Adicionei Rocket, Users e Award nos imports
+// MUDANÇA 1: Importamos 'm' (versão leve) e LazyMotion
+import { m, useInView, LazyMotion, domAnimation } from "motion/react";
 import { Code2, Sparkles, Zap, Rocket, Users, Award } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import { translations } from "../../locales/translations";
@@ -10,10 +11,16 @@ export function About() {
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { language } = useLanguage();
-  const t = translations[language].about;
-  // Assumindo que t.stats existe no seu arquivo de tradução, 
-  // caso contrário, você precisará adicionar no translations.ts ou usar fallback aqui.
-  const tStats = translations[language].hero.stats; // Usei do hero como fallback caso não tenha criado no about
+  
+  // Memoização das traduções para evitar recalculos
+  const t = useMemo(() => translations[language].about, [language]);
+  
+  // Fallback seguro: se não tiver stats no 'about', pega do 'hero'
+  const tStats = useMemo(() => 
+    // @ts-ignore - Ignorando erro de tipagem caso a chave não exista ainda no arquivo
+    translations[language].about?.stats || translations[language].hero.stats, 
+    [language]
+  );
 
   const features = useMemo(
     () => [
@@ -36,7 +43,6 @@ export function About() {
     [t.features]
   );
 
-  // Lógica dos Stats adicionada e memorizada
   const stats = useMemo(
     () => [
       { icon: Code2, value: "4+", label: tStats.experience },
@@ -48,147 +54,153 @@ export function About() {
   );
 
   return (
-    <section id="about" className="relative py-32 px-4 overflow-hidden">
-      
-      {/* Fundo com brilho central Azul (Blue-600) */}
-      <div className="absolute inset-0 bg-linear-to-b from-black via-blue-600/35 to-black" />
+    // MUDANÇA 2: LazyMotion envolve tudo para reduzir o peso do JS
+    <LazyMotion features={domAnimation}>
+      {/* MUDANÇA 3: Removi id="about" daqui pois ele já está no wrapper do App.tsx.
+         Mantive as classes de layout.
+      */}
+      <section className="relative py-32 px-4 overflow-hidden w-full h-full">
+        
+        {/* Fundo com brilho central Azul */}
+        <div className="absolute inset-0 bg-linear-to-b from-black via-blue-600/35 to-black pointer-events-none" />
 
-      {/* Grade com linhas Ciano (Cyan-400 convertido para RGB) */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.15)_1px,transparent_1px)] bg-size-[30px_30px]" />
+        {/* Grade com linhas Ciano */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(34,211,238,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(34,211,238,0.15)_1px,transparent_1px)] bg-size-[30px_30px] pointer-events-none" />
 
-      <div
-        className="absolute inset-0 opacity-30"
-        style={{
-          backgroundImage:
-            "radial-linear(circle, rgba(6,182,212,0.15) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
+        {/* MUDANÇA 4: Correção de 'radial-linear' para 'radial-gradient' */}
+        <div
+          className="absolute inset-0 opacity-30 pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(6,182,212,0.15) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
 
-      {/* Efeitos decorativos */}
-      <motion.div
-        className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl will-change-transform"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-      <motion.div
-        className="absolute bottom-32 left-20 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl will-change-transform"
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+        {/* Efeitos decorativos (Blobs) */}
+        {/* Usamos 'm.div' ao invés de 'motion.div' */}
+        <m.div
+          className="absolute top-20 right-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl will-change-transform pointer-events-none"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <m.div
+          className="absolute bottom-32 left-20 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl will-change-transform pointer-events-none"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
 
-      <div className="relative max-w-6xl mx-auto" ref={ref}>
-        {/* Title Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : undefined}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="mb-4">
-            <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold">
-              {t.title}
-            </span>
-          </h2>
-          <p className="text-gray-400 max-w-3xl mx-auto">{t.subtitle}</p>
-        </motion.div>
+        <div className="relative max-w-6xl mx-auto" ref={ref}>
+          {/* Title Header */}
+          <m.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="mb-4">
+              <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold">
+                {t.title}
+              </span>
+            </h2>
+            <p className="text-gray-400 max-w-3xl mx-auto">{t.subtitle}</p>
+          </m.div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
-          {features.map(({ icon: Icon, title, description }, index) => (
-            <motion.div
-              key={title}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : undefined}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="relative group"
-            >
-              <div className="absolute inset-0 bg-linear-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300" />
-              <div className="relative p-6 md:p-8 bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-cyan-400/50 transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/10 h-full">
-                <motion.div
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.6 }}
-                  className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-linear-to-r from-cyan-400 to-blue-600 rounded-xl"
-                >
-                  <Icon size={28} className="text-white" />
-                </motion.div>
-                <h3 className="mb-3 text-white font-bold text-xl">{title}</h3>
-                <p className="text-gray-400 leading-relaxed">{description}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-        {/* NEW: Stats Section Integrada */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : undefined}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          // Ajustado para aparecer em mobile (grid-cols-2) e desktop (grid-cols-4)
-          className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12 w-full"
-        >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : undefined}
-              transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.05 }}
-              className="relative group will-change-transform"
-            >
-              <div className="absolute inset-0 bg-linear-to-br from-cyan-500/10 to-blue-500/10 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300" />
-              <div className="relative p-4 md:p-5 bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl hover:border-cyan-400/50 transition-all duration-500 hover:shadow-lg hover:shadow-cyan-500/5 h-full flex flex-col justify-between">
-                <div>
-                  <motion.div
+          {/* Features Grid */}
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
+            {features.map(({ icon: Icon, title, description }, index) => (
+              <m.div
+                key={title}
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="relative group"
+              >
+                <div className="absolute inset-0 bg-linear-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300" />
+                <div className="relative p-6 md:p-8 bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl hover:border-cyan-400/50 transition-all duration-500 hover:shadow-xl hover:shadow-cyan-500/10 h-full">
+                  <m.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.6 }}
-                    className="inline-flex items-center justify-center w-10 h-10 mb-3 bg-linear-to-br from-cyan-400/20 to-blue-600/20 rounded-lg"
+                    className="inline-flex items-center justify-center w-14 h-14 mb-4 bg-linear-to-r from-cyan-400 to-blue-600 rounded-xl"
                   >
-                    <stat.icon size={20} className="text-cyan-400" />
-                  </motion.div>
-                  <div className="text-2xl md:text-3xl font-bold bg-linear-to-br from-cyan-400 to-blue-600 bg-clip-text text-transparent mb-1">
-                    {stat.value}
-                  </div>
+                    <Icon size={28} className="text-white" />
+                  </m.div>
+                  <h3 className="mb-3 text-white font-bold text-xl">{title}</h3>
+                  <p className="text-gray-400 leading-relaxed">{description}</p>
                 </div>
-                <div className="text-sm md:text-base text-gray-400 font-medium">{stat.label}</div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              </m.div>
+            ))}
+          </div>
 
-        {/* Journey Text */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : undefined}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-12 md:mt-16 p-6 md:p-8 bg-linear-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl border border-white/10 backdrop-blur-sm"
-        >
-          <h3 className="mb-4 text-white text-2xl font-semibold">{t.journeyTitle}</h3>
-          <p className="text-gray-400 leading-relaxed mb-4">
-            {t.journeyParagraph1}
-          </p>
-          <p className="text-gray-400 leading-relaxed">
-            {t.journeyParagraph2}
-          </p>
-        </motion.div>
+          {/* Stats Section */}
+          <m.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-12 w-full"
+          >
+            {stats.map((stat, index) => (
+              <m.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
+                whileHover={{ y: -5, scale: 1.05 }}
+                className="relative group will-change-transform"
+              >
+                <div className="absolute inset-0 bg-linear-to-br from-cyan-500/10 to-blue-500/10 rounded-xl blur-lg group-hover:blur-xl transition-all duration-300" />
+                <div className="relative p-4 md:p-5 bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl hover:border-cyan-400/50 transition-all duration-500 hover:shadow-lg hover:shadow-cyan-500/5 h-full flex flex-col justify-between">
+                  <div>
+                    <m.div
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                      className="inline-flex items-center justify-center w-10 h-10 mb-3 bg-linear-to-br from-cyan-400/20 to-blue-600/20 rounded-lg"
+                    >
+                      <stat.icon size={20} className="text-cyan-400" />
+                    </m.div>
+                    <div className="text-2xl md:text-3xl font-bold bg-linear-to-br from-cyan-400 to-blue-600 bg-clip-text text-transparent mb-1">
+                      {stat.value}
+                    </div>
+                  </div>
+                  <div className="text-sm md:text-base text-gray-400 font-medium">{stat.label}</div>
+                </div>
+              </m.div>
+            ))}
+          </m.div>
 
-        
+          {/* Journey Text */}
+          <m.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-12 md:mt-16 p-6 md:p-8 bg-linear-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl border border-white/10 backdrop-blur-sm"
+          >
+            <h3 className="mb-4 text-white text-2xl font-semibold">{t.journeyTitle}</h3>
+            <p className="text-gray-400 leading-relaxed mb-4">
+              {t.journeyParagraph1}
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              {t.journeyParagraph2}
+            </p>
+          </m.div>
 
-      </div>
-    </section>
+        </div>
+      </section>
+    </LazyMotion>
   );
 }
