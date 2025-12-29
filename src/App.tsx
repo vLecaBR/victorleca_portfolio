@@ -21,11 +21,10 @@ const SectionSkeleton = () => (
   </div>
 );
 
-// MUDANÇA 1: Adicionei props 'id' e 'className' ao LazySection
 interface LazySectionProps {
   children: ReactNode;
-  id?: string; // O ID agora é opcional, mas essencial para navegação
-  className?: string; // Para controlar a altura mínima de cada seção
+  id?: string;
+  className?: string;
 }
 
 const LazySection = ({ children, id, className = "min-h-[50vh]" }: LazySectionProps) => {
@@ -33,35 +32,39 @@ const LazySection = ({ children, id, className = "min-h-[50vh]" }: LazySectionPr
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // CORREÇÃO DO LINT: Capturamos o elemento atual para usar no cleanup
+    const element = ref.current;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          if (ref.current) observer.unobserve(ref.current);
+          // Uma vez visível, paramos de observar para economizar recursos
+          if (element) observer.unobserve(element);
         }
       },
       {
-        rootMargin: "200px",
+        rootMargin: "200px", // Carrega 200px antes de chegar na tela
         threshold: 0.1,
       }
     );
 
-    if (ref.current) observer.observe(ref.current);
+    if (element) observer.observe(element);
 
     return () => {
-      if (ref.current) observer.unobserve(ref.current);
+      // Usamos a variável capturada 'element' em vez de ref.current
+      if (element) observer.unobserve(element);
     };
   }, []);
 
   return (
-    // O ID agora fica na DIV externa. O navegador consegue encontrá-la imediatamente!
     <section id={id} ref={ref} className={`w-full ${className} transition-all duration-500`}>
       {isVisible ? (
         <Suspense fallback={<SectionSkeleton />}>
           {children}
         </Suspense>
       ) : (
-        // Mantém o espaço reservado para evitar CLS e garantir que a barra de rolagem tenha o tamanho certo
+        // Mantém o espaço reservado para evitar CLS
         <div className="w-full h-full" /> 
       )}
     </section>
@@ -77,12 +80,13 @@ export default function App() {
         <ScrollProgress />
         <Navbar />
         
-        {/* O Hero deve ter o ID 'home' se o link da navbar apontar para #home */}
+        {/* O Hero carrega imediatamente (LCP priorizado) */}
         <section id="home">
             <Hero />
         </section>
 
         <div className="flex flex-col">
+          {/* Seções com Lazy Loading e IDs corrigidos para navegação */}
           <LazySection id="about" className="min-h-screen">
             <About />
           </LazySection>
@@ -102,7 +106,7 @@ export default function App() {
           <LazySection id="contact" className="min-h-[80vh]">
             <Contact />
           </LazySection>
-        
+          
           <LazySection className="min-h-[200px]">
             <Footer />
           </LazySection>
