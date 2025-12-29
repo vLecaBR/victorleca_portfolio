@@ -1,4 +1,5 @@
 import React, { useMemo, useState, useEffect } from "react";
+// Voltei para o import padrão 'motion' para garantir que as animações funcionem como antes
 import { motion, useScroll, useTransform, LazyMotion, domAnimation } from "motion/react";
 import { Rocket } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
@@ -8,7 +9,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-// --- Utility & Components (Mantidos iguais para preservar estilo) ---
+// --- Utility & Components (Seus componentes originais) ---
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -66,8 +67,8 @@ function Badge({ className, variant, asChild = false, ...props }: React.Componen
   return <Comp data-slot="badge" className={cn(badgeVariants({ variant }), className)} {...props} />;
 }
 
-// --- Definição de Partícula para TypeScript ---
-interface Particle {
+// Interface para as partículas (para o TypeScript não reclamar)
+interface ParticleData {
   id: number;
   width: number;
   height: number;
@@ -78,7 +79,7 @@ interface Particle {
   duration: number;
 }
 
-// --- HERO SECTION ---
+// HERO SECTION
 export function Hero() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 200]);
@@ -86,13 +87,18 @@ export function Hero() {
   const { language } = useLanguage();
   const t = translations[language].hero;
 
-  // Estado para armazenar as partículas apenas no cliente
-  const [particles, setParticles] = useState<Particle[]>([]);
+  const mainTechs = useMemo(
+    () => ["ReactJS", "React Native", "NodeJS", "TypeScript", "Power Platform", "Tailwind CSS"],
+    []
+  );
 
-  // OTIMIZAÇÃO 1: Gerar posições aleatórias APENAS após a montagem do componente.
-  // Isso evita Hydration Mismatch (Server HTML != Client HTML) que mata a performance.
+  // CORREÇÃO CLS #1: Gerar partículas no useEffect
+  // Isso impede que o servidor gere números aleatórios diferentes do cliente (Hydration Mismatch),
+  // que é a causa nº 1 de Layout Shifts em componentes animados.
+  const [particles, setParticles] = useState<ParticleData[]>([]);
+
   useEffect(() => {
-    const generatedParticles = [...Array(30)].map((_, i) => ({ // Reduzi para 30 (50 é muito para mobile)
+    const generated = [...Array(50)].map((_, i) => ({
       id: i,
       width: Math.random() * 300 + 50,
       height: Math.random() * 300 + 50,
@@ -102,47 +108,35 @@ export function Hero() {
       moveY: Math.random() * 100 - 50,
       duration: Math.random() * 10 + 10,
     }));
-    setParticles(generatedParticles);
+    setParticles(generated);
   }, []);
-
-  const mainTechs = useMemo(
-    () => ["ReactJS", "React Native", "NodeJS", "TypeScript", "Power Platform", "Tailwind CSS"],
-    []
-  );
-
-  const handleScrollTo = (id: string) => {
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <section
-      // O ID 'home' é crucial para a Navbar funcionar
       id="home"
+      // Mantive suas classes exatas
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 will-change-transform"
     >
       <div className="absolute inset-0 bg-linear-to-br from-black via-blue-950 to-black">
-        {/* Renderiza partículas apenas quando existirem (client-side) */}
-        {particles.map((particle) => (
+        {/* Renderiza as partículas apenas quando prontas (evita o pulo visual) */}
+        {particles.map((p) => (
           <motion.div
-            key={particle.id}
+            key={p.id}
             className="absolute bg-blue-500/20 rounded-full will-change-transform"
             style={{
-              width: particle.width,
-              height: particle.height,
-              left: particle.left,
-              top: particle.top,
+              width: p.width,
+              height: p.height,
+              left: p.left,
+              top: p.top,
             }}
             animate={{
-              x: [0, particle.moveX],
-              y: [0, particle.moveY],
+              x: [0, p.moveX],
+              y: [0, p.moveY],
               scale: [1, 1.2, 1],
               opacity: [0.1, 0.3, 0.1],
             }}
             transition={{
-              duration: particle.duration,
+              duration: p.duration,
               repeat: Infinity,
               ease: "easeInOut",
             }}
@@ -157,28 +151,31 @@ export function Hero() {
           style={{ y, opacity }}
           className="relative z-10 text-center px-4 max-w-6xl mx-auto w-full"
         >
-          {/* Greetings - Use h2/span para semântica leve */}
+          
+          {/* CORREÇÃO CLS #2: min-h nos textos */}
+          {/* Isso garante que o espaço esteja reservado antes da fonte carregar */}
+          
+          {/* Greetings */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="mb-6"
+            className="mb-6 min-h-11 flex items-center justify-center" // Adicionado min-h
           >
-            {/* content-visibility: auto ajuda o browser a priorizar o render */}
-            <span className="block text-gray-300 mb-4 text-4xl font-light">{t.greeting}</span>
+            <span className="block text-gray-300 mb-4 text-4xl">{t.greeting}</span>
           </motion.div>
 
-          {/* Name - LCP Element (Prioridade Máxima) */}
+          {/* Name */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2, type: "spring" }}
-            className="mb-4"
+            className="mb-4 min-h-[120px] flex items-center justify-center" // Adicionado min-h
           >
             <div className="inline-block relative">
               <div className="absolute inset-0 bg-linear-to-br from-cyan-400 to-blue-600 blur-3xl opacity-40 animate-pulse" />
               <div className="relative px-10 py-7 pb-8 border border-cyan-400/50 rounded-full bg-black/40 backdrop-blur-sm">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl bg-linear-to-br from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent whitespace-nowrap leading-tight font-bold tracking-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl bg-linear-to-br from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent whitespace-nowrap leading-tight">
                   Victor Leça
                 </h1>
               </div>
@@ -190,11 +187,11 @@ export function Hero() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3, type: "spring" }}
-            className="mb-8"
+            className="mb-8 min-h-[42px] flex items-center justify-center" // Adicionado min-h
           >
             <div className="inline-block relative">
               <div className="relative px-6 py-2 border border-cyan-400/50 rounded-full bg-black/40 backdrop-blur-sm">
-                <p className="text-cyan-400 font-medium">{t.role}</p>
+                <p className="text-cyan-400">{t.role}</p>
               </div>
             </div>
           </motion.div>
@@ -204,10 +201,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-gray-400 text-lg mb-10 max-w-3xl mx-auto leading-relaxed px-4 min-h-[60px]" // min-h evita CLS se a fonte demorar
+            className="text-gray-400 text-lg mb-10 max-w-3xl mx-auto leading-relaxed px-4 min-h-[84px] flex items-center justify-center" // Adicionado min-h
           >
-             {/* Renderização segura do HTML */}
-             <p dangerouslySetInnerHTML={{ __html: t.description }} />
+             {/* Usamos o dangerouslySetInnerHTML como antes, mas dentro de um container com tamanho */}
+             <div dangerouslySetInnerHTML={{ __html: t.description }} />
           </motion.div>
 
           {/* Techs */}
@@ -215,7 +212,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-wrap gap-3 justify-center mb-8 max-w-2xl mx-auto"
+            className="flex flex-wrap gap-3 justify-center mb-8 max-w-2xl mx-auto min-h-8" // Adicionado min-h
           >
             {mainTechs.map((tech, index) => (
               <motion.div
@@ -234,7 +231,7 @@ export function Hero() {
               </motion.div>
             ))}
           </motion.div>
-          
+
           {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -243,20 +240,25 @@ export function Hero() {
             className="flex flex-wrap gap-4 justify-center mb-12 p-8"
           >
             <Button
-              className="bg-linear-to-br from-cyan-400 to-blue-600 hover:from-cyan-500 hover:to-blue-700 text-white border-0 px-8 cursor-pointer"
-              onClick={() => handleScrollTo("#projects")}
+              className="bg-linear-to-br from-cyan-400 to-blue-600 hover:from-cyan-500 hover:to-blue-700 text-white border-0 px-8"
+              onClick={() =>
+                document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               <Rocket className="mr-2" size={18} />
               {t.viewProjects}
             </Button>
             <Button
               variant="outline"
-              className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-cyan-400/50 px-8 cursor-pointer"
-              onClick={() => handleScrollTo("#about")}
+              className="border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-cyan-400/50 px-8"
+              onClick={() =>
+                document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" })
+              }
             >
               {t.aboutMe}
             </Button>
           </motion.div>
+
         </motion.div>
       </LazyMotion>
     </section>
