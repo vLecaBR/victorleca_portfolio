@@ -9,7 +9,6 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-// --- Utility & Components (Seus componentes originais) ---
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -92,9 +91,7 @@ export function Hero() {
     []
   );
 
-  // CORREÇÃO CLS #1: Gerar partículas no useEffect
-  // Isso impede que o servidor gere números aleatórios diferentes do cliente (Hydration Mismatch),
-  // que é a causa nº 1 de Layout Shifts em componentes animados.
+  //geração das particulas
   const [particles, setParticles] = useState<ParticleData[]>([]);
 
   useEffect(() => {
@@ -114,7 +111,6 @@ export function Hero() {
   return (
     <section
       id="home"
-      // Mantive suas classes exatas
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 will-change-transform"
     >
       <div className="absolute inset-0 bg-linear-to-br from-black via-blue-950 to-black">
@@ -151,11 +147,7 @@ export function Hero() {
           style={{ y, opacity }}
           className="relative z-10 text-center px-4 max-w-6xl mx-auto w-full"
         >
-          
-          {/* CORREÇÃO CLS #2: min-h nos textos */}
-          {/* Isso garante que o espaço esteja reservado antes da fonte carregar */}
-          
-          {/* Greetings */}
+          {/* Greeting */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -203,7 +195,6 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-gray-400 text-lg mb-10 max-w-3xl mx-auto leading-relaxed px-4 min-h-[84px] flex items-center justify-center" // Adicionado min-h
           >
-             {/* Usamos o dangerouslySetInnerHTML como antes, mas dentro de um container com tamanho */}
              <div dangerouslySetInnerHTML={{ __html: t.description }} />
           </motion.div>
 

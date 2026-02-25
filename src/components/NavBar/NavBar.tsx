@@ -23,8 +23,6 @@ export function Navbar() {
     ["blur(0px)", "blur(20px)"]
   );
 
-  // OTIMIZAÇÃO 1: useMemo para evitar recriar o array e os ícones a cada render.
-  // Mudança estrutural: Passamos o componente do ícone, não o JSX instanciado.
   const navItems = useMemo(() => [
     { Icon: Home, name: t.home, href: "#home" },
     { Icon: Info, name: t.about, href: "#about" },
@@ -34,7 +32,6 @@ export function Navbar() {
     { Icon: Smartphone, name: t.contact, href: "#contact" },
   ], [t]);
 
-  // OTIMIZAÇÃO 2: useCallback para estabilizar a função de clique.
   // Isso evita que os botões "pisquem" ou recarreguem listeners desnecessariamente.
   const handleScrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -51,7 +48,7 @@ export function Navbar() {
         backdropFilter: backdropBlur as unknown as string,
         WebkitBackdropFilter: backdropBlur as unknown as string,
       }}
-      // OTIMIZAÇÃO 3: 'will-change-transform' ajuda o navegador a preparar a GPU
+      //'will-change-transform' ajuda o navegador a preparar a GPU
       className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 shadow-lg shadow-cyan-500/5 will-change-[background-color,backdrop-filter]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
