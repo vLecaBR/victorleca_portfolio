@@ -240,6 +240,37 @@ projects: {
       },
     },
 
+        {
+      title: "Leca3D - 3D Printing Landing Page",
+      shortDescription:
+        "A high-performance landing page designed for a 3D printing service, focusing on portfolio showcase and lead generation.",
+      fullDescription:
+        "Leca3D is a specialized platform built to bridge the gap between digital modeling and physical production. The site features a modern, industrial aesthetic that mirrors the precision of 3D printing. It leverages Vite for near-instant load times and Tailwind CSS for a fully responsive, utility-first design. The project focuses on high-quality visual rendering of 3D-printed parts, detailed service descriptions (FDM/SLA), and a streamlined flow for potential clients to request quotes and view custom project galleries.",
+      features: [
+        "Optimized portfolio gallery for high-resolution 3D print displays",
+        "Service-specific sections (Prototyping, Action Figures, Industrial Parts)",
+        "Contact & Lead generation system for custom quotes",
+        "Fully responsive layout with mobile-first approach",
+        "Fast-loading architecture using Vite and TypeScript",
+        "Modern UI/UX with dark mode support and industrial aesthetics",
+      ],
+      tags: ["React", "Tailwind CSS", "TypeScript", "Vite", "Frontend"],
+      technologies: {
+        frontend: "React, Tailwind CSS, Lucide React (Icons)",
+        tooling: "Vite, TypeScript",
+        deployment: "Vercel",
+        styling: "PostCSS, Responsive Design",
+      },
+      images: ["../assets/leca3dcapa.png", "../assets/leca3dsegunda.png"],
+      githubUrlFront: null,
+      githubUrlBack: null,
+      liveUrl: "https://www.leca3d.com.br", 
+      hosting: {
+        frontend: "Vercel",
+        backend: null,
+      },
+    },
+
     {
       title: "DJ Franzoni Portfolio",
       shortDescription:
@@ -571,6 +602,37 @@ projects: {
         backend: "Render",
       },
     },
+
+    {
+  title: "Leca3D - Landing Page de Impressão 3D",
+  shortDescription:
+    "Landing page de alta performance desenvolvida para serviços de impressão 3D, focada em conversão e exibição de portfólio.",
+  fullDescription:
+    "A Leca3D é uma plataforma especializada que conecta modelagem digital à produção física. O site apresenta uma estética moderna e industrial que reflete a precisão da impressão 3D. Utiliza Vite para tempos de carregamento instantâneos e Tailwind CSS para um design responsivo e fluido. O projeto é focado na exibição visual de peças impressas, detalhamento de serviços (FDM/SLA) e um fluxo otimizado para captação de leads e orçamentos personalizados.",
+  features: [
+    "Galeria de portfólio otimizada para exibição de peças em alta resolução",
+    "Seções específicas por serviço (Prototipagem, Action Figures, Peças Industriais)",
+    "Sistema de captura de leads para orçamentos personalizados",
+    "Layout totalmente responsivo com abordagem Mobile-First",
+    "Arquitetura de alto desempenho com Vite e TypeScript",
+    "Interface moderna (UI/UX) com foco em usabilidade e conversão",
+  ],
+  tags: ["React", "Tailwind CSS", "TypeScript", "Vite", "Frontend"],
+  technologies: {
+    frontend: "React, Tailwind CSS, Lucide React (Ícones)",
+    tooling: "Vite, TypeScript",
+    deployment: "Vercel",
+    styling: "PostCSS, Design Responsivo",
+  },
+  images: ["../assets/leca3dcapa.png", "../assets/leca3dsegunda.png"],
+  githubUrlFront: null,
+  githubUrlBack: null,
+  liveUrl: "https://www.leca3d.com.br", 
+  hosting: {
+    frontend: "Vercel",
+    backend: null,
+  },
+},
 
     {
       title: "Portfólio DJ Franzoni",
