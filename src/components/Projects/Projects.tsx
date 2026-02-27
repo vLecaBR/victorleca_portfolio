@@ -132,7 +132,7 @@ export const Projects = memo(function Projects() {
             className="text-center mb-16"
           >
             <h2 className="mb-4">
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold tracking-tight">
+              <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold tracking-tight">
                 {projectsT.title}
               </span>
             </h2>
@@ -149,7 +149,7 @@ export const Projects = memo(function Projects() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="relative group"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-linear-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <div className="relative bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-cyan-400/40 transition-all duration-500 shadow-2xl">
                   <div className="grid md:grid-cols-2 gap-8 p-6 md:p-8">
@@ -289,7 +289,7 @@ export const Projects = memo(function Projects() {
                                 </Button>
                               )}
                               {project.liveUrl && (
-                                <Button asChild className="sm:col-span-2 bg-gradient-to-r from-cyan-500 to-blue-600 border-0 text-white shadow-lg shadow-cyan-500/20">
+                                <Button asChild className="sm:col-span-2 bg-linear-to-r from-cyan-500 to-blue-600 border-0 text-white shadow-lg shadow-cyan-500/20">
                                   <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                                     <ExternalLink size={18} /> {projectsT.viewLive}
                                   </a>

@@ -63,9 +63,9 @@ export function Navbar() {
               onClick={(e) => handleScrollToSection(e, "#home")} 
               className="block"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-linear-to-r from-cyan-400/20 to-blue-600/20 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="relative px-3 py-1.5 border border-cyan-400/30 rounded-lg bg-black/20 group-hover:border-cyan-400/60 transition-all duration-300">
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent font-bold tracking-tight">
+                <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent font-bold tracking-tight">
                   {"<VictorLeça />"}
                 </span>
               </div>
@@ -92,7 +92,7 @@ export function Navbar() {
                   <span className="text-xs font-medium uppercase tracking-wider">{name}</span>
                   
                   <motion.span
-                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-blue-600"
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-linear-to-r from-cyan-400 to-blue-600"
                     initial={{ scaleX: 0 }}
                     whileHover={{ scaleX: 1 }}
                     transition={{ duration: 0.3 }}

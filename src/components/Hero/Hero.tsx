@@ -99,7 +99,7 @@ export function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 will-change-transform"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-blue-950/40 to-black -z-10" />
+      <div className="absolute inset-0 bg-linear-to-br from-black via-blue-950/40 to-black -z-10" />
       
       <div className="absolute inset-0 -z-10">
         {particles.map((p) => (
@@ -138,7 +138,7 @@ export function Hero() {
             <div className="inline-block relative">
               <div className="absolute inset-0 bg-cyan-400 blur-[80px] opacity-20 animate-pulse" />
               <div className="relative px-8 py-5 border border-cyan-400/30 rounded-full bg-black/60 backdrop-blur-md">
-                <h1 className="text-4xl md:text-6xl lg:text-7xl bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent font-bold">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl bg-linear-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent font-bold">
                   Victor Leça
                 </h1>
               </div>
@@ -150,7 +150,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-8 min-h-[40px] flex items-center justify-center"
+            className="mb-8 min-h-10 flex items-center justify-center"
           >
             <div className="px-6 py-2 border border-cyan-400/20 rounded-full bg-cyan-400/5">
               <p className="text-cyan-400 font-medium tracking-wide">{heroT.role}</p>
@@ -194,7 +194,7 @@ export function Hero() {
           >
             <Button
               size="lg"
-              className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:scale-105 transition-transform text-white border-0"
+              className="bg-linear-to-r from-cyan-500 to-blue-600 hover:scale-105 transition-transform text-white border-0"
               onClick={() => document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" })}
             >
               <Rocket className="mr-2" size={18} />

@@ -70,8 +70,8 @@ export const Experience = memo(function Experience() {
       <section ref={ref} className="relative py-32 px-4 overflow-hidden w-full h-full">
         
         {/* Background Layers */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-500/10 to-black pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.1)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-b from-black via-purple-500/10 to-black pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.1)_1px,transparent_1px)] bg-size-[80px_80px] pointer-events-none" />
 
         {/* Orbs Decorativos */}
         <m.div
@@ -89,7 +89,7 @@ export const Experience = memo(function Experience() {
             className="text-center mb-16"
           >
             <h2 className="mb-4">
-              <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold">
+              <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold">
                 {experienceT.title}
               </span>
             </h2>
@@ -99,7 +99,7 @@ export const Experience = memo(function Experience() {
           {/* Timeline */}
           <div className="relative">
             {/* Linha Central */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500/50 via-pink-500/50 to-transparent" />
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-purple-500/50 via-pink-500/50 to-transparent" />
 
             <div className="space-y-12">
               {experiences.map((exp, index) => (
@@ -113,7 +113,7 @@ export const Experience = memo(function Experience() {
                   }`}
                 >
                   {/* Dot */}
-                  <div className="absolute left-8 md:left-1/2 top-6 -translate-x-1/2 w-4 h-4 rounded-full bg-gradient-to-br from-purple-500 to-pink-600 shadow-lg shadow-purple-500/50 z-10">
+                  <div className="absolute left-8 md:left-1/2 top-6 -translate-x-1/2 w-4 h-4 rounded-full bg-linear-to-br from-purple-500 to-pink-600 shadow-lg shadow-purple-500/50 z-10">
                     <div className="absolute inset-0 rounded-full bg-purple-500 animate-ping opacity-75" />
                   </div>
 
@@ -193,7 +193,7 @@ export const Experience = memo(function Experience() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-16 text-center"
           >
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-400/30 rounded-full">
+            <div className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-purple-500/10 to-pink-500/10 border border-purple-400/30 rounded-full">
               <Briefcase className="text-purple-400" size={18} />
               <p className="text-gray-300 text-sm font-medium">
                 {language === "en"

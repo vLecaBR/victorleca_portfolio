@@ -102,7 +102,7 @@ export const Skills = memo(function Skills() {
           className="text-center mb-16"
         >
           <h2 className="mb-4">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold tracking-tight">
+            <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold tracking-tight">
               {skillsT.title}
             </span>
           </h2>
@@ -124,7 +124,7 @@ export const Skills = memo(function Skills() {
                 <div className="flex items-center gap-5 mb-8">
                   <motion.div
                     whileHover={{ rotate: 10, scale: 1.1 }}
-                    className={`p-3.5 rounded-xl bg-gradient-to-r ${category.color} shadow-lg shadow-black/20 text-white`}
+                    className={`p-3.5 rounded-xl bg-linear-to-r ${category.color} shadow-lg shadow-black/20 text-white`}
                   >
                     {category.icon}
                   </motion.div>

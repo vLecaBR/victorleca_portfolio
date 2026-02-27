@@ -22,7 +22,7 @@ export const Footer = memo(function Footer() {
     <LazyMotion features={domAnimation}>
       <footer className="relative py-12 px-4 border-t border-white/10 bg-black overflow-hidden">
         {/* Camada de fundo */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black to-blue-950/10 pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-b from-black to-blue-950/10 pointer-events-none" />
         
         <div className="relative max-w-6xl mx-auto z-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
@@ -34,7 +34,7 @@ export const Footer = memo(function Footer() {
               viewport={{ once: true }}
               className="group cursor-default"
             >
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent font-bold text-lg tracking-tighter">
+              <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent font-bold text-lg tracking-tighter">
                 {"<VictorLeça />"}
               </span>
             </m.div>
