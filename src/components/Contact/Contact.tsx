@@ -88,7 +88,7 @@ export const Contact = memo(function Contact() {
       <section ref={ref} className="relative py-32 px-4 overflow-hidden w-full h-full">
         
         {/* Backgrounds */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-blue-950/20 to-black pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-b from-black via-blue-950/20 to-black pointer-events-none" />
         <div
           className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
@@ -103,7 +103,7 @@ export const Contact = memo(function Contact() {
 
         {/* Floating BGs */}
         <m.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl will-change-transform pointer-events-none"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-linear-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl will-change-transform pointer-events-none"
           animate={isInView ? { scale: [1, 1.2, 1], rotate: [0, 180, 360] } : {}}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
@@ -117,7 +117,7 @@ export const Contact = memo(function Contact() {
             className="text-center mb-16"
           >
             <h2 className="mb-4">
-              <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold">
+              <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold">
                 {contactT.title}
               </span>
             </h2>
@@ -146,9 +146,9 @@ export const Contact = memo(function Contact() {
                     whileHover={{ x: 10 }}
                     className="relative group will-change-transform"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                    <div className="absolute inset-0 bg-linear-to-r from-cyan-500/10 to-blue-500/10 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-300" />
                     <div className="relative flex items-start gap-4 p-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl hover:border-cyan-400/50 transition-all duration-500 hover:shadow-lg hover:shadow-cyan-500/5">
-                      <div className="shrink-0 w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center">
+                      <div className="shrink-0 w-12 h-12 bg-linear-to-r from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center">
                         <item.icon size={24} className="text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
@@ -200,9 +200,9 @@ export const Contact = memo(function Contact() {
                     whileHover={{ x: -10, scale: 1.02 }}
                     className="relative group block will-change-transform"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                    <div className="absolute inset-0 bg-linear-to-r from-cyan-500/10 to-blue-500/10 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-300" />
                     <div className="relative flex items-center gap-4 p-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl hover:border-cyan-400/50 transition-all duration-500 hover:shadow-lg hover:shadow-cyan-500/5">
-                      <div className={`shrink-0 w-12 h-12 bg-gradient-to-r ${social.color} rounded-lg flex items-center justify-center`}>
+                      <div className={`shrink-0 w-12 h-12 bg-linear-to-r ${social.color} rounded-lg flex items-center justify-center`}>
                         <social.icon size={24} className="text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
@@ -221,13 +221,13 @@ export const Contact = memo(function Contact() {
                   transition={{ duration: 0.6, delay: 0.6 }}
                   className="relative group"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300" />
-                  <div className="relative p-5 bg-gradient-to-br from-green-950/40 to-emerald-950/40 backdrop-blur-sm border border-green-400/30 rounded-xl hover:border-green-400/60 transition-all duration-500 hover:shadow-xl hover:shadow-green-500/20">
+                  <div className="absolute inset-0 bg-linear-to-r from-green-500/20 to-emerald-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-300" />
+                  <div className="relative p-5 bg-linear-to-br from-green-950/40 to-emerald-950/40 backdrop-blur-sm border border-green-400/30 rounded-xl hover:border-green-400/60 transition-all duration-500 hover:shadow-xl hover:shadow-green-500/20">
                     <div className="flex items-start gap-4 mb-4">
                       <m.div
                         animate={isInView ? { scale: [1, 1.1, 1] } : {}}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        className="shrink-0 w-12 h-12 bg-gradient-to-r from-green-400 to-emerald-600 rounded-lg flex items-center justify-center shadow-lg shadow-green-500/30"
+                        className="shrink-0 w-12 h-12 bg-linear-to-r from-green-400 to-emerald-600 rounded-lg flex items-center justify-center shadow-lg shadow-green-500/30"
                       >
                         <MessageCircle size={24} className="text-white" />
                       </m.div>
@@ -239,7 +239,7 @@ export const Contact = memo(function Contact() {
                     <p className="text-gray-300 text-sm mb-4">{contactT.whatsappMessage}</p>
                     <Button
                       asChild
-                      className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white border-0 shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-all duration-300"
+                      className="w-full bg-linear-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white border-0 shadow-lg shadow-green-500/25 hover:shadow-green-500/40 transition-all duration-300"
                     >
                       <a href="https://wa.me/5516988647864" target="_blank" rel="noopener noreferrer">
                         <MessageCircle className="mr-2" size={18} />
@@ -257,7 +257,7 @@ export const Contact = memo(function Contact() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="text-center p-6 md:p-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl border border-white/10 backdrop-blur-sm"
+            className="text-center p-6 md:p-8 bg-linear-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl border border-white/10 backdrop-blur-sm"
           >
             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
               📍 <span dangerouslySetInnerHTML={{ __html: contactT.footer }} />

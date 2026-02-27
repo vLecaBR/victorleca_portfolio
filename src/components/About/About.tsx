@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "motion/react";
 import { useLanguage } from "../../context/LanguageContext";
 import { 
@@ -49,7 +48,7 @@ export function About() {
             <User size={16} />
             <span>{aboutT.title}</span>
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-linear-to-r from-white to-gray-500 bg-clip-text text-transparent">
             {aboutT.title}
           </h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
