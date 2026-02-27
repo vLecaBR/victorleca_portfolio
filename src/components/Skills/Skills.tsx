@@ -1,9 +1,10 @@
+"use client";
+
 import { motion, useInView } from "motion/react";
 import { useRef, useMemo, memo } from "react";
 import { useLanguage } from "../../context/LanguageContext";
-import { translations } from "../../locales/translations";
 
-// Componentes de ícones memoizados (mantém performance sem afetar visual)
+// Componentes de ícones memoizados
 const FrontendIcon = memo(() => (
   <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
     <path d="M14.25 9.75L16.5 12L14.25 14.25" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -39,8 +40,10 @@ const DesignIcon = memo(() => (
 export const Skills = memo(function Skills() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { language } = useLanguage();
-  const t = translations[language].skills;
+  
+  // Pegamos 't' (tradução filtrada) direto do contexto
+  const { t } = useLanguage();
+  const skillsT = t.skills;
 
   const skillCategories = useMemo(() => [
     {
@@ -49,7 +52,7 @@ export const Skills = memo(function Skills() {
       color: "from-purple-400 to-pink-600",
       bgColor: "bg-purple-500/10",
       borderColor: "border-purple-400/30",
-      skills: ["ReactJS", "React Native", "TypeScript", "NextJS", "VueJS", "Tailwind CSS", "HTML/CSS", "JavaScript"],
+      skills: skillsT.hardSkills.frontend,
     },
     {
       name: "Backend & Database",
@@ -57,7 +60,7 @@ export const Skills = memo(function Skills() {
       color: "from-blue-400 to-cyan-600",
       bgColor: "bg-blue-500/10",
       borderColor: "border-blue-400/30",
-      skills: ["NodeJS", "Java", "REST APIs", "Database Design", "PostgreSQL", "MongoDB", "Express"],
+      skills: skillsT.hardSkills.backend.concat(skillsT.hardSkills.databases),
     },
     {
       name: "Power Platform & Automation",
@@ -65,100 +68,80 @@ export const Skills = memo(function Skills() {
       color: "from-yellow-400 to-orange-600",
       bgColor: "bg-yellow-500/10",
       borderColor: "border-yellow-400/30",
-      skills: ["Power Apps", "Power Automate", "SharePoint", "Process Automation", "Digital Transformation", "Microsoft Graph API"],
+      skills: skillsT.hardSkills.other,
     },
     {
-      name: "Design & Tools",
+      name: "Soft Skills & Tools",
       icon: <DesignIcon />,
       color: "from-green-400 to-emerald-600",
       bgColor: "bg-green-500/10",
       borderColor: "border-green-400/30",
-      skills: ["Figma", "UX Design", "Vite", "Sass", "Styled Components", "Git", "Agile/Scrum"],
+      skills: skillsT.softSkills,
     },
-  ], []);
+  ], [skillsT]);
 
   return (
-    // Removido id="skills" (está no App.tsx). Classes mantidas idênticas ao original.
     <section className="relative py-32 px-4 overflow-hidden">
-      
-      <div className="absolute inset-0 bg-linear-to-b from-black via-indigo-600/35 to-black" />
+      {/* Background simplificado para performance */}
+      <div className="absolute inset-0 bg-linear-to-b from-black via-indigo-950/20 to-black" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(129,140,248,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(129,140,248,0.05)_1px,transparent_1px)] bg-size-[30px_30px] opacity-20" />
 
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(129,140,248,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(129,140,248,0.15)_1px,transparent_1px)] bg-size-[30px_30px]" />
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(168,85,247,0.1) 35px, rgba(168,85,247,0.1) 36px)',
-        }}
-      />
-
+      {/* Orbs Decorativos */}
       <motion.div
-        className="absolute bottom-20 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
-        animate={isInView ? { scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] } : {}}
+        className="absolute bottom-20 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none"
+        animate={isInView ? { scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] } : {}}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute top-40 right-20 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl"
-        animate={isInView ? { scale: [1.2, 1, 1.2], opacity: [0.3, 0.2, 0.3] } : {}}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-purple-600/5 rounded-full blur-3xl"
-        animate={isInView ? { scale: [1, 1.1, 1], opacity: [0.3, 0.5, 0.3] } : {}}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="relative max-w-6xl mx-auto" ref={ref}>
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <h2 className="mb-4">
-            <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold">
-              {t.title}
+            <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold tracking-tight">
+              {skillsT.title}
             </span>
           </h2>
-          <p className="text-gray-400 max-w-3xl mx-auto">{t.subtitle}</p>
+          <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">{skillsT.subtitle}</p>
         </motion.div>
 
         {/* Grid de Cards */}
-        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {skillCategories.map((category, i) => (
             <motion.div
               key={category.name}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="relative group"
             >
-              <div className={`absolute inset-0 ${category.bgColor} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 opacity-70`} />
-              <div className={`relative p-6 md:p-7 bg-black/40 backdrop-blur-sm border ${category.borderColor} rounded-2xl hover:border-opacity-80 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/10`}>
-                <div className="flex items-center gap-4 mb-6">
+              <div className={`absolute inset-0 ${category.bgColor} rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
+              <div className={`relative p-8 bg-black/40 backdrop-blur-md border ${category.borderColor} rounded-2xl hover:border-white/20 transition-all duration-500`}>
+                <div className="flex items-center gap-5 mb-8">
                   <motion.div
-                    whileHover={{ rotate: 360, scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                    // REVERTIDO: Mantive bg-linear-gradient-to-r conforme seu código original
-                    className={`p-3 rounded-xl bg-linear-gradient-to-r ${category.color} shadow-lg`}
+                    whileHover={{ rotate: 10, scale: 1.1 }}
+                    className={`p-3.5 rounded-xl bg-linear-to-r ${category.color} shadow-lg shadow-black/20 text-white`}
                   >
-                    <div className="text-white">{category.icon}</div>
+                    {category.icon}
                   </motion.div>
-                  <h3 className="text-white">{category.name}</h3>
+                  <h3 className="text-xl font-bold text-white">{category.name}</h3>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2.5">
                   {category.skills.map((skill, j) => (
                     <motion.div
                       key={skill}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ duration: 0.3, delay: i * 0.15 + j * 0.05 }}
-                      whileHover={{ scale: 1.05, y: -2 }}
-                      // REVERTIDO: Mantive bg-linear-gradient-to-r para garantir o estilo outline/transparente
-                      className={`px-4 py-2.5 rounded-full bg-linear-gradient-to-r ${category.color} bg-opacity-10 border ${category.borderColor} backdrop-blur-sm cursor-default transition-all duration-300 hover:shadow-lg`}
+                      initial={{ opacity: 0 }}
+                      animate={isInView ? { opacity: 1 } : {}}
+                      transition={{ duration: 0.3, delay: i * 0.1 + j * 0.05 }}
+                      whileHover={{ y: -2 }}
+                      className={`px-4 py-2 rounded-full border ${category.borderColor} bg-white/5 backdrop-blur-sm text-gray-300 text-sm hover:text-white hover:bg-white/10 transition-all`}
                     >
-                      <span className="text-white text-sm">{skill}</span>
+                      {skill}
                     </motion.div>
                   ))}
                 </div>
@@ -169,12 +152,12 @@ export const Skills = memo(function Skills() {
 
         {/* Footer */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-8 md:mt-12 text-center"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-16 text-center"
         >
-          <p className="text-gray-400 text-sm md:text-base">{t.footer}</p>
+          <p className="text-gray-500 text-sm md:text-base italic">{skillsT.footer}</p>
         </motion.div>
       </div>
     </section>

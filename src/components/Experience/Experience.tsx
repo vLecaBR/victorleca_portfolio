@@ -1,11 +1,9 @@
 "use client";
 
-// MUDANÇA 1: Usando a versão otimizada 'm' e LazyMotion
 import { m, useInView, LazyMotion, domAnimation } from "motion/react";
 import { useRef, useMemo, memo } from "react";
 import { Briefcase, MapPin, Calendar, Award } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
-import { translations } from "../../locales/translations";
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
@@ -59,44 +57,29 @@ const IconAward = memo(() => <Award size={16} className="text-purple-400" />);
 export const Experience = memo(function Experience() {
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const { language } = useLanguage();
+  
+  // Pegamos o 't' do contexto (idioma já resolvido)
+  const { language, t } = useLanguage();
+  const experienceT = t.experience;
 
-  const t = translations[language].experience;
-
-  // useMemo pra travar o array traduzido
-  const experiences = useMemo(() => t.list, [t.list]);
+  // useMemo para travar o array traduzido e evitar re-renderizações caras
+  const experiences = useMemo(() => experienceT.list, [experienceT.list]);
 
   return (
-    // MUDANÇA 2: LazyMotion envolvendo o componente
     <LazyMotion features={domAnimation}>
-      {/* MUDANÇA 3: id="experience" removido (já está no App.tsx) */}
       <section ref={ref} className="relative py-32 px-4 overflow-hidden w-full h-full">
         
-        {/* Background Layers com pointer-events-none para não bloquear scroll/clique */}
-        <div className="absolute inset-0 bg-linear-to-b from-black via-purple-500/35 to-black pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.15)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.15)_1px,transparent_1px)] bg-size-[80px_80px] pointer-events-none" />
+        {/* Background Layers */}
+        <div className="absolute inset-0 bg-linear-to-b from-black via-purple-500/10 to-black pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(168,85,247,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(168,85,247,0.1)_1px,transparent_1px)] bg-size-[80px_80px] pointer-events-none" />
 
-        {/* Floating gradient orbs (m.div) */}
+        {/* Orbs Decorativos */}
         <m.div
           className="absolute top-1/4 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none will-change-transform"
-          animate={
-            isInView
-              ? { x: [0, -50, 0], y: [0, 30, 0], scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }
-              : {}
-          }
+          animate={isInView ? { x: [0, -50, 0], y: [0, 30, 0], scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] } : {}}
           transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
         />
-        <m.div
-          className="absolute bottom-1/4 left-10 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl pointer-events-none will-change-transform"
-          animate={
-            isInView
-              ? { x: [0, 40, 0], y: [0, -20, 0], scale: [1.1, 1, 1.1], opacity: [0.2, 0.4, 0.2] }
-              : {}
-          }
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        />
 
-        {/* Content */}
         <div className="relative max-w-6xl mx-auto">
           {/* Header */}
           <m.div
@@ -107,14 +90,15 @@ export const Experience = memo(function Experience() {
           >
             <h2 className="mb-4">
               <span className="bg-linear-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold">
-                {t.title}
+                {experienceT.title}
               </span>
             </h2>
-            <p className="text-gray-400 max-w-3xl mx-auto">{t.subtitle}</p>
+            <p className="text-gray-400 max-w-3xl mx-auto">{experienceT.subtitle}</p>
           </m.div>
 
           {/* Timeline */}
           <div className="relative">
+            {/* Linha Central */}
             <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-purple-500/50 via-pink-500/50 to-transparent" />
 
             <div className="space-y-12">
@@ -134,24 +118,21 @@ export const Experience = memo(function Experience() {
                   </div>
 
                   {/* Content Card */}
-                  <div
-                    className={`${index % 2 === 0 ? "md:text-right" : "md:col-start-2"} ml-16 md:ml-0`}
-                  >
+                  <div className={`${index % 2 === 0 ? "md:text-right" : "md:col-start-2"} ml-16 md:ml-0`}>
                     <m.div
                       whileHover={{ scale: 1.02 }}
                       className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-8 hover:border-purple-400/50 transition-all duration-500 hover:shadow-xl hover:shadow-purple-500/10"
                     >
-                      {/* Header */}
                       <div className="mb-4">
-                        <div className="flex items-start gap-3 mb-2">
+                        <div className={`flex items-start gap-3 mb-2 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
                           <IconBriefcase />
                           <div>
-                            <h3 className="text-white mb-1">{exp.position}</h3>
+                            <h3 className="text-white mb-1 font-bold">{exp.position}</h3>
                             <p className="text-purple-400">{exp.company}</p>
                           </div>
                         </div>
 
-                        <div className="flex flex-wrap gap-3 mt-3 text-sm text-gray-400">
+                        <div className={`flex flex-wrap gap-3 mt-3 text-sm text-gray-400 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
                           <div className="flex items-center gap-2">
                             <IconCalendar />
                             <span>{exp.period}</span>
@@ -163,23 +144,22 @@ export const Experience = memo(function Experience() {
                         </div>
                       </div>
 
-                      {/* Description */}
-                      <p className="text-gray-300 mb-4 leading-relaxed">
+                      <p className="text-gray-300 mb-4 leading-relaxed text-sm md:text-base">
                         {exp.description}
                       </p>
 
-                      {/* Tech */}
+                      {/* Techs */}
                       <div className="mb-4">
-                        <h4 className="text-white mb-3 text-sm flex items-center gap-2">
+                        <h4 className={`text-white mb-3 text-sm flex items-center gap-2 ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}>
                           <IconAward />
-                          {t.technologies}
+                          {experienceT.technologies}
                         </h4>
-                        <div className="flex flex-wrap gap-2">
+                        <div className={`flex flex-wrap gap-2 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
                           {exp.technologies.map((tech: string, i: number) => (
                             <Badge
                               key={`${tech}-${i}`}
                               variant="outline"
-                              className="border-purple-400/30 text-purple-400 hover:bg-purple-400/10"
+                              className="border-purple-400/30 text-purple-300 hover:bg-purple-400/10"
                             >
                               {tech}
                             </Badge>
@@ -188,11 +168,11 @@ export const Experience = memo(function Experience() {
                       </div>
 
                       {/* Achievements */}
-                      <ul className="space-y-2">
+                      <ul className={`space-y-2 ${index % 2 === 0 ? "md:text-right" : ""}`}>
                         {exp.achievements.map((achievement: string, i: number) => (
                           <li
                             key={`${achievement}-${i}`}
-                            className="flex items-start gap-2 text-gray-400 text-sm"
+                            className={`flex items-start gap-2 text-gray-400 text-sm ${index % 2 === 0 ? "md:flex-row-reverse" : ""}`}
                           >
                             <span className="text-purple-400 mt-1">•</span>
                             <span>{achievement}</span>
@@ -206,7 +186,7 @@ export const Experience = memo(function Experience() {
             </div>
           </div>
 
-          {/* Footer */}
+          {/* Footer Status */}
           <m.div
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -215,12 +195,10 @@ export const Experience = memo(function Experience() {
           >
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-purple-500/10 to-pink-500/10 border border-purple-400/30 rounded-full">
               <Briefcase className="text-purple-400" size={18} />
-              <p className="text-gray-300 text-sm">
-                <span className="text-purple-400">
-                  {language === "en"
-                    ? "Currently working on exciting projects"
-                    : "Atualmente trabalhando em projetos empolgantes"}
-                </span>
+              <p className="text-gray-300 text-sm font-medium">
+                {language === "en"
+                  ? "Open to new challenges and strategic collaborations"
+                  : "Aberto a novos desafios e colaborações estratégicas"}
               </p>
             </div>
           </m.div>
