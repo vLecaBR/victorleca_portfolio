@@ -154,11 +154,14 @@ export const Projects = memo(function Projects() {
                 <div className="relative bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-cyan-400/40 transition-all duration-500 shadow-2xl">
                   <div className="grid md:grid-cols-2 gap-8 p-6 md:p-8">
                     {/* Imagem Principal */}
-                    <div className="relative h-64 md:h-80 overflow-hidden rounded-xl border border-white/5">
+                    <div className="relative aspect-video md:h-80 overflow-hidden rounded-xl border border-white/5 bg-white/5">
                       <m.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.4 }} className="h-full w-full">
                         <ImageWithFallback
                           src={project.images?.[0]}
                           alt={project.title}
+                          // MUDANÇA: Tamanhos explícitos ajudam o motor do Chrome a calcular o layout instantaneamente
+                          width={800} 
+                          height={450}
                           className="w-full h-full object-cover"
                           loading="lazy"
                         />
@@ -234,10 +237,12 @@ export const Projects = memo(function Projects() {
                         <div className="space-y-6">
                           {/* Segunda Imagem Otimizada */}
                           {project.images?.[1] && (
-                            <div className="relative h-48 w-full overflow-hidden rounded-xl border border-white/5 shadow-inner bg-black/20 flex items-center justify-center">
+                            <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-white/5 shadow-inner bg-black/20 flex items-center justify-center">
                               <ImageWithFallback
                                 src={project.images[1]}
                                 alt={`${project.title} Interface`}
+                                width={600}
+                                height={338}
                                 className="h-full w-auto object-contain opacity-80"
                                 loading="lazy"
                               />
