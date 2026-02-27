@@ -5,7 +5,7 @@ import { m, useInView, LazyMotion, domAnimation } from "motion/react";
 import { useRef, useMemo, memo } from "react";
 import { Briefcase, MapPin, Calendar, Award } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
-import { translations } from "../../locales/translations";
+import { translations } from "../../locales/en";
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";

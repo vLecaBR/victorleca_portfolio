@@ -1,7 +1,7 @@
 import { motion, useInView } from "motion/react";
 import { useRef, useMemo, memo } from "react";
 import { useLanguage } from "../../context/LanguageContext";
-import { translations } from "../../locales/translations";
+import { translations } from "../../locales/en";
 
 // Componentes de ícones memoizados (mantém performance sem afetar visual)
 const FrontendIcon = memo(() => (

@@ -3,7 +3,7 @@ import { useRef, useState, useMemo, memo } from "react";
 import { ExternalLink, Github, ChevronDown, ChevronUp, Server } from "lucide-react";
 import { ImageWithFallback } from "../../figma/ImageWithFallback";
 import { useLanguage } from "../../context/LanguageContext";
-import { translations } from "../../locales/translations";
+import { translations } from "../../locales/en";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { clsx, type ClassValue } from "clsx";

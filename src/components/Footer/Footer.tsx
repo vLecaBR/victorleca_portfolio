@@ -1,7 +1,7 @@
 import { m, LazyMotion, domAnimation } from "motion/react";
 import { Github, Linkedin } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
-import { translations } from "../../locales/translations";
+import { translations } from "../../locales/en";
 import { memo, useMemo } from "react";
 
 export const Footer = memo(function Footer() {
