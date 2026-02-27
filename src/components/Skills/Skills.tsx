@@ -83,8 +83,8 @@ export const Skills = memo(function Skills() {
   return (
     <section className="relative py-32 px-4 overflow-hidden">
       {/* Background simplificado para performance */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-indigo-950/20 to-black" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(129,140,248,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(129,140,248,0.05)_1px,transparent_1px)] bg-[size:30px_30px] opacity-20" />
+      <div className="absolute inset-0 bg-linear-to-b from-black via-indigo-950/20 to-black" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(129,140,248,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(129,140,248,0.05)_1px,transparent_1px)] bg-size-[30px_30px] opacity-20" />
 
       {/* Orbs Decorativos */}
       <motion.div

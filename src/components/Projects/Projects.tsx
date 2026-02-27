@@ -120,8 +120,8 @@ export const Projects = memo(function Projects() {
       <section className="relative py-32 px-4 overflow-hidden w-full h-full" ref={ref}>
         
         {/* Backgrounds */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-cyan-500/10 to-black pointer-events-none" />
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:80px_80px] pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-b from-black via-cyan-500/10 to-black pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-size-[80px_80px] pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto">
           {/* Header */}
@@ -213,7 +213,7 @@ export const Projects = memo(function Projects() {
                     transition={{ duration: 0.4, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="p-6 md:p-8 pt-6 border-t border-white/10 bg-white/[0.02]">
+                    <div className="p-6 md:p-8 pt-6 border-t border-white/10 bg-white/2">
                       <div className="grid md:grid-cols-2 gap-10">
                         <div className="space-y-6">
                           <div>
