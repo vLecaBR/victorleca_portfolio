@@ -91,7 +91,7 @@ export const Skills = memo(function Skills() {
 
   return (
     <section className="relative py-32 px-4 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-indigo-950/20 to-black" />
+      <div className="absolute inset-0 bg-linear-to-b from-black via-indigo-950/20 to-black" />
       
       {/* OTIMIZAÇÃO: Background animado via GPU (translateZ) */}
       <motion.div
@@ -110,7 +110,7 @@ export const Skills = memo(function Skills() {
           className="text-center mb-16"
         >
           <h2 className="mb-4">
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold tracking-tight">
+            <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold tracking-tight">
               {skillsT.title}
             </span>
           </h2>
@@ -130,7 +130,7 @@ export const Skills = memo(function Skills() {
               <div className={`absolute inset-0 ${category.bgColor} rounded-2xl blur-xl opacity-40`} />
               <div className={`relative p-8 bg-black/40 backdrop-blur-md border ${category.borderColor} rounded-2xl`}>
                 <div className="flex items-center gap-5 mb-8">
-                  <div className={`p-3.5 rounded-xl bg-gradient-to-r ${category.color} text-white shadow-lg`}>
+                  <div className={`p-3.5 rounded-xl bg-linear-to-r ${category.color} text-white shadow-lg`}>
                     {category.icon}
                   </div>
                   <h3 className="text-xl font-bold text-white">{category.name}</h3>
