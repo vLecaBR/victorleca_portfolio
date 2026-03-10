@@ -37,11 +37,20 @@ const DesignIcon = memo(() => (
   </svg>
 ));
 
+// OTIMIZAÇÃO: Skill Item separado e memoizado para evitar re-calculo em grupo
+const SkillBadge = memo(({ skill }: { skill: string }) => (
+  <div
+    className="px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-gray-300 text-sm hover:text-white hover:bg-white/10 transition-all duration-200 cursor-default"
+    style={{ willChange: "transform" }}
+  >
+    {skill}
+  </div>
+));
+
 export const Skills = memo(function Skills() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   
-  // Pegamos 't' (tradução filtrada) direto do contexto
   const { t } = useLanguage();
   const skillsT = t.skills;
 
@@ -82,27 +91,26 @@ export const Skills = memo(function Skills() {
 
   return (
     <section className="relative py-32 px-4 overflow-hidden">
-      {/* Background simplificado para performance */}
-      <div className="absolute inset-0 bg-linear-to-b from-black via-indigo-950/20 to-black" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(129,140,248,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(129,140,248,0.05)_1px,transparent_1px)] bg-size-[30px_30px] opacity-20" />
-
-      {/* Orbs Decorativos */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-indigo-950/20 to-black" />
+      
+      {/* OTIMIZAÇÃO: Background animado via GPU (translateZ) */}
       <motion.div
         className="absolute bottom-20 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none"
-        animate={isInView ? { scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] } : {}}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        animate={isInView ? { scale: [1, 1.1, 1], opacity: [0.1, 0.15, 0.1] } : {}}
+        style={{ transform: "translateZ(0)", willChange: "transform, opacity" }}
+        transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
       />
 
       <div className="relative max-w-6xl mx-auto" ref={ref}>
-        {/* Header */}
+        {/* Header simplificado */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
           <h2 className="mb-4">
-            <span className="bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold tracking-tight">
+            <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent text-4xl md:text-5xl font-extrabold tracking-tight">
               {skillsT.title}
             </span>
           </h2>
@@ -116,33 +124,22 @@ export const Skills = memo(function Skills() {
               key={category.name}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
               className="relative group"
             >
-              <div className={`absolute inset-0 ${category.bgColor} rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition-opacity`} />
-              <div className={`relative p-8 bg-black/40 backdrop-blur-md border ${category.borderColor} rounded-2xl hover:border-white/20 transition-all duration-500`}>
+              <div className={`absolute inset-0 ${category.bgColor} rounded-2xl blur-xl opacity-40`} />
+              <div className={`relative p-8 bg-black/40 backdrop-blur-md border ${category.borderColor} rounded-2xl`}>
                 <div className="flex items-center gap-5 mb-8">
-                  <motion.div
-                    whileHover={{ rotate: 10, scale: 1.1 }}
-                    className={`p-3.5 rounded-xl bg-linear-to-r ${category.color} shadow-lg shadow-black/20 text-white`}
-                  >
+                  <div className={`p-3.5 rounded-xl bg-gradient-to-r ${category.color} text-white shadow-lg`}>
                     {category.icon}
-                  </motion.div>
+                  </div>
                   <h3 className="text-xl font-bold text-white">{category.name}</h3>
                 </div>
 
+                {/* OTIMIZAÇÃO: Renderização direta sem animação individual pesada (Melhora TBT/INP) */}
                 <div className="flex flex-wrap gap-2.5">
-                  {category.skills.map((skill, j) => (
-                    <motion.div
-                      key={skill}
-                      initial={{ opacity: 0 }}
-                      animate={isInView ? { opacity: 1 } : {}}
-                      transition={{ duration: 0.3, delay: i * 0.1 + j * 0.05 }}
-                      whileHover={{ y: -2 }}
-                      className={`px-4 py-2 rounded-full border ${category.borderColor} bg-white/5 backdrop-blur-sm text-gray-300 text-sm hover:text-white hover:bg-white/10 transition-all`}
-                    >
-                      {skill}
-                    </motion.div>
+                  {category.skills.map((skill) => (
+                    <SkillBadge key={skill} skill={skill} />
                   ))}
                 </div>
               </div>
@@ -154,7 +151,6 @@ export const Skills = memo(function Skills() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
           className="mt-16 text-center"
         >
           <p className="text-gray-500 text-sm md:text-base italic">{skillsT.footer}</p>
