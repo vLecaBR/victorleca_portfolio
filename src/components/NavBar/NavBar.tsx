@@ -3,8 +3,17 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { BriefcaseBusiness, Code, Home, Info, Languages, MonitorSmartphone, Smartphone } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 
-// OTIMIZAÇÃO: NavItem memoizado para evitar re-render durante o scroll da página
-const NavItem = memo(({ name, href, Icon, index, onClick }: any) => (
+// CORREÇÃO: Interface para as propriedades do NavItem
+interface NavItemProps {
+  name: string;
+  href: string;
+  Icon: React.ElementType;
+  index: number;
+  onClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
+}
+
+// OTIMIZAÇÃO: NavItem memoizado com tipagem correta
+const NavItem = memo(({ name, href, Icon, index, onClick }: NavItemProps) => (
   <motion.a
     href={href}
     onClick={(e) => onClick(e, href)}
@@ -26,7 +35,6 @@ export function Navbar() {
   const { scrollY } = useScroll();
   const { language, toggleLanguage, t } = useLanguage();
   
-  // OTIMIZAÇÃO: Usar transformações simples para manter a Main Thread livre
   const backgroundColor = useTransform(
     scrollY,
     [0, 80],
@@ -60,7 +68,6 @@ export function Navbar() {
     <motion.nav
       style={{ 
         backgroundColor,
-        // OTIMIZAÇÃO: translateZ(0) força o navegador a usar a GPU para renderizar a barra
         backdropFilter: backdropBlur as unknown as string,
         WebkitBackdropFilter: backdropBlur as unknown as string,
         transform: "translateZ(0)",
