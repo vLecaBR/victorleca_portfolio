@@ -11,7 +11,19 @@ function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// --- UI Components (Mantidos) ---
+// --- Tipagem para as Partículas ---
+interface Particle {
+  id: number;
+  size: number;
+  left: string;
+  top: string;
+  delay: string;
+  duration: string;
+  moveX: string;
+  moveY: string;
+}
+
+// --- UI Components ---
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-cyan-400",
   {
@@ -40,7 +52,6 @@ const Badge = memo(({ children, className }: { children: React.ReactNode, classN
   </span>
 ));
 
-// --- OTIMIZAÇÃO: Componente de Nome Estático para evitar re-calculo de filtro ---
 const StaticName = memo(() => (
   <div className="inline-block relative">
     <div className="absolute inset-0 bg-cyan-400 blur-[80px] opacity-20 pointer-events-none" />
@@ -54,7 +65,6 @@ const StaticName = memo(() => (
 
 export function Hero() {
   const { scrollY } = useScroll();
-  // Otimização: useTransform fora do render loop principal se possível
   const y = useTransform(scrollY, [0, 500], [0, 100]);
   const opacityTransform = useTransform(scrollY, [0, 500], [1, 0]);
   
@@ -66,11 +76,11 @@ export function Hero() {
     []
   );
 
-  // REDUÇÃO AGRESSIVA: Apenas 12 partículas para liberar a Main Thread
-  const [particles, setParticles] = useState<any[]>([]);
+  // CORREÇÃO: Tipagem definida para evitar erro de 'any'
+  const [particles, setParticles] = useState<Particle[]>([]);
 
   useEffect(() => {
-    const generated = [...Array(12)].map((_, i) => ({
+    const generated: Particle[] = [...Array(12)].map((_, i) => ({
       id: i,
       size: Math.random() * 150 + 50,
       left: `${Math.random() * 100}%`,
@@ -88,10 +98,8 @@ export function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
     >
-      {/* Background fixo - Não animado via JS */}
       <div className="absolute inset-0 bg-linear-to-br from-black via-blue-950/40 to-black -z-10" />
       
-      {/* OTIMIZAÇÃO: Partículas via CSS puro para liberar o JS (Melhora INP) */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         {particles.map((p) => (
           <div
@@ -103,7 +111,7 @@ export function Hero() {
               left: p.left, 
               top: p.top,
               willChange: "transform, opacity",
-              transform: "translateZ(0)", // Force GPU
+              transform: "translateZ(0)",
               animation: `float-particle ${p.duration} infinite ease-in-out ${p.delay}`
             }}
           />
