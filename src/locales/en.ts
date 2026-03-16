@@ -27,7 +27,7 @@ export const translations = {
         "Full Stack Developer with 5 years of experience in multinational companies, building web and automation solutions that optimize processes and increase productivity.",
       journeyTitle: "My Journey",
       journeyParagraph1:
-        "With 5 years of experience in the tech industry, I am a Full Stack Developer focused on building modern web applications and automating complex corporate processes. I started my career in 2021, and today I am part of the Digitalization & AI team, developing digital ecosystems that connect global teams—including direct technical collaboration with our team in China.",
+        "With 5 years of experience in the tech industry, I am a Full Stack Developer focused on building modern web applications and automating complex corporate processes. I started my career in 2021, and today I am part of the Digitalization & AI team, developing digital ecosystems that connect global teams, including direct technical collaboration with our team in China.",
       journeyParagraph2:
         "My core technical strength lies in the JavaScript/TypeScript ecosystem. On the front-end, I build dynamic, responsive, and user-centric interfaces using ReactJS, Next.js, and Tailwind CSS. On the back-end, my specialty is agile development using Node.js, alongside strong experience in consuming, orchestrating, and integrating RESTful APIs to ensure seamless communication across different services.",
       journeyParagraph3:

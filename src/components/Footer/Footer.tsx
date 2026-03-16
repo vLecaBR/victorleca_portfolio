@@ -1,7 +1,7 @@
 "use client";
 
 import { m, LazyMotion, domAnimation } from "motion/react";
-import { Github, Linkedin, Heart } from "lucide-react";
+import { Github, Linkedin} from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import { memo, useMemo } from "react";
 
@@ -82,7 +82,6 @@ export const Footer = memo(function Footer() {
                   ease: "easeInOut",
                 }}
               >
-                <Heart size={14} className="text-cyan-500 fill-cyan-500/20" />
               </m.div>
             </m.div>
           </div>
