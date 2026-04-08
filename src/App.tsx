@@ -1,13 +1,15 @@
 import { Suspense, lazy, useState, useEffect, useRef } from "react";
 import type { ReactNode } from "react";
-import { Navbar } from "./components/NavBar/NavBar";
 import { Hero } from "./components/Hero/Hero";
-import { ScrollProgress } from "./components/ScrollProgress/ScrollProgress";
 import { LanguageProvider } from "./context/LanguageContext";
 
 // Lazy Imports for Analytics and SpeedInsights
 const Analytics = lazy(() => import("@vercel/analytics/react").then(m => ({ default: m.Analytics })));
 const SpeedInsights = lazy(() => import("@vercel/speed-insights/react").then(m => ({ default: m.SpeedInsights })));
+
+// Lazy Imports for NavBar and ScrollProgress
+const Navbar = lazy(() => import("./components/NavBar/NavBar").then(m => ({ default: m.Navbar })));
+const ScrollProgress = lazy(() => import("./components/ScrollProgress/ScrollProgress").then(m => ({ default: m.ScrollProgress })));
 
 // Imports Lazy
 const About = lazy(() => import("./components/About/About").then(module => ({ default: module.About })));
@@ -80,9 +82,9 @@ export default function App() {
         <Suspense fallback={null}>
           <Analytics />
           <SpeedInsights />
+          <ScrollProgress />
+          <Navbar />
         </Suspense>
-        <ScrollProgress />
-        <Navbar />
         
         {/* O Hero carrega imediatamente (LCP priorizado) */}
         <section id="home">
