@@ -1,4 +1,4 @@
-import { motion, useScroll, useSpring } from "motion/react";
+import { m, useScroll, useSpring, LazyMotion, domAnimation } from "motion/react";
 
 export function ScrollProgress() {
   const { scrollYProgress } = useScroll();
@@ -9,9 +9,11 @@ export function ScrollProgress() {
   });
 
   return (
-    <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-linear-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 origin-left z-[60px]"
-      style={{ scaleX }}
-    />
+    <LazyMotion features={domAnimation}>
+      <m.div
+        className="fixed top-0 left-0 right-0 h-1 bg-linear-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 origin-left z-[60px]"
+        style={{ scaleX }}
+      />
+    </LazyMotion>
   );
 }

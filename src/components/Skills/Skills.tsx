@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "motion/react";
+import { m, useInView, LazyMotion, domAnimation } from "motion/react";
 import { useRef, useMemo, memo } from "react";
 import { useLanguage } from "../../context/LanguageContext";
 
@@ -95,11 +95,12 @@ const skillCategories = useMemo(() => [
   ], [skillsT]);
 
   return (
-    <section className="relative py-32 px-4 overflow-hidden">
+    <LazyMotion features={domAnimation}>
+      <section className="relative py-32 px-4 overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-b from-black via-indigo-950/20 to-black" />
       
       {/* OTIMIZAÇÃO: Background animado via GPU (translateZ) */}
-      <motion.div
+      <m.div
         className="absolute bottom-20 left-10 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] pointer-events-none"
         animate={isInView ? { scale: [1, 1.1, 1], opacity: [0.1, 0.15, 0.1] } : {}}
         style={{ transform: "translateZ(0)", willChange: "transform, opacity" }}
@@ -108,7 +109,7 @@ const skillCategories = useMemo(() => [
 
       <div className="relative max-w-6xl mx-auto" ref={ref}>
         {/* Header simplificado */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5 }}
@@ -120,12 +121,12 @@ const skillCategories = useMemo(() => [
             </span>
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto leading-relaxed">{skillsT.subtitle}</p>
-        </motion.div>
+        </m.div>
 
         {/* Grid de Cards */}
         <div className="grid md:grid-cols-2 gap-8">
           {skillCategories.map((category, i) => (
-            <motion.div
+            <m.div
               key={category.name}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -148,19 +149,20 @@ const skillCategories = useMemo(() => [
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
         {/* Footer */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           className="mt-16 text-center"
         >
           <p className="text-gray-500 text-sm md:text-base italic">{skillsT.footer}</p>
-        </motion.div>
+        </m.div>
       </div>
-    </section>
+      </section>
+    </LazyMotion>
   );
 });

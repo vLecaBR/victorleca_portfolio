@@ -1,5 +1,5 @@
 import { useMemo, useCallback, memo } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { m, useScroll, useTransform, LazyMotion, domAnimation } from "motion/react";
 import { BriefcaseBusiness, Code, Home, Info, Languages, MonitorSmartphone, Smartphone } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 
@@ -14,7 +14,7 @@ interface NavItemProps {
 
 // OTIMIZAÇÃO: NavItem memoizado com tipagem correta
 const NavItem = memo(({ name, href, Icon, index, onClick }: NavItemProps) => (
-  <motion.a
+  <m.a
     href={href}
     onClick={(e) => onClick(e, href)}
     className="text-gray-300 hover:text-white transition-colors relative group cursor-pointer flex flex-col items-center gap-1"
@@ -28,7 +28,7 @@ const NavItem = memo(({ name, href, Icon, index, onClick }: NavItemProps) => (
     </span>
     <span className="text-xs font-medium uppercase tracking-wider">{name}</span>
     <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-linear-to-r from-cyan-400 to-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-  </motion.a>
+  </m.a>
 ));
 
 export function Navbar() { 
@@ -65,7 +65,8 @@ export function Navbar() {
   }, []);
 
   return (
-    <motion.nav
+    <LazyMotion features={domAnimation}>
+      <m.nav
       style={{ 
         backgroundColor,
         backdropFilter: backdropBlur as unknown as string,
@@ -106,7 +107,7 @@ export function Navbar() {
                 />
               ))}
               
-              <motion.button
+              <m.button
                 onClick={toggleLanguage}
                 className="relative group px-4 py-1.5 border border-cyan-400/30 rounded-lg bg-black/20 hover:border-cyan-400/60 transition-all duration-300 cursor-pointer ml-4"
                 whileHover={{ scale: 1.05 }}
@@ -117,7 +118,7 @@ export function Navbar() {
                   <Languages size={16} className="text-cyan-400" />
                   <span className="text-white text-xs font-bold">{language.toUpperCase()}</span>
                 </div>
-              </motion.button>
+              </m.button>
             </div>
           </div>
 
@@ -135,6 +136,7 @@ export function Navbar() {
 
         </div>
       </div>
-    </motion.nav>
+      </m.nav>
+    </LazyMotion>
   );
 }

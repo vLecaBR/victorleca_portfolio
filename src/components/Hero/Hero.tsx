@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect, memo } from "react";
-import { motion, useScroll, useTransform, LazyMotion, domAnimation } from "motion/react";
+import { m, useScroll, useTransform, LazyMotion, domAnimation } from "motion/react";
 import { Rocket } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import { Slot } from "@radix-ui/react-slot";
@@ -126,27 +126,27 @@ export function Hero() {
       `}} />
 
       <LazyMotion features={domAnimation}>
-        <motion.div
+        <m.div
           style={{ y, opacity: opacityTransform }}
           className="relative z-10 text-center px-4 max-w-6xl mx-auto w-full"
         >
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }} className="mb-4">
+          <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }} className="mb-4">
             <span className="block text-gray-300 text-3xl md:text-4xl">{heroT.greeting}</span>
-          </motion.div>
+          </m.div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} className="mb-4 min-h-[100px] flex items-center justify-center">
+          <m.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} className="mb-4 min-h-[100px] flex items-center justify-center">
             <StaticName />
-          </motion.div>
+          </m.div>
 
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }} className="mb-8">
+          <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }} className="mb-8">
             <div className="inline-block px-6 py-2 border border-cyan-400/20 rounded-full bg-cyan-400/5">
               <p className="text-cyan-400 font-medium tracking-wide">{heroT.role}</p>
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+          <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
              <div dangerouslySetInnerHTML={{ __html: heroT.description }} />
-          </motion.div>
+          </m.div>
 
           <div className="flex flex-wrap gap-3 justify-center mb-12 max-w-2xl mx-auto">
             {mainTechs.map((tech) => (
@@ -172,7 +172,7 @@ export function Hero() {
               {heroT.aboutMe}
             </Button>
           </div>
-        </motion.div>
+        </m.div>
       </LazyMotion>
     </section>
   );
