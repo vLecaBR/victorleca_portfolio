@@ -197,14 +197,43 @@ export const translationsPT = {
         githubUrlFront: "https://github.com/vLecaBR/eastqg",
         githubUrlBack: "https://github.com/vLecaBR/eastqg_backend",
         liveUrl: "https://eastqg.vercel.app/",
-        hosting: {
-          frontend: "Vercel",
-          backend: "Render",
-        },
+    hosting: {
+        frontend: "Vercel",
+        backend: "Render",
       },
-  
-      {
-        title: "Modelo de Site de Vendas (Full Stack)",
+    },
+
+    {
+      title: "MarcaAí / People OS",
+      shortDescription: "Plataforma SaaS moderna de agendamentos online projetada para profissionais e equipes gerenciarem horários de forma eficiente.",
+      fullDescription: "O MarcaAí é uma plataforma de agendamentos que elimina as longas trocas de mensagens no WhatsApp para encontrar um horário disponível. Focada no ambiente B2B, permite a criação de páginas públicas premium e customizáveis. O sistema possui integração direta com o Google Calendar para evitar conflitos, disparos de lembretes automáticos via WhatsApp e E-mail para reduzir no-shows, e uma arquitetura robusta anti double-booking com PostgreSQL. Também suporta assinaturas SaaS via Stripe e cobranças antecipadas via Pix com Mercado Pago.",
+      features: [
+        "Páginas públicas premium e customizáveis (estilo 'Link in bio')",
+        "Gestão avançada de disponibilidade (horários recorrentes, férias, buffers)",
+        "Lembretes automáticos via WhatsApp (Evolution API) e E-mail (Resend)",
+        "Integração direta com Google Calendar para prevenção de conflitos",
+        "Monetização SaaS com Stripe e pagamentos antecipados com Mercado Pago",
+        "Arquitetura anti double-booking segura com bloqueio transacional (FOR UPDATE SKIP LOCKED)"
+      ],
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "SaaS"],
+      technologies: {
+        frontend: "Next.js 15+ (App Router), React 19, Tailwind CSS v4, Zod",
+        tooling: "TypeScript, Vitest, Playwright, Prisma",
+        deployment: "Vercel",
+        styling: "Tailwind CSS v4, Lucide Icons"
+      },
+      images: ["../assets/marcaai.webp", "../assets/marcaai-dash.webp"],
+      githubUrlFront: "https://github.com/vLecaBR/marcaAi",
+      githubUrlBack: null,
+      liveUrl: null, 
+      hosting: {
+        frontend: "Vercel",
+        backend: "Neon (PostgreSQL)"
+      }
+    },
+
+    {
+      title: "Modelo de Site de Vendas (Full Stack)",
         shortDescription:
           "Template completo e escalável para lojas virtuais, marketplaces e plataformas de vendas.",
         fullDescription:
