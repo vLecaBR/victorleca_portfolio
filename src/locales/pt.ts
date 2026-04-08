@@ -10,8 +10,7 @@ export const translationsPT = {
     hero: {
       greeting: "Olá, eu sou o",
       role: "Desenvolvedor Full Stack",
-      description:
-        "Desenvolvedor Full Stack especializado em criar <span class='text-cyan-400'>aplicações web escaláveis e sistemas automatizados</span>. Atualmente faço parte do time de <span class='text-cyan-400'>Digitalization & AI</span> na <span class='text-cyan-400'>LongPing High-Tech</span>, com foco em modernizar operações e integrar sistemas globais.",
+      description:"Desenvolvedor Full Stack focado em <span class='text-cyan-400'>interfaces de alta performance e arquiteturas escaláveis</span>. Especialista no uso estratégico de <span class='text-cyan-400'>IA para automação e produtividade</span>, acelerando entregas globais. Atualmente no time de Digitalization & AI na LongPing High-Tech, modernizando operações com soluções modernas e eficientes.",
       viewProjects: "Ver Projetos",
       aboutMe: "Sobre Mim",
       stats: {
@@ -114,71 +113,71 @@ export const translationsPT = {
       current: "Atual",
       technologies: "Tecnologias Utilizadas",
       list: [
-          {
-            company: "Long Ping High-Tech",
-            position: "Front-End / Full Stack Developer | Digitalization & AI",
-            period: "September 2024 – Present",
-            location: "Cravinhos, SP",
-            description:
-              "Technical leadership in the development of web and mobile applications using ReactJS and React Native. Architecture and maintenance of robust REST APIs with Node.js and PostgreSQL database modeling. Implementation of AI-optimized workflows (GenAI) for automation and legacy code refactoring.",
-            technologies: [
-              "ReactJS",
-              "React Native",
-              "Node.js",
-              "PostgreSQL",
-              "Vite",
-              "GenAI (Claude, Gemini)",
-              "Power Platform",
-            ],
-            achievements: [
-              "Reduced the delivery time of new projects by 65% through stack modernization (Vite/React) and agile collaboration with international teams in China.",
-              "Built automated corporate solutions with Microsoft Power Platform, creating reservation systems and approval workflows that increased internal productivity.",
-              "Continuous technical support, maintenance, and troubleshooting of production applications, ensuring high availability.",
-            ],
-          },
-          {
-            company: "Long Ping High-Tech",
-            position: "IT Intern (Focus on Web Development and Operations)",
-            period: "February 2023 – September 2024",
-            location: "Cravinhos, SP",
-            description:
-              "Focused on creating internal web solutions and automating IT infrastructure, combining software development with operations optimization.",
-            technologies: [
-              "React",
-              "Vite",
-              "JavaScript",
-              "PowerShell",
-              "Zabbix",
-              "Grafana",
-              "HTML5/CSS3",
-              "Active Directory",
-            ],
-            achievements: [
-              "Developed and implemented several web solutions and intranet systems using React and Vite, increasing team productivity by 25%.",
-              "Developed PowerShell scripts for routine task automation, saving approximately 10 hours of manual work per month.",
-              "Direct contribution to the monitoring architecture by implementing Zabbix and Grafana, reducing failure response time by 20%.",
-              "Resolved infrastructure issues by implementing proactive solutions that reduced the mean time to resolution by 30%.",
-            ],
-          },
-          {
-            company: "TMF-GROUP",
-            position: "IT / Facilities Apprentice",
-            period: "February 2021 – January 2023",
-            location: "Ribeirão Preto, SP",
-            description:
-              "Early career experience focused on optimizing IT support processes, infrastructure, and corporate asset management in a multinational environment.",
-            technologies: [
-              "Active Directory",
-              "SAP",
-              "Level 1 Help Desk",
-              "Hardware Support",
-            ],
-            achievements: [
-              "Level 1 Help Desk support, streamlining machine formatting and access management processes.",
-              "Optimized IT corporate inventory control, improving equipment stock accuracy by 35%.",
-              "Direct support in infrastructure routines, new employee onboarding, and service note management.",
-            ],
-          },
+            {
+              company: "Long Ping High-Tech",
+              position: "Desenvolvedor Front-End / Full Stack | Digitalização & IA",
+              period: "Setembro 2024 – Presente",
+              location: "Cravinhos, SP",
+              description:
+                "Liderança técnica no desenvolvimento de aplicações web e mobile utilizando ReactJS e React Native. Arquitetura e manutenção de APIs REST robustas com Node.js e modelagem de bancos PostgreSQL. Implementação de fluxos de trabalho otimizados por IA (GenAI) para automação e refatoração de código legado.",
+              technologies: [
+                "ReactJS",
+                "React Native",
+                "Node.js",
+                "PostgreSQL",
+                "Vite",
+                "GenAI (Claude, Gemini)",
+                "Power Platform",
+              ],
+              achievements: [
+                "Redução de 65% no tempo de entrega de novos projetos através da modernização do stack (Vite/React) e colaboração ágil com times internacionais na China.",
+                "Construção de soluções corporativas automatizadas com a Microsoft Power Platform, criando sistemas de reservas e fluxos de aprovação que aumentaram a produtividade interna.",
+                "Suporte técnico contínuo, manutenção e resolução de problemas (troubleshooting) de aplicações em produção, garantindo alta disponibilidade.",
+              ],
+            },
+            {
+              company: "Long Ping High-Tech",
+              position: "Estagiário de TI (Foco em Desenvolvimento Web e Operações)",
+              period: "Fevereiro 2023 – Setembro 2024",
+              location: "Cravinhos, SP",
+              description:
+                "Atuação focada na criação de soluções web internas e na automação da infraestrutura de TI, combinando desenvolvimento de software com otimização de operações.",
+              technologies: [
+                "React",
+                "Vite",
+                "JavaScript",
+                "PowerShell",
+                "Zabbix",
+                "Grafana",
+                "HTML5/CSS3",
+                "Active Directory",
+              ],
+              achievements: [
+                "Desenvolvimento e implementação de diversas soluções web e sistemas de intranet utilizando React e Vite, aumentando a produtividade da equipe em 25%.",
+                "Desenvolvimento de scripts em PowerShell para automação de tarefas rotineiras, economizando cerca de 10 horas de trabalho manual por mês.",
+                "Contribuição direta na arquitetura de monitoramento implementando Zabbix e Grafana, reduzindo o tempo de resposta a falhas em 20%.",
+                "Resolução de problemas de infraestrutura com a implementação de soluções proativas que reduziram o tempo médio de resolução em 30%.",
+              ],
+            },
+            {
+              company: "TMF-GROUP",
+              position: "Aprendiz de TI / Facilities",
+              period: "Fevereiro 2021 – Janeiro 2023",
+              location: "Ribeirão Preto, SP",
+              description:
+                "Experiência inicial de carreira voltada para otimização de processos de suporte de TI, infraestrutura e gestão de ativos corporativos em um ambiente multinacional.",
+              technologies: [
+                "Active Directory",
+                "SAP",
+                "Help Desk Nível 1",
+                "Hardware Support",
+              ],
+              achievements: [
+                "Suporte de Help Desk nível 1, agilizando processos de formatação de máquinas e gestão de acessos.",
+                "Otimização do controle de inventário corporativo de TI, melhorando a acurácia do estoque de equipamentos em 35%.",
+                "Apoio direto em rotinas de infraestrutura, onboarding de novos colaboradores e gestão de notas de serviço.",
+              ],
+            },
       ],
     },
   projects: {

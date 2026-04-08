@@ -10,8 +10,7 @@ export const translations = {
     hero: {
       greeting: "Hello, I'm",
       role: "Full Stack Developer",
-      description:
-        "Full Stack Developer specialized in building <span class='text-cyan-400'>scalable web applications and automated systems</span>. Currently part of the <span class='text-cyan-400'>Digitalization & AI</span> team at <span class='text-cyan-400'>LongPing High-Tech</span>, focused on modernizing operations and integrating global systems.",
+      description: "Full Stack Developer focused on <span class='text-cyan-400'>high-performance interfaces and scalable architectures</span>. Specialist in the strategic use of <span class='text-cyan-400'>AI for automation and productivity</span>, accelerating global deliveries. Currently part of the Digitalization & AI team at LongPing High-Tech, modernizing operations with efficient, cutting-edge solutions.",
       viewProjects: "View Projects",
       aboutMe: "About Me",
       stats: {
@@ -116,11 +115,11 @@ export const translations = {
       list: [
           {
             company: "Long Ping High-Tech",
-            position: "Desenvolvedor Front-End / Full Stack | Digitalização & IA",
-            period: "Setembro 2024 – Presente",
+            position: "Front-End / Full Stack Developer | Digitalization & AI",
+            period: "September 2024 – Present",
             location: "Cravinhos, SP",
             description:
-              "Liderança técnica no desenvolvimento de aplicações web e mobile utilizando ReactJS e React Native. Arquitetura e manutenção de APIs REST robustas com Node.js e modelagem de bancos PostgreSQL. Implementação de fluxos de trabalho otimizados por IA (GenAI) para automação e refatoração de código legado.",
+              "Technical leadership in the development of web and mobile applications using ReactJS and React Native. Architecture and maintenance of robust REST APIs with Node.js and PostgreSQL database modeling. Implementation of AI-optimized workflows (GenAI) for automation and legacy code refactoring.",
             technologies: [
               "ReactJS",
               "React Native",
@@ -131,18 +130,18 @@ export const translations = {
               "Power Platform",
             ],
             achievements: [
-              "Redução de 65% no tempo de entrega de novos projetos através da modernização do stack (Vite/React) e colaboração ágil com times internacionais na China.",
-              "Construção de soluções corporativas automatizadas com a Microsoft Power Platform, criando sistemas de reservas e fluxos de aprovação que aumentaram a produtividade interna.",
-              "Suporte técnico contínuo, manutenção e resolução de problemas (troubleshooting) de aplicações em produção, garantindo alta disponibilidade.",
+              "Reduced the delivery time of new projects by 65% through stack modernization (Vite/React) and agile collaboration with international teams in China.",
+              "Built automated corporate solutions with Microsoft Power Platform, creating reservation systems and approval workflows that increased internal productivity.",
+              "Continuous technical support, maintenance, and troubleshooting of production applications, ensuring high availability.",
             ],
           },
           {
             company: "Long Ping High-Tech",
-            position: "Estagiário de TI (Foco em Desenvolvimento Web e Operações)",
-            period: "Fevereiro 2023 – Setembro 2024",
+            position: "IT Intern (Focus on Web Development and Operations)",
+            period: "February 2023 – September 2024",
             location: "Cravinhos, SP",
             description:
-              "Atuação focada na criação de soluções web internas e na automação da infraestrutura de TI, combinando desenvolvimento de software com otimização de operações.",
+              "Focused on creating internal web solutions and automating IT infrastructure, combining software development with operations optimization.",
             technologies: [
               "React",
               "Vite",
@@ -154,29 +153,29 @@ export const translations = {
               "Active Directory",
             ],
             achievements: [
-              "Desenvolvimento e implementação de diversas soluções web e sistemas de intranet utilizando React e Vite, aumentando a produtividade da equipe em 25%.",
-              "Desenvolvimento de scripts em PowerShell para automação de tarefas rotineiras, economizando cerca de 10 horas de trabalho manual por mês.",
-              "Contribuição direta na arquitetura de monitoramento implementando Zabbix e Grafana, reduzindo o tempo de resposta a falhas em 20%.",
-              "Resolução de problemas de infraestrutura com a implementação de soluções proativas que reduziram o tempo médio de resolução em 30%.",
+              "Developed and implemented several web solutions and intranet systems using React and Vite, increasing team productivity by 25%.",
+              "Developed PowerShell scripts for routine task automation, saving approximately 10 hours of manual work per month.",
+              "Direct contribution to the monitoring architecture by implementing Zabbix and Grafana, reducing failure response time by 20%.",
+              "Resolved infrastructure issues by implementing proactive solutions that reduced the mean time to resolution by 30%.",
             ],
           },
           {
             company: "TMF-GROUP",
-            position: "Aprendiz de TI / Facilities",
-            period: "Fevereiro 2021 – Janeiro 2023",
+            position: "IT / Facilities Apprentice",
+            period: "February 2021 – January 2023",
             location: "Ribeirão Preto, SP",
             description:
-              "Experiência inicial de carreira voltada para otimização de processos de suporte de TI, infraestrutura e gestão de ativos corporativos em um ambiente multinacional.",
+              "Early career experience focused on optimizing IT support processes, infrastructure, and corporate asset management in a multinational environment.",
             technologies: [
               "Active Directory",
               "SAP",
-              "Help Desk Nível 1",
+              "Level 1 Help Desk",
               "Hardware Support",
             ],
             achievements: [
-              "Suporte de Help Desk nível 1, agilizando processos de formatação de máquinas e gestão de acessos.",
-              "Otimização do controle de inventário corporativo de TI, melhorando a acurácia do estoque de equipamentos em 35%.",
-              "Apoio direto em rotinas de infraestrutura, onboarding de novos colaboradores e gestão de notas de serviço.",
+              "Level 1 Help Desk support, streamlining machine formatting and access management processes.",
+              "Optimized IT corporate inventory control, improving equipment stock accuracy by 35%.",
+              "Direct support in infrastructure routines, new employee onboarding, and service note management.",
             ],
           },
       ],
