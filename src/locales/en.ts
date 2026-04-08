@@ -33,21 +33,31 @@ export const translations = {
       journeyParagraph3:
         "I am passionate about clean architecture and performance optimization. I am constantly learning and improving my skills to deliver practical, scalable, and maintainable solutions. I am recognized for being fast, consistent, and motivated to take on new challenges and overcome obstacles.",
       features: [
-        {
-          title: "Scalable Web Development",
-          description:
-            "End-to-end application delivery using React, Next.js, and Node.js, focused on performance and clean code.",
-        },
-        {
-          title: "API & Systems Integration",
-          description:
-            "Ability to connect front-end interfaces to different back-end architectures through the efficient consumption of RESTful APIs.",
-        },
-        {
-          title: "Automation & Digital Transformation",
-          description:
-            "Mapping operational bottlenecks and creating web systems or scripts that eliminate manual work and reduce costs.",
-        },
+      {
+        title: "Scalable Web & Mobile Development",
+        description:
+          "Solid mastery of the JavaScript/TypeScript ecosystem (ReactJS, React Native, Node.js), with over 3 years of hands-on experience building scalable applications.",
+      },
+      {
+        title: "Global Collaboration & Digitalization",
+        description:
+          "Currently part of a Digitalization & AI team at a multinational company, actively collaborating on international projects.",
+      },
+      {
+        title: "AI-Driven Development",
+        description:
+          "Specialist in using AI tools (Claude Code, OpenCode, Gemini, Cursor, Copilot) and MCP (Model Context Protocol) to accelerate deliveries and ensure high-quality code.",
+      },
+      {
+        title: "API Architecture & Data Modeling",
+        description:
+          "Proven experience in API architecture, PostgreSQL data modeling, and modern, high-performance interface development with Vite.",
+      },
+      {
+        title: "Performance & Process Automation",
+        description:
+          "Focused on clean architecture and testing, combining business vision to automate processes, support production systems, and deliver user-centric solutions.",
+      },
       ],
     },
     skills: {

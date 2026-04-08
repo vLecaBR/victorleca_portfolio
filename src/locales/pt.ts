@@ -34,20 +34,30 @@ export const translationsPT = {
         "Sou apaixonado por arquitetura limpa e otimização de performance. Estou em constante aprendizado e aprimoramento para entregar soluções práticas, escaláveis e de fácil manutenção. Sou reconhecido por ser ágil, consistente e motivado a enfrentar novos desafios e superar obstáculos.",
       features: [
         {
-          title: "Desenvolvimento Web Escalável",
-          description:
-            "Entrega de aplicações de ponta a ponta utilizando React, Next.js e Node.js, com foco em performance e código limpo.",
-        },
-        {
-          title: "Integração de APIs & Sistemas",
-          description:
-            "Capacidade de conectar interfaces front-end a diferentes arquiteturas de back-end através do consumo eficiente de APIs RESTful.",
-        },
-        {
-          title: "Automação & Transformação Digital",
-          description:
-            "Mapeamento de gargalos operacionais e criação de sistemas web ou scripts que eliminam trabalho manual e reduzem custos corporativos.",
-        },
+        title: "Desenvolvimento Web e Mobile Escalável",
+        description:
+          "Sólido domínio do ecossistema JavaScript/TypeScript (ReactJS, React Native, Node.js), com mais de 3 anos de experiência prática na construção de aplicações escaláveis.",
+      },
+      {
+        title: "Colaboração Global e Digitalização",
+        description:
+          "Atualmente integrando o time de Digitalização & IA em uma multinacional, colaborando ativamente em projetos internacionais.",
+      },
+      {
+        title: "Desenvolvimento Impulsionado por IA",
+        description:
+          "Especialista no uso de ferramentas de IA (Claude Code, OpenCode, Gemini, Cursor, Copilot) e MCP (Model Context Protocol) para acelerar entregas e garantir código de alta qualidade.",
+      },
+      {
+        title: "Arquitetura de APIs e Modelagem de Dados",
+        description:
+          "Experiência comprovada em arquitetura de APIs, modelagem de dados em PostgreSQL e desenvolvimento de interfaces modernas e de alta performance com Vite.",
+      },
+      {
+        title: "Performance e Automação de Processos",
+        description:
+          "Foco em arquitetura limpa e testes, aliando visão de negócio para automatizar processos, dar suporte a sistemas em produção e entregar soluções centradas no usuário.",
+      },
       ],
     },
     skills: {
