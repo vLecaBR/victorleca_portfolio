@@ -114,67 +114,71 @@ export const translations = {
       current: "Current",
       technologies: "Technologies Used",
       list: [
-        {
-          company: "LongPing High-Tech",
-          position: "Full Stack Developer (Web & Automation) | Digitalization & AI",
-          period: "Sep 2024 - Present",
-          location: "Cravinhos, São Paulo, Brazil",
-          description:
-            "Playing a strategic role within the Digitalization & AI core, focusing on the development of web solutions and automated integrations to modernize company infrastructure and streamline global processes. Responsible for building scalable ReactJS and Next.js applications, developing Node.js back-end architecture, and providing ongoing production support.",
-          technologies: [
-            "React.js",
-            "Next.js",
-            "Node.js",
-            "TypeScript",
-            "REST APIs",
-            "Tailwind CSS",
-            "Git",
-            "Figma",
-          ],
-          achievements: [
-            "Optimized workflows and reduced the delivery time of new corporate projects by up to 65%",
-            "Co-developed innovation projects through direct technical collaboration with teams in China",
-            "Provided ongoing technical support, maintenance, and troubleshooting for production applications",
-          ],
-        },
-        {
-          company: "LongPing High-Tech",
-          position: "IT Intern (Focus on Web Development & Operations)",
-          period: "Feb 2023 - Sep 2024",
-          location: "Cravinhos, São Paulo, Brazil",
-          description:
-            "Focused on creating internal web solutions and automating IT infrastructure, combining software development with operations optimization well beyond traditional tech support.",
-          technologies: [
-            "React.js",
-            "Vite",
-            "JavaScript",
-            "PowerShell",
-            "Zabbix",
-            "Grafana",
-            "HTML/CSS",
-            "Active Directory",
-          ],
-          achievements: [
-            "Created intranet systems using React and JavaScript, increasing team productivity by 25%",
-            "Developed PowerShell automation workflows, saving the team ~10 hours of manual work per month",
-            "Implemented Zabbix and Grafana dashboards, reducing failure response time by 20%",
-            "Implemented proactive support solutions that reduced average issue resolution time by 30%",
-          ],
-        },
-        {
-          company: "TMF-GROUP",
-          position: "IT / Facilities Apprentice",
-          period: "Feb 2021 - Jan 2023",
-          location: "Ribeirão Preto, São Paulo, Brazil",
-          description:
-            "Early career experience focused on optimizing IT support processes, infrastructure, and corporate asset management within a multinational environment.",
-          technologies: ["Active Directory", "SAP", "Windows Support", "VPN", "ITIL"],
-          achievements: [
-            "Provided Level 1 Help Desk support, resulting in a 30% reduction in average response time (SLA)",
-            "Restructured hardware inventory control, achieving a 35% improvement in stock accuracy",
-            "Managed user access and onboarding processes using Active Directory and SAP",
-          ],
-        },
+          {
+            company: "Long Ping High-Tech",
+            position: "Desenvolvedor Front-End / Full Stack | Digitalização & IA",
+            period: "Setembro 2024 – Presente",
+            location: "Cravinhos, SP",
+            description:
+              "Liderança técnica no desenvolvimento de aplicações web e mobile utilizando ReactJS e React Native. Arquitetura e manutenção de APIs REST robustas com Node.js e modelagem de bancos PostgreSQL. Implementação de fluxos de trabalho otimizados por IA (GenAI) para automação e refatoração de código legado.",
+            technologies: [
+              "ReactJS",
+              "React Native",
+              "Node.js",
+              "PostgreSQL",
+              "Vite",
+              "GenAI (Claude, Gemini)",
+              "Power Platform",
+            ],
+            achievements: [
+              "Redução de 65% no tempo de entrega de novos projetos através da modernização do stack (Vite/React) e colaboração ágil com times internacionais na China.",
+              "Construção de soluções corporativas automatizadas com a Microsoft Power Platform, criando sistemas de reservas e fluxos de aprovação que aumentaram a produtividade interna.",
+              "Suporte técnico contínuo, manutenção e resolução de problemas (troubleshooting) de aplicações em produção, garantindo alta disponibilidade.",
+            ],
+          },
+          {
+            company: "Long Ping High-Tech",
+            position: "Estagiário de TI (Foco em Desenvolvimento Web e Operações)",
+            period: "Fevereiro 2023 – Setembro 2024",
+            location: "Cravinhos, SP",
+            description:
+              "Atuação focada na criação de soluções web internas e na automação da infraestrutura de TI, combinando desenvolvimento de software com otimização de operações.",
+            technologies: [
+              "React",
+              "Vite",
+              "JavaScript",
+              "PowerShell",
+              "Zabbix",
+              "Grafana",
+              "HTML5/CSS3",
+              "Active Directory",
+            ],
+            achievements: [
+              "Desenvolvimento e implementação de diversas soluções web e sistemas de intranet utilizando React e Vite, aumentando a produtividade da equipe em 25%.",
+              "Desenvolvimento de scripts em PowerShell para automação de tarefas rotineiras, economizando cerca de 10 horas de trabalho manual por mês.",
+              "Contribuição direta na arquitetura de monitoramento implementando Zabbix e Grafana, reduzindo o tempo de resposta a falhas em 20%.",
+              "Resolução de problemas de infraestrutura com a implementação de soluções proativas que reduziram o tempo médio de resolução em 30%.",
+            ],
+          },
+          {
+            company: "TMF-GROUP",
+            position: "Aprendiz de TI / Facilities",
+            period: "Fevereiro 2021 – Janeiro 2023",
+            location: "Ribeirão Preto, SP",
+            description:
+              "Experiência inicial de carreira voltada para otimização de processos de suporte de TI, infraestrutura e gestão de ativos corporativos em um ambiente multinacional.",
+            technologies: [
+              "Active Directory",
+              "SAP",
+              "Help Desk Nível 1",
+              "Hardware Support",
+            ],
+            achievements: [
+              "Suporte de Help Desk nível 1, agilizando processos de formatação de máquinas e gestão de acessos.",
+              "Otimização do controle de inventário corporativo de TI, melhorando a acurácia do estoque de equipamentos em 35%.",
+              "Apoio direto em rotinas de infraestrutura, onboarding de novos colaboradores e gestão de notas de serviço.",
+            ],
+          },
       ],
     },
   projects: {
