@@ -1,5 +1,5 @@
-import React, { useMemo, useState, useEffect, memo } from "react";
-import { motion, useScroll, useTransform, LazyMotion, domAnimation } from "motion/react";
+import React, { useMemo, memo } from "react";
+import { m, LazyMotion, domAnimation } from "motion/react";
 import { Rocket } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 import { Slot } from "@radix-ui/react-slot";
@@ -22,6 +22,18 @@ interface Particle {
   moveX: string;
   moveY: string;
 }
+
+// --- Partículas Estáticas (Fora do ciclo de renderização do React) ---
+const STATIC_PARTICLES: Particle[] = [...Array(12)].map((_, i) => ({
+  id: i,
+  size: Math.random() * 150 + 50,
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+  delay: `${Math.random() * 5}s`,
+  duration: `${Math.random() * 10 + 10}s`,
+  moveX: `${Math.random() * 40 - 20}px`,
+  moveY: `${Math.random() * 40 - 20}px`,
+}));
 
 // --- UI Components ---
 const buttonVariants = cva(
@@ -64,10 +76,6 @@ const StaticName = memo(() => (
 ));
 
 export function Hero() {
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, 100]);
-  const opacityTransform = useTransform(scrollY, [0, 500], [1, 0]);
-  
   const { t } = useLanguage();
   const heroT = t.hero;
 
@@ -75,23 +83,6 @@ export function Hero() {
     () => ["ReactJS", "React Native", "NodeJS", "TypeScript", "Power Platform", "Tailwind CSS"],
     []
   );
-
-  // CORREÇÃO: Tipagem definida para evitar erro de 'any'
-  const [particles, setParticles] = useState<Particle[]>([]);
-
-  useEffect(() => {
-    const generated: Particle[] = [...Array(12)].map((_, i) => ({
-      id: i,
-      size: Math.random() * 150 + 50,
-      left: `${Math.random() * 100}%`,
-      top: `${Math.random() * 100}%`,
-      delay: `${Math.random() * 5}s`,
-      duration: `${Math.random() * 10 + 10}s`,
-      moveX: `${Math.random() * 40 - 20}px`,
-      moveY: `${Math.random() * 40 - 20}px`,
-    }));
-    setParticles(generated);
-  }, []);
 
   return (
     <section
@@ -101,7 +92,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-linear-to-br from-black via-blue-950/40 to-black -z-10" />
       
       <div className="absolute inset-0 -z-10 pointer-events-none">
-        {particles.map((p) => (
+        {STATIC_PARTICLES.map((p) => (
           <div
             key={p.id}
             className="absolute bg-blue-500/10 rounded-full blur-xl"
@@ -126,27 +117,26 @@ export function Hero() {
       `}} />
 
       <LazyMotion features={domAnimation}>
-        <motion.div
-          style={{ y, opacity: opacityTransform }}
-          className="relative z-10 text-center px-4 max-w-6xl mx-auto w-full"
+        <m.div
+          className="relative z-10 text-center px-4 max-w-6xl mx-auto w-full hero-parallax-anim"
         >
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }} className="mb-4">
+          <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }} className="mb-4">
             <span className="block text-gray-300 text-3xl md:text-4xl">{heroT.greeting}</span>
-          </motion.div>
+          </m.div>
 
-          <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} className="mb-4 min-h-[100px] flex items-center justify-center">
+          <m.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} className="mb-4 min-h-[100px] flex items-center justify-center">
             <StaticName />
-          </motion.div>
+          </m.div>
 
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }} className="mb-8">
+          <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }} className="mb-8">
             <div className="inline-block px-6 py-2 border border-cyan-400/20 rounded-full bg-cyan-400/5">
               <p className="text-cyan-400 font-medium tracking-wide">{heroT.role}</p>
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+          <m.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-gray-400 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
              <div dangerouslySetInnerHTML={{ __html: heroT.description }} />
-          </motion.div>
+          </m.div>
 
           <div className="flex flex-wrap gap-3 justify-center mb-12 max-w-2xl mx-auto">
             {mainTechs.map((tech) => (
@@ -172,7 +162,7 @@ export function Hero() {
               {heroT.aboutMe}
             </Button>
           </div>
-        </motion.div>
+        </m.div>
       </LazyMotion>
     </section>
   );

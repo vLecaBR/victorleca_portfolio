@@ -1,11 +1,15 @@
-import { Suspense, lazy, useState, useEffect, useRef } from "react";
+import { Suspense, lazy, useState, useEffect, useRef, startTransition } from "react";
 import type { ReactNode } from "react";
-import { Navbar } from "./components/NavBar/NavBar";
 import { Hero } from "./components/Hero/Hero";
-import { ScrollProgress } from "./components/ScrollProgress/ScrollProgress";
 import { LanguageProvider } from "./context/LanguageContext";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
+
+// Lazy Imports for Analytics and SpeedInsights
+const Analytics = lazy(() => import("@vercel/analytics/react").then(m => ({ default: m.Analytics })));
+const SpeedInsights = lazy(() => import("@vercel/speed-insights/react").then(m => ({ default: m.SpeedInsights })));
+
+// Lazy Imports for NavBar and ScrollProgress
+const Navbar = lazy(() => import("./components/NavBar/NavBar").then(m => ({ default: m.Navbar })));
+const ScrollProgress = lazy(() => import("./components/ScrollProgress/ScrollProgress").then(m => ({ default: m.ScrollProgress })));
 
 // Imports Lazy
 const About = lazy(() => import("./components/About/About").then(module => ({ default: module.About })));
@@ -38,7 +42,9 @@ const LazySection = ({ children, id, className = "min-h-[50vh]" }: LazySectionPr
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          startTransition(() => {
+            setIsVisible(true);
+          });
           // Uma vez visível, paramos de observar para economizar recursos
           if (element) observer.unobserve(element);
         }
@@ -75,10 +81,12 @@ export default function App() {
   return (
     <LanguageProvider>
       <div className="bg-black text-white overflow-x-hidden">
-        <Analytics />
-        <SpeedInsights />
-        <ScrollProgress />
-        <Navbar />
+        <Suspense fallback={null}>
+          <Analytics />
+          <SpeedInsights />
+          <ScrollProgress />
+          <Navbar />
+        </Suspense>
         
         {/* O Hero carrega imediatamente (LCP priorizado) */}
         <section id="home">

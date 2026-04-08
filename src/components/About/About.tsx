@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { m, LazyMotion, domAnimation } from "motion/react";
 import { useLanguage } from "../../context/LanguageContext";
 import { 
   User, 
@@ -45,11 +45,12 @@ const features = [
   ];
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-black">
+    <LazyMotion features={domAnimation}>
+      <section id="about" className="py-24 relative overflow-hidden bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header da Seção */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -66,12 +67,12 @@ const features = [
           <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
             {aboutT.subtitle}
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* Coluna da Esquerda: Texto/Jornada */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-50px" }}
@@ -93,12 +94,12 @@ const features = [
                 <p>{aboutT.journeyParagraph3}</p>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Coluna da Direita: Features/Cards */}
           <div className="grid grid-cols-1 gap-6">
             {features.map((feature, index) => (
-              <motion.div
+              <m.div
                 key={index}
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -120,15 +121,15 @@ const features = [
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </div>
 
         </div>
       </div>
 
-      {/* Background Decorativo - Otimizado para não pesar no LCP */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-cyan-500/5 blur-[120px] rounded-full -z-10" />
     </section>
+    </LazyMotion>
   );
 }

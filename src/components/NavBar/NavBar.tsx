@@ -1,5 +1,5 @@
-import { useMemo, useCallback, memo } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { useMemo, useCallback, memo, useState, useEffect } from "react";
+import { m, LazyMotion, domAnimation } from "motion/react";
 import { BriefcaseBusiness, Code, Home, Info, Languages, MonitorSmartphone, Smartphone } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 
@@ -14,7 +14,7 @@ interface NavItemProps {
 
 // OTIMIZAÇÃO: NavItem memoizado com tipagem correta
 const NavItem = memo(({ name, href, Icon, index, onClick }: NavItemProps) => (
-  <motion.a
+  <m.a
     href={href}
     onClick={(e) => onClick(e, href)}
     className="text-gray-300 hover:text-white transition-colors relative group cursor-pointer flex flex-col items-center gap-1"
@@ -28,24 +28,31 @@ const NavItem = memo(({ name, href, Icon, index, onClick }: NavItemProps) => (
     </span>
     <span className="text-xs font-medium uppercase tracking-wider">{name}</span>
     <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-linear-to-r from-cyan-400 to-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-  </motion.a>
+  </m.a>
 ));
 
 export function Navbar() { 
-  const { scrollY } = useScroll();
   const { language, toggleLanguage, t } = useLanguage();
+  const [isScrolled, setIsScrolled] = useState(false);
   
-  const backgroundColor = useTransform(
-    scrollY,
-    [0, 80],
-    ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0.85)"]
-  );
-  
-  const backdropBlur = useTransform(
-    scrollY,
-    [0, 80],
-    ["blur(0px)", "blur(12px)"]
-  );
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 80);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    // Set initial value
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = useMemo(() => [
     { Icon: Home, name: t.navbar.home, href: "#home" },
@@ -65,16 +72,18 @@ export function Navbar() {
   }, []);
 
   return (
-    <motion.nav
-      style={{ 
-        backgroundColor,
-        backdropFilter: backdropBlur as unknown as string,
-        WebkitBackdropFilter: backdropBlur as unknown as string,
-        transform: "translateZ(0)",
-        willChange: "background-color, backdrop-filter"
-      }}
-      className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 shadow-lg shadow-cyan-500/5"
-    >
+    <LazyMotion features={domAnimation}>
+      <m.nav
+        className={`fixed top-0 left-0 right-0 z-50 border-b shadow-lg transition-all duration-300 ${
+          isScrolled 
+            ? "bg-black/85 backdrop-blur-md border-white/10 shadow-cyan-500/5" 
+            : "bg-transparent border-transparent shadow-transparent"
+        }`}
+        style={{ 
+          transform: "translateZ(0)",
+          willChange: "background-color, backdrop-filter"
+        }}
+      >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           
@@ -106,7 +115,7 @@ export function Navbar() {
                 />
               ))}
               
-              <motion.button
+              <m.button
                 onClick={toggleLanguage}
                 className="relative group px-4 py-1.5 border border-cyan-400/30 rounded-lg bg-black/20 hover:border-cyan-400/60 transition-all duration-300 cursor-pointer ml-4"
                 whileHover={{ scale: 1.05 }}
@@ -117,7 +126,7 @@ export function Navbar() {
                   <Languages size={16} className="text-cyan-400" />
                   <span className="text-white text-xs font-bold">{language.toUpperCase()}</span>
                 </div>
-              </motion.button>
+              </m.button>
             </div>
           </div>
 
@@ -135,6 +144,7 @@ export function Navbar() {
 
         </div>
       </div>
-    </motion.nav>
+      </m.nav>
+    </LazyMotion>
   );
 }
