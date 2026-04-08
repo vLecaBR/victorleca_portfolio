@@ -10,8 +10,7 @@ export const translations = {
     hero: {
       greeting: "Hello, I'm",
       role: "Full Stack Developer",
-      description:
-        "Full Stack Developer specialized in building <span class='text-cyan-400'>scalable web applications and automated systems</span>. Currently part of the <span class='text-cyan-400'>Digitalization & AI</span> team at <span class='text-cyan-400'>LongPing High-Tech</span>, focused on modernizing operations and integrating global systems.",
+      description: "Full Stack Developer focused on <span class='text-cyan-400'>high-performance interfaces and scalable architectures</span>. Specialist in the strategic use of <span class='text-cyan-400'>AI for automation and productivity</span>, accelerating global deliveries. Currently part of the Digitalization & AI team at LongPing High-Tech, modernizing operations with efficient, cutting-edge solutions.",
       viewProjects: "View Projects",
       aboutMe: "About Me",
       stats: {
@@ -33,21 +32,31 @@ export const translations = {
       journeyParagraph3:
         "I am passionate about clean architecture and performance optimization. I am constantly learning and improving my skills to deliver practical, scalable, and maintainable solutions. I am recognized for being fast, consistent, and motivated to take on new challenges and overcome obstacles.",
       features: [
-        {
-          title: "Scalable Web Development",
-          description:
-            "End-to-end application delivery using React, Next.js, and Node.js, focused on performance and clean code.",
-        },
-        {
-          title: "API & Systems Integration",
-          description:
-            "Ability to connect front-end interfaces to different back-end architectures through the efficient consumption of RESTful APIs.",
-        },
-        {
-          title: "Automation & Digital Transformation",
-          description:
-            "Mapping operational bottlenecks and creating web systems or scripts that eliminate manual work and reduce costs.",
-        },
+      {
+        title: "Scalable Web & Mobile Development",
+        description:
+          "Solid mastery of the JavaScript/TypeScript ecosystem (ReactJS, React Native, Node.js), with over 3 years of hands-on experience building scalable applications.",
+      },
+      {
+        title: "Global Collaboration & Digitalization",
+        description:
+          "Currently part of a Digitalization & AI team at a multinational company, actively collaborating on international projects.",
+      },
+      {
+        title: "AI-Driven Development",
+        description:
+          "Specialist in using AI tools (Claude Code, OpenCode, Gemini, Cursor, Copilot) and MCP (Model Context Protocol) to accelerate deliveries and ensure high-quality code.",
+      },
+      {
+        title: "API Architecture & Data Modeling",
+        description:
+          "Proven experience in API architecture, PostgreSQL data modeling, and modern, high-performance interface development with Vite.",
+      },
+      {
+        title: "Performance & Process Automation",
+        description:
+          "Focused on clean architecture and testing, combining business vision to automate processes, support production systems, and deliver user-centric solutions.",
+      },
       ],
     },
     skills: {
@@ -58,33 +67,44 @@ export const translations = {
         "Continuously learning: Clean Architecture, DevOps practices, modern testing, and advanced system design patterns.",
       hardSkills: {
         frontend: [
-          "ReactJS (Hooks, Context API)",
+          "ReactJS (Hooks, Context API, Redux, Zustand)",
           "Next.js (SSR/SSG, Web Vitals)",
           "TypeScript & JavaScript (ES6+)",
           "React Native",
-          "Tailwind CSS & Styled Components",
-          "HTML5 & CSS3",
+          "Tailwind CSS, Styled Components & Shadcn UI",
+          "Vite, HTML5 & CSS3",
           "Figma (UI/UX & handoff)",
         ],
         backend: [
-          "Node.js (Express)",
+          "Node.js (Express.js)",
           "Python (FastAPI)",
           "RESTful APIs & Webhooks",
-          "Clean Architecture",
+          "Clean Architecture & Microservices",
           "GraphQL",
         ],
-        databases: ["PostgreSQL", "SQL", "DynamoDB (NoSQL)", "MongoDB"],
-        testing: ["Jest", "Testing Library", "Cypress", "TDD"],
-        devops: ["Git & GitHub", "CI/CD (GitHub Actions)", "Docker", "AWS & GCP", "PowerShell", "Zabbix & Grafana"],
-        other: ["Scrum/Kanban", "Code Review", "Power Platform (Power Apps, Automate)"],
+        databases: ["PostgreSQL", "SQL", "DynamoDB (NoSQL)"],
+        testing: ["Jest", "Testing Library", "Cypress", "TDD & Integration Tests"],
+        devops: [
+          "Git, GitHub & GitFlow",
+          "CI/CD (GitHub Actions, Jenkins)",
+          "Docker",
+          "Cloud (AWS & GCP)",
+          "PowerShell, Zabbix & Grafana",
+        ],
+        other: [
+          "Scrum & Kanban",
+          "Code Review & Pull Requests",
+          "Power Platform (Power Apps, Automate)",
+        ],
+        aiTools: [
+          "Claude Code",
+          "Cursor",
+          "GitHub Copilot",
+          "Gemini",
+          "Vertex AI",
+          "MCP (Model Context Protocol)",
+        ],
       },
-      softSkills: [
-        "Agile mindset",
-        "Fast learner",
-        "Consistent and resilient",
-        "Clear communicator",
-        "Proactive problem solver",
-      ],
     },
     experience: {
       title: "Professional Experience",
@@ -93,67 +113,71 @@ export const translations = {
       current: "Current",
       technologies: "Technologies Used",
       list: [
-        {
-          company: "LongPing High-Tech",
-          position: "Full Stack Developer (Web & Automation) | Digitalization & AI",
-          period: "Sep 2024 - Present",
-          location: "Cravinhos, São Paulo, Brazil",
-          description:
-            "Playing a strategic role within the Digitalization & AI core, focusing on the development of web solutions and automated integrations to modernize company infrastructure and streamline global processes. Responsible for building scalable ReactJS and Next.js applications, developing Node.js back-end architecture, and providing ongoing production support.",
-          technologies: [
-            "React.js",
-            "Next.js",
-            "Node.js",
-            "TypeScript",
-            "REST APIs",
-            "Tailwind CSS",
-            "Git",
-            "Figma",
-          ],
-          achievements: [
-            "Optimized workflows and reduced the delivery time of new corporate projects by up to 65%",
-            "Co-developed innovation projects through direct technical collaboration with teams in China",
-            "Provided ongoing technical support, maintenance, and troubleshooting for production applications",
-          ],
-        },
-        {
-          company: "LongPing High-Tech",
-          position: "IT Intern (Focus on Web Development & Operations)",
-          period: "Feb 2023 - Sep 2024",
-          location: "Cravinhos, São Paulo, Brazil",
-          description:
-            "Focused on creating internal web solutions and automating IT infrastructure, combining software development with operations optimization well beyond traditional tech support.",
-          technologies: [
-            "React.js",
-            "Vite",
-            "JavaScript",
-            "PowerShell",
-            "Zabbix",
-            "Grafana",
-            "HTML/CSS",
-            "Active Directory",
-          ],
-          achievements: [
-            "Created intranet systems using React and JavaScript, increasing team productivity by 25%",
-            "Developed PowerShell automation workflows, saving the team ~10 hours of manual work per month",
-            "Implemented Zabbix and Grafana dashboards, reducing failure response time by 20%",
-            "Implemented proactive support solutions that reduced average issue resolution time by 30%",
-          ],
-        },
-        {
-          company: "TMF-GROUP",
-          position: "IT / Facilities Apprentice",
-          period: "Feb 2021 - Jan 2023",
-          location: "Ribeirão Preto, São Paulo, Brazil",
-          description:
-            "Early career experience focused on optimizing IT support processes, infrastructure, and corporate asset management within a multinational environment.",
-          technologies: ["Active Directory", "SAP", "Windows Support", "VPN", "ITIL"],
-          achievements: [
-            "Provided Level 1 Help Desk support, resulting in a 30% reduction in average response time (SLA)",
-            "Restructured hardware inventory control, achieving a 35% improvement in stock accuracy",
-            "Managed user access and onboarding processes using Active Directory and SAP",
-          ],
-        },
+          {
+            company: "Long Ping High-Tech",
+            position: "Front-End / Full Stack Developer | Digitalization & AI",
+            period: "September 2024 – Present",
+            location: "Cravinhos, SP",
+            description:
+              "Technical leadership in the development of web and mobile applications using ReactJS and React Native. Architecture and maintenance of robust REST APIs with Node.js and PostgreSQL database modeling. Implementation of AI-optimized workflows (GenAI) for automation and legacy code refactoring.",
+            technologies: [
+              "ReactJS",
+              "React Native",
+              "Node.js",
+              "PostgreSQL",
+              "Vite",
+              "GenAI (Claude, Gemini)",
+              "Power Platform",
+            ],
+            achievements: [
+              "Reduced the delivery time of new projects by 65% through stack modernization (Vite/React) and agile collaboration with international teams in China.",
+              "Built automated corporate solutions with Microsoft Power Platform, creating reservation systems and approval workflows that increased internal productivity.",
+              "Continuous technical support, maintenance, and troubleshooting of production applications, ensuring high availability.",
+            ],
+          },
+          {
+            company: "Long Ping High-Tech",
+            position: "IT Intern (Focus on Web Development and Operations)",
+            period: "February 2023 – September 2024",
+            location: "Cravinhos, SP",
+            description:
+              "Focused on creating internal web solutions and automating IT infrastructure, combining software development with operations optimization.",
+            technologies: [
+              "React",
+              "Vite",
+              "JavaScript",
+              "PowerShell",
+              "Zabbix",
+              "Grafana",
+              "HTML5/CSS3",
+              "Active Directory",
+            ],
+            achievements: [
+              "Developed and implemented several web solutions and intranet systems using React and Vite, increasing team productivity by 25%.",
+              "Developed PowerShell scripts for routine task automation, saving approximately 10 hours of manual work per month.",
+              "Direct contribution to the monitoring architecture by implementing Zabbix and Grafana, reducing failure response time by 20%.",
+              "Resolved infrastructure issues by implementing proactive solutions that reduced the mean time to resolution by 30%.",
+            ],
+          },
+          {
+            company: "TMF-GROUP",
+            position: "IT / Facilities Apprentice",
+            period: "February 2021 – January 2023",
+            location: "Ribeirão Preto, SP",
+            description:
+              "Early career experience focused on optimizing IT support processes, infrastructure, and corporate asset management in a multinational environment.",
+            technologies: [
+              "Active Directory",
+              "SAP",
+              "Level 1 Help Desk",
+              "Hardware Support",
+            ],
+            achievements: [
+              "Level 1 Help Desk support, streamlining machine formatting and access management processes.",
+              "Optimized IT corporate inventory control, improving equipment stock accuracy by 35%.",
+              "Direct support in infrastructure routines, new employee onboarding, and service note management.",
+            ],
+          },
       ],
     },
   projects: {

@@ -10,8 +10,7 @@ export const translationsPT = {
     hero: {
       greeting: "Olá, eu sou o",
       role: "Desenvolvedor Full Stack",
-      description:
-        "Desenvolvedor Full Stack especializado em criar <span class='text-cyan-400'>aplicações web escaláveis e sistemas automatizados</span>. Atualmente faço parte do time de <span class='text-cyan-400'>Digitalization & AI</span> na <span class='text-cyan-400'>LongPing High-Tech</span>, com foco em modernizar operações e integrar sistemas globais.",
+      description:"Desenvolvedor Full Stack focado em <span class='text-cyan-400'>interfaces de alta performance e arquiteturas escaláveis</span>. Especialista no uso estratégico de <span class='text-cyan-400'>IA para automação e produtividade</span>, acelerando entregas globais. Atualmente no time de Digitalization & AI na LongPing High-Tech, modernizando operações com soluções modernas e eficientes.",
       viewProjects: "Ver Projetos",
       aboutMe: "Sobre Mim",
       stats: {
@@ -34,20 +33,30 @@ export const translationsPT = {
         "Sou apaixonado por arquitetura limpa e otimização de performance. Estou em constante aprendizado e aprimoramento para entregar soluções práticas, escaláveis e de fácil manutenção. Sou reconhecido por ser ágil, consistente e motivado a enfrentar novos desafios e superar obstáculos.",
       features: [
         {
-          title: "Desenvolvimento Web Escalável",
-          description:
-            "Entrega de aplicações de ponta a ponta utilizando React, Next.js e Node.js, com foco em performance e código limpo.",
-        },
-        {
-          title: "Integração de APIs & Sistemas",
-          description:
-            "Capacidade de conectar interfaces front-end a diferentes arquiteturas de back-end através do consumo eficiente de APIs RESTful.",
-        },
-        {
-          title: "Automação & Transformação Digital",
-          description:
-            "Mapeamento de gargalos operacionais e criação de sistemas web ou scripts que eliminam trabalho manual e reduzem custos corporativos.",
-        },
+        title: "Desenvolvimento Web e Mobile Escalável",
+        description:
+          "Sólido domínio do ecossistema JavaScript/TypeScript (ReactJS, React Native, Node.js), com mais de 3 anos de experiência prática na construção de aplicações escaláveis.",
+      },
+      {
+        title: "Colaboração Global e Digitalização",
+        description:
+          "Atualmente integrando o time de Digitalização & IA em uma multinacional, colaborando ativamente em projetos internacionais.",
+      },
+      {
+        title: "Desenvolvimento Impulsionado por IA",
+        description:
+          "Especialista no uso de ferramentas de IA (Claude Code, OpenCode, Gemini, Cursor, Copilot) e MCP (Model Context Protocol) para acelerar entregas e garantir código de alta qualidade.",
+      },
+      {
+        title: "Arquitetura de APIs e Modelagem de Dados",
+        description:
+          "Experiência comprovada em arquitetura de APIs, modelagem de dados em PostgreSQL e desenvolvimento de interfaces modernas e de alta performance com Vite.",
+      },
+      {
+        title: "Performance e Automação de Processos",
+        description:
+          "Foco em arquitetura limpa e testes, aliando visão de negócio para automatizar processos, dar suporte a sistemas em produção e entregar soluções centradas no usuário.",
+      },
       ],
     },
     skills: {
@@ -58,33 +67,44 @@ export const translationsPT = {
         "Em constante aprendizado: Arquitetura Limpa (Clean Architecture), práticas de DevOps, testes modernos e padrões avançados de sistemas.",
       hardSkills: {
         frontend: [
-          "ReactJS (Hooks, Context API)",
-          "Next.js (SSR/SSG, Web Vitals)",
-          "TypeScript & JavaScript (ES6+)",
+          "ReactJS (Hooks, Context API, Redux, Zustand)",
+          "Next.js (SSR/SSG, Otimização de Web Vitals)",
+          "TypeScript e JavaScript (ES6+)",
           "React Native",
-          "Tailwind CSS & Styled Components",
-          "HTML5 & CSS3",
-          "Figma (UI/UX & handoff)",
+          "Tailwind CSS, Styled Components e Shadcn UI",
+          "Vite, HTML5 e CSS3",
+          "Figma (UI/UX e handoff)",
         ],
         backend: [
-          "Node.js (Express)",
+          "Node.js (Express.js)",
           "Python (FastAPI)",
-          "APIs RESTful & Webhooks",
-          "Arquitetura Limpa",
+          "APIs RESTful e Webhooks",
+          "Clean Architecture e Microsserviços",
           "GraphQL",
         ],
-        databases: ["PostgreSQL", "SQL", "DynamoDB (NoSQL)", "MongoDB"],
-        testing: ["Jest", "Testing Library", "Cypress", "TDD"],
-        devops: ["Git & GitHub", "CI/CD (GitHub Actions)", "Docker", "AWS & GCP", "PowerShell", "Zabbix & Grafana"],
-        other: ["Scrum/Kanban", "Code Review", "Power Platform (Power Apps, Automate)"],
+        databases: ["PostgreSQL", "SQL", "DynamoDB (NoSQL)"],
+        testing: ["Jest", "Testing Library", "Cypress", "TDD e Testes de Integração"],
+        devops: [
+          "Git, GitHub e GitFlow",
+          "CI/CD (GitHub Actions, Jenkins)",
+          "Docker",
+          "Cloud (AWS e GCP)",
+          "PowerShell, Zabbix e Grafana",
+        ],
+        other: [
+          "Scrum e Kanban",
+          "Code Review e Pull Requests",
+          "Power Platform (Power Apps, Power Automate)",
+        ],
+        aiTools: [
+          "Claude Code",
+          "Cursor",
+          "GitHub Copilot",
+          "Gemini",
+          "Vertex AI",
+          "MCP (Model Context Protocol)",
+        ],
       },
-      softSkills: [
-        "Mentalidade ágil (Scrum/Kanban)",
-        "Aprendizado rápido",
-        "Consistente e resiliente",
-        "Comunicação clara",
-        "Resolução proativa de problemas",
-      ],
     },
     experience: {
       title: "Experiência Profissional",
@@ -93,67 +113,71 @@ export const translationsPT = {
       current: "Atual",
       technologies: "Tecnologias Utilizadas",
       list: [
-        {
-          company: "LongPing High-Tech",
-          position: "Desenvolvedor Full Stack (Web & Automação) | Digitalization & AI",
-          period: "Set 2024 - Atual",
-          location: "Cravinhos, São Paulo, Brasil",
-          description:
-            "Atuação estratégica no núcleo de Digitalização & IA, focada no desenvolvimento de soluções web e em integrações automatizadas para modernizar a infraestrutura da companhia e otimizar processos globais. Responsável por construir aplicações escaláveis em ReactJS e Next.js, desenvolver arquitetura back-end com Node.js e fornecer suporte contínuo em produção.",
-          technologies: [
-            "React.js",
-            "Next.js",
-            "Node.js",
-            "TypeScript",
-            "APIs REST",
-            "Tailwind CSS",
-            "Git",
-            "Figma",
-          ],
-          achievements: [
-            "Otimizei fluxos de trabalho e reduzi o tempo de entrega de novos projetos corporativos em até 65%",
-            "Co-desenvolvi projetos de inovação através de colaboração técnica direta com equipes na China",
-            "Forneci suporte técnico contínuo, manutenção e resolução de problemas (troubleshooting) para aplicações em produção",
-          ],
-        },
-        {
-          company: "LongPing High-Tech",
-          position: "Estagiário de TI (Foco em Desenvolvimento Web e Operações)",
-          period: "Fev 2023 - Set 2024",
-          location: "Cravinhos, São Paulo, Brasil",
-          description:
-            "Atuação focada na criação de soluções web internas e na automação da infraestrutura de TI, combinando desenvolvimento de software com otimização de operações para além do suporte tradicional.",
-          technologies: [
-            "React.js",
-            "Vite",
-            "JavaScript",
-            "PowerShell",
-            "Zabbix",
-            "Grafana",
-            "HTML/CSS",
-            "Active Directory",
-          ],
-          achievements: [
-            "Criei sistemas de intranet usando React e JavaScript, aumentando a produtividade da equipe em 25%",
-            "Desenvolvi fluxos de automação em PowerShell, economizando ~10 horas de trabalho manual por mês",
-            "Implementei dashboards no Zabbix e Grafana, reduzindo o tempo de resposta a falhas em 20%",
-            "Implementei soluções proativas que reduziram o tempo médio de resolução de problemas em 30%",
-          ],
-        },
-        {
-          company: "TMF-GROUP",
-          position: "Aprendiz de TI / Facilities",
-          period: "Fev 2021 - Jan 2023",
-          location: "Ribeirão Preto, São Paulo, Brasil",
-          description:
-            "Primeiros passos na carreira focados na otimização de processos de suporte de TI, infraestrutura e gestão de ativos corporativos dentro de um ambiente multinacional.",
-          technologies: ["Active Directory", "SAP", "Suporte Windows", "VPN", "ITIL"],
-          achievements: [
-            "Prestei suporte de Help Desk Nível 1, resultando em uma redução de 30% no tempo médio de resposta (SLA)",
-            "Reestruturei o controle de inventário de hardware, alcançando uma melhoria de 35% na precisão do estoque",
-            "Gerenciei processos de acesso e integração (onboarding) de usuários utilizando Active Directory e SAP",
-          ],
-        },
+            {
+              company: "Long Ping High-Tech",
+              position: "Desenvolvedor Front-End / Full Stack | Digitalização & IA",
+              period: "Setembro 2024 – Presente",
+              location: "Cravinhos, SP",
+              description:
+                "Liderança técnica no desenvolvimento de aplicações web e mobile utilizando ReactJS e React Native. Arquitetura e manutenção de APIs REST robustas com Node.js e modelagem de bancos PostgreSQL. Implementação de fluxos de trabalho otimizados por IA (GenAI) para automação e refatoração de código legado.",
+              technologies: [
+                "ReactJS",
+                "React Native",
+                "Node.js",
+                "PostgreSQL",
+                "Vite",
+                "GenAI (Claude, Gemini)",
+                "Power Platform",
+              ],
+              achievements: [
+                "Redução de 65% no tempo de entrega de novos projetos através da modernização do stack (Vite/React) e colaboração ágil com times internacionais na China.",
+                "Construção de soluções corporativas automatizadas com a Microsoft Power Platform, criando sistemas de reservas e fluxos de aprovação que aumentaram a produtividade interna.",
+                "Suporte técnico contínuo, manutenção e resolução de problemas (troubleshooting) de aplicações em produção, garantindo alta disponibilidade.",
+              ],
+            },
+            {
+              company: "Long Ping High-Tech",
+              position: "Estagiário de TI (Foco em Desenvolvimento Web e Operações)",
+              period: "Fevereiro 2023 – Setembro 2024",
+              location: "Cravinhos, SP",
+              description:
+                "Atuação focada na criação de soluções web internas e na automação da infraestrutura de TI, combinando desenvolvimento de software com otimização de operações.",
+              technologies: [
+                "React",
+                "Vite",
+                "JavaScript",
+                "PowerShell",
+                "Zabbix",
+                "Grafana",
+                "HTML5/CSS3",
+                "Active Directory",
+              ],
+              achievements: [
+                "Desenvolvimento e implementação de diversas soluções web e sistemas de intranet utilizando React e Vite, aumentando a produtividade da equipe em 25%.",
+                "Desenvolvimento de scripts em PowerShell para automação de tarefas rotineiras, economizando cerca de 10 horas de trabalho manual por mês.",
+                "Contribuição direta na arquitetura de monitoramento implementando Zabbix e Grafana, reduzindo o tempo de resposta a falhas em 20%.",
+                "Resolução de problemas de infraestrutura com a implementação de soluções proativas que reduziram o tempo médio de resolução em 30%.",
+              ],
+            },
+            {
+              company: "TMF-GROUP",
+              position: "Aprendiz de TI / Facilities",
+              period: "Fevereiro 2021 – Janeiro 2023",
+              location: "Ribeirão Preto, SP",
+              description:
+                "Experiência inicial de carreira voltada para otimização de processos de suporte de TI, infraestrutura e gestão de ativos corporativos em um ambiente multinacional.",
+              technologies: [
+                "Active Directory",
+                "SAP",
+                "Help Desk Nível 1",
+                "Hardware Support",
+              ],
+              achievements: [
+                "Suporte de Help Desk nível 1, agilizando processos de formatação de máquinas e gestão de acessos.",
+                "Otimização do controle de inventário corporativo de TI, melhorando a acurácia do estoque de equipamentos em 35%.",
+                "Apoio direto em rotinas de infraestrutura, onboarding de novos colaboradores e gestão de notas de serviço.",
+              ],
+            },
       ],
     },
   projects: {

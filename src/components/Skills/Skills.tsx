@@ -54,7 +54,7 @@ export const Skills = memo(function Skills() {
   const { t } = useLanguage();
   const skillsT = t.skills;
 
-  const skillCategories = useMemo(() => [
+const skillCategories = useMemo(() => [
     {
       name: "Frontend & Mobile",
       icon: <FrontendIcon />,
@@ -64,28 +64,33 @@ export const Skills = memo(function Skills() {
       skills: skillsT.hardSkills.frontend,
     },
     {
-      name: "Backend & Database",
+      name: "Backend & Banco de Dados",
       icon: <BackendIcon />,
       color: "from-blue-400 to-cyan-600",
       bgColor: "bg-blue-500/10",
       borderColor: "border-blue-400/30",
-      skills: skillsT.hardSkills.backend.concat(skillsT.hardSkills.databases),
+      skills: [...skillsT.hardSkills.backend, ...skillsT.hardSkills.databases],
     },
     {
-      name: "Power Platform & Automation",
+      name: "DevOps, QA & Metodologias",
       icon: <PowerIcon />,
       color: "from-yellow-400 to-orange-600",
       bgColor: "bg-yellow-500/10",
       borderColor: "border-yellow-400/30",
-      skills: skillsT.hardSkills.other,
+      // Juntando DevOps, Testes e Outros (onde está o Power Platform) no mesmo card
+      skills: [
+        ...skillsT.hardSkills.devops,
+        ...skillsT.hardSkills.testing,
+        ...skillsT.hardSkills.other,
+      ],
     },
     {
-      name: "Soft Skills & Tools",
-      icon: <DesignIcon />,
+      name: "Inteligência Artificial (IA)",
+      icon: <DesignIcon />, // Dica: Você pode trocar esse ícone por um <Bot /> ou <Brain /> do Lucide Icons!
       color: "from-green-400 to-emerald-600",
       bgColor: "bg-green-500/10",
       borderColor: "border-green-400/30",
-      skills: skillsT.softSkills,
+      skills: skillsT.hardSkills.aiTools, // Puxando a nova lista de IA no lugar das soft skills
     },
   ], [skillsT]);
 

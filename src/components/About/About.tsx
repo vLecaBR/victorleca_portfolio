@@ -6,7 +6,9 @@ import {
   Cpu, 
   Globe2, 
   Sparkles, 
-  ChevronRight 
+  ChevronRight, 
+  Zap,
+  Database
 } from "lucide-react";
 
 export function About() {
@@ -14,21 +16,31 @@ export function About() {
   const { t } = useLanguage();
   const aboutT = t.about;
 
-  const features = [
+const features = [
     {
       icon: <Code2 className="text-cyan-400" size={24} />,
       title: aboutT.features[0].title,
       desc: aboutT.features[0].description,
     },
     {
-      icon: <Cpu className="text-cyan-400" size={24} />,
+      icon: <Globe2 className="text-cyan-400" size={24} />,
       title: aboutT.features[1].title,
       desc: aboutT.features[1].description,
     },
     {
-      icon: <Globe2 className="text-cyan-400" size={24} />,
+      icon: <Cpu className="text-cyan-400" size={24} />,
       title: aboutT.features[2].title,
       desc: aboutT.features[2].description,
+    },
+    {
+      icon: <Database className="text-cyan-400" size={24} />,
+      title: aboutT.features[3].title,
+      desc: aboutT.features[3].description,
+    },
+    {
+      icon: <Zap className="text-cyan-400" size={24} />,
+      title: aboutT.features[4].title,
+      desc: aboutT.features[4].description,
     },
   ];
 
