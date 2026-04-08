@@ -1,5 +1,5 @@
-import { useMemo, useCallback, memo } from "react";
-import { m, useScroll, useTransform, LazyMotion, domAnimation } from "motion/react";
+import { useMemo, useCallback, memo, useState, useEffect } from "react";
+import { m, LazyMotion, domAnimation } from "motion/react";
 import { BriefcaseBusiness, Code, Home, Info, Languages, MonitorSmartphone, Smartphone } from "lucide-react";
 import { useLanguage } from "../../context/LanguageContext";
 
@@ -32,20 +32,27 @@ const NavItem = memo(({ name, href, Icon, index, onClick }: NavItemProps) => (
 ));
 
 export function Navbar() { 
-  const { scrollY } = useScroll();
   const { language, toggleLanguage, t } = useLanguage();
+  const [isScrolled, setIsScrolled] = useState(false);
   
-  const backgroundColor = useTransform(
-    scrollY,
-    [0, 80],
-    ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0.85)"]
-  );
-  
-  const backdropBlur = useTransform(
-    scrollY,
-    [0, 80],
-    ["blur(0px)", "blur(12px)"]
-  );
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 80);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    // Set initial value
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = useMemo(() => [
     { Icon: Home, name: t.navbar.home, href: "#home" },
@@ -67,15 +74,16 @@ export function Navbar() {
   return (
     <LazyMotion features={domAnimation}>
       <m.nav
-      style={{ 
-        backgroundColor,
-        backdropFilter: backdropBlur as unknown as string,
-        WebkitBackdropFilter: backdropBlur as unknown as string,
-        transform: "translateZ(0)",
-        willChange: "background-color, backdrop-filter"
-      }}
-      className="fixed top-0 left-0 right-0 z-50 border-b border-white/10 shadow-lg shadow-cyan-500/5"
-    >
+        className={`fixed top-0 left-0 right-0 z-50 border-b shadow-lg transition-all duration-300 ${
+          isScrolled 
+            ? "bg-black/85 backdrop-blur-md border-white/10 shadow-cyan-500/5" 
+            : "bg-transparent border-transparent shadow-transparent"
+        }`}
+        style={{ 
+          transform: "translateZ(0)",
+          willChange: "background-color, backdrop-filter"
+        }}
+      >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           

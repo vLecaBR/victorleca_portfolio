@@ -1,4 +1,4 @@
-import { Suspense, lazy, useState, useEffect, useRef } from "react";
+import { Suspense, lazy, useState, useEffect, useRef, startTransition } from "react";
 import type { ReactNode } from "react";
 import { Hero } from "./components/Hero/Hero";
 import { LanguageProvider } from "./context/LanguageContext";
@@ -42,7 +42,9 @@ const LazySection = ({ children, id, className = "min-h-[50vh]" }: LazySectionPr
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true);
+          startTransition(() => {
+            setIsVisible(true);
+          });
           // Uma vez visível, paramos de observar para economizar recursos
           if (element) observer.unobserve(element);
         }
