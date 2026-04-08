@@ -197,14 +197,43 @@ export const translations = {
         githubUrlFront: "https://github.com/vLecaBR/eastqg",
         githubUrlBack: "https://github.com/vLecaBR/eastqg_backend",
         liveUrl: "https://eastqg.vercel.app/",
-        hosting: {
-          frontend: "Vercel",
-          backend: "Render",
-        },
+    hosting: {
+        frontend: "Vercel",
+        backend: "Render",
       },
-  
-      {
-        title: "Sales Website Model (Full Stack)",
+    },
+
+    {
+      title: "MarcaAí / People OS",
+      shortDescription: "A modern scheduling SaaS platform designed for professionals and teams to manage appointments and streamline client bookings.",
+      fullDescription: "MarcaAí is a comprehensive scheduling platform that eliminates the back-and-forth of booking appointments. Designed with B2B features, it allows professionals and teams to create customized public pages. The platform integrates deeply with Google Calendar to prevent scheduling conflicts, supports automated reminders via WhatsApp (Evolution API) and email (Resend) to reduce no-shows, and features a robust anti double-booking system using PostgreSQL. It also handles SaaS subscriptions via Stripe and upfront payments through Mercado Pago.",
+      features: [
+        "Premium customizable public pages for seamless client booking",
+        "Advanced availability management (recurring hours, time-offs, buffers)",
+        "Automated reminders via WhatsApp and transactional emails",
+        "Direct Google Calendar integration for conflict prevention",
+        "SaaS subscriptions via Stripe and upfront Pix payments via Mercado Pago",
+        "Robust anti double-booking architecture with transactional database locking"
+      ],
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "SaaS"],
+      technologies: {
+        frontend: "Next.js 15+ (App Router), React 19, Tailwind CSS v4, Zod",
+        tooling: "TypeScript, Vitest, Playwright, Prisma",
+        deployment: "Vercel",
+        styling: "Tailwind CSS v4, Lucide Icons"
+      },
+      images: ["../assets/marcaai.webp", "../assets/marcaai-dash.webp"],
+      githubUrlFront: "https://github.com/vLecaBR/marcaAi",
+      githubUrlBack: null,
+      liveUrl: null, 
+      hosting: {
+        frontend: "Vercel",
+        backend: "Neon (PostgreSQL)"
+      }
+    },
+
+    {
+      title: "Sales Website Model (Full Stack)",
         shortDescription:
           "A complete, scalable template for online stores, marketplaces, and digital sales platforms.",
         fullDescription:
