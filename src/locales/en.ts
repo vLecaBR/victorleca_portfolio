@@ -257,6 +257,37 @@ export const translations = {
     },
 
     {
+      title: "Sophy Presentes (Catalog and Showcase)",
+      shortDescription:
+        "Gift showcase web application with brand filtering and a complete administrative panel (CRUD) protected by authentication.",
+      fullDescription:
+        "Sophy Presentes is a web application developed to act as a catalog and gift showcase. The main interface allows users to browse various products and easily filter them by brands. The application features a segregated administrative panel protected by authentication, where the administrator can manage the entire inventory through CRUD operations for products and brands. All data storage and authentication are managed natively through Supabase (BaaS), ensuring high availability.",
+      features: [
+        "Interactive showcase with dynamic brand filters",
+        "Administrative area protected by login",
+        "Complete catalog management for products and brands (CRUD)",
+        "Dashboard with summarized metrics",
+        "Deployment and routing natively configured for Vercel",
+      ],
+      tags: ["React", "Vite", "Tailwind CSS", "Supabase", "Radix UI"],
+      technologies: {
+        frontend: "React 18, Vite, Tailwind CSS, Radix UI",
+        backend: "Supabase (Backend-as-a-Service)",
+        database: "PostgreSQL (Supabase)",
+        integration: "Direct client-side communication via @supabase/supabase-js",
+        automation: "State management with Context API and deployment on Vercel",
+      },
+      images: ["../assets/sophyyy.webp", "../assets/sophy2.webp"],
+      githubUrlFront: "https://github.com/vLecaBR/sophy_presentes",
+      githubUrlBack: null,
+      liveUrl: "https://sophy-presentes.vercel.app/",
+      hosting: {
+        frontend: "Vercel",
+        backend: "Supabase",
+      },
+    },
+
+    {
       title: "Sales Website Model (Full Stack)",
         shortDescription:
           "A complete, scalable template for online stores, marketplaces, and digital sales platforms.",
