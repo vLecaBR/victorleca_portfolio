@@ -257,6 +257,37 @@ export const translationsPT = {
     },
 
     {
+      title: "Sophy Presentes (Catálogo e Vitrine)",
+      shortDescription:
+        "Aplicação web de vitrine de presentes com filtro de marcas e painel administrativo completo (CRUD) protegido por autenticação.",
+      fullDescription:
+        "O Sophy Presentes é uma aplicação web desenvolvida para atuar como catálogo e vitrine de presentes. A interface principal permite aos usuários navegar por diversos produtos e filtrá-los facilmente por marcas. A aplicação conta com um painel administrativo segregado e protegido por autenticação, onde o administrador pode gerenciar todo o estoque através de operações CRUD para produtos e marcas. Todo o armazenamento de dados e autenticação são gerenciados nativamente por meio do Supabase (BaaS), garantindo alta disponibilidade.",
+      features: [
+        "Vitrine interativa com filtros dinâmicos por marca",
+        "Área administrativa protegida por login",
+        "Gerenciamento completo do catálogo de produtos e marcas (CRUD)",
+        "Dashboard com métricas resumidas",
+        "Deploy e roteamento configurados nativamente para Vercel",
+      ],
+      tags: ["React", "Vite", "Tailwind CSS", "Supabase", "Radix UI"],
+      technologies: {
+        frontend: "React 18, Vite, Tailwind CSS, Radix UI",
+        backend: "Supabase (Backend-as-a-Service)",
+        database: "PostgreSQL (Supabase)",
+        integration: "Comunicação direta client-side via @supabase/supabase-js",
+        automation: "Controle de estado com Context API e deploy no Vercel",
+      },
+      images: ["../assets/sophy1.webp", "../assets/sophy2.webp"],
+      githubUrlFront: "https://github.com/vLecaBR/sophy_presentes",
+      githubUrlBack: null,
+      liveUrl: "https://sophy-presentes.vercel.app/",
+      hosting: {
+        frontend: "Vercel",
+        backend: "Supabase",
+      },
+    },
+
+    {
       title: "Modelo de Site de Vendas (Full Stack)",
         shortDescription:
           "Template completo e escalável para lojas virtuais, marketplaces e plataformas de vendas.",
