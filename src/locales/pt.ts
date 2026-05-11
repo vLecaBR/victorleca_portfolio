@@ -277,7 +277,7 @@ export const translationsPT = {
         integration: "Comunicação direta client-side via @supabase/supabase-js",
         automation: "Controle de estado com Context API e deploy no Vercel",
       },
-      images: ["../assets/sophy1.webp", "../assets/sophy2.webp"],
+      images: ["../assets/sophyyy.webp", "../assets/sophy2.webp"],
       githubUrlFront: "https://github.com/vLecaBR/sophy_presentes",
       githubUrlBack: null,
       liveUrl: "https://sophy-presentes.vercel.app/",
