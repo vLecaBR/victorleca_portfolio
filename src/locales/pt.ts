@@ -288,6 +288,38 @@ export const translationsPT = {
     },
 
     {
+      title: "Broadcast SaaS Prototype",
+      shortDescription:
+        "Uma plataforma SaaS multi-tenant para disparo de mensagens e gestão de contatos, construída com arquitetura React estritamente funcional e backend em tempo real no Firebase.",
+      fullDescription:
+        "Desenvolvido com forte foco em escalabilidade e clean code, este protótipo de Broadcast SaaS apresenta uma arquitetura multi-tenant robusta. O frontend em React e TypeScript adere estritamente ao paradigma de programação funcional, utilizando custom hooks e Context API para gerenciamento de estado. O backend utiliza Firebase Auth e um banco de dados NoSQL plano no Firestore, protegido por Security Rules avançadas para isolamento estrito de dados entre os tenants. Além disso, implementa Firebase Cloud Functions com CRON jobs via Pub/Sub e WriteBatch do Admin SDK para processar automaticamente mensagens agendadas em segundo plano. Toda a arquitetura foi planejada e executada utilizando Spec-Driven Development (SDD) para garantir um código altamente organizado e manutenível.",
+      features: [
+        "Arquitetura SaaS multi-tenant com isolamento estrito de dados em nível de banco de dados",
+        "Sincronização de dados em tempo real utilizando listeners onSnapshot do Firestore",
+        "Disparo automatizado de mensagens via CRON jobs serverless (Cloud Functions)",
+        "Arquitetura React estritamente funcional sem classes Orientadas a Objetos",
+        "Modelagem de banco de dados NoSQL plano otimizada sem subcoleções",
+      ],
+      tags: ["React", "TypeScript", "Firebase", "Material UI", "Tailwind CSS"],
+      technologies: {
+        frontend: "React, TypeScript, Vite, Tailwind CSS, Material UI (MUI)",
+        backend: "Firebase Cloud Functions (Node.js)",
+        database: "Firestore (Estrutura NoSQL Plana)",
+        integration: "Firebase Auth, Firebase Admin SDK",
+        automation:
+          "CRON Jobs via Pub/Sub para atualizações automatizadas de status de mensagens via WriteBatch",
+      },
+      images: ["../assets/broadcast1.webp", "../assets/broadcast2.webp"],
+      githubUrlFront: "https://github.com/vLecaBR/saas_model",
+      githubUrlBack: "https://github.com/vLecaBR/saas_model/tree/main/functions",
+      liveUrl: "https://saas-broadcast.web.app",
+      hosting: {
+        frontend: "Firebase Hosting",
+        backend: "Firebase Functions",
+      },
+    },
+
+    {
       title: "Modelo de Site de Vendas (Full Stack)",
         shortDescription:
           "Template completo e escalável para lojas virtuais, marketplaces e plataformas de vendas.",

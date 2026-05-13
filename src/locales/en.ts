@@ -288,6 +288,38 @@ export const translations = {
     },
 
     {
+      title: "Broadcast SaaS Prototype",
+      shortDescription:
+        "A multi-tenant SaaS platform for message broadcasting and contact management, built with a strictly functional React architecture and a real-time Firebase backend.",
+      fullDescription:
+        "Developed with a strong focus on scalability and clean code, this Broadcast SaaS prototype features a robust multi-tenant architecture. The React and TypeScript frontend adheres strictly to the functional programming paradigm, utilizing custom hooks and the Context API for state management. The backend relies on Firebase Auth and a flat NoSQL Firestore database, secured by advanced Security Rules for strict data isolation between tenants. Additionally, it implements Firebase Cloud Functions with Pub/Sub CRON jobs and Admin SDK WriteBatch to automatically process scheduled messages in the background. The entire architecture was planned and executed using Spec-Driven Development (SDD) to ensure highly organized and maintainable code.",
+      features: [
+        "Multi-tenant SaaS architecture with strict database-level data isolation",
+        "Real-time data synchronization using Firestore onSnapshot listeners",
+        "Automated message broadcasting via serverless CRON jobs (Cloud Functions)",
+        "Strictly functional React architecture with zero Object-Oriented classes",
+        "Optimized flat NoSQL database modeling without subcollections",
+      ],
+      tags: ["React", "TypeScript", "Firebase", "Material UI", "Tailwind CSS"],
+      technologies: {
+        frontend: "React, TypeScript, Vite, Tailwind CSS, Material UI (MUI)",
+        backend: "Firebase Cloud Functions (Node.js)",
+        database: "Firestore (Flat NoSQL Structure)",
+        integration: "Firebase Auth, Firebase Admin SDK",
+        automation:
+          "Pub/Sub CRON Jobs for automated message status updates via WriteBatch",
+      },
+      images: ["../assets/broadcast1.webp", "../assets/broadcast2.webp"],
+      githubUrlFront: "https://github.com/vLecaBR/saas_model",
+      githubUrlBack: "https://github.com/vLecaBR/saas_model/tree/main/functions",
+      liveUrl: "https://saas-broadcast.web.app",
+      hosting: {
+        frontend: "Firebase Hosting",
+        backend: "Firebase Functions",
+      },
+    },
+
+    {
       title: "Sales Website Model (Full Stack)",
         shortDescription:
           "A complete, scalable template for online stores, marketplaces, and digital sales platforms.",
