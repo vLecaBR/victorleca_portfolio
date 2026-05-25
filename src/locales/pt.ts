@@ -407,32 +407,32 @@ export const translationsPT = {
       },
       
       {
-        title: "Site Agência CliqZ",
+        title: "CliqZ - Software & AI",
         shortDescription:
-          "Website institucional moderno e otimizado para uma agência de marketing e desenvolvimento digital.",
+          "Plataforma institucional para uma fábrica de software e consultoria em IA, focada em sistemas sob medida, arquitetura cloud e automações.",
         fullDescription:
-          "Desenvolvimento completo do site oficial da agência 'CliqZ', focado em marketing digital, branding e criação de soluções web. O objetivo do projeto foi criar uma identidade sólida com uma experiência envolvente, utilizando animações suaves, seções dinâmicas e uma performance alinhada às melhores práticas de SEO. Também inclui integrações com formulários automatizados, mensuração de leads e rastreamento de conversões via Google Analytics.",
+          "Desenvolvimento completo da nova plataforma da CliqZ, reposicionada como uma fábrica de software escalável e consultoria em Inteligência Artificial. O projeto foi projetado para transmitir autoridade técnica, destacando as principais especialidades da empresa: criação de sistemas web, integração de agentes autônomos de IA, infraestrutura Cloud-Native (AWS/GCP) e automações orientadas a eventos. A interface é focada na jornada B2B, apresentando métricas de impacto, metodologias ágeis de engenharia e diferenciais competitivos para conversão de leads corporativos.",
         features: [
-          "Landing page institucional responsiva e otimizada para SEO",
-          "Sessões dinâmicas para apresentação de serviços e portfólio",
-          "Integração com EmailJS para captação de leads",
-          "Microinterações e animações personalizadas utilizando Framer Motion",
-          "Integração completa com Google Analytics para métricas e conversões",
+          "Landing page de alta conversão focada no mercado corporativo (B2B)",
+          "Seções dinâmicas apresentando verticais de serviços (IA, Cloud, Sistemas, Automação)",
+          "Showcase interativo da stack tecnológica (React, Next.js, Node.js, Python)",
+          "Área de métricas de impacto (ROI, uptime, requisições) e diferenciais técnicos",
+          "Integração de formulários para captação de leads e agendamento com especialistas"
         ],
-        tags: ["React", "Styled Components", "Framer Motion"],
+        tags: ["Next.js", "TypeScript", "React", "Node.js", "Python", "Cloud"],
         technologies: {
-          frontend: "React, Styled Components, Framer Motion",
-          integration: "EmailJS, Google Analytics",
+          frontend: "React, Next.js, TypeScript",
+          integration: "OpenAI, Anthropic, n8n, AWS, GCP"
         },
-        images: ["../assets/cliqz.webp", "../assets/cliqz2.webp"],
+        images: ["../assets/cliqz-software1.webp", "../assets/cliqz-software2.webp"],
         githubUrlFront: "https://github.com/vLecaBR/CliqZ",
         githubUrlBack: null,
         liveUrl: "https://cliqz.com.br",
         hosting: {
           frontend: "Vercel",
-          backend: null,
-        },
-      },
+          backend: "AWS"
+        }
+      }
     ],
   },
   
