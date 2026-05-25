@@ -228,7 +228,7 @@ export const translations = {
     },
 
     {
-      title: "MarcaAí / People OS",
+      title: "MarcaAí",
       shortDescription: "A modern scheduling SaaS platform designed for professionals and teams to manage appointments and streamline client bookings.",
       fullDescription: "MarcaAí is a comprehensive scheduling platform that eliminates the back-and-forth of booking appointments. Designed with B2B features, it allows professionals and teams to create customized public pages. The platform integrates deeply with Google Calendar to prevent scheduling conflicts, supports automated reminders via WhatsApp (Evolution API) and email (Resend) to reduce no-shows, and features a robust anti double-booking system using PostgreSQL. It also handles SaaS subscriptions via Stripe and upfront payments through Mercado Pago.",
       features: [
@@ -249,7 +249,7 @@ export const translations = {
       images: ["../assets/marcaai.webp", "../assets/marcaai-dash.webp"],
       githubUrlFront: "https://github.com/vLecaBR/marcaAi",
       githubUrlBack: null,
-      liveUrl: null, 
+      liveUrl: "https://marca-ai-app.vercel.app/", 
       hosting: {
         frontend: "Vercel",
         backend: "Neon (PostgreSQL)"
@@ -284,6 +284,38 @@ export const translations = {
       hosting: {
         frontend: "Vercel",
         backend: "Supabase",
+      },
+    },
+
+    {
+      title: "Broadcast SaaS Prototype",
+      shortDescription:
+        "A multi-tenant SaaS platform for message broadcasting and contact management, built with a strictly functional React architecture and a real-time Firebase backend.",
+      fullDescription:
+        "Developed with a strong focus on scalability and clean code, this Broadcast SaaS prototype features a robust multi-tenant architecture. The React and TypeScript frontend adheres strictly to the functional programming paradigm, utilizing custom hooks and the Context API for state management. The backend relies on Firebase Auth and a flat NoSQL Firestore database, secured by advanced Security Rules for strict data isolation between tenants. Additionally, it implements Firebase Cloud Functions with Pub/Sub CRON jobs and Admin SDK WriteBatch to automatically process scheduled messages in the background. The entire architecture was planned and executed using Spec-Driven Development (SDD) to ensure highly organized and maintainable code.",
+      features: [
+        "Multi-tenant SaaS architecture with strict database-level data isolation",
+        "Real-time data synchronization using Firestore onSnapshot listeners",
+        "Automated message broadcasting via serverless CRON jobs (Cloud Functions)",
+        "Strictly functional React architecture with zero Object-Oriented classes",
+        "Optimized flat NoSQL database modeling without subcollections",
+      ],
+      tags: ["React", "TypeScript", "Firebase", "Material UI", "Tailwind CSS"],
+      technologies: {
+        frontend: "React, TypeScript, Vite, Tailwind CSS, Material UI (MUI)",
+        backend: "Firebase Cloud Functions (Node.js)",
+        database: "Firestore (Flat NoSQL Structure)",
+        integration: "Firebase Auth, Firebase Admin SDK",
+        automation:
+          "Pub/Sub CRON Jobs for automated message status updates via WriteBatch",
+      },
+      images: ["../assets/broadcast1.webp", "../assets/broadcast2.webp"],
+      githubUrlFront: "https://github.com/vLecaBR/saas_model",
+      githubUrlBack: "https://github.com/vLecaBR/saas_model/tree/main/functions",
+      liveUrl: "https://saas-broadcast.web.app",
+      hosting: {
+        frontend: "Firebase Hosting",
+        backend: "Firebase Functions",
       },
     },
 
@@ -374,22 +406,22 @@ export const translations = {
         },
       },
       {
-        title: "CliqZ Agency Website",
+        title: "CliqZ - Software & AI",
         shortDescription:
-          "A modern, optimized institutional website for a digital marketing and development agency.",
+          "Institutional platform for a software factory and AI consulting firm, focused on custom systems, cloud architecture, and automations.",
         fullDescription:
-          "Full development of the official website for 'CliqZ', a digital marketing, branding, and web solutions agency. The project focuses on delivering a strong identity with engaging user experience, smooth animations, dynamic sections, and SEO-optimized performance. It also includes automated form integrations, lead tracking, and conversion measurement through Google Analytics.",
+          "Full development of the new CliqZ platform, rebranded as a scalable software factory and Artificial Intelligence consulting firm. The project was designed to convey technical authority, highlighting the company's main specialties: web system creation, integration of autonomous AI agents, Cloud-Native infrastructure (AWS/GCP), and event-driven automations. The interface focuses on the B2B journey, featuring impact metrics, agile engineering methodologies, and competitive differentiators for corporate lead conversion.",
         features: [
-          "Responsive landing page optimized for SEO",
-          "Dynamic service and portfolio showcase sections",
-          "Lead-capturing integration using EmailJS",
-          "Custom micro-interactions and animations powered by Framer Motion",
-          "Full Google Analytics integration for metrics and conversions",
+          "High-converting landing page focused on the corporate market (B2B)",
+          "Dynamic sections showcasing service verticals (AI, Cloud, Systems, Automation)",
+          "Interactive technology stack showcase (React, Next.js, Node.js, Python)",
+          "Impact metrics area (ROI, uptime, requests) and technical differentiators",
+          "Form integration for lead capturing and scheduling with experts"
         ],
-        tags: ["React", "Styled Components", "Framer Motion"],
+        tags: ["Next.js", "TypeScript", "React", "Node.js", "Python", "Cloud"],
         technologies: {
-          frontend: "React, Styled Components, Framer Motion",
-          integration: "EmailJS, Google Analytics",
+          frontend: "React, Next.js, TypeScript",
+          integration: "OpenAI, Anthropic, n8n, AWS, GCP"
         },
         images: ["../assets/cliqz.webp", "../assets/cliqz2.webp"],
         githubUrlFront: "https://github.com/vLecaBR/CliqZ",
@@ -397,8 +429,8 @@ export const translations = {
         liveUrl: "https://cliqz.com.br",
         hosting: {
           frontend: "Vercel",
-          backend: null,
-        },
+          backend: "AWS"
+        }
       },
     ],
   },
