@@ -228,7 +228,7 @@ export const translationsPT = {
     },
 
     {
-      title: "MarcaAí / People OS",
+      title: "MarcaAí",
       shortDescription: "Plataforma SaaS moderna de agendamentos online projetada para profissionais e equipes gerenciarem horários de forma eficiente.",
       fullDescription: "O MarcaAí é uma plataforma de agendamentos que elimina as longas trocas de mensagens no WhatsApp para encontrar um horário disponível. Focada no ambiente B2B, permite a criação de páginas públicas premium e customizáveis. O sistema possui integração direta com o Google Calendar para evitar conflitos, disparos de lembretes automáticos via WhatsApp e E-mail para reduzir no-shows, e uma arquitetura robusta anti double-booking com PostgreSQL. Também suporta assinaturas SaaS via Stripe e cobranças antecipadas via Pix com Mercado Pago.",
       features: [
@@ -249,7 +249,7 @@ export const translationsPT = {
       images: ["../assets/marcaai.webp", "../assets/marcaai-dash.webp"],
       githubUrlFront: "https://github.com/vLecaBR/marcaAi",
       githubUrlBack: null,
-      liveUrl: null, 
+      liveUrl: "https://marca-ai-app.vercel.app/", 
       hosting: {
         frontend: "Vercel",
         backend: "Neon (PostgreSQL)"

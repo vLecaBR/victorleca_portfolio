@@ -228,7 +228,7 @@ export const translations = {
     },
 
     {
-      title: "MarcaAí / People OS",
+      title: "MarcaAí",
       shortDescription: "A modern scheduling SaaS platform designed for professionals and teams to manage appointments and streamline client bookings.",
       fullDescription: "MarcaAí is a comprehensive scheduling platform that eliminates the back-and-forth of booking appointments. Designed with B2B features, it allows professionals and teams to create customized public pages. The platform integrates deeply with Google Calendar to prevent scheduling conflicts, supports automated reminders via WhatsApp (Evolution API) and email (Resend) to reduce no-shows, and features a robust anti double-booking system using PostgreSQL. It also handles SaaS subscriptions via Stripe and upfront payments through Mercado Pago.",
       features: [
@@ -249,7 +249,7 @@ export const translations = {
       images: ["../assets/marcaai.webp", "../assets/marcaai-dash.webp"],
       githubUrlFront: "https://github.com/vLecaBR/marcaAi",
       githubUrlBack: null,
-      liveUrl: null, 
+      liveUrl: "https://marca-ai-app.vercel.app/", 
       hosting: {
         frontend: "Vercel",
         backend: "Neon (PostgreSQL)"
