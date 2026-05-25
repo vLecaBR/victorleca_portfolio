@@ -424,7 +424,7 @@ export const translationsPT = {
           frontend: "React, Next.js, TypeScript",
           integration: "OpenAI, Anthropic, n8n, AWS, GCP"
         },
-        images: ["../assets/cliqz-software1.webp", "../assets/cliqz-software2.webp"],
+        images: ["../assets/cliqz.webp", "../assets/cliqz2.webp"],
         githubUrlFront: "https://github.com/vLecaBR/CliqZ",
         githubUrlBack: null,
         liveUrl: "https://cliqz.com.br",
