@@ -406,31 +406,31 @@ export const translations = {
         },
       },
       {
-        title: "CliqZ Agency Website",
+        title: "CliqZ - Software & AI",
         shortDescription:
-          "A modern, optimized institutional website for a digital marketing and development agency.",
+          "Institutional platform for a software factory and AI consulting firm, focused on custom systems, cloud architecture, and automations.",
         fullDescription:
-          "Full development of the official website for 'CliqZ', a digital marketing, branding, and web solutions agency. The project focuses on delivering a strong identity with engaging user experience, smooth animations, dynamic sections, and SEO-optimized performance. It also includes automated form integrations, lead tracking, and conversion measurement through Google Analytics.",
+          "Full development of the new CliqZ platform, rebranded as a scalable software factory and Artificial Intelligence consulting firm. The project was designed to convey technical authority, highlighting the company's main specialties: web system creation, integration of autonomous AI agents, Cloud-Native infrastructure (AWS/GCP), and event-driven automations. The interface focuses on the B2B journey, featuring impact metrics, agile engineering methodologies, and competitive differentiators for corporate lead conversion.",
         features: [
-          "Responsive landing page optimized for SEO",
-          "Dynamic service and portfolio showcase sections",
-          "Lead-capturing integration using EmailJS",
-          "Custom micro-interactions and animations powered by Framer Motion",
-          "Full Google Analytics integration for metrics and conversions",
+          "High-converting landing page focused on the corporate market (B2B)",
+          "Dynamic sections showcasing service verticals (AI, Cloud, Systems, Automation)",
+          "Interactive technology stack showcase (React, Next.js, Node.js, Python)",
+          "Impact metrics area (ROI, uptime, requests) and technical differentiators",
+          "Form integration for lead capturing and scheduling with experts"
         ],
-        tags: ["React", "Styled Components", "Framer Motion"],
+        tags: ["Next.js", "TypeScript", "React", "Node.js", "Python", "Cloud"],
         technologies: {
-          frontend: "React, Styled Components, Framer Motion",
-          integration: "EmailJS, Google Analytics",
+          frontend: "React, Next.js, TypeScript",
+          integration: "OpenAI, Anthropic, n8n, AWS, GCP"
         },
-        images: ["../assets/cliqz.webp", "../assets/cliqz2.webp"],
+        images: ["../assets/cliqz-software1.webp", "../assets/cliqz-software2.webp"],
         githubUrlFront: "https://github.com/vLecaBR/CliqZ",
         githubUrlBack: null,
         liveUrl: "https://cliqz.com.br",
         hosting: {
           frontend: "Vercel",
-          backend: null,
-        },
+          backend: "AWS"
+        }
       },
     ],
   },
