@@ -155,10 +155,12 @@ html {
   100% { transform: scaleX(1); }
 }
 
-.scroll-progress-bar {
-  animation: scroll-progress-anim linear;
-  animation-timeline: scroll(root block);
-  transform-origin: 0% 50%;
+@supports (animation-timeline: scroll()) {
+  .scroll-progress-bar {
+    animation: scroll-progress-anim linear;
+    animation-timeline: scroll(root block);
+    transform-origin: 0% 50%;
+  }
 }
 
 @keyframes hero-parallax {
@@ -172,10 +174,12 @@ html {
   }
 }
 
-.hero-parallax-anim {
-  animation: hero-parallax linear both;
-  animation-timeline: scroll(root block);
-  animation-range: 0px 500px;
+@supports (animation-timeline: scroll()) {
+  .hero-parallax-anim {
+    animation: hero-parallax linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0px 500px;
+  }
 }
 
 /* --- ESTILIZAÇÃO DA SCROLLBAR --- */
