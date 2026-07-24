@@ -201,12 +201,12 @@ export const Projects = memo(function Projects() {
 
                           <div className="space-y-6">
                             {project.images?.[1] && (
-                              <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-white/5 bg-black/20">
+                              <div className="relative w-full overflow-hidden rounded-xl border border-white/5 bg-black/20">
                                 <ImageWithFallback
                                   src={project.images[1]}
                                   alt={`${project.title} UI`}
-                                  width={600} height={338}
-                                  className="h-full w-full object-contain opacity-80"
+                                  width={960} height={444}
+                                  className="w-full h-auto object-contain opacity-80"
                                   loading="lazy"
                                   decoding="async"
                                 />
