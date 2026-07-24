@@ -10,7 +10,7 @@ export const translationsPT = {
     hero: {
       greeting: "Olá, eu sou o",
       role: "Desenvolvedor Full Stack",
-      description:"Desenvolvedor Full Stack focado em <span class='text-cyan-400'>interfaces de alta performance e arquiteturas escaláveis</span>. Especialista no uso estratégico de <span class='text-cyan-400'>IA para automação e produtividade</span>, acelerando entregas globais. Atualmente no time de Digitalization & AI na LongPing High-Tech, modernizando operações com soluções modernas e eficientes.",
+      description:"Desenvolvedor Full Stack especializado em <span class='text-cyan-400'>C#/.NET e Node.js no back-end</span> e no <span class='text-cyan-400'>ecossistema React (Next.js, TypeScript)</span> no front-end. Construo APIs REST, microsserviços e interfaces de alta performance, com uso estratégico de <span class='text-cyan-400'>IA generativa para acelerar entregas globais</span>. Atuei no time de Digitalization & AI da LongPing High-Tech, modernizando operações em projetos com times na China.",
       viewProjects: "Ver Projetos",
       aboutMe: "Sobre Mim",
       stats: {
@@ -23,85 +23,90 @@ export const translationsPT = {
     about: {
       title: "Sobre Mim",
       subtitle:
-        "Desenvolvedor Full Stack com 5 anos de experiência em empresas multinacionais, criando soluções web e de automação que otimizam processos e aumentam a produtividade corporativa.",
+        "Desenvolvedor Full Stack com 5 anos em tecnologia e 4 dedicados ao desenvolvimento de software, especializado em C#/.NET, Node.js e no ecossistema React, construindo APIs REST, microsserviços e interfaces escaláveis.",
       journeyTitle: "Minha Jornada",
       journeyParagraph1:
-        "Com 5 anos de experiência no mercado de tecnologia, atuo como Desenvolvedor Full Stack com foco na criação de aplicações web modernas e na automação de processos corporativos complexos. Iniciei minha carreira em 2021, e hoje integro o time de Digitalization & AI, desenvolvendo ecossistemas digitais que conectam equipes globais, incluindo colaboração técnica direta com nosso time na China.",
+        "Com 5 anos em tecnologia e 4 dedicados ao desenvolvimento de software, atuo como Desenvolvedor Full Stack construindo APIs REST e microsserviços em ASP.NET Core e Node.js, além de interfaces em React, Next.js e Angular. Iniciei minha carreira em 2021 e, nos últimos anos, integrei o time de Digitalization & AI da LongPing High-Tech em projetos globais, com interface técnica direta com os times na China.",
       journeyParagraph2:
-        "Minha principal força técnica está no ecossistema JavaScript/TypeScript. No front-end, construo interfaces dinâmicas, responsivas e centradas no usuário utilizando ReactJS, Next.js e Tailwind CSS. No back-end, minha especialidade é o desenvolvimento ágil com Node.js, aliado a uma forte experiência em consumir, orquestrar e integrar APIs RESTful para garantir uma comunicação fluida entre diferentes serviços.",
+        "Minha força técnica cobre toda a stack. No back-end, desenvolvo APIs RESTful de alta disponibilidade com C#, ASP.NET Core, EF Core e LINQ, além de serviços em Node.js (Express, NestJS), com mensageria (RabbitMQ, Kafka), cache em Redis e bancos SQL Server, PostgreSQL e MongoDB. No front-end, construo interfaces dinâmicas e performáticas com React 19, Next.js 15 (App Router e Server Components), TypeScript e Tailwind, com foco em Core Web Vitals, acessibilidade e componentização.",
       journeyParagraph3:
-        "Sou apaixonado por arquitetura limpa e otimização de performance. Estou em constante aprendizado e aprimoramento para entregar soluções práticas, escaláveis e de fácil manutenção. Sou reconhecido por ser ágil, consistente e motivado a enfrentar novos desafios e superar obstáculos.",
+        "Sou apaixonado por arquitetura limpa e boas práticas — aplico SOLID, Clean Architecture e CQRS, com cobertura de testes (xUnit, Jest, Cypress) e pipelines de CI/CD em Azure DevOps e GitHub Actions. Uso IA generativa no dia a dia para acelerar entregas e refatorar código legado, resultado que reduziu em cerca de 65% o tempo de entrega de novos projetos. Estou aberto a novos desafios como Desenvolvedor Full Stack de nível Pleno.",
       features: [
         {
-        title: "Desenvolvimento Web e Mobile Escalável",
+        title: "Back-end Robusto e Microsserviços",
         description:
-          "Sólido domínio do ecossistema JavaScript/TypeScript (ReactJS, React Native, Node.js), com mais de 3 anos de experiência prática na construção de aplicações escaláveis.",
+          "Construção de APIs RESTful de alta disponibilidade em C#/.NET (ASP.NET Core, EF Core) e Node.js (Express, NestJS), com mensageria (RabbitMQ, Kafka), cache Redis e bancos SQL Server, PostgreSQL e MongoDB.",
       },
       {
-        title: "Colaboração Global e Digitalização",
+        title: "Front-end Moderno e de Alta Performance",
         description:
-          "Atualmente integrando o time de Digitalização & IA em uma multinacional, colaborando ativamente em projetos internacionais.",
+          "Interfaces dinâmicas e responsivas com React 19, Next.js 15, TypeScript e Tailwind, com foco em Core Web Vitals, acessibilidade e arquitetura de componentes.",
       },
       {
         title: "Desenvolvimento Impulsionado por IA",
         description:
-          "Especialista no uso de ferramentas de IA (Claude Code, OpenCode, Gemini, Cursor, Copilot) e MCP (Model Context Protocol) para acelerar entregas e garantir código de alta qualidade.",
+          "Uso diário de ferramentas de IA (Claude Code, Cursor, GitHub Copilot, Gemini, Vertex AI) e agentes n8n para acelerar entregas, testes e refatoração de código legado com qualidade.",
       },
       {
-        title: "Arquitetura de APIs e Modelagem de Dados",
+        title: "Arquitetura Limpa e Qualidade",
         description:
-          "Experiência comprovada em arquitetura de APIs, modelagem de dados em PostgreSQL e desenvolvimento de interfaces modernas e de alta performance com Vite.",
+          "Aplicação de SOLID, Clean Architecture e CQRS, com cobertura de testes (xUnit, Jest, Cypress), code review e pipelines de CI/CD em Azure DevOps e GitHub Actions.",
       },
       {
-        title: "Performance e Automação de Processos",
+        title: "Transformação Digital e Automação",
         description:
-          "Foco em arquitetura limpa e testes, aliando visão de negócio para automatizar processos, dar suporte a sistemas em produção e entregar soluções centradas no usuário.",
+          "Automação de processos corporativos com Power Platform (Power Apps, Power Automate, SharePoint), RPA e LLMs, eliminando trabalho manual em fluxos de aprovação e integração de dados.",
       },
       ],
     },
     skills: {
       title: "Habilidades Técnicas",
       subtitle:
-        "Especialista full stack cobrindo front-end, back-end, bancos de dados, testes e integração de sistemas. Sempre aprendendo novas tecnologias e práticas para entregar soluções manuteníveis, escaláveis e de alto desempenho.",
+        "Especialista full stack cobrindo back-end em C#/.NET e Node.js, front-end no ecossistema React, bancos de dados, mensageria, testes e cloud. Sempre aprendendo novas tecnologias e práticas para entregar soluções manuteníveis, escaláveis e de alto desempenho.",
       footer:
-        "Em constante aprendizado: Arquitetura Limpa (Clean Architecture), práticas de DevOps, testes modernos e padrões avançados de sistemas.",
+        "Em constante aprendizado: Clean Architecture, CQRS, práticas de DevOps, observabilidade e padrões avançados de arquitetura distribuída.",
       hardSkills: {
         frontend: [
           "ReactJS (Hooks, Context API, Redux, Zustand)",
-          "Next.js (SSR/SSG, Otimização de Web Vitals)",
+          "Next.js 15 (App Router, Server Components, Web Vitals)",
           "TypeScript e JavaScript (ES6+)",
+          "Angular",
           "React Native",
           "Tailwind CSS, Styled Components e Shadcn UI",
           "Vite, HTML5 e CSS3",
           "Figma (UI/UX e handoff)",
         ],
         backend: [
-          "Node.js (Express.js)",
+          "C# / .NET 8 (ASP.NET Core, EF Core, LINQ)",
+          "Node.js (Express, NestJS)",
           "Python (FastAPI)",
-          "APIs RESTful e Webhooks",
-          "Clean Architecture e Microsserviços",
-          "GraphQL",
+          "APIs RESTful, Microsserviços e Webhooks",
+          "Mensageria (RabbitMQ, Kafka) e Cache (Redis)",
+          "Clean Architecture, SOLID e CQRS",
+          "Swagger / OpenAPI e GraphQL",
         ],
-        databases: ["PostgreSQL", "SQL", "DynamoDB (NoSQL)"],
-        testing: ["Jest", "Testing Library", "Cypress", "TDD e Testes de Integração"],
+        databases: ["SQL Server", "PostgreSQL", "MongoDB", "Redis", "DynamoDB (NoSQL)"],
+        testing: ["xUnit", "Jest", "Testing Library", "Cypress", "TDD e Testes de Integração"],
         devops: [
           "Git, GitHub e GitFlow",
-          "CI/CD (GitHub Actions, Jenkins)",
+          "CI/CD (GitHub Actions, Azure DevOps, Jenkins)",
           "Docker",
-          "Cloud (AWS e GCP)",
+          "Cloud (AWS, Azure e GCP)",
           "PowerShell, Zabbix e Grafana",
         ],
         other: [
           "Scrum e Kanban",
           "Code Review e Pull Requests",
-          "Power Platform (Power Apps, Power Automate)",
+          "Power Platform (Power Apps, Power Automate, SharePoint)",
+          "RPA e Automação de Processos",
+          "Autenticação (JWT, Entra ID / OAuth)",
         ],
         aiTools: [
           "Claude Code",
           "Cursor",
           "GitHub Copilot",
-          "Gemini",
-          "Vertex AI",
+          "Gemini e Vertex AI",
+          "Agentes n8n e LLMs",
           "MCP (Model Context Protocol)",
         ],
       },
@@ -109,36 +114,40 @@ export const translationsPT = {
     experience: {
       title: "Experiência Profissional",
       subtitle:
-        "5 anos de experiência em empresas multinacionais, desenvolvendo soluções web e automatizando operações com impacto mensurável nos negócios.",
-      current: "Atual",
+        "5 anos em ambientes multinacionais, desenvolvendo aplicações full stack e microsserviços com impacto mensurável nos negócios, do back-end em .NET/Node ao front-end em React.",
+      current: "Mais Recente",
       technologies: "Tecnologias Utilizadas",
       list: [
             {
               company: "Long Ping High-Tech",
-              position: "Desenvolvedor Front-End / Full Stack | Digitalização & IA",
-              period: "Setembro 2024 – Presente",
+              position: "Desenvolvedor Full Stack Pleno (.NET, Node.js, React) | Digitalização & IA",
+              period: "Setembro 2024 – Julho 2026",
               location: "Cravinhos, SP",
               description:
-                "Liderança técnica no desenvolvimento de aplicações web e mobile utilizando ReactJS e React Native. Arquitetura e manutenção de APIs REST robustas com Node.js e modelagem de bancos PostgreSQL. Implementação de fluxos de trabalho otimizados por IA (GenAI) para automação e refatoração de código legado.",
+                "Atuação no time de Digitalization & IA em projetos globais de modernização, com interface técnica direta com os times na China. Desenvolvimento de APIs RESTful e microsserviços em C#/ASP.NET Core e Node.js, interfaces em React e Next.js, e integração de IA generativa ao fluxo de desenvolvimento.",
               technologies: [
-                "ReactJS",
-                "React Native",
-                "Node.js",
-                "PostgreSQL",
-                "Vite",
-                "GenAI (Claude, Gemini)",
+                "C# / ASP.NET Core",
+                "EF Core & LINQ",
+                "Node.js (Express)",
+                "React & Next.js",
+                "TypeScript",
+                "SQL Server & PostgreSQL",
+                "RabbitMQ & Redis",
+                "Docker & Azure DevOps",
                 "Power Platform",
+                "GenAI (Claude, Vertex AI)",
               ],
               achievements: [
-                "Redução de 65% no tempo de entrega de novos projetos através da modernização do stack (Vite/React) e colaboração ágil com times internacionais na China.",
-                "Construção de soluções corporativas automatizadas com a Microsoft Power Platform, criando sistemas de reservas e fluxos de aprovação que aumentaram a produtividade interna.",
-                "Suporte técnico contínuo, manutenção e resolução de problemas (troubleshooting) de aplicações em produção, garantindo alta disponibilidade.",
+                "Redução de ~65% no tempo de entrega de novos projetos ao modernizar a stack e incorporar IA generativa (Claude Code, Cursor, Copilot) ao fluxo de desenvolvimento, sem abrir mão de arquitetura limpa e performance.",
+                "Criação e sustentação de APIs RESTful de alta disponibilidade em C# (ASP.NET Core, EF Core) e Node.js, com comunicação assíncrona via mensageria, cache Redis e documentação em Swagger/OpenAPI.",
+                "Definições técnicas aplicando SOLID, Clean Architecture e CQRS, com code reviews, cobertura de testes (xUnit, Jest, Cypress) em CI/CD e autenticação segura integrada ao ecossistema Microsoft (Entra ID / OAuth).",
+                "Arquitetura de soluções na Power Platform (Power Apps, Power Automate, SharePoint) e implementação de RPA, LLMs e agentes n8n, eliminando trabalho manual em fluxos de aprovação.",
               ],
             },
             {
               company: "Long Ping High-Tech",
-              position: "Estagiário de TI (Foco em Desenvolvimento Web e Operações)",
-              period: "Fevereiro 2023 – Setembro 2024",
+              position: "Estagiário de TI & Automação (Desenvolvimento Web e Operações)",
+              period: "Fevereiro 2023 – Agosto 2024",
               location: "Cravinhos, SP",
               description:
                 "Atuação focada na criação de soluções web internas e na automação da infraestrutura de TI, combinando desenvolvimento de software com otimização de operações.",
