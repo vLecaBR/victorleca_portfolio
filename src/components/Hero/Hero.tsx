@@ -24,7 +24,7 @@ interface Particle {
 }
 
 // --- Partículas Estáticas (Fora do ciclo de renderização do React) ---
-const STATIC_PARTICLES: Particle[] = [...Array(12)].map((_, i) => ({
+const STATIC_PARTICLES: Particle[] = [...Array(6)].map((_, i) => ({
   id: i,
   size: Math.random() * 150 + 50,
   left: `${Math.random() * 100}%`,
@@ -96,25 +96,16 @@ export function Hero() {
           <div
             key={p.id}
             className="absolute bg-blue-500/10 rounded-full blur-xl"
-            style={{ 
-              width: p.size, 
-              height: p.size, 
-              left: p.left, 
+            style={{
+              width: p.size,
+              height: p.size,
+              left: p.left,
               top: p.top,
-              willChange: "transform, opacity",
               transform: "translateZ(0)",
-              animation: `float-particle ${p.duration} infinite ease-in-out ${p.delay}`
             }}
           />
         ))}
       </div>
-
-      <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes float-particle {
-          0%, 100% { transform: translate(0, 0) translateZ(0); opacity: 0.1; }
-          50% { transform: translate(20px, -20px) translateZ(0); opacity: 0.2; }
-        }
-      `}} />
 
       <LazyMotion features={domAnimation}>
         <m.div

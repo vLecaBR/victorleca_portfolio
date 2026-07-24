@@ -137,6 +137,7 @@ export const Projects = memo(function Projects() {
                             width={800} height={450}
                             className="w-full h-full object-cover"
                             loading="lazy"
+                            decoding="async"
                           />
                         </m.div>
                       </div>
@@ -198,6 +199,7 @@ export const Projects = memo(function Projects() {
                                   width={600} height={338}
                                   className="h-full w-full object-contain opacity-80"
                                   loading="lazy"
+                                  decoding="async"
                                 />
                               </div>
                             )}
