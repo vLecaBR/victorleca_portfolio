@@ -68,7 +68,7 @@ const StaticName = memo(() => (
   <div className="inline-block relative">
     <div className="absolute inset-0 bg-cyan-400 blur-[80px] opacity-20 pointer-events-none" />
     <div className="relative px-8 py-5 border border-cyan-400/30 rounded-full bg-black/60 backdrop-blur-md">
-      <h1 className="text-4xl md:text-6xl lg:text-7xl bg-linear-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent font-bold">
+      <h1 className="text-4xl md:text-6xl lg:text-7xl bg-linear-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent font-bold leading-[1.2] pb-2">
         Victor Leça
       </h1>
     </div>
