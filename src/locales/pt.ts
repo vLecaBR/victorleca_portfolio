@@ -293,7 +293,7 @@ export const translationsPT = {
         integration: "Stripe, Mercado Pago SDK, Google Calendar API, Evolution API (WhatsApp), Resend (React Email)",
         automation: "Controle de concorrência no banco de dados (Skip Locked), testes unitários com Vitest e E2E com Playwright"
       },
-      images: ["../assets/marcaai.webp", "../assets/marcaai2.webp"],
+      images: ["../assets/marcaai.webp", "../assets/marcaai-dash.webp"],
       githubUrlFront: "https://github.com/vLecaBR/marcaAi",
       githubUrlBack: null,
       liveUrl: "https://marca-ai-app.vercel.app",
