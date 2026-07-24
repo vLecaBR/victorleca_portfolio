@@ -205,6 +205,41 @@ export const translations = {
       "Every project listed here reflects my commitment to quality, efficiency, and scalable solutions — always prioritizing best practices, maintainability, and design focused on user experience.",
     list: [
       {
+        title: "RedLine (Full Stack Application)",
+        status: "In development",
+        shortDescription:
+          "Marketplace for modified cars with a management panel for shops, automatic lead distribution, and real authentication — a decoupled architecture with an independent .NET API.",
+        fullDescription:
+          "RedLine is a full-stack application for selling tuned/modified vehicles, featuring a public showcase and an administrative panel for shops and sellers. The architecture is fully decoupled: the React/Vite frontend consumes a REST API in .NET 10 (Minimal APIs) that concentrates all business logic. Authentication uses Supabase JWTs validated via JWKS/OIDC on the backend, with role-based authorization (seller and shop manager). The system distributes leads among sellers through round-robin, aggregates KPIs in a dashboard, and standardizes error handling with ProblemDetails (RFC 7807). Persistence runs on PostgreSQL (Supabase) via EF Core with idempotent migrations applied at boot, and vehicle image uploads go directly to Supabase Storage. The project focused on security (secrets kept out of version control, rate limiting, per-environment CORS), observability (structured per-request logging, health checks), and clear separation of responsibilities.",
+        features: [
+          "Fully independent frontend and backend (decoupled architecture)",
+          "Real authentication via Supabase (JWT/JWKS) with role-based authorization",
+          "Automatic lead distribution among sellers (round-robin per shop)",
+          "Dashboard aggregating sales and service KPIs",
+          "RESTful API with standardized errors (ProblemDetails/RFC 7807), rate limiting, and health checks",
+          "Image uploads sent directly to Supabase Storage",
+          "Secrets kept out of version control (user-secrets/environment variables) and per-environment CORS",
+        ],
+        tags: ["React", ".NET", "TypeScript", "Supabase", "PostgreSQL"],
+        technologies: {
+          frontend: "React, TypeScript, Vite, Radix UI/shadcn, MUI, React Router",
+          backend: ".NET 10 (ASP.NET Core Minimal APIs), Entity Framework Core",
+          database: "PostgreSQL (Supabase) via EF Core with migrations",
+          integration: "Supabase Auth (JWT/OIDC) and Supabase Storage for images",
+          automation:
+            "Automatic round-robin lead distribution, idempotent migrations at boot, per-IP rate limiting, and liveness/readiness health checks",
+        },
+        images: ["../assets/redline.webp", "../assets/redline2.webp"],
+        githubUrlFront: "https://github.com/vLecaBR/RedLine/tree/main/RedLine_FrontEnd",
+        githubUrlBack: "https://github.com/vLecaBR/RedLine/tree/main/RedlineApi",
+        liveUrl: null,
+        hosting: {
+          frontend: null,
+          backend: null,
+        },
+      },
+
+      {
         title: "Eastqg (Full Stack Application)",
         shortDescription:
           "Mechanic service website with a custom product system, using a fully decoupled architecture and independent API.",
@@ -237,31 +272,34 @@ export const translations = {
     },
 
     {
-      title: "MarcaAí",
-      shortDescription: "A modern scheduling SaaS platform designed for professionals and teams to manage appointments and streamline client bookings.",
-      fullDescription: "MarcaAí is a comprehensive scheduling platform that eliminates the back-and-forth of booking appointments. Designed with B2B features, it allows professionals and teams to create customized public pages. The platform integrates deeply with Google Calendar to prevent scheduling conflicts, supports automated reminders via WhatsApp (Evolution API) and email (Resend) to reduce no-shows, and features a robust anti double-booking system using PostgreSQL. It also handles SaaS subscriptions via Stripe and upfront payments through Mercado Pago.",
+      title: "MarcaAí (SaaS Platform)",
+      status: "In development",
+      shortDescription: "A modern B2B2C online scheduling platform with customizable public pages, advanced availability management, double-booking prevention, and integrated payments.",
+      fullDescription: "MarcaAí is a full-stack SaaS platform designed to simplify appointment management for professionals and teams in Brazil, eliminating long message exchanges. The system enables the creation of public pages ('link in bio' style) with customizable design, where clients can book in-person or online services. The architecture features flexible availability control (recurring hours, buffers, and holidays) and a robust anti double-booking system using database locks (FOR UPDATE SKIP LOCKED). The application offers hierarchical team management (Owner, Admin, Member), dynamic onboarding forms, and essential integrations: Google Calendar sync, automated WhatsApp notifications (Evolution API), and transactional emails built with React Email. The financial flow is hybrid, handling B2B subscriptions via Stripe and upfront appointment payments via Pix using Mercado Pago webhooks.",
       features: [
-        "Premium customizable public pages for seamless client booking",
-        "Advanced availability management (recurring hours, time-offs, buffers)",
-        "Automated reminders via WhatsApp and transactional emails",
-        "Direct Google Calendar integration for conflict prevention",
-        "SaaS subscriptions via Stripe and upfront Pix payments via Mercado Pago",
-        "Robust anti double-booking architecture with transactional database locking"
+        "Premium, customizable public pages for listing and booking multiple services",
+        "Complete B2B team management with role-based access control (Owner, Admin, Member)",
+        "Advanced availability control, blocks, and concurrent double-booking prevention",
+        "Two-way Google Calendar sync and meeting link generation",
+        "Dynamic onboarding with custom forms at the booking stage",
+        "SaaS subscriptions managed via Stripe and upfront payments via Pix (Mercado Pago)",
+        "Automated notifications and reminders via WhatsApp (Evolution API) and transactional emails"
       ],
-      tags: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "SaaS"],
+      tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "SaaS"],
       technologies: {
-        frontend: "Next.js 15+ (App Router), React 19, Tailwind CSS v4, Zod",
-        tooling: "TypeScript, Vitest, Playwright, Prisma",
-        deployment: "Vercel",
-        styling: "Tailwind CSS v4, Lucide Icons"
+        frontend: "Next.js 15+ (App Router, Server Actions), React 19, TypeScript, Tailwind CSS v4, Zod, React Hook Form",
+        backend: "Next.js (Server Actions and API Routes), NextAuth.js v5 (Auth.js) for authentication",
+        database: "PostgreSQL (hosted on Neon) managed through the Prisma ORM",
+        integration: "Stripe, Mercado Pago SDK, Google Calendar API, Evolution API (WhatsApp), Resend (React Email)",
+        automation: "Database-level concurrency control (Skip Locked), unit tests with Vitest and E2E with Playwright"
       },
-      images: ["../assets/marcaai.webp", "../assets/marcaai-dash.webp"],
+      images: ["../assets/marcaai.webp", "../assets/marcaai2.webp"],
       githubUrlFront: "https://github.com/vLecaBR/marcaAi",
       githubUrlBack: null,
-      liveUrl: "https://marca-ai-app.vercel.app/", 
+      liveUrl: "https://marca-ai-app.vercel.app",
       hosting: {
         frontend: "Vercel",
-        backend: "Neon (PostgreSQL)"
+        backend: null
       }
     },
 
