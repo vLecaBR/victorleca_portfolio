@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Backup dos originais de imagem (não versionar)
+_img_originals_backup/

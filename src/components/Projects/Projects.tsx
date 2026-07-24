@@ -13,6 +13,7 @@ import * as React from "react";
 
 interface Project {
   title: string;
+  status?: string;
   shortDescription: string;
   fullDescription: string;
   features: string[];
@@ -137,13 +138,22 @@ export const Projects = memo(function Projects() {
                             width={800} height={450}
                             className="w-full h-full object-cover"
                             loading="lazy"
+                            decoding="async"
                           />
                         </m.div>
                       </div>
 
                       <div className="flex flex-col justify-between">
                         <div>
-                          <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
+                          <div className="flex items-center gap-3 mb-3 flex-wrap">
+                            <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+                            {project.status && (
+                              <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 text-amber-300 px-2.5 py-0.5 text-[11px] font-medium">
+                                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                                {project.status}
+                              </span>
+                            )}
+                          </div>
                           <p className="text-gray-400 mb-6 line-clamp-3">{project.shortDescription}</p>
                           <div className="flex flex-wrap gap-2 mb-6">
                             {project.tags?.map((tag) => <Badge key={tag}>{tag}</Badge>)}
@@ -198,6 +208,7 @@ export const Projects = memo(function Projects() {
                                   width={600} height={338}
                                   className="h-full w-full object-contain opacity-80"
                                   loading="lazy"
+                                  decoding="async"
                                 />
                               </div>
                             )}

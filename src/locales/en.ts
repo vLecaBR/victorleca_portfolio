@@ -10,7 +10,7 @@ export const translations = {
     hero: {
       greeting: "Hello, I'm",
       role: "Full Stack Developer",
-      description: "Full Stack Developer focused on <span class='text-cyan-400'>high-performance interfaces and scalable architectures</span>. Specialist in the strategic use of <span class='text-cyan-400'>AI for automation and productivity</span>, accelerating global deliveries. Currently part of the Digitalization & AI team at LongPing High-Tech, modernizing operations with efficient, cutting-edge solutions.",
+      description: "Full Stack Developer specialized in <span class='text-cyan-400'>C#/.NET and Node.js on the back-end</span> and the <span class='text-cyan-400'>React ecosystem (Next.js, TypeScript)</span> on the front-end. I build REST APIs, microservices, and high-performance interfaces, with strategic use of <span class='text-cyan-400'>generative AI to accelerate global deliveries</span>. I worked on the Digitalization & AI team at LongPing High-Tech, modernizing operations on projects with teams in China.",
       viewProjects: "View Projects",
       aboutMe: "About Me",
       stats: {
@@ -23,85 +23,90 @@ export const translations = {
     about: {
       title: "About Me",
       subtitle:
-        "Full Stack Developer with 5 years of experience in multinational companies, building web and automation solutions that optimize processes and increase productivity.",
+        "Full Stack Developer with 5 years in tech and 4 dedicated to software development, specialized in C#/.NET, Node.js, and the React ecosystem, building REST APIs, microservices, and scalable interfaces.",
       journeyTitle: "My Journey",
       journeyParagraph1:
-        "With 5 years of experience in the tech industry, I am a Full Stack Developer focused on building modern web applications and automating complex corporate processes. I started my career in 2021, and today I am part of the Digitalization & AI team, developing digital ecosystems that connect global teams, including direct technical collaboration with our team in China.",
+        "With 5 years in tech and 4 dedicated to software development, I work as a Full Stack Developer building REST APIs and microservices with ASP.NET Core and Node.js, as well as interfaces in React, Next.js, and Angular. I started my career in 2021 and, in recent years, joined the Digitalization & AI team at LongPing High-Tech on global projects, with direct technical collaboration with the teams in China.",
       journeyParagraph2:
-        "My core technical strength lies in the JavaScript/TypeScript ecosystem. On the front-end, I build dynamic, responsive, and user-centric interfaces using ReactJS, Next.js, and Tailwind CSS. On the back-end, my specialty is agile development using Node.js, alongside strong experience in consuming, orchestrating, and integrating RESTful APIs to ensure seamless communication across different services.",
+        "My technical strength spans the entire stack. On the back-end, I build high-availability RESTful APIs with C#, ASP.NET Core, EF Core, and LINQ, along with Node.js services (Express, NestJS), using messaging (RabbitMQ, Kafka), Redis caching, and SQL Server, PostgreSQL, and MongoDB databases. On the front-end, I build dynamic, performant interfaces with React 19, Next.js 15 (App Router and Server Components), TypeScript, and Tailwind, focused on Core Web Vitals, accessibility, and componentization.",
       journeyParagraph3:
-        "I am passionate about clean architecture and performance optimization. I am constantly learning and improving my skills to deliver practical, scalable, and maintainable solutions. I am recognized for being fast, consistent, and motivated to take on new challenges and overcome obstacles.",
+        "I am passionate about clean architecture and best practices — I apply SOLID, Clean Architecture, and CQRS, with test coverage (xUnit, Jest, Cypress) and CI/CD pipelines on Azure DevOps and GitHub Actions. I use generative AI daily to accelerate deliveries and refactor legacy code, an approach that reduced the delivery time of new projects by roughly 65%. I am open to new challenges as a Mid-level Full Stack Developer.",
       features: [
       {
-        title: "Scalable Web & Mobile Development",
+        title: "Robust Back-end & Microservices",
         description:
-          "Solid mastery of the JavaScript/TypeScript ecosystem (ReactJS, React Native, Node.js), with over 3 years of hands-on experience building scalable applications.",
+          "Building high-availability RESTful APIs in C#/.NET (ASP.NET Core, EF Core) and Node.js (Express, NestJS), with messaging (RabbitMQ, Kafka), Redis caching, and SQL Server, PostgreSQL, and MongoDB databases.",
       },
       {
-        title: "Global Collaboration & Digitalization",
+        title: "Modern, High-Performance Front-end",
         description:
-          "Currently part of a Digitalization & AI team at a multinational company, actively collaborating on international projects.",
+          "Dynamic, responsive interfaces with React 19, Next.js 15, TypeScript, and Tailwind, focused on Core Web Vitals, accessibility, and component architecture.",
       },
       {
         title: "AI-Driven Development",
         description:
-          "Specialist in using AI tools (Claude Code, OpenCode, Gemini, Cursor, Copilot) and MCP (Model Context Protocol) to accelerate deliveries and ensure high-quality code.",
+          "Daily use of AI tools (Claude Code, Cursor, GitHub Copilot, Gemini, Vertex AI) and n8n agents to accelerate deliveries, testing, and legacy code refactoring with quality.",
       },
       {
-        title: "API Architecture & Data Modeling",
+        title: "Clean Architecture & Quality",
         description:
-          "Proven experience in API architecture, PostgreSQL data modeling, and modern, high-performance interface development with Vite.",
+          "Applying SOLID, Clean Architecture, and CQRS, with test coverage (xUnit, Jest, Cypress), code review, and CI/CD pipelines on Azure DevOps and GitHub Actions.",
       },
       {
-        title: "Performance & Process Automation",
+        title: "Digital Transformation & Automation",
         description:
-          "Focused on clean architecture and testing, combining business vision to automate processes, support production systems, and deliver user-centric solutions.",
+          "Automating corporate processes with Power Platform (Power Apps, Power Automate, SharePoint), RPA, and LLMs, eliminating manual work in approval and data integration flows.",
       },
       ],
     },
     skills: {
       title: "Technical Skills",
       subtitle:
-        "Full-stack expertise covering front-end, back-end, databases, testing, and system integrations. Constantly learning new technologies and practices to deliver maintainable, scalable, and high-performance solutions.",
+        "Full-stack expertise covering back-end in C#/.NET and Node.js, front-end in the React ecosystem, databases, messaging, testing, and cloud. Constantly learning new technologies and practices to deliver maintainable, scalable, and high-performance solutions.",
       footer:
-        "Continuously learning: Clean Architecture, DevOps practices, modern testing, and advanced system design patterns.",
+        "Continuously learning: Clean Architecture, CQRS, DevOps practices, observability, and advanced distributed architecture patterns.",
       hardSkills: {
         frontend: [
           "ReactJS (Hooks, Context API, Redux, Zustand)",
-          "Next.js (SSR/SSG, Web Vitals)",
+          "Next.js 15 (App Router, Server Components, Web Vitals)",
           "TypeScript & JavaScript (ES6+)",
+          "Angular",
           "React Native",
           "Tailwind CSS, Styled Components & Shadcn UI",
           "Vite, HTML5 & CSS3",
           "Figma (UI/UX & handoff)",
         ],
         backend: [
-          "Node.js (Express.js)",
+          "C# / .NET 8 (ASP.NET Core, EF Core, LINQ)",
+          "Node.js (Express, NestJS)",
           "Python (FastAPI)",
-          "RESTful APIs & Webhooks",
-          "Clean Architecture & Microservices",
-          "GraphQL",
+          "RESTful APIs, Microservices & Webhooks",
+          "Messaging (RabbitMQ, Kafka) & Caching (Redis)",
+          "Clean Architecture, SOLID & CQRS",
+          "Swagger / OpenAPI & GraphQL",
         ],
-        databases: ["PostgreSQL", "SQL", "DynamoDB (NoSQL)"],
-        testing: ["Jest", "Testing Library", "Cypress", "TDD & Integration Tests"],
+        databases: ["SQL Server", "PostgreSQL", "MongoDB", "Redis", "DynamoDB (NoSQL)"],
+        testing: ["xUnit", "Jest", "Testing Library", "Cypress", "TDD & Integration Tests"],
         devops: [
           "Git, GitHub & GitFlow",
-          "CI/CD (GitHub Actions, Jenkins)",
+          "CI/CD (GitHub Actions, Azure DevOps, Jenkins)",
           "Docker",
-          "Cloud (AWS & GCP)",
+          "Cloud (AWS, Azure & GCP)",
           "PowerShell, Zabbix & Grafana",
         ],
         other: [
           "Scrum & Kanban",
           "Code Review & Pull Requests",
-          "Power Platform (Power Apps, Automate)",
+          "Power Platform (Power Apps, Power Automate, SharePoint)",
+          "RPA & Process Automation",
+          "Authentication (JWT, Entra ID / OAuth)",
         ],
         aiTools: [
           "Claude Code",
           "Cursor",
           "GitHub Copilot",
-          "Gemini",
-          "Vertex AI",
+          "Gemini & Vertex AI",
+          "n8n Agents & LLMs",
           "MCP (Model Context Protocol)",
         ],
       },
@@ -109,36 +114,40 @@ export const translations = {
     experience: {
       title: "Professional Experience",
       subtitle:
-        "5 years of experience in multinational companies, developing web solutions and automating operations with measurable business impact.",
-      current: "Current",
+        "5 years in multinational environments, developing full-stack applications and microservices with measurable business impact, from the back-end in .NET/Node to the front-end in React.",
+      current: "Most Recent",
       technologies: "Technologies Used",
       list: [
           {
             company: "Long Ping High-Tech",
-            position: "Front-End / Full Stack Developer | Digitalization & AI",
-            period: "September 2024 – Present",
+            position: "Mid-level Full Stack Developer (.NET, Node.js, React) | Digitalization & AI",
+            period: "September 2024 – July 2026",
             location: "Cravinhos, SP",
             description:
-              "Technical leadership in the development of web and mobile applications using ReactJS and React Native. Architecture and maintenance of robust REST APIs with Node.js and PostgreSQL database modeling. Implementation of AI-optimized workflows (GenAI) for automation and legacy code refactoring.",
+              "Worked on the Digitalization & AI team on global modernization projects, with direct technical collaboration with teams in China. Development of RESTful APIs and microservices in C#/ASP.NET Core and Node.js, interfaces in React and Next.js, and integration of generative AI into the development workflow.",
             technologies: [
-              "ReactJS",
-              "React Native",
-              "Node.js",
-              "PostgreSQL",
-              "Vite",
-              "GenAI (Claude, Gemini)",
+              "C# / ASP.NET Core",
+              "EF Core & LINQ",
+              "Node.js (Express)",
+              "React & Next.js",
+              "TypeScript",
+              "SQL Server & PostgreSQL",
+              "RabbitMQ & Redis",
+              "Docker & Azure DevOps",
               "Power Platform",
+              "GenAI (Claude, Vertex AI)",
             ],
             achievements: [
-              "Reduced the delivery time of new projects by 65% through stack modernization (Vite/React) and agile collaboration with international teams in China.",
-              "Built automated corporate solutions with Microsoft Power Platform, creating reservation systems and approval workflows that increased internal productivity.",
-              "Continuous technical support, maintenance, and troubleshooting of production applications, ensuring high availability.",
+              "Reduced the delivery time of new projects by ~65% by modernizing the stack and embedding generative AI (Claude Code, Cursor, Copilot) into the development workflow, without compromising clean architecture and performance.",
+              "Built and maintained high-availability RESTful APIs in C# (ASP.NET Core, EF Core) and Node.js, with asynchronous communication via messaging, Redis caching, and Swagger/OpenAPI documentation.",
+              "Contributed to technical decisions applying SOLID, Clean Architecture, and CQRS, with code reviews, test coverage (xUnit, Jest, Cypress) in CI/CD, and secure authentication integrated with the Microsoft ecosystem (Entra ID / OAuth).",
+              "Architected Power Platform solutions (Power Apps, Power Automate, SharePoint) and implemented RPA, LLMs, and n8n agents, eliminating manual work in approval flows.",
             ],
           },
           {
             company: "Long Ping High-Tech",
-            position: "IT Intern (Focus on Web Development and Operations)",
-            period: "February 2023 – September 2024",
+            position: "IT & Automation Intern (Web Development and Operations)",
+            period: "February 2023 – August 2024",
             location: "Cravinhos, SP",
             description:
               "Focused on creating internal web solutions and automating IT infrastructure, combining software development with operations optimization.",
@@ -196,6 +205,41 @@ export const translations = {
       "Every project listed here reflects my commitment to quality, efficiency, and scalable solutions — always prioritizing best practices, maintainability, and design focused on user experience.",
     list: [
       {
+        title: "RedLine (Full Stack Application)",
+        status: "In development",
+        shortDescription:
+          "Marketplace for modified cars with a management panel for shops, automatic lead distribution, and real authentication — a decoupled architecture with an independent .NET API.",
+        fullDescription:
+          "RedLine is a full-stack application for selling tuned/modified vehicles, featuring a public showcase and an administrative panel for shops and sellers. The architecture is fully decoupled: the React/Vite frontend consumes a REST API in .NET 10 (Minimal APIs) that concentrates all business logic. Authentication uses Supabase JWTs validated via JWKS/OIDC on the backend, with role-based authorization (seller and shop manager). The system distributes leads among sellers through round-robin, aggregates KPIs in a dashboard, and standardizes error handling with ProblemDetails (RFC 7807). Persistence runs on PostgreSQL (Supabase) via EF Core with idempotent migrations applied at boot, and vehicle image uploads go directly to Supabase Storage. The project focused on security (secrets kept out of version control, rate limiting, per-environment CORS), observability (structured per-request logging, health checks), and clear separation of responsibilities.",
+        features: [
+          "Fully independent frontend and backend (decoupled architecture)",
+          "Real authentication via Supabase (JWT/JWKS) with role-based authorization",
+          "Automatic lead distribution among sellers (round-robin per shop)",
+          "Dashboard aggregating sales and service KPIs",
+          "RESTful API with standardized errors (ProblemDetails/RFC 7807), rate limiting, and health checks",
+          "Image uploads sent directly to Supabase Storage",
+          "Secrets kept out of version control (user-secrets/environment variables) and per-environment CORS",
+        ],
+        tags: ["React", ".NET", "TypeScript", "Supabase", "PostgreSQL"],
+        technologies: {
+          frontend: "React, TypeScript, Vite, Radix UI/shadcn, MUI, React Router",
+          backend: ".NET 10 (ASP.NET Core Minimal APIs), Entity Framework Core",
+          database: "PostgreSQL (Supabase) via EF Core with migrations",
+          integration: "Supabase Auth (JWT/OIDC) and Supabase Storage for images",
+          automation:
+            "Automatic round-robin lead distribution, idempotent migrations at boot, per-IP rate limiting, and liveness/readiness health checks",
+        },
+        images: ["../assets/redline.webp", "../assets/redline2.webp"],
+        githubUrlFront: "https://github.com/vLecaBR/RedLine/tree/main/RedLine_FrontEnd",
+        githubUrlBack: "https://github.com/vLecaBR/RedLine/tree/main/RedlineApi",
+        liveUrl: null,
+        hosting: {
+          frontend: null,
+          backend: null,
+        },
+      },
+
+      {
         title: "Eastqg (Full Stack Application)",
         shortDescription:
           "Mechanic service website with a custom product system, using a fully decoupled architecture and independent API.",
@@ -228,31 +272,34 @@ export const translations = {
     },
 
     {
-      title: "MarcaAí",
-      shortDescription: "A modern scheduling SaaS platform designed for professionals and teams to manage appointments and streamline client bookings.",
-      fullDescription: "MarcaAí is a comprehensive scheduling platform that eliminates the back-and-forth of booking appointments. Designed with B2B features, it allows professionals and teams to create customized public pages. The platform integrates deeply with Google Calendar to prevent scheduling conflicts, supports automated reminders via WhatsApp (Evolution API) and email (Resend) to reduce no-shows, and features a robust anti double-booking system using PostgreSQL. It also handles SaaS subscriptions via Stripe and upfront payments through Mercado Pago.",
+      title: "MarcaAí (SaaS Platform)",
+      status: "In development",
+      shortDescription: "A modern B2B2C online scheduling platform with customizable public pages, advanced availability management, double-booking prevention, and integrated payments.",
+      fullDescription: "MarcaAí is a full-stack SaaS platform designed to simplify appointment management for professionals and teams in Brazil, eliminating long message exchanges. The system enables the creation of public pages ('link in bio' style) with customizable design, where clients can book in-person or online services. The architecture features flexible availability control (recurring hours, buffers, and holidays) and a robust anti double-booking system using database locks (FOR UPDATE SKIP LOCKED). The application offers hierarchical team management (Owner, Admin, Member), dynamic onboarding forms, and essential integrations: Google Calendar sync, automated WhatsApp notifications (Evolution API), and transactional emails built with React Email. The financial flow is hybrid, handling B2B subscriptions via Stripe and upfront appointment payments via Pix using Mercado Pago webhooks.",
       features: [
-        "Premium customizable public pages for seamless client booking",
-        "Advanced availability management (recurring hours, time-offs, buffers)",
-        "Automated reminders via WhatsApp and transactional emails",
-        "Direct Google Calendar integration for conflict prevention",
-        "SaaS subscriptions via Stripe and upfront Pix payments via Mercado Pago",
-        "Robust anti double-booking architecture with transactional database locking"
+        "Premium, customizable public pages for listing and booking multiple services",
+        "Complete B2B team management with role-based access control (Owner, Admin, Member)",
+        "Advanced availability control, blocks, and concurrent double-booking prevention",
+        "Two-way Google Calendar sync and meeting link generation",
+        "Dynamic onboarding with custom forms at the booking stage",
+        "SaaS subscriptions managed via Stripe and upfront payments via Pix (Mercado Pago)",
+        "Automated notifications and reminders via WhatsApp (Evolution API) and transactional emails"
       ],
-      tags: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "SaaS"],
+      tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "SaaS"],
       technologies: {
-        frontend: "Next.js 15+ (App Router), React 19, Tailwind CSS v4, Zod",
-        tooling: "TypeScript, Vitest, Playwright, Prisma",
-        deployment: "Vercel",
-        styling: "Tailwind CSS v4, Lucide Icons"
+        frontend: "Next.js 15+ (App Router, Server Actions), React 19, TypeScript, Tailwind CSS v4, Zod, React Hook Form",
+        backend: "Next.js (Server Actions and API Routes), NextAuth.js v5 (Auth.js) for authentication",
+        database: "PostgreSQL (hosted on Neon) managed through the Prisma ORM",
+        integration: "Stripe, Mercado Pago SDK, Google Calendar API, Evolution API (WhatsApp), Resend (React Email)",
+        automation: "Database-level concurrency control (Skip Locked), unit tests with Vitest and E2E with Playwright"
       },
       images: ["../assets/marcaai.webp", "../assets/marcaai-dash.webp"],
       githubUrlFront: "https://github.com/vLecaBR/marcaAi",
       githubUrlBack: null,
-      liveUrl: "https://marca-ai-app.vercel.app/", 
+      liveUrl: "https://marca-ai-app.vercel.app",
       hosting: {
         frontend: "Vercel",
-        backend: "Neon (PostgreSQL)"
+        backend: null
       }
     },
 
