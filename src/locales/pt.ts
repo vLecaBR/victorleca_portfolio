@@ -240,6 +240,37 @@ export const translationsPT = {
       },
 
       {
+        title: "MarcaAí (Plataforma SaaS)",
+        status: "Em desenvolvimento",
+        shortDescription: "Plataforma moderna de agendamentos B2B2C focada em HealthTech (clínicas) com páginas públicas customizáveis, gestão avançada de disponibilidade e cobranças integradas.",
+        fullDescription: "O MarcaAí é uma plataforma SaaS full stack projetada para simplificar a gestão de agendamentos de clínicas e profissionais de saúde no Brasil. O sistema permite a criação de páginas públicas premium com design clínico e limpo, onde os pacientes podem agendar consultas. A arquitetura foi construída em um monorepo simétrico, combinando um frontend em Next.js 16 e uma API robusta em C# (.NET 10) baseada em Clean Architecture. Conta com controle de disponibilidade flexível, sistema anti double-booking utilizando locks no banco de dados, gestão hierárquica de equipes e fluxo de trial de 30 dias. Oferece integrações essenciais: sincronização com Google Calendar, notificações via WhatsApp (Evolution API) e e-mails transacionais. O fluxo financeiro lida com assinaturas B2B via Stripe e cobranças antecipadas via Pix (Mercado Pago).",
+        features: [
+          "Páginas públicas premium e customizáveis, com foco em autoridade clínica para agendamento de consultas",
+          "Gestão B2B completa de equipes com controle de acesso por perfis (Owner, Admin, Member)",
+          "Controle avançado de disponibilidade, bloqueios e prevenção concorrente de double-booking",
+          "Sincronização bidirecional com Google Calendar e geração de links de reunião",
+          "Onboarding dinâmico com oferta de 30 dias de trial e formulários customizados",
+          "Assinaturas SaaS geridas via Stripe e cobranças antecipadas via Pix (Mercado Pago)",
+          "Notificações automáticas e lembretes via WhatsApp (Evolution API) e e-mails transacionais"
+        ],
+        tags: ["Next.js", ".NET 10", "C#", "Supabase", "HealthTech", "SaaS"],
+        technologies: {
+          frontend: "Next.js 16 (App Router), React, TypeScript, Tailwind CSS, Zod, React Hook Form, Radix UI",
+          backend: "API em .NET 10 (C#), Clean Architecture",
+          database: "PostgreSQL (hospedado no Supabase)",
+          integration: "Stripe, Mercado Pago SDK, Google Calendar API, Evolution API (WhatsApp), Resend (React Email)",
+          automation: "Controle de concorrência no banco de dados, testes unitários com Vitest e CI/CD com GitHub Actions"
+        },
+        images: ["../assets/marcaai.webp", "../assets/marcaai-dash.webp"],
+        githubUrlFront: "https://github.com/vLecaBR/marcaAi",
+        githubUrlBack: "https://github.com/vLecaBR/marcaAi",
+        liveUrl: "https://marca-ai-app.vercel.app",
+        hosting: {
+          frontend: "Vercel",
+          backend: "Render"
+        }
+      },
+      {
         title: "Eastqg (Aplicação Full Stack)",
         shortDescription:
           "Site de mecânica com sistema próprio de produtos, utilizando arquitetura desacoplada com API independente.",
@@ -271,37 +302,6 @@ export const translationsPT = {
       },
     },
 
-    {
-      title: "MarcaAí (Plataforma SaaS)",
-      status: "Em desenvolvimento",
-      shortDescription: "Plataforma moderna de agendamentos B2B2C focada em HealthTech (clínicas) com páginas públicas customizáveis, gestão avançada de disponibilidade e cobranças integradas.",
-      fullDescription: "O MarcaAí é uma plataforma SaaS full stack projetada para simplificar a gestão de agendamentos de clínicas e profissionais de saúde no Brasil. O sistema permite a criação de páginas públicas premium com design clínico e limpo, onde os pacientes podem agendar consultas. A arquitetura foi construída em um monorepo simétrico, combinando um frontend em Next.js 16 e uma API robusta em C# (.NET 10) baseada em Clean Architecture. Conta com controle de disponibilidade flexível, sistema anti double-booking utilizando locks no banco de dados, gestão hierárquica de equipes e fluxo de trial de 30 dias. Oferece integrações essenciais: sincronização com Google Calendar, notificações via WhatsApp (Evolution API) e e-mails transacionais. O fluxo financeiro lida com assinaturas B2B via Stripe e cobranças antecipadas via Pix (Mercado Pago).",
-      features: [
-        "Páginas públicas premium e customizáveis, com foco em autoridade clínica para agendamento de consultas",
-        "Gestão B2B completa de equipes com controle de acesso por perfis (Owner, Admin, Member)",
-        "Controle avançado de disponibilidade, bloqueios e prevenção concorrente de double-booking",
-        "Sincronização bidirecional com Google Calendar e geração de links de reunião",
-        "Onboarding dinâmico com oferta de 30 dias de trial e formulários customizados",
-        "Assinaturas SaaS geridas via Stripe e cobranças antecipadas via Pix (Mercado Pago)",
-        "Notificações automáticas e lembretes via WhatsApp (Evolution API) e e-mails transacionais"
-      ],
-      tags: ["Next.js", ".NET 10", "C#", "Supabase", "HealthTech", "SaaS"],
-      technologies: {
-        frontend: "Next.js 16 (App Router), React, TypeScript, Tailwind CSS, Zod, React Hook Form, Radix UI",
-        backend: "API em .NET 10 (C#), Clean Architecture",
-        database: "PostgreSQL (hospedado no Supabase)",
-        integration: "Stripe, Mercado Pago SDK, Google Calendar API, Evolution API (WhatsApp), Resend (React Email)",
-        automation: "Controle de concorrência no banco de dados, testes unitários com Vitest e CI/CD com GitHub Actions"
-      },
-      images: ["../assets/marcaai.webp", "../assets/marcaai-dash.webp"],
-      githubUrlFront: "https://github.com/vLecaBR/marcaAi",
-      githubUrlBack: "https://github.com/vLecaBR/marcaAi",
-      liveUrl: "https://marca-ai-app.vercel.app",
-      hosting: {
-        frontend: "Vercel",
-        backend: "Render"
-      }
-    },
 
     {
       title: "Sophy Presentes (Catálogo e Vitrine)",

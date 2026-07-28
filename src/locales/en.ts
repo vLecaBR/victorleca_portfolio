@@ -238,6 +238,37 @@ export const translations = {
           backend: null,
         },
       },
+      {
+        title: "MarcaAí (SaaS Platform)",
+        status: "In development",
+        shortDescription: "A modern B2B2C HealthTech scheduling platform with customizable public pages, advanced availability management, double-booking prevention, and integrated payments for clinics.",
+        fullDescription: "MarcaAí is a full-stack SaaS platform designed to simplify appointment management for clinics and healthcare professionals in Brazil, eliminating long message exchanges. The system enables the creation of premium public pages with a clean, health-focused design where clients can book services. The robust architecture uses a symmetric monorepo with a Next.js 16 frontend and a .NET 10 C# API built on Clean Architecture principles. It features flexible availability control, a robust anti double-booking system using database locks, hierarchical team management, and 30-day trial flows. Essential integrations include Google Calendar sync, automated WhatsApp notifications, and transactional emails. The financial flow handles B2B subscriptions via Stripe and upfront appointment payments via Pix using Mercado Pago webhooks.",
+        features: [
+          "Premium, health-focused public pages for listing and booking multiple clinical services",
+          "Complete B2B team management with role-based access control (Owner, Admin, Member)",
+          "Advanced availability control, blocks, and concurrent double-booking prevention",
+          "Two-way Google Calendar sync and meeting link generation",
+          "Dynamic onboarding with 30-day trial provision and custom booking forms",
+          "SaaS subscriptions managed via Stripe and upfront payments via Pix (Mercado Pago)",
+          "Automated notifications and reminders via WhatsApp (Evolution API) and transactional emails"
+        ],
+        tags: ["Next.js", ".NET 10", "C#", "Supabase", "HealthTech", "SaaS"],
+        technologies: {
+          frontend: "Next.js 16 (App Router), React, TypeScript, Tailwind CSS, Zod, React Hook Form, Radix UI",
+          backend: ".NET 10 API (C#), Clean Architecture",
+          database: "PostgreSQL (hosted on Supabase)",
+          integration: "Stripe, Mercado Pago SDK, Google Calendar API, Evolution API (WhatsApp), Resend (React Email)",
+          automation: "Database-level concurrency control, unit tests with Vitest, and CI/CD pipelines via GitHub Actions"
+        },
+        images: ["../assets/marcaai.webp", "../assets/marcaai-dash.webp"],
+        githubUrlFront: "https://github.com/vLecaBR/marcaAi",
+        githubUrlBack: "https://github.com/vLecaBR/marcaAi",
+        liveUrl: "https://marca-ai-app.vercel.app",
+        hosting: {
+          frontend: "Vercel",
+          backend: "Render"
+        }
+      },
 
       {
         title: "Eastqg (Full Stack Application)",
@@ -271,37 +302,6 @@ export const translations = {
       },
     },
 
-    {
-      title: "MarcaAí (SaaS Platform)",
-      status: "In development",
-      shortDescription: "A modern B2B2C HealthTech scheduling platform with customizable public pages, advanced availability management, double-booking prevention, and integrated payments for clinics.",
-      fullDescription: "MarcaAí is a full-stack SaaS platform designed to simplify appointment management for clinics and healthcare professionals in Brazil, eliminating long message exchanges. The system enables the creation of premium public pages with a clean, health-focused design where clients can book services. The robust architecture uses a symmetric monorepo with a Next.js 16 frontend and a .NET 10 C# API built on Clean Architecture principles. It features flexible availability control, a robust anti double-booking system using database locks, hierarchical team management, and 30-day trial flows. Essential integrations include Google Calendar sync, automated WhatsApp notifications, and transactional emails. The financial flow handles B2B subscriptions via Stripe and upfront appointment payments via Pix using Mercado Pago webhooks.",
-      features: [
-        "Premium, health-focused public pages for listing and booking multiple clinical services",
-        "Complete B2B team management with role-based access control (Owner, Admin, Member)",
-        "Advanced availability control, blocks, and concurrent double-booking prevention",
-        "Two-way Google Calendar sync and meeting link generation",
-        "Dynamic onboarding with 30-day trial provision and custom booking forms",
-        "SaaS subscriptions managed via Stripe and upfront payments via Pix (Mercado Pago)",
-        "Automated notifications and reminders via WhatsApp (Evolution API) and transactional emails"
-      ],
-      tags: ["Next.js", ".NET 10", "C#", "Supabase", "HealthTech", "SaaS"],
-      technologies: {
-        frontend: "Next.js 16 (App Router), React, TypeScript, Tailwind CSS, Zod, React Hook Form, Radix UI",
-        backend: ".NET 10 API (C#), Clean Architecture",
-        database: "PostgreSQL (hosted on Supabase)",
-        integration: "Stripe, Mercado Pago SDK, Google Calendar API, Evolution API (WhatsApp), Resend (React Email)",
-        automation: "Database-level concurrency control, unit tests with Vitest, and CI/CD pipelines via GitHub Actions"
-      },
-      images: ["../assets/marcaai.webp", "../assets/marcaai-dash.webp"],
-      githubUrlFront: "https://github.com/vLecaBR/marcaAi",
-      githubUrlBack: "https://github.com/vLecaBR/marcaAi",
-      liveUrl: "https://marca-ai-app.vercel.app",
-      hosting: {
-        frontend: "Vercel",
-        backend: "Render"
-      }
-    },
 
     {
       title: "Sophy Presentes (Catalog and Showcase)",
