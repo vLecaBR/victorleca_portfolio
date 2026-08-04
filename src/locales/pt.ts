@@ -242,32 +242,32 @@ export const translationsPT = {
       {
         title: "MarcaAí (Plataforma SaaS)",
         status: "Em desenvolvimento",
-        shortDescription: "Plataforma moderna de agendamentos B2B2C focada em HealthTech (clínicas) com páginas públicas customizáveis, gestão avançada de disponibilidade e cobranças integradas.",
-        fullDescription: "O MarcaAí é uma plataforma SaaS full stack projetada para simplificar a gestão de agendamentos de clínicas e profissionais de saúde no Brasil. O sistema permite a criação de páginas públicas premium com design clínico e limpo, onde os pacientes podem agendar consultas. A arquitetura foi construída em um monorepo simétrico, combinando um frontend em Next.js 16 e uma API robusta em C# (.NET 10) baseada em Clean Architecture. Conta com controle de disponibilidade flexível, sistema anti double-booking utilizando locks no banco de dados, gestão hierárquica de equipes e fluxo de trial de 30 dias. Oferece integrações essenciais: sincronização com Google Calendar, notificações via WhatsApp (Evolution API) e e-mails transacionais. O fluxo financeiro lida com assinaturas B2B via Stripe e cobranças antecipadas via Pix (Mercado Pago).",
+        shortDescription: "SaaS de HealthTech para clínicas e consultórios: os pacientes agendam e pagam pelo link do profissional, com repasse transparente e agenda sem conflitos. Frontend em Next.js e API própria em .NET.",
+        fullDescription: "O MarcaAí é um SaaS de HealthTech que resolve a rotina de agendamento e recebimento de clínicas e consultórios de ponta a ponta. É um monorepo com dois aplicativos independentes: o frontend em Next.js 16 (React 19, RSC) nunca fala direto com o banco — as leituras acontecem em Server Components e as escritas passam por um BFF (Route Handlers same-origin, com cookie HttpOnly e proteção CSRF) que repassa para a API .NET 10. Construída em Clean Architecture com EF Core, a API concentra toda a regra de negócio e é a fonte da verdade, persistindo em PostgreSQL no Supabase com migrations aplicadas no boot. O paciente paga no agendamento (PIX ou cartão via Stripe) e o repasse — bruto, taxa e líquido — fica sempre à vista. O produto oferece agenda sem conflitos por profissional (buffers e antecedência mínima), gestão de equipe da clínica com papéis e permissões (RBAC), tipos de consulta configuráveis (retorno, primeira consulta, avaliação) e conformidade com a LGPD, com 30 dias de teste grátis dos recursos premium.",
         features: [
-          "Páginas públicas premium e customizáveis, com foco em autoridade clínica para agendamento de consultas",
-          "Gestão B2B completa de equipes com controle de acesso por perfis (Owner, Admin, Member)",
-          "Controle avançado de disponibilidade, bloqueios e prevenção concorrente de double-booking",
-          "Sincronização bidirecional com Google Calendar e geração de links de reunião",
-          "Onboarding dinâmico com oferta de 30 dias de trial e formulários customizados",
-          "Assinaturas SaaS geridas via Stripe e cobranças antecipadas via Pix (Mercado Pago)",
-          "Notificações automáticas e lembretes via WhatsApp (Evolution API) e e-mails transacionais"
+          "Pacientes agendam e pagam pelo link do profissional (PIX ou cartão via Stripe)",
+          "Repasse financeiro transparente — bruto, taxa e líquido sempre à vista",
+          "Agenda sem conflitos por profissional, com buffers e antecedência mínima",
+          "Gestão de equipe da clínica com papéis e permissões (RBAC)",
+          "Tipos de consulta configuráveis (retorno, primeira consulta, avaliação) com duração, valor e modalidade",
+          "Arquitetura desacoplada: frontend Next.js (RSC) + BFF que consome a API própria em .NET (fonte da verdade)",
+          "Sessão segura com cookie HttpOnly e proteção CSRF; conformidade com a LGPD e 30 dias de teste grátis"
         ],
-        tags: ["Next.js", ".NET 10", "C#", "Supabase", "HealthTech", "SaaS"],
+        tags: ["Next.js", ".NET 10", "C#", "Supabase", "HealthTech"],
         technologies: {
-          frontend: "Next.js 16 (App Router), React, TypeScript, Tailwind CSS, Zod, React Hook Form, Radix UI",
-          backend: "API em .NET 10 (C#), Clean Architecture",
-          database: "PostgreSQL (hospedado no Supabase)",
-          integration: "Stripe, Mercado Pago SDK, Google Calendar API, Evolution API (WhatsApp), Resend (React Email)",
-          automation: "Controle de concorrência no banco de dados, testes unitários com Vitest e CI/CD com GitHub Actions"
+          frontend: "Next.js 16 (App Router, RSC), React 19, TypeScript, Tailwind CSS v4, React Hook Form + Zod, Radix UI, Recharts",
+          backend: "API em .NET 10 (C#, Clean Architecture: Api/Application/Domain/Infrastructure) com EF Core (Npgsql)",
+          database: "PostgreSQL no Supabase (Session pooler), com migrations aplicadas no boot",
+          integration: "Pagamentos com Stripe (cartão + Elements) e PIX; BFF (Route Handlers) com cookie HttpOnly + CSRF",
+          automation: "Testes unitários e de integração com Vitest e E2E com Playwright; migrations idempotentes no boot"
         },
         images: ["../assets/marcaai.webp", "../assets/marcaai-dash.webp"],
-        githubUrlFront: "https://github.com/vLecaBR/marcaAi",
-        githubUrlBack: "https://github.com/vLecaBR/marcaAi",
+        githubUrlFront: "https://github.com/vLecaBR/marcaAi/tree/main/frontend",
+        githubUrlBack: "https://github.com/vLecaBR/marcaAi/tree/main/backend",
         liveUrl: "https://marca-ai-app.vercel.app",
         hosting: {
           frontend: "Vercel",
-          backend: "Render"
+          backend: "Render (Docker)"
         }
       },
       {

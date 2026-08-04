@@ -241,28 +241,28 @@ export const translations = {
       {
         title: "MarcaAí (SaaS Platform)",
         status: "In development",
-        shortDescription: "A modern B2B2C HealthTech scheduling platform with customizable public pages, advanced availability management, double-booking prevention, and integrated payments for clinics.",
-        fullDescription: "MarcaAí is a full-stack SaaS platform designed to simplify appointment management for clinics and healthcare professionals in Brazil, eliminating long message exchanges. The system enables the creation of premium public pages with a clean, health-focused design where clients can book services. The robust architecture uses a symmetric monorepo with a Next.js 16 frontend and a .NET 10 C# API built on Clean Architecture principles. It features flexible availability control, a robust anti double-booking system using database locks, hierarchical team management, and 30-day trial flows. Essential integrations include Google Calendar sync, automated WhatsApp notifications, and transactional emails. The financial flow handles B2B subscriptions via Stripe and upfront appointment payments via Pix using Mercado Pago webhooks.",
+        shortDescription: "A HealthTech SaaS for clinics and practices: patients book and pay through the professional's link, with transparent payouts and a conflict-free schedule. Next.js frontend and a dedicated .NET API.",
+        fullDescription: "MarcaAí is a HealthTech SaaS that handles the scheduling and payment routine of clinics and medical practices end to end. It is a monorepo with two independent apps: the Next.js 16 frontend (React 19, RSC) never talks to the database directly — reads happen in Server Components and writes go through a BFF (same-origin Route Handlers with an HttpOnly cookie and CSRF protection) that forwards to the .NET 10 API. Built on Clean Architecture with EF Core, the API holds all business logic and is the source of truth, persisting to PostgreSQL on Supabase with migrations applied at boot. Patients pay at booking time (PIX or card via Stripe) and the payout breakdown — gross, fee, and net — is always visible. The product provides conflict-free scheduling per professional (buffers and minimum lead time), clinic team management with roles and permissions (RBAC), configurable appointment types (follow-up, first visit, evaluation), and LGPD compliance, with a 30-day free trial of premium features.",
         features: [
-          "Premium, health-focused public pages for listing and booking multiple clinical services",
-          "Complete B2B team management with role-based access control (Owner, Admin, Member)",
-          "Advanced availability control, blocks, and concurrent double-booking prevention",
-          "Two-way Google Calendar sync and meeting link generation",
-          "Dynamic onboarding with 30-day trial provision and custom booking forms",
-          "SaaS subscriptions managed via Stripe and upfront payments via Pix (Mercado Pago)",
-          "Automated notifications and reminders via WhatsApp (Evolution API) and transactional emails"
+          "Patients book and pay through the professional's link (PIX or card via Stripe)",
+          "Transparent financial payout — gross, fee, and net always visible",
+          "Conflict-free scheduling per professional, with buffers and minimum lead time",
+          "Clinic team management with roles and permissions (RBAC)",
+          "Configurable appointment types (follow-up, first visit, evaluation) with duration, price, and modality",
+          "Decoupled architecture: Next.js frontend (RSC) + BFF consuming the dedicated .NET API (source of truth)",
+          "Secure session with HttpOnly cookie and CSRF protection; LGPD compliance and a 30-day free trial"
         ],
-        tags: ["Next.js", ".NET 10", "C#", "Supabase", "HealthTech", "SaaS"],
+        tags: ["Next.js", ".NET 10", "C#", "Supabase", "HealthTech"],
         technologies: {
-          frontend: "Next.js 16 (App Router), React, TypeScript, Tailwind CSS, Zod, React Hook Form, Radix UI",
-          backend: ".NET 10 API (C#), Clean Architecture",
-          database: "PostgreSQL (hosted on Supabase)",
-          integration: "Stripe, Mercado Pago SDK, Google Calendar API, Evolution API (WhatsApp), Resend (React Email)",
-          automation: "Database-level concurrency control, unit tests with Vitest, and CI/CD pipelines via GitHub Actions"
+          frontend: "Next.js 16 (App Router, RSC), React 19, TypeScript, Tailwind CSS v4, React Hook Form + Zod, Radix UI, Recharts",
+          backend: ".NET 10 API (C#, Clean Architecture: Api/Application/Domain/Infrastructure) with EF Core (Npgsql)",
+          database: "PostgreSQL on Supabase (Session pooler), with migrations applied at boot",
+          integration: "Payments with Stripe (card + Elements) and PIX; BFF (Route Handlers) with HttpOnly cookie + CSRF",
+          automation: "Unit and integration tests with Vitest and E2E with Playwright; idempotent migrations at boot"
         },
         images: ["../assets/marcaai.webp", "../assets/marcaai-dash.webp"],
-        githubUrlFront: "https://github.com/vLecaBR/marcaAi",
-        githubUrlBack: "https://github.com/vLecaBR/marcaAi",
+        githubUrlFront: "https://github.com/vLecaBR/marcaAi/tree/main/frontend",
+        githubUrlBack: "https://github.com/vLecaBR/marcaAi/tree/main/backend",
         liveUrl: "https://marca-ai-app.vercel.app",
         hosting: {
           frontend: "Vercel",
